@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Danilo Pantani — Senior Go / Blockchain Protocol Engineer</title>
+  <title>Danilo Pantani — Senior Go Engineer / Blockchain Protocols</title>
 
-  <meta name="description" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
+  <meta name="description" content="Danilo Pantani — Senior Go Engineer / Blockchain Protocols focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
   <meta name="theme-color" content="#5b3a7a">
   <link rel="canonical" href="https://pantani.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer">
-  <meta property="og:description" content="Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
+  <meta property="og:title" content="Danilo Pantani — Senior Go Engineer / Blockchain Protocols">
+  <meta property="og:description" content="Senior Go Engineer / Blockchain Protocols focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
   <meta property="og:url" content="https://pantani.github.io/">
   <meta property="og:site_name" content="Danilo Pantani">
   <meta property="og:image" content="https://pantani.github.io/og-image.jpg">
@@ -20,15 +20,15 @@
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer · Cosmos SDK · IBC · CometBFT · Web3 Infrastructure">
+  <meta property="og:image:alt" content="Danilo Pantani — Senior Go Engineer / Blockchain Protocols · Cosmos SDK · IBC · CometBFT · Web3 Infrastructure">
   <meta property="fb:app_id" content="1517404393071248">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer">
+  <meta name="twitter:title" content="Danilo Pantani — Senior Go Engineer / Blockchain Protocols">
   <meta name="twitter:description" content="Cosmos SDK · IBC · Go · Web3 Infrastructure · Distributed Systems · Developer Tooling">
   <meta name="twitter:image" content="https://pantani.github.io/og-image.jpg">
-  <meta name="twitter:image:alt" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer · Cosmos SDK · IBC · CometBFT · Web3 Infrastructure">
+  <meta name="twitter:image:alt" content="Danilo Pantani — Senior Go Engineer / Blockchain Protocols · Cosmos SDK · IBC · CometBFT · Web3 Infrastructure">
 
   <!-- Inline SVG favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%23704a96'/><stop offset='1' stop-color='%23c98455'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='%23f6f1e8'/><text x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='url(%23g)' dominant-baseline='middle'>P</text></svg>">
@@ -199,6 +199,54 @@
     .tb-btn .copied {
       color: oklch(0.55 0.10 150);
       font-weight: 700;
+    }
+
+    /* ───── Language switcher ───── */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--paper);
+    }
+    .lang-switcher .lang-button {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-family: var(--mono);
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      transition: background 160ms ease, color 160ms ease, box-shadow 160ms ease;
+    }
+    .lang-switcher .lang-button:hover {
+      color: var(--ink);
+      background: var(--paper-2);
+    }
+    .lang-switcher .lang-button:focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+    .lang-switcher .lang-button[aria-pressed="true"] {
+      background: var(--ink-strong);
+      color: var(--paper);
+      box-shadow: var(--shadow-sm);
+    }
+    @media (max-width: 480px) {
+      .lang-switcher .lang-button {
+        padding: 5px 8px;
+        font-size: 10.5px;
+      }
     }
 
     /* ───── Resume container ───── */
@@ -1490,68 +1538,85 @@
   <div class="glow" aria-hidden="true"></div>
 
   <nav class="toolbar" aria-label="CV actions">
-    <button type="button" class="tb-btn" id="printBtn" title="Print or save as PDF">
+    <div class="lang-switcher" role="group" aria-label="Language">
+      <button type="button" class="lang-button" data-lang="en" aria-pressed="true"
+              data-i18n-attr="aria-label" data-i18n-attr-key="lang.aria.en"
+              aria-label="Switch language to English">EN</button>
+      <button type="button" class="lang-button" data-lang="pt" aria-pressed="false"
+              data-i18n-attr="aria-label" data-i18n-attr-key="lang.aria.pt"
+              aria-label="Switch language to Brazilian Portuguese">PT-BR</button>
+      <button type="button" class="lang-button" data-lang="es" aria-pressed="false"
+              data-i18n-attr="aria-label" data-i18n-attr-key="lang.aria.es"
+              aria-label="Switch language to Spanish">ES</button>
+    </div>
+    <button type="button" class="tb-btn" id="printBtn"
+            title="Print or save as PDF"
+            data-i18n-attr="title" data-i18n-attr-key="toolbar.printTitle">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="9" rx="2"/><path d="M6 14h12v6H6z"/></svg>
-      Print / Save as PDF
+      <span data-i18n="toolbar.print">Print / Save as PDF</span>
     </button>
-    <button type="button" class="tb-btn" id="copyEmailBtn" title="Copy email">
+    <button type="button" class="tb-btn" id="copyEmailBtn"
+            title="Copy email"
+            data-i18n-attr="title" data-i18n-attr-key="toolbar.copyEmailTitle">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-      <span data-state="default">Copy email</span>
+      <span data-state="default" data-i18n="toolbar.copyEmail">Copy email</span>
     </button>
-    <button type="button" class="tb-btn" id="shareBtn" title="Toggle social share preview">
+    <button type="button" class="tb-btn" id="shareBtn"
+            title="Toggle social share preview"
+            data-i18n-attr="title" data-i18n-attr-key="toolbar.shareTitle">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m8.6 13.5 6.8 3M15.4 7.5l-6.8 3"/></svg>
-      Share preview
+      <span data-i18n="toolbar.share">Share preview</span>
     </button>
   </nav>
 
   <main class="resume" aria-label="Danilo Pantani CV">
     <header class="hero">
       <div>
-        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Available · Remote · UTC−3 · São Paulo, Brazil</p>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Available · Remote · UTC−3 · São Paulo, Brazil</span></p>
         <h1>Danilo <span class="name-accent">Pantani</span></h1>
-        <p class="title">Senior Go / Blockchain Protocol Engineer<span class="pipe" aria-hidden="true"></span>Cosmos SDK · IBC · Web3 Infrastructure</p>
-        <p class="hero-summary">Building production blockchain protocols, developer tooling, and distributed systems for over a decade — currently focused on Cosmos SDK, IBC, validator infrastructure, and AI-assisted engineering workflows.</p>
+        <p class="title" data-i18n-html="hero.title">Senior Go Engineer / Blockchain Protocols<span class="pipe" aria-hidden="true"></span>Cosmos SDK · IBC · Web3 Infrastructure</p>
+        <p class="hero-summary" data-i18n="hero.summary">Building production blockchain protocols, developer tooling, and distributed systems for over a decade — currently focused on Cosmos SDK, IBC, validator infrastructure, and AI-assisted engineering workflows.</p>
 
         <div class="ctas">
           <a class="cta primary" href="https://github.com/Pantani" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-            View GitHub
+            <span data-i18n="hero.cta.github">View GitHub</span>
           </a>
           <a class="cta" href="https://www.linkedin.com/in/dpantani/" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9.5h4v11.5H3V9.5zM10 9.5h3.83v1.57h.05c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.79 2.66 4.79 6.13V21H18.6v-5.05c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.66V21H10V9.5z"/></svg>
-            View LinkedIn
+            <span data-i18n="hero.cta.linkedin">View LinkedIn</span>
           </a>
           <a class="cta" href="mailto:danpantani@gmail.com">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Email me
+            <span data-i18n="hero.cta.email">Email me</span>
           </a>
         </div>
       </div>
 
       <address class="contact-card" aria-label="Contact information">
         <div class="contact-card-head">
-          <h2>Contact</h2>
+          <h2 data-i18n="contact.heading">Contact</h2>
           <span class="avatar-mark" aria-hidden="true">DP</span>
         </div>
 
         <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span class="contact-label">Location</span>
-          <span class="contact-value">São Paulo, Brazil</span>
+          <span class="contact-label" data-i18n="contact.location.label">Location</span>
+          <span class="contact-value" data-i18n="contact.location.value">São Paulo, Brazil</span>
         </div>
         <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          <span class="contact-label">Remote</span>
-          <span class="contact-value">UTC−3 · Worldwide</span>
+          <span class="contact-label" data-i18n="contact.remote.label">Remote</span>
+          <span class="contact-value" data-i18n="contact.remote.value">UTC−3 · Worldwide</span>
         </div>
         <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          <span class="contact-label">Email</span>
+          <span class="contact-label" data-i18n="contact.email.label">Email</span>
           <span class="contact-value"><a href="mailto:danpantani@gmail.com">danpantani@gmail.com</a></span>
         </div>
         <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="contact-label">Phone</span>
+          <span class="contact-label" data-i18n="contact.phone.label">Phone</span>
           <span class="contact-value"><a href="tel:+5511983587422">+55 11 98358-7422</a></span>
         </div>
         <div class="contact-item">
@@ -1572,22 +1637,22 @@
       <div class="proof-card">
         <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         <span class="proof-value">10<span class="small">+</span></span>
-        <span class="proof-label">years building production software &amp; blockchain systems</span>
+        <span class="proof-label" data-i18n="proof.years">years building production software &amp; blockchain systems</span>
       </div>
       <div class="proof-card">
         <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M8.2 17.2 15.8 9.6"/><path d="M14 6h6v6"/></svg>
         <span class="proof-value">300<span class="small">+</span></span>
-        <span class="proof-label">public merged PRs across Ignite CLI &amp; Cosmos SDK tooling</span>
+        <span class="proof-label" data-i18n="proof.ignitePRs">public merged PRs across Ignite CLI &amp; Cosmos SDK tooling</span>
       </div>
       <div class="proof-card">
         <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7H3M21 12H3M21 17H3"/><circle cx="7" cy="7" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="17" cy="17" r="1.6" fill="currentColor"/></svg>
         <span class="proof-value">200<span class="small">+</span></span>
-        <span class="proof-label">public merged PRs in Trust Wallet blockatlas</span>
+        <span class="proof-label" data-i18n="proof.blockatlasPRs">public merged PRs in Trust Wallet blockatlas</span>
       </div>
       <div class="proof-card">
         <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5z"/><path d="m12 7 4.5 2.5v5L12 17l-4.5-2.5v-5L12 7z"/></svg>
         <span class="proof-value">L1<span class="small">/</span>L2</span>
-        <span class="proof-label">Cosmos SDK, IBC, validator infra, wallets &amp; rollups</span>
+        <span class="proof-label" data-i18n="proof.l1l2">Cosmos SDK, IBC, validator infra, wallets &amp; rollups</span>
       </div>
     </section>
 
@@ -1595,7 +1660,7 @@
     <section class="section" aria-labelledby="expertise-title">
       <div class="section-title">
         <span class="num">01</span>
-        <h2 id="expertise-title">Core Expertise</h2>
+        <h2 id="expertise-title" data-i18n="expertise.title">Core Expertise</h2>
         <span class="rule"></span>
       </div>
       <div class="expertise-grid">
@@ -1604,9 +1669,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8M7.5 7.5l3 3M16.5 7.5l-3 3M7.5 16.5l3-3M16.5 16.5l-3-3"/></svg>
             </span>
-            <h3>Blockchain &amp; Protocols</h3>
+            <h3 data-i18n="expertise.blockchain.title">Blockchain &amp; Protocols</h3>
           </div>
-          <p>Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.</p>
+          <p data-i18n="expertise.blockchain.body">Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -1614,9 +1679,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
             </span>
-            <h3>Backend &amp; Distributed Systems</h3>
+            <h3 data-i18n="expertise.backend.title">Backend &amp; Distributed Systems</h3>
           </div>
-          <p>Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems.</p>
+          <p data-i18n="expertise.backend.body">Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems.</p>
         </div>
 
         <div class="expertise-card indigo">
@@ -1624,9 +1689,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 4 8l4 4M16 4l4 4-4 4M14 4l-4 16"/></svg>
             </span>
-            <h3>Tooling &amp; Developer Experience</h3>
+            <h3 data-i18n="expertise.tooling.title">Tooling &amp; Developer Experience</h3>
           </div>
-          <p>CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.</p>
+          <p data-i18n="expertise.tooling.body">CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -1634,9 +1699,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>
             </span>
-            <h3>Infrastructure &amp; DevOps</h3>
+            <h3 data-i18n="expertise.infra.title">Infrastructure &amp; DevOps</h3>
           </div>
-          <p>Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observability, production operations; working knowledge of Terraform, Ansible, Helm Charts.</p>
+          <p data-i18n="expertise.infra.body">Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observability, production operations; working knowledge of Terraform, Ansible, Helm Charts.</p>
         </div>
 
         <div class="expertise-card">
@@ -1644,9 +1709,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.5 5.5l2 2M16.5 16.5l2 2M5.5 18.5l2-2M16.5 7.5l2-2"/><circle cx="12" cy="12" r="3.5"/></svg>
             </span>
-            <h3>AI-Assisted Engineering</h3>
+            <h3 data-i18n="expertise.ai.title">AI-Assisted Engineering</h3>
           </div>
-          <p>Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review/refactor loops, test generation.</p>
+          <p data-i18n="expertise.ai.body">Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review/refactor loops, test generation.</p>
         </div>
 
         <div class="expertise-card indigo">
@@ -1654,9 +1719,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
             </span>
-            <h3>Languages &amp; Data</h3>
+            <h3 data-i18n="expertise.languages.title">Languages &amp; Data</h3>
           </div>
-          <p>Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.</p>
+          <p data-i18n="expertise.languages.body">Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.</p>
         </div>
       </div>
     </section>
@@ -1669,56 +1734,56 @@
         <section class="section" style="margin-top: 0;" aria-labelledby="os-title">
           <div class="section-title">
             <span class="num">02</span>
-            <h2 id="os-title">Open Source &amp; Protocol Impact</h2>
+            <h2 id="os-title" data-i18n="os.title">Open Source &amp; Protocol Impact</h2>
             <span class="rule"></span>
           </div>
           <div class="os-grid">
             <article class="os-card">
               <div class="os-head">
                 <h3>Ignite CLI</h3>
-                <span class="os-badge">300+ PRs</span>
+                <span class="os-badge" data-i18n="os.ignite.badge">300+ PRs</span>
               </div>
-              <p>Protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes across the all-in-one platform for building Cosmos SDK chains.</p>
+              <p data-i18n="os.ignite.body">Protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes across the all-in-one platform for building Cosmos SDK chains.</p>
             </article>
 
             <article class="os-card">
               <div class="os-head">
                 <h3>AtomOne</h3>
-                <span class="os-badge">Cosmos fork</span>
+                <span class="os-badge" data-i18n="os.atomone.badge">Cosmos fork</span>
               </div>
-              <p>Distribution-module implementation, <strong>ADR-004 Nakamoto Bonus</strong> mechanics, governance-migration fixes, and validator-commission update logic on the AtomOne Cosmos SDK fork.</p>
+              <p data-i18n-html="os.atomone.body">Distribution-module implementation, <strong>ADR-004 Nakamoto Bonus</strong> mechanics, governance-migration fixes, and validator-commission update logic on the AtomOne Cosmos SDK fork.</p>
             </article>
 
             <article class="os-card">
               <div class="os-head">
                 <h3>Hermez Node</h3>
-                <span class="os-badge">Eth L2</span>
+                <span class="os-badge" data-i18n="os.hermez.badge">Eth L2</span>
               </div>
-              <p>Go backend and protocol-adjacent work for the <strong>zk-SNARK rollup</strong> operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.</p>
+              <p data-i18n-html="os.hermez.body">Go backend and protocol-adjacent work for the <strong>zk-SNARK rollup</strong> operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.</p>
             </article>
 
             <article class="os-card">
               <div class="os-head">
                 <h3>Ignite Network · tendermint/spn</h3>
-                <span class="os-badge">SPN</span>
+                <span class="os-badge" data-i18n="os.spn.badge">SPN</span>
               </div>
-              <p>Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations for sovereign network bootstrapping.</p>
+              <p data-i18n="os.spn.body">Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations for sovereign network bootstrapping.</p>
             </article>
 
             <article class="os-card">
               <div class="os-head">
                 <h3>Cosmos SDK · IBC-Go</h3>
-                <span class="os-badge">Upstream</span>
+                <span class="os-badge" data-i18n="os.sdk.badge">Upstream</span>
               </div>
-              <p>Upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</p>
+              <p data-i18n="os.sdk.body">Upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</p>
             </article>
 
             <article class="os-card">
               <div class="os-head">
                 <h3>Trust Wallet blockatlas</h3>
-                <span class="os-badge">200+ PRs</span>
+                <span class="os-badge" data-i18n="os.blockatlas.badge">200+ PRs</span>
               </div>
-              <p>Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration across a high-traffic crypto wallet backend.</p>
+              <p data-i18n="os.blockatlas.body">Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration across a high-traffic crypto wallet backend.</p>
             </article>
           </div>
         </section>
@@ -1727,7 +1792,7 @@
         <section class="section" aria-labelledby="experience-title">
           <div class="section-title">
             <span class="num">03</span>
-            <h2 id="experience-title">Professional Experience</h2>
+            <h2 id="experience-title" data-i18n="exp.title">Professional Experience</h2>
             <span class="rule"></span>
           </div>
 
@@ -1737,17 +1802,17 @@
                 <div class="job-head">
                   <div>
                     <h3>Ignite / AtomOne / All in Bits</h3>
-                    <p class="role">Senior Blockchain Engineer, Go</p>
+                    <p class="role" data-i18n="exp.ignite.role">Senior Blockchain Engineer, Go</p>
                   </div>
-                  <div class="job-meta"><span class="now">Now</span>Jun 2021 — Present<br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.ignite.meta"><span class="now" data-i18n="exp.now">Now</span>Jun 2021 — Present<br>Remote</div>
                 </div>
                 <ul>
-                  <li>Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
-                  <li>Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.</li>
-                  <li>Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.</li>
-                  <li>Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.</li>
-                  <li>Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
-                  <li>Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with <strong>Claude Code</strong> and <strong>ChatGPT/Codex</strong>.</li>
+                  <li data-i18n-html="exp.ignite.b1">Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
+                  <li data-i18n-html="exp.ignite.b2">Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.</li>
+                  <li data-i18n-html="exp.ignite.b3">Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.</li>
+                  <li data-i18n-html="exp.ignite.b4">Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.</li>
+                  <li data-i18n-html="exp.ignite.b5">Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
+                  <li data-i18n-html="exp.ignite.b6">Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with <strong>Claude Code</strong> and <strong>ChatGPT/Codex</strong>.</li>
                 </ul>
               </div>
             </article>
@@ -1757,13 +1822,13 @@
                 <div class="job-head">
                   <div>
                     <h3>Interchain / Cosmos Hub</h3>
-                    <p class="role">Blockchain Engineer, Go</p>
+                    <p class="role" data-i18n="exp.interchain.role">Blockchain Engineer, Go</p>
                   </div>
-                  <div class="job-meta">Jun 2022 — Dec 2022<br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.interchain.meta">Jun 2022 — Dec 2022<br>Remote</div>
                 </div>
                 <ul>
-                  <li>Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.</li>
-                  <li>Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
+                  <li data-i18n-html="exp.interchain.b1">Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.</li>
+                  <li data-i18n-html="exp.interchain.b2">Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
                 </ul>
               </div>
             </article>
@@ -1773,13 +1838,13 @@
                 <div class="job-head">
                   <div>
                     <h3>Polygon Hermez</h3>
-                    <p class="role">Blockchain / Layer-2 Engineer, Go</p>
+                    <p class="role" data-i18n="exp.hermez.role">Blockchain / Layer-2 Engineer, Go</p>
                   </div>
-                  <div class="job-meta">Feb 2021 — Jun 2021<br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.hermez.meta">Feb 2021 — Jun 2021<br>Remote</div>
                 </div>
                 <ul>
-                  <li>Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
-                  <li>Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
+                  <li data-i18n-html="exp.hermez.b1">Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
+                  <li data-i18n-html="exp.hermez.b2">Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
                 </ul>
               </div>
             </article>
@@ -1789,14 +1854,14 @@
                 <div class="job-head">
                   <div>
                     <h3>Energi</h3>
-                    <p class="role">Backend Engineer / Architecture</p>
+                    <p class="role" data-i18n="exp.energi.role">Backend Engineer / Architecture</p>
                   </div>
-                  <div class="job-meta">Apr 2020 — Feb 2021<br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.energi.meta">Apr 2020 — Feb 2021<br>Remote</div>
                 </div>
                 <ul>
-                  <li>Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
-                  <li>Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
-                  <li>Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
+                  <li data-i18n-html="exp.energi.b1">Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
+                  <li data-i18n-html="exp.energi.b2">Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
+                  <li data-i18n-html="exp.energi.b3">Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
                 </ul>
               </div>
             </article>
@@ -1806,15 +1871,15 @@
                 <div class="job-head">
                   <div>
                     <h3>Trust Wallet / Binance</h3>
-                    <p class="role">Backend Lead, Go</p>
+                    <p class="role" data-i18n="exp.trustwallet.role">Backend Lead, Go</p>
                   </div>
-                  <div class="job-meta">Aug 2019 — Apr 2020<br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.trustwallet.meta">Aug 2019 — Apr 2020<br>Remote</div>
                 </div>
                 <ul>
-                  <li>Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
-                  <li>Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
-                  <li>Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
-                  <li>Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.</li>
+                  <li data-i18n-html="exp.trustwallet.b1">Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
+                  <li data-i18n-html="exp.trustwallet.b2">Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
+                  <li data-i18n-html="exp.trustwallet.b3">Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
+                  <li data-i18n-html="exp.trustwallet.b4">Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.</li>
                 </ul>
               </div>
             </article>
@@ -1824,14 +1889,14 @@
                 <div class="job-head">
                   <div>
                     <h3>Mercado Bitcoin</h3>
-                    <p class="role">Tech Lead — Backend &amp; Mobile</p>
+                    <p class="role" data-i18n="exp.mb.role">Tech Lead — Backend &amp; Mobile</p>
                   </div>
-                  <div class="job-meta">Mar 2018 — Aug 2019<br>São Paulo</div>
+                  <div class="job-meta" data-i18n-html="exp.mb.meta">Mar 2018 — Aug 2019<br>São Paulo</div>
                 </div>
                 <ul>
-                  <li>Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
-                  <li>Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
-                  <li>Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
+                  <li data-i18n-html="exp.mb.b1">Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
+                  <li data-i18n-html="exp.mb.b2">Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
+                  <li data-i18n-html="exp.mb.b3">Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
                 </ul>
               </div>
             </article>
@@ -1840,12 +1905,12 @@
               <div class="job-card">
                 <div class="job-head">
                   <div>
-                    <h3>Earlier Roles</h3>
-                    <p class="role">Tech Lead / Founder / Mobile Engineer</p>
+                    <h3 data-i18n="exp.earlier.title">Earlier Roles</h3>
+                    <p class="role" data-i18n="exp.earlier.role">Tech Lead / Founder / Mobile Engineer</p>
                   </div>
-                  <div class="job-meta">2011 — 2018<br>São Paulo</div>
+                  <div class="job-meta" data-i18n-html="exp.earlier.meta">2011 — 2018<br>São Paulo</div>
                 </div>
-                <p class="earlier-roles"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</p>
+                <p class="earlier-roles" data-i18n-html="exp.earlier.body"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</p>
               </div>
             </article>
           </div>
@@ -1855,7 +1920,7 @@
         <section class="section" aria-labelledby="projects-title">
           <div class="section-title">
             <span class="num">04</span>
-            <h2 id="projects-title">Selected Projects</h2>
+            <h2 id="projects-title" data-i18n="projects.title">Selected Projects</h2>
             <span class="rule"></span>
           </div>
           <div class="project-grid">
@@ -1865,7 +1930,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/ignite/cli" target="_blank" rel="noopener">github.com/ignite/cli</a>
-              <p>Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows.</p>
+              <p data-i18n="projects.ignite-cli.body">Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows.</p>
             </article>
 
             <article class="project-card">
@@ -1874,7 +1939,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/ignite/apps" target="_blank" rel="noopener">github.com/ignite/apps</a>
-              <p>Ignite ecosystem application tooling and Web3 developer-experience infrastructure.</p>
+              <p data-i18n="projects.ignite-apps.body">Ignite ecosystem application tooling and Web3 developer-experience infrastructure.</p>
             </article>
 
             <article class="project-card">
@@ -1886,7 +1951,7 @@
                 <a class="project-link" href="https://github.com/ignite/network" target="_blank" rel="noopener">github.com/ignite/network</a>
                 <a class="project-link" href="https://github.com/tendermint/spn" target="_blank" rel="noopener">github.com/tendermint/spn</a>
               </div>
-              <p>Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows.</p>
+              <p data-i18n="projects.spn.body">Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows.</p>
             </article>
 
             <article class="project-card">
@@ -1895,7 +1960,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/hermeznetwork/hermez-node" target="_blank" rel="noopener">github.com/hermeznetwork/hermez-node</a>
-              <p>Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows.</p>
+              <p data-i18n="projects.hermez.body">Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows.</p>
             </article>
 
             <article class="project-card">
@@ -1904,7 +1969,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/cosmos/gaia" target="_blank" rel="noopener">github.com/cosmos/gaia</a>
-              <p>Cosmos Hub / ATOM chain code and protocol-adjacent tooling.</p>
+              <p data-i18n="projects.gaia.body">Cosmos Hub / ATOM chain code and protocol-adjacent tooling.</p>
             </article>
 
             <article class="project-card">
@@ -1913,7 +1978,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/cosmos/cosmos-sdk" target="_blank" rel="noopener">github.com/cosmos/cosmos-sdk</a>
-              <p>Upstream Cosmos SDK protocol framework contributions and module-composition fixes.</p>
+              <p data-i18n="projects.cosmos-sdk.body">Upstream Cosmos SDK protocol framework contributions and module-composition fixes.</p>
             </article>
 
             <article class="project-card">
@@ -1922,7 +1987,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/cosmos/ibc-go" target="_blank" rel="noopener">github.com/cosmos/ibc-go</a>
-              <p>IBC implementation work, capability-keeper helpers, and downstream chain composition support.</p>
+              <p data-i18n="projects.ibc-go.body">IBC implementation work, capability-keeper helpers, and downstream chain composition support.</p>
             </article>
 
             <article class="project-card">
@@ -1931,7 +1996,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/atomone-hub/atomone" target="_blank" rel="noopener">github.com/atomone-hub/atomone</a>
-              <p>AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes.</p>
+              <p data-i18n="projects.atomone.body">AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes.</p>
             </article>
 
             <article class="project-card">
@@ -1940,7 +2005,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/atomone-hub/cosmos-sdk" target="_blank" rel="noopener">github.com/atomone-hub/cosmos-sdk</a>
-              <p>AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes.</p>
+              <p data-i18n="projects.atomone-sdk.body">AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes.</p>
             </article>
 
             <article class="project-card">
@@ -1949,7 +2014,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/allinbits/vaas" target="_blank" rel="noopener">github.com/allinbits/vaas</a>
-              <p>Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations.</p>
+              <p data-i18n="projects.vaas.body">Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations.</p>
             </article>
 
             <article class="project-card">
@@ -1958,7 +2023,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/Pantani/gnorender" target="_blank" rel="noopener">github.com/Pantani/gnorender</a>
-              <p>Gno rendering helpers for composable Markdown / ASCII realm interfaces and Render(path) workflows.</p>
+              <p data-i18n="projects.gnorender.body">Gno rendering helpers for composable Markdown / ASCII realm interfaces and Render(path) workflows.</p>
             </article>
 
             <article class="project-card">
@@ -1967,7 +2032,7 @@
                 <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
               </div>
               <a class="project-link" href="https://github.com/trustwallet/blockatlas" target="_blank" rel="noopener">github.com/trustwallet/blockatlas</a>
-              <p>Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work.</p>
+              <p data-i18n="projects.blockatlas.body">Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work.</p>
             </article>
           </div>
         </section>
@@ -1979,9 +2044,9 @@
             <span class="sp-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             </span>
-            <h2 id="summary-title">Summary</h2>
+            <h2 id="summary-title" data-i18n="summary.title">Summary</h2>
           </div>
-          <p style="margin: 0; color: var(--ink); font-size: 13px; line-height: 1.6;">Senior Go / Blockchain Protocol Engineer with <strong style="color: var(--ink-strong); font-weight: 600;">10+ years</strong> building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Experienced with <strong style="color: var(--ink-strong); font-weight: 600;">Claude Code and ChatGPT/Codex</strong> for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.</p>
+          <p data-i18n-html="summary.body" style="margin: 0; color: var(--ink); font-size: 13px; line-height: 1.6;">Senior Go Engineer / Blockchain Protocols with <strong style="color: var(--ink-strong); font-weight: 600;">10+ years</strong> building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Experienced with <strong style="color: var(--ink-strong); font-weight: 600;">Claude Code and ChatGPT/Codex</strong> for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.</p>
         </section>
 
         <section class="side-panel" aria-labelledby="impact-title">
@@ -1989,15 +2054,15 @@
             <span class="sp-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
             </span>
-            <h2 id="impact-title">Highlights</h2>
+            <h2 id="impact-title" data-i18n="highlights.title">Highlights</h2>
           </div>
           <ul class="impact-list">
-            <li><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.</li>
-            <li><strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.</li>
-            <li><strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.</li>
-            <li><strong>ignite/network · spn:</strong> Cosmos chain-launch coordination &amp; sovereign-chain lifecycle workflows.</li>
-            <li><strong>Cosmos SDK + IBC-Go:</strong> upstream interface-registry handling and capability-keeper helpers.</li>
-            <li><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing &amp; full-node tooling.</li>
+            <li data-i18n-html="highlights.b1"><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.</li>
+            <li data-i18n-html="highlights.b2"><strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.</li>
+            <li data-i18n-html="highlights.b3"><strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.</li>
+            <li data-i18n-html="highlights.b4"><strong>ignite/network · spn:</strong> Cosmos chain-launch coordination &amp; sovereign-chain lifecycle workflows.</li>
+            <li data-i18n-html="highlights.b5"><strong>Cosmos SDK + IBC-Go:</strong> upstream interface-registry handling and capability-keeper helpers.</li>
+            <li data-i18n-html="highlights.b6"><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing &amp; full-node tooling.</li>
           </ul>
         </section>
 
@@ -2006,23 +2071,23 @@
             <span class="sp-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
             </span>
-            <h2 id="education-title">Education &amp; Teaching</h2>
+            <h2 id="education-title" data-i18n="edu.title">Education &amp; Teaching</h2>
           </div>
           <div class="edu-group">
             <h3>Universidade Presbiteriana Mackenzie</h3>
-            <p>Computer Science — 6 semesters<br>Electrical Engineering — 8 semesters<br>São Paulo, Brazil</p>
+            <p data-i18n-html="edu.mackenzie.body">Computer Science — 6 semesters<br>Electrical Engineering — 8 semesters<br>São Paulo, Brazil</p>
           </div>
           <div class="edu-group">
             <h3>FIAP</h3>
-            <p>MBA Blockchain Instructor, since 2021</p>
+            <p data-i18n="edu.fiap.body">MBA Blockchain Instructor, since 2021</p>
           </div>
           <div class="edu-group">
-            <h3>Speaking</h3>
-            <p>Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 — including ETH São Paulo.</p>
+            <h3 data-i18n="edu.speaking.title">Speaking</h3>
+            <p data-i18n="edu.speaking.body">Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 — including ETH São Paulo.</p>
           </div>
           <div class="edu-group">
-            <h3>Selected Certifications</h3>
-            <p>Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy</p>
+            <h3 data-i18n="edu.certs.title">Selected Certifications</h3>
+            <p data-i18n-html="edu.certs.body">Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy</p>
           </div>
         </section>
 
@@ -2031,12 +2096,12 @@
             <span class="sp-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             </span>
-            <h2 id="languages-title">Languages</h2>
+            <h2 id="languages-title" data-i18n="langs.title">Languages</h2>
           </div>
           <div class="lang-list">
-            <div class="lang-row"><strong>Portuguese</strong><span>Native</span></div>
-            <div class="lang-row"><strong>English</strong><span>Advanced</span></div>
-            <div class="lang-row"><strong>Spanish</strong><span>Advanced</span></div>
+            <div class="lang-row"><strong data-i18n="langs.portuguese">Portuguese</strong><span data-i18n="langs.portuguese.level">Native</span></div>
+            <div class="lang-row"><strong data-i18n="langs.english">English</strong><span data-i18n="langs.english.level">Advanced</span></div>
+            <div class="lang-row"><strong data-i18n="langs.spanish">Spanish</strong><span data-i18n="langs.spanish.level">Advanced</span></div>
           </div>
           <div class="tag-row" aria-label="Positioning keywords">
             <span class="tag">Go</span>
@@ -2044,10 +2109,10 @@
             <span class="tag">Cosmos SDK</span>
             <span class="tag">IBC</span>
             <span class="tag">CometBFT</span>
-            <span class="tag">Tooling</span>
+            <span class="tag" data-i18n="langs.tag.tooling">Tooling</span>
             <span class="tag">Claude Code</span>
             <span class="tag">ChatGPT/Codex</span>
-            <span class="tag">Advanced Prompting</span>
+            <span class="tag" data-i18n="langs.tag.prompting">Advanced Prompting</span>
             <span class="tag">Terraform</span>
             <span class="tag">Ansible</span>
             <span class="tag">Helm Charts</span>
@@ -2061,9 +2126,9 @@
       <div class="sps-head">
         <div class="left">
           <span class="num">05</span>
-          <h2 id="sps-title">Share preview</h2>
+          <h2 id="sps-title" data-i18n="share.title">Share preview</h2>
         </div>
-        <p class="sps-hint">A 1200×630 social card you can screenshot and host as <span style="font-family: var(--mono);">og-image.png</span>.</p>
+        <p class="sps-hint" data-i18n-html="share.hint">A 1200×630 social card you can screenshot and host as <span style="font-family: var(--mono);">og-image.png</span>.</p>
       </div>
 
       <article class="social-preview-card" aria-label="Social sharing preview card">
@@ -2095,8 +2160,8 @@
         </div>
 
         <div class="sps-body">
-          <h3 class="sps-name">Senior Go &amp;<br><em>Blockchain</em> Engineer</h3>
-          <p class="sps-role">Cosmos SDK · IBC · CometBFT · Web3 Infrastructure · Distributed Systems</p>
+          <h3 class="sps-name" data-i18n-html="share.cardTitle">Senior Go Engineer &amp;<br><em>Blockchain</em></h3>
+          <p class="sps-role" data-i18n="share.cardRole">Cosmos SDK · IBC · CometBFT · Web3 Infrastructure · Distributed Systems</p>
           <div class="sps-keywords">
             <span>Go</span>
             <span>Cosmos SDK</span>
@@ -2110,9 +2175,9 @@
 
         <div class="sps-bottom">
           <div class="sps-stats">
-            <div class="sps-stat"><b>10+</b><span>Years</span></div>
-            <div class="sps-stat"><b>300+</b><span>Ignite CLI PRs</span></div>
-            <div class="sps-stat"><b>200+</b><span>blockatlas PRs</span></div>
+            <div class="sps-stat"><b>10+</b><span data-i18n="share.stat.years">Years</span></div>
+            <div class="sps-stat"><b>300+</b><span data-i18n="share.stat.ignite">Ignite CLI PRs</span></div>
+            <div class="sps-stat"><b>200+</b><span data-i18n="share.stat.blockatlas">blockatlas PRs</span></div>
           </div>
           <div class="sps-handle">github.com/Pantani</div>
         </div>
@@ -2120,8 +2185,8 @@
     </section>
 
     <footer class="resume-footer">
-      <span>© 2026 Danilo Pantani · Crafted with care</span>
-      <span>v2 · Updated 2026</span>
+      <span data-i18n="footer.copy">© 2026 Danilo Pantani · Crafted with care</span>
+      <span data-i18n="footer.version">v2 · Updated 2026</span>
     </footer>
   </main>
 
@@ -2172,30 +2237,573 @@
     // ─── Print ───
     document.getElementById('printBtn').addEventListener('click', () => window.print());
 
-    // ─── Copy email ───
-    const copyBtn = document.getElementById('copyEmailBtn');
-    const copyLabel = copyBtn.querySelector('span');
-    copyBtn.addEventListener('click', async () => {
-      try {
-        await navigator.clipboard.writeText('danpantani@gmail.com');
-        copyLabel.textContent = 'Copied ✓';
-        copyLabel.classList.add('copied');
-        setTimeout(() => {
-          copyLabel.textContent = 'Copy email';
-          copyLabel.classList.remove('copied');
-        }, 1800);
-      } catch (e) {
-        copyLabel.textContent = 'danpantani@gmail.com';
-        setTimeout(() => { copyLabel.textContent = 'Copy email'; }, 2400);
-      }
-    });
-
     // ─── Share preview anchor scroll ───
     document.getElementById('shareBtn').addEventListener('click', () => {
       const target = document.getElementById('sharePreview');
       const rect = target.getBoundingClientRect();
       const top = rect.top + window.scrollY - 24;
       window.scrollTo({ top, behavior: 'smooth' });
+    });
+
+    // ─── i18n: EN (default) / PT-BR / ES ───
+    const translations = {
+      en: {
+        "lang.aria.en": "Switch language to English",
+        "lang.aria.pt": "Switch language to Brazilian Portuguese",
+        "lang.aria.es": "Switch language to Spanish",
+
+        "meta.title": "Danilo Pantani — Senior Go Engineer / Blockchain Protocols",
+        "meta.description": "Danilo Pantani — Senior Go Engineer / Blockchain Protocols focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.",
+
+        "toolbar.print": "Print / Save as PDF",
+        "toolbar.printTitle": "Print or save as PDF",
+        "toolbar.copyEmail": "Copy email",
+        "toolbar.copyEmailTitle": "Copy email",
+        "toolbar.copied": "Copied ✓",
+        "toolbar.share": "Share preview",
+        "toolbar.shareTitle": "Toggle social share preview",
+
+        "hero.eyebrow": "Available · Remote · UTC−3 · São Paulo, Brazil",
+        "hero.title": "Senior Go Engineer / Blockchain Protocols<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Web3 Infrastructure",
+        "hero.summary": "Building production blockchain protocols, developer tooling, and distributed systems for over a decade — currently focused on Cosmos SDK, IBC, validator infrastructure, and AI-assisted engineering workflows.",
+        "hero.cta.github": "View GitHub",
+        "hero.cta.linkedin": "View LinkedIn",
+        "hero.cta.email": "Email me",
+
+        "contact.heading": "Contact",
+        "contact.location.label": "Location",
+        "contact.location.value": "São Paulo, Brazil",
+        "contact.remote.label": "Remote",
+        "contact.remote.value": "UTC−3 · Worldwide",
+        "contact.email.label": "Email",
+        "contact.phone.label": "Phone",
+
+        "proof.years": "years building production software & blockchain systems",
+        "proof.ignitePRs": "public merged PRs across Ignite CLI & Cosmos SDK tooling",
+        "proof.blockatlasPRs": "public merged PRs in Trust Wallet blockatlas",
+        "proof.l1l2": "Cosmos SDK, IBC, validator infra, wallets & rollups",
+
+        "expertise.title": "Core Expertise",
+        "expertise.blockchain.title": "Blockchain & Protocols",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.",
+        "expertise.backend.title": "Backend & Distributed Systems",
+        "expertise.backend.body": "Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems.",
+        "expertise.tooling.title": "Tooling & Developer Experience",
+        "expertise.tooling.body": "CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.",
+        "expertise.infra.title": "Infrastructure & DevOps",
+        "expertise.infra.body": "Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observability, production operations; working knowledge of Terraform, Ansible, Helm Charts.",
+        "expertise.ai.title": "AI-Assisted Engineering",
+        "expertise.ai.body": "Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review/refactor loops, test generation.",
+        "expertise.languages.title": "Languages & Data",
+        "expertise.languages.body": "Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.",
+
+        "os.title": "Open Source & Protocol Impact",
+        "os.ignite.badge": "300+ PRs",
+        "os.ignite.body": "Protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes across the all-in-one platform for building Cosmos SDK chains.",
+        "os.atomone.badge": "Cosmos fork",
+        "os.atomone.body": "Distribution-module implementation, <strong>ADR-004 Nakamoto Bonus</strong> mechanics, governance-migration fixes, and validator-commission update logic on the AtomOne Cosmos SDK fork.",
+        "os.hermez.badge": "Eth L2",
+        "os.hermez.body": "Go backend and protocol-adjacent work for the <strong>zk-SNARK rollup</strong> operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.",
+        "os.spn.badge": "SPN",
+        "os.spn.body": "Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations for sovereign network bootstrapping.",
+        "os.sdk.badge": "Upstream",
+        "os.sdk.body": "Upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.",
+        "os.blockatlas.badge": "200+ PRs",
+        "os.blockatlas.body": "Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration across a high-traffic crypto wallet backend.",
+
+        "exp.title": "Professional Experience",
+        "exp.now": "Now",
+
+        "exp.ignite.role": "Senior Blockchain Engineer, Go",
+        "exp.ignite.meta": "<span class=\"now\">Now</span>Jun 2021 — Present<br>Remote",
+        "exp.ignite.b1": "Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.",
+        "exp.ignite.b2": "Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.",
+        "exp.ignite.b3": "Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.",
+        "exp.ignite.b4": "Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.",
+        "exp.ignite.b5": "Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.",
+        "exp.ignite.b6": "Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with <strong>Claude Code</strong> and <strong>ChatGPT/Codex</strong>.",
+
+        "exp.interchain.role": "Blockchain Engineer, Go",
+        "exp.interchain.meta": "Jun 2022 — Dec 2022<br>Remote",
+        "exp.interchain.b1": "Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.",
+        "exp.interchain.b2": "Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.",
+
+        "exp.hermez.role": "Blockchain / Layer-2 Engineer, Go",
+        "exp.hermez.meta": "Feb 2021 — Jun 2021<br>Remote",
+        "exp.hermez.b1": "Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.",
+        "exp.hermez.b2": "Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.",
+
+        "exp.energi.role": "Backend Engineer / Architecture",
+        "exp.energi.meta": "Apr 2020 — Feb 2021<br>Remote",
+        "exp.energi.b1": "Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.",
+        "exp.energi.b2": "Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.",
+        "exp.energi.b3": "Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.",
+
+        "exp.trustwallet.role": "Backend Lead, Go",
+        "exp.trustwallet.meta": "Aug 2019 — Apr 2020<br>Remote",
+        "exp.trustwallet.b1": "Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.",
+        "exp.trustwallet.b2": "Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.",
+        "exp.trustwallet.b3": "Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.",
+        "exp.trustwallet.b4": "Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.",
+
+        "exp.mb.role": "Tech Lead — Backend & Mobile",
+        "exp.mb.meta": "Mar 2018 — Aug 2019<br>São Paulo",
+        "exp.mb.b1": "Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.",
+        "exp.mb.b2": "Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.",
+        "exp.mb.b3": "Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.",
+
+        "exp.earlier.title": "Earlier Roles",
+        "exp.earlier.role": "Tech Lead / Founder / Mobile Engineer",
+        "exp.earlier.meta": "2011 — 2018<br>São Paulo",
+        "exp.earlier.body": "<strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.",
+
+        "projects.title": "Selected Projects",
+        "projects.ignite-cli.body": "Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows.",
+        "projects.ignite-apps.body": "Ignite ecosystem application tooling and Web3 developer-experience infrastructure.",
+        "projects.spn.body": "Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows.",
+        "projects.hermez.body": "Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows.",
+        "projects.gaia.body": "Cosmos Hub / ATOM chain code and protocol-adjacent tooling.",
+        "projects.cosmos-sdk.body": "Upstream Cosmos SDK protocol framework contributions and module-composition fixes.",
+        "projects.ibc-go.body": "IBC implementation work, capability-keeper helpers, and downstream chain composition support.",
+        "projects.atomone.body": "AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes.",
+        "projects.atomone-sdk.body": "AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes.",
+        "projects.vaas.body": "Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations.",
+        "projects.gnorender.body": "Gno rendering helpers for composable Markdown / ASCII realm interfaces and Render(path) workflows.",
+        "projects.blockatlas.body": "Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work.",
+
+        "summary.title": "Summary",
+        "summary.body": "Senior Go Engineer / Blockchain Protocols with <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ years</strong> building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Experienced with <strong style=\"color: var(--ink-strong); font-weight: 600;\">Claude Code and ChatGPT/Codex</strong> for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.",
+
+        "highlights.title": "Highlights",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.",
+        "highlights.b2": "<strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.",
+        "highlights.b3": "<strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.",
+        "highlights.b4": "<strong>ignite/network · spn:</strong> Cosmos chain-launch coordination & sovereign-chain lifecycle workflows.",
+        "highlights.b5": "<strong>Cosmos SDK + IBC-Go:</strong> upstream interface-registry handling and capability-keeper helpers.",
+        "highlights.b6": "<strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing & full-node tooling.",
+
+        "edu.title": "Education & Teaching",
+        "edu.mackenzie.body": "Computer Science — 6 semesters<br>Electrical Engineering — 8 semesters<br>São Paulo, Brazil",
+        "edu.fiap.body": "MBA Blockchain Instructor, since 2021",
+        "edu.speaking.title": "Speaking",
+        "edu.speaking.body": "Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 — including ETH São Paulo.",
+        "edu.certs.title": "Selected Certifications",
+        "edu.certs.body": "Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy",
+
+        "langs.title": "Languages",
+        "langs.portuguese": "Portuguese",
+        "langs.portuguese.level": "Native",
+        "langs.english": "English",
+        "langs.english.level": "Advanced",
+        "langs.spanish": "Spanish",
+        "langs.spanish.level": "Advanced",
+        "langs.tag.tooling": "Tooling",
+        "langs.tag.prompting": "Advanced Prompting",
+
+        "share.title": "Share preview",
+        "share.hint": "A 1200×630 social card you can screenshot and host as <span style=\"font-family: var(--mono);\">og-image.png</span>.",
+        "share.cardTitle": "Senior Go Engineer &amp;<br><em>Blockchain</em>",
+        "share.cardRole": "Cosmos SDK · IBC · CometBFT · Web3 Infrastructure · Distributed Systems",
+        "share.stat.years": "Years",
+        "share.stat.ignite": "Ignite CLI PRs",
+        "share.stat.blockatlas": "blockatlas PRs",
+
+        "footer.copy": "© 2026 Danilo Pantani · Crafted with care",
+        "footer.version": "v2 · Updated 2026"
+      },
+
+      pt: {
+        "lang.aria.en": "Mudar idioma para inglês",
+        "lang.aria.pt": "Mudar idioma para português do Brasil",
+        "lang.aria.es": "Mudar idioma para espanhol",
+
+        "meta.title": "Danilo Pantani — Engenheiro Go Sênior / Protocolo Blockchain",
+        "meta.description": "Danilo Pantani — Engenheiro Go Sênior focado em Cosmos SDK, IBC, infraestrutura Web3, sistemas distribuídos, ferramentas para desenvolvedores e fluxos com Claude Code e ChatGPT/Codex.",
+
+        "toolbar.print": "Imprimir / Salvar como PDF",
+        "toolbar.printTitle": "Imprimir ou salvar como PDF",
+        "toolbar.copyEmail": "Copiar e-mail",
+        "toolbar.copyEmailTitle": "Copiar e-mail",
+        "toolbar.copied": "Copiado ✓",
+        "toolbar.share": "Pré-visualização",
+        "toolbar.shareTitle": "Alternar pré-visualização social",
+
+        "hero.eyebrow": "Disponível · Remoto · UTC−3 · São Paulo, Brasil",
+        "hero.title": "Engenheiro Go Sênior / Protocolo Blockchain<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Infraestrutura Web3",
+        "hero.summary": "Há mais de uma década entregando protocolos blockchain em produção, ferramentas para desenvolvedores e sistemas distribuídos — atualmente focado em Cosmos SDK, IBC, infraestrutura de validadores e fluxos com Claude Code e ChatGPT/Codex.",
+        "hero.cta.github": "Ver GitHub",
+        "hero.cta.linkedin": "Ver LinkedIn",
+        "hero.cta.email": "Enviar e-mail",
+
+        "contact.heading": "Contato",
+        "contact.location.label": "Localização",
+        "contact.location.value": "São Paulo, Brasil",
+        "contact.remote.label": "Remoto",
+        "contact.remote.value": "UTC−3 · Mundo",
+        "contact.email.label": "E-mail",
+        "contact.phone.label": "Telefone",
+
+        "proof.years": "anos entregando software em produção e sistemas blockchain",
+        "proof.ignitePRs": "PRs públicos mergeados no Ignite CLI e em ferramentas Cosmos SDK",
+        "proof.blockatlasPRs": "PRs públicos mergeados no Trust Wallet blockatlas",
+        "proof.l1l2": "Cosmos SDK, IBC, infra de validadores, wallets e rollups",
+
+        "expertise.title": "Áreas de Especialização",
+        "expertise.blockchain.title": "Blockchain e Protocolos",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestrutura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestrutura de rollups.",
+        "expertise.backend.title": "Backend e Sistemas Distribuídos",
+        "expertise.backend.body": "Go, gRPC, APIs REST, arquitetura de backend, concorrência, goroutines, channels, worker pools, pipelines fan-out, cancelamento de contexto e sistemas distribuídos.",
+        "expertise.tooling.title": "Tooling e Experiência do Desenvolvedor",
+        "expertise.tooling.body": "Ferramentas de CLI, Cobra, Viper, geração de código, manipulação de AST, protobuf, protoanalysis, migrações de scaffold, ergonomia para devs e fluxos de release.",
+        "expertise.infra.title": "Infraestrutura e DevOps",
+        "expertise.infra.body": "Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observabilidade e operação em produção; bom domínio de Terraform, Ansible e Helm Charts.",
+        "expertise.ai.title": "Engenharia com IA",
+        "expertise.ai.body": "Claude Code, ChatGPT/Codex, prompting avançado, contextualização de repositórios, decomposição de tarefas, planejamento, ciclos de revisão e refatoração e geração de testes.",
+        "expertise.languages.title": "Linguagens e Dados",
+        "expertise.languages.body": "Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.",
+
+        "os.title": "Open Source e Impacto em Protocolos",
+        "os.ignite.badge": "300+ PRs",
+        "os.ignite.body": "Protoanalysis, geração de código com AST, migrações de scaffold, UX de CLI, ergonomia para devs e correções de qualidade de release na plataforma all-in-one para construir blockchains Cosmos SDK.",
+        "os.atomone.badge": "Fork Cosmos",
+        "os.atomone.body": "Implementação do módulo de distribuição, mecânica do <strong>ADR-004 Nakamoto Bonus</strong>, correções na migração de governança e atualização da lógica de comissão de validadores no fork AtomOne do Cosmos SDK.",
+        "os.hermez.badge": "Eth L2",
+        "os.hermez.body": "Backend em Go e atuação a nível de protocolo no stack do operador <strong>zk-SNARK rollup</strong> — integração de prover/coordinator e infraestrutura Ethereum Layer-2.",
+        "os.spn.badge": "SPN",
+        "os.spn.body": "Coordenação do lançamento de chains Cosmos, ciclo de vida de chains soberanas e operações de bootstrap orientadas a validadores.",
+        "os.sdk.badge": "Upstream",
+        "os.sdk.body": "Contribuições upstream incluindo o tratamento de interface-registry / resolver gogoproto e helpers de capability-keeper para composição de módulos downstream.",
+        "os.blockatlas.badge": "200+ PRs",
+        "os.blockatlas.body": "Indexação multi-chain, integração de chains, rotas de market data, tooling para full nodes e migração de Node.js para Go em um backend de wallet de alto tráfego.",
+
+        "exp.title": "Experiência Profissional",
+        "exp.now": "Atual",
+
+        "exp.ignite.role": "Desenvolvedor Sênior Blockchain, Go",
+        "exp.ignite.meta": "<span class=\"now\">Atual</span>Jun 2021 — Presente<br>Remoto",
+        "exp.ignite.b1": "Mantive e evoluí o <strong>Ignite CLI</strong>, plataforma all-in-one para construir, lançar e manter blockchains Cosmos SDK; entreguei <strong>300+ PRs públicos mergeados</strong> em protoanalysis, geração de código com AST, migrações de scaffold, UX de CLI e ergonomia para devs.",
+        "exp.ignite.b2": "Atuei no protocolo e nos módulos do <strong>AtomOne / fork do Cosmos SDK</strong>: implementação do módulo de distribuição, mecânica do ADR-004 Nakamoto Bonus, correções na migração de governança e atualização da lógica de comissão de validadores.",
+        "exp.ignite.b3": "Implementei e revisei código em <strong>IBC, infraestrutura de validadores, ciclo de vida de consumer chains, validação de misbehaviour, limpeza de parâmetros</strong> e fluxos Validator-as-a-Service.",
+        "exp.ignite.b4": "Contribuí no <strong>Gno / allinbits/gno-realms</strong> com funcionalidades de IBC core e do realm de transfer, incluindo helpers de MsgCall para tokens voucher de IBC e restrições em operações IBC retransmitidas.",
+        "exp.ignite.b5": "Contribuí com correções e helpers upstream no <strong>Cosmos SDK e IBC-Go</strong>, incluindo o tratamento do registry resolver do gogoproto e funcionalidades de capability-keeper.",
+        "exp.ignite.b6": "Melhorei a experiência de desenvolvimento com scaffolding de CLI, análise de protobuf, resolução de mensagens RPC aninhadas, arrays customizados, modo daemon, redução de ruído em CI / Sentry e fluxos com <strong>Claude Code</strong> e <strong>ChatGPT/Codex</strong>.",
+
+        "exp.interchain.role": "Desenvolvedor Blockchain, Go",
+        "exp.interchain.meta": "Jun 2022 — Dez 2022<br>Remoto",
+        "exp.interchain.b1": "Contribuí com código Go e tooling de apoio para o desenvolvimento da chain <strong>Cosmos Hub / ATOM</strong> ao lado do core do ecossistema Interchain.",
+        "exp.interchain.b2": "Construí composição de módulos e funcionalidades de IBC para chains Cosmos SDK downstream, incluindo melhorias de capability-keeper no IBC-Go.",
+
+        "exp.hermez.role": "Desenvolvedor Blockchain / Layer-2, Go",
+        "exp.hermez.meta": "Fev 2021 — Jun 2021<br>Remoto",
+        "exp.hermez.b1": "Construí serviços Go a nível de backend e de protocolo para o <strong>Hermez</strong>, sistema Ethereum Layer-2 baseado em zk-SNARKs.",
+        "exp.hermez.b2": "Integrei serviços Go com ferramentas Ethereum e ao pipeline de prover / coordinator do stack do operador rollup.",
+
+        "exp.energi.role": "Desenvolvedor Backend / Arquitetura",
+        "exp.energi.meta": "Abr 2020 — Fev 2021<br>Remoto",
+        "exp.energi.b1": "Construí serviços Go no backend do <strong>stack DeFi da Energi</strong> e em sistemas custodiais de wallet com fluxos de chaves privadas.",
+        "exp.energi.b2": "Responsável pela arquitetura de deploy em Kubernetes com <strong>Helm e GitHub Actions CI/CD</strong> para serviços blockchain e operação de nós.",
+        "exp.energi.b3": "Implementei observabilidade com <strong>Prometheus e Grafana</strong> para serviços e nós em produção.",
+
+        "exp.trustwallet.role": "Tech Lead Backend, Go",
+        "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
+        "exp.trustwallet.b1": "Liderei o backend da plataforma de indexação e integração multi-chain da Trust Wallet, <strong>blockatlas</strong>, com <strong>200+ PRs públicos mergeados</strong> em integração de chains, indexadores, rotas de market data e tooling para full nodes.",
+        "exp.trustwallet.b2": "Migrei serviços legados de Node.js para Go, padronizando worker pools, processamento fan-out, cancelamento de contexto e padrões de concorrência para produção.",
+        "exp.trustwallet.b3": "Operei e monitorei full nodes em produção em diversas chains, sustentando a infraestrutura backend de uma wallet cripto em larga escala.",
+        "exp.trustwallet.b4": "Construí e mantive rotas de dados blockchain, fluxos de metadados de ativos, parsing de transações, lógica de validadores, batching de RPC e integrações específicas por chain.",
+
+        "exp.mb.role": "Tech Lead — Backend e Mobile",
+        "exp.mb.meta": "Mar 2018 — Ago 2019<br>São Paulo",
+        "exp.mb.b1": "Construí serviços em Go e Python para rastreio multi-chain de transações e assinatura de payloads em uma das maiores exchanges cripto da LATAM.",
+        "exp.mb.b2": "Mantive scripts de wallets hot / warm / cold e procedimentos de gestão de chaves integrados ao ledger e ao matching da exchange.",
+        "exp.mb.b3": "Liderei engenharia de backend, mobile e web em fluxos voltados ao cliente, em iOS, Android e web.",
+
+        "exp.earlier.title": "Atuações Anteriores",
+        "exp.earlier.role": "Tech Lead / Fundador / Engenheiro Mobile",
+        "exp.earlier.meta": "2011 — 2018<br>São Paulo",
+        "exp.earlier.body": "<strong>XDEX</strong> — engenharia de serviços de exchange em .NET. <strong>Finchain / FlowBTC</strong> — fluxos de wallet ERC-20, integrações com smart contracts e sistemas de compliance. <strong>Neon Bank</strong> — engenharia iOS / Android e fluxos de reconhecimento de documentos com OpenCV e C++. <strong>Miya / Pixon</strong> — sistemas de tracking de pessoas em tempo real com IoT, Arduino, Raspberry Pi, beacons, micro-localização Wi-Fi e visão computacional.",
+
+        "projects.title": "Projetos Selecionados",
+        "projects.ignite-cli.body": "Tooling para chains Cosmos SDK, scaffolding, protoanalysis, geração de código com AST, UX de CLI e fluxos para devs.",
+        "projects.ignite-apps.body": "Tooling de aplicações do ecossistema Ignite e infraestrutura Web3 voltada à experiência do desenvolvedor.",
+        "projects.spn.body": "Infraestrutura de lançamento e coordenação de redes Cosmos para o ciclo de vida de chains soberanas.",
+        "projects.hermez.body": "Infraestrutura de nós Ethereum Layer-2 conectada aos fluxos do operador zk-SNARK rollup.",
+        "projects.gaia.body": "Código da chain Cosmos Hub / ATOM e tooling a nível de protocolo.",
+        "projects.cosmos-sdk.body": "Contribuições upstream ao framework Cosmos SDK e correções na composição de módulos.",
+        "projects.ibc-go.body": "Implementação de IBC, helpers de capability-keeper e suporte à composição de chains downstream.",
+        "projects.atomone.body": "Atuação na chain AtomOne: lógica do módulo de distribuição, mecânica do Nakamoto Bonus e correções na migração de governança.",
+        "projects.atomone-sdk.body": "Atuação no fork AtomOne do Cosmos SDK em módulos de protocolo, lógica de comissão de validadores e mudanças no SDK.",
+        "projects.vaas.body": "Infraestrutura Validator-as-a-Service para hardening de provider IBC, ciclo de vida e operação de validadores.",
+        "projects.gnorender.body": "Helpers de renderização Gno para interfaces de realm em Markdown / ASCII e fluxos Render(path).",
+        "projects.blockatlas.body": "Indexação multi-chain, integração de chains, rotas de market data, tooling para full nodes e migração de Node.js para Go.",
+
+        "summary.title": "Resumo",
+        "summary.body": "Engenheiro Go Sênior / Protocolo Blockchain com <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ anos</strong> entregando software em produção e infraestrutura blockchain. Sólida vivência prática em protocolos Cosmos SDK, IBC, CometBFT/Tendermint, infraestrutura de validadores, tooling de CLI, geração de código, wallets, indexação multi-chain e infraestrutura Ethereum Layer-2. Uso intensivo de <strong style=\"color: var(--ink-strong); font-weight: 600;\">Claude Code e ChatGPT/Codex</strong> para prompting avançado, contextualização de repositórios, exploração de código, planejamento, revisão, refatoração, testes e documentação.",
+
+        "highlights.title": "Destaques",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos mergeados em protoanalysis, geração de código com AST, migrações de scaffold e UX de CLI.",
+        "highlights.b2": "<strong>AtomOne:</strong> atuação no fork Cosmos SDK — módulo de distribuição, ADR-004 Nakamoto Bonus e migrações de governança.",
+        "highlights.b3": "<strong>Hermez:</strong> backend em Go para fluxos do operador Ethereum L2 zk-SNARK rollup.",
+        "highlights.b4": "<strong>ignite/network · spn:</strong> coordenação de lançamento e ciclo de vida de chains Cosmos soberanas.",
+        "highlights.b5": "<strong>Cosmos SDK + IBC-Go:</strong> tratamento upstream de interface-registry e helpers de capability-keeper.",
+        "highlights.b6": "<strong>Trust Wallet blockatlas:</strong> 200+ PRs públicos mergeados em indexação multi-chain e tooling para full nodes.",
+
+        "edu.title": "Formação e Docência",
+        "edu.mackenzie.body": "Ciência da Computação — 6 semestres<br>Engenharia Elétrica — 8 semestres<br>São Paulo, Brasil",
+        "edu.fiap.body": "Professor convidado de Blockchain no MBA, desde 2021",
+        "edu.speaking.title": "Palestras",
+        "edu.speaking.body": "Palestrante sobre Ethereum, sistemas zk, Web3, ZK-SNARKs e Layer-2 — incluindo o ETH São Paulo.",
+        "edu.certs.title": "Certificações Selecionadas",
+        "edu.certs.body": "Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy",
+
+        "langs.title": "Idiomas",
+        "langs.portuguese": "Português",
+        "langs.portuguese.level": "Nativo",
+        "langs.english": "Inglês",
+        "langs.english.level": "Avançado",
+        "langs.spanish": "Espanhol",
+        "langs.spanish.level": "Avançado",
+        "langs.tag.tooling": "Tooling",
+        "langs.tag.prompting": "Prompting Avançado",
+
+        "share.title": "Pré-visualização social",
+        "share.hint": "Um card social 1200×630 que você pode capturar e hospedar como <span style=\"font-family: var(--mono);\">og-image.png</span>.",
+        "share.cardTitle": "Engenheiro Go Sênior &amp;<br><em>Blockchain</em>",
+        "share.cardRole": "Cosmos SDK · IBC · CometBFT · Infraestrutura Web3 · Sistemas Distribuídos",
+        "share.stat.years": "Anos",
+        "share.stat.ignite": "PRs Ignite CLI",
+        "share.stat.blockatlas": "PRs blockatlas",
+
+        "footer.copy": "© 2026 Danilo Pantani · Feito com cuidado",
+        "footer.version": "v2 · Atualizado em 2026"
+      },
+
+      es: {
+        "lang.aria.en": "Cambiar idioma a inglés",
+        "lang.aria.pt": "Cambiar idioma a portugués de Brasil",
+        "lang.aria.es": "Cambiar idioma a español",
+
+        "meta.title": "Danilo Pantani — Ingeniero Go Senior / Protocolo Blockchain",
+        "meta.description": "Danilo Pantani — Ingeniero Go Senior enfocado en Cosmos SDK, IBC, infraestructura Web3, sistemas distribuidos, herramientas para desarrolladores y flujos con Claude Code y ChatGPT/Codex.",
+
+        "toolbar.print": "Imprimir / Guardar como PDF",
+        "toolbar.printTitle": "Imprimir o guardar como PDF",
+        "toolbar.copyEmail": "Copiar correo",
+        "toolbar.copyEmailTitle": "Copiar correo",
+        "toolbar.copied": "Copiado ✓",
+        "toolbar.share": "Vista social",
+        "toolbar.shareTitle": "Alternar vista previa social",
+
+        "hero.eyebrow": "Disponible · Remoto · UTC−3 · São Paulo, Brasil",
+        "hero.title": "Ingeniero Go Senior / Protocolo Blockchain<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Infraestructura Web3",
+        "hero.summary": "Más de una década entregando protocolos blockchain en producción, herramientas para desarrolladores y sistemas distribuidos — actualmente enfocado en Cosmos SDK, IBC, infraestructura de validadores y flujos con Claude Code y ChatGPT/Codex.",
+        "hero.cta.github": "Ver GitHub",
+        "hero.cta.linkedin": "Ver LinkedIn",
+        "hero.cta.email": "Enviar correo",
+
+        "contact.heading": "Contacto",
+        "contact.location.label": "Ubicación",
+        "contact.location.value": "São Paulo, Brasil",
+        "contact.remote.label": "Remoto",
+        "contact.remote.value": "UTC−3 · Mundial",
+        "contact.email.label": "Correo",
+        "contact.phone.label": "Teléfono",
+
+        "proof.years": "años entregando software en producción y sistemas blockchain",
+        "proof.ignitePRs": "PRs públicos integrados en Ignite CLI y herramientas de Cosmos SDK",
+        "proof.blockatlasPRs": "PRs públicos integrados en Trust Wallet blockatlas",
+        "proof.l1l2": "Cosmos SDK, IBC, infra de validadores, wallets y rollups",
+
+        "expertise.title": "Áreas de Especialización",
+        "expertise.blockchain.title": "Blockchain y Protocolos",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestructura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestructura de rollups.",
+        "expertise.backend.title": "Backend y Sistemas Distribuidos",
+        "expertise.backend.body": "Go, gRPC, APIs REST, arquitectura de backend, concurrencia, goroutines, channels, worker pools, pipelines fan-out, cancelación de contexto y sistemas distribuidos.",
+        "expertise.tooling.title": "Tooling y Experiencia del Desarrollador",
+        "expertise.tooling.body": "Tooling de CLI, Cobra, Viper, generación de código, manipulación de AST, protobuf, protoanalysis, migraciones de scaffold, ergonomía para devs y flujos de release.",
+        "expertise.infra.title": "Infraestructura y DevOps",
+        "expertise.infra.body": "Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observabilidad y operación en producción; buen dominio de Terraform, Ansible y Helm Charts.",
+        "expertise.ai.title": "Ingeniería con IA",
+        "expertise.ai.body": "Claude Code, ChatGPT/Codex, prompting avanzado, contexto de repositorios, descomposición de tareas, planificación, ciclos de revisión y refactor y generación de pruebas.",
+        "expertise.languages.title": "Lenguajes y Datos",
+        "expertise.languages.body": "Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.",
+
+        "os.title": "Open Source e Impacto en Protocolos",
+        "os.ignite.badge": "300+ PRs",
+        "os.ignite.body": "Protoanalysis, generación de código con AST, migraciones de scaffold, UX de CLI, ergonomía para devs y correcciones de calidad de release en la plataforma all-in-one para construir blockchains Cosmos SDK.",
+        "os.atomone.badge": "Fork Cosmos",
+        "os.atomone.body": "Implementación del módulo de distribución, mecánica del <strong>ADR-004 Nakamoto Bonus</strong>, correcciones en la migración de gobernanza y actualización de la lógica de comisión de validadores en el fork AtomOne de Cosmos SDK.",
+        "os.hermez.badge": "Eth L2",
+        "os.hermez.body": "Backend en Go y trabajo a nivel de protocolo en el stack del operador <strong>zk-SNARK rollup</strong> — integración de prover/coordinator e infraestructura Ethereum Layer-2.",
+        "os.spn.badge": "SPN",
+        "os.spn.body": "Coordinación del lanzamiento de chains Cosmos, ciclo de vida de chains soberanas y operaciones de bootstrap orientadas a validadores.",
+        "os.sdk.badge": "Upstream",
+        "os.sdk.body": "Contribuciones upstream incluyendo el manejo de interface-registry / resolver gogoproto y helpers de capability-keeper para composición de módulos downstream.",
+        "os.blockatlas.badge": "200+ PRs",
+        "os.blockatlas.body": "Indexación multi-chain, integración de chains, rutas de market data, tooling para full nodes y migración de Node.js a Go en un backend de wallet cripto de alto tráfico.",
+
+        "exp.title": "Experiencia Profesional",
+        "exp.now": "Actual",
+
+        "exp.ignite.role": "Desarrollador Senior Blockchain, Go",
+        "exp.ignite.meta": "<span class=\"now\">Actual</span>Jun 2021 — Presente<br>Remoto",
+        "exp.ignite.b1": "Mantuve y evolucioné <strong>Ignite CLI</strong>, plataforma all-in-one para construir, lanzar y mantener blockchains Cosmos SDK; entregué <strong>300+ PRs públicos integrados</strong> en protoanalysis, generación de código con AST, migraciones de scaffold, UX de CLI y ergonomía para devs.",
+        "exp.ignite.b2": "Trabajé en protocolo y módulos del <strong>AtomOne / fork de Cosmos SDK</strong>: implementación del módulo de distribución, mecánica del ADR-004 Nakamoto Bonus, correcciones en la migración de gobernanza y actualización de la lógica de comisión de validadores.",
+        "exp.ignite.b3": "Implementé y revisé código en <strong>IBC, infraestructura de validadores, ciclo de vida de consumer chains, validación de misbehaviour, limpieza de parámetros</strong> y flujos Validator-as-a-Service.",
+        "exp.ignite.b4": "Aporté en <strong>Gno / allinbits/gno-realms</strong> con funcionalidades de IBC core y del realm de transfer, incluyendo helpers de MsgCall para tokens voucher de IBC y restricciones en operaciones IBC retransmitidas.",
+        "exp.ignite.b5": "Aporté correcciones y helpers upstream en <strong>Cosmos SDK e IBC-Go</strong>, incluyendo el manejo del registry resolver de gogoproto y funcionalidades de capability-keeper.",
+        "exp.ignite.b6": "Mejoré la experiencia de desarrollo con scaffolding de CLI, análisis de protobuf, resolución de mensajes RPC anidados, arrays personalizados, modo daemon, reducción de ruido en CI / Sentry y flujos con <strong>Claude Code</strong> y <strong>ChatGPT/Codex</strong>.",
+
+        "exp.interchain.role": "Desarrollador Blockchain, Go",
+        "exp.interchain.meta": "Jun 2022 — Dic 2022<br>Remoto",
+        "exp.interchain.b1": "Aporté código Go y tooling de soporte para el desarrollo de la chain <strong>Cosmos Hub / ATOM</strong> junto al core del ecosistema Interchain.",
+        "exp.interchain.b2": "Construí composición de módulos y funcionalidades de IBC para chains Cosmos SDK downstream, incluyendo mejoras de capability-keeper en IBC-Go.",
+
+        "exp.hermez.role": "Desarrollador Blockchain / Layer-2, Go",
+        "exp.hermez.meta": "Feb 2021 — Jun 2021<br>Remoto",
+        "exp.hermez.b1": "Construí servicios Go a nivel de backend y de protocolo para <strong>Hermez</strong>, sistema Ethereum Layer-2 basado en zk-SNARKs.",
+        "exp.hermez.b2": "Integré servicios Go con herramientas Ethereum y con el pipeline de prover / coordinator del stack del operador rollup.",
+
+        "exp.energi.role": "Desarrollador Backend / Arquitectura",
+        "exp.energi.meta": "Abr 2020 — Feb 2021<br>Remoto",
+        "exp.energi.b1": "Construí servicios Go en el backend del <strong>stack DeFi de Energi</strong> y en sistemas custodiales de wallet con flujos de claves privadas.",
+        "exp.energi.b2": "A cargo de la arquitectura de despliegue en Kubernetes con <strong>Helm y GitHub Actions CI/CD</strong> para servicios blockchain y operación de nodos.",
+        "exp.energi.b3": "Implementé observabilidad con <strong>Prometheus y Grafana</strong> para servicios y nodos en producción.",
+
+        "exp.trustwallet.role": "Tech Lead Backend, Go",
+        "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
+        "exp.trustwallet.b1": "Lideré el backend de la plataforma de indexación e integración multi-chain de Trust Wallet, <strong>blockatlas</strong>, con <strong>200+ PRs públicos integrados</strong> en integración de chains, indexadores, rutas de market data y tooling para full nodes.",
+        "exp.trustwallet.b2": "Migré servicios legacy de Node.js a Go, estandarizando worker pools, procesamiento fan-out, cancelación de contexto y patrones de concurrencia para producción.",
+        "exp.trustwallet.b3": "Operé y monitoreé full nodes en producción en múltiples chains, sosteniendo la infraestructura backend de una wallet cripto a gran escala.",
+        "exp.trustwallet.b4": "Construí y mantuve rutas de datos blockchain, flujos de metadatos de activos, parsing de transacciones, lógica de validadores, batching de RPC e integraciones específicas por chain.",
+
+        "exp.mb.role": "Tech Lead — Backend y Mobile",
+        "exp.mb.meta": "Mar 2018 — Ago 2019<br>São Paulo",
+        "exp.mb.b1": "Construí servicios en Go y Python para tracking multi-chain de transacciones y firma de payloads en uno de los exchanges cripto más grandes de LATAM.",
+        "exp.mb.b2": "Mantuve scripts de wallets hot / warm / cold y procedimientos de gestión de claves integrados al ledger y al matching del exchange.",
+        "exp.mb.b3": "Lideré ingeniería de backend, mobile y web en flujos orientados al cliente, en iOS, Android y web.",
+
+        "exp.earlier.title": "Roles Anteriores",
+        "exp.earlier.role": "Tech Lead / Fundador / Ingeniero Mobile",
+        "exp.earlier.meta": "2011 — 2018<br>São Paulo",
+        "exp.earlier.body": "<strong>XDEX</strong> — ingeniería de servicios de exchange en .NET. <strong>Finchain / FlowBTC</strong> — flujos de wallet ERC-20, integraciones con smart contracts y sistemas de compliance. <strong>Neon Bank</strong> — ingeniería iOS / Android y flujos de reconocimiento de documentos con OpenCV y C++. <strong>Miya / Pixon</strong> — sistemas de tracking de personas en tiempo real con IoT, Arduino, Raspberry Pi, beacons, micro-localización Wi-Fi y visión por computadora.",
+
+        "projects.title": "Proyectos Seleccionados",
+        "projects.ignite-cli.body": "Tooling para chains Cosmos SDK, scaffolding, protoanalysis, generación de código con AST, UX de CLI y flujos para devs.",
+        "projects.ignite-apps.body": "Tooling de aplicaciones del ecosistema Ignite e infraestructura Web3 orientada a la experiencia del desarrollador.",
+        "projects.spn.body": "Infraestructura de lanzamiento y coordinación de redes Cosmos para el ciclo de vida de chains soberanas.",
+        "projects.hermez.body": "Infraestructura de nodos Ethereum Layer-2 conectada a los flujos del operador zk-SNARK rollup.",
+        "projects.gaia.body": "Código de la chain Cosmos Hub / ATOM y tooling a nivel de protocolo.",
+        "projects.cosmos-sdk.body": "Contribuciones upstream al framework Cosmos SDK y correcciones en la composición de módulos.",
+        "projects.ibc-go.body": "Implementación de IBC, helpers de capability-keeper y soporte a la composición de chains downstream.",
+        "projects.atomone.body": "Trabajo en la chain AtomOne: lógica del módulo de distribución, mecánica del Nakamoto Bonus y correcciones en la migración de gobernanza.",
+        "projects.atomone-sdk.body": "Trabajo en el fork AtomOne de Cosmos SDK en módulos de protocolo, lógica de comisión de validadores y cambios en el SDK.",
+        "projects.vaas.body": "Infraestructura Validator-as-a-Service para hardening de provider IBC, ciclo de vida y operación de validadores.",
+        "projects.gnorender.body": "Helpers de renderizado Gno para interfaces de realm en Markdown / ASCII y flujos Render(path).",
+        "projects.blockatlas.body": "Indexación multi-chain, integración de chains, rutas de market data, tooling para full nodes y migración de Node.js a Go.",
+
+        "summary.title": "Resumen",
+        "summary.body": "Ingeniero Go Senior / Protocolo Blockchain con <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ años</strong> entregando software en producción e infraestructura blockchain. Sólida experiencia en protocolos Cosmos SDK, IBC, CometBFT/Tendermint, infraestructura de validadores, tooling de CLI, generación de código, wallets, indexación multi-chain e infraestructura Ethereum Layer-2. Uso intensivo de <strong style=\"color: var(--ink-strong); font-weight: 600;\">Claude Code y ChatGPT/Codex</strong> para prompting avanzado, contexto de repositorios, exploración de código, planificación, revisión, refactor, pruebas y documentación.",
+
+        "highlights.title": "Logros Destacados",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados en protoanalysis, generación de código con AST, migraciones de scaffold y UX de CLI.",
+        "highlights.b2": "<strong>AtomOne:</strong> trabajo en el fork Cosmos SDK — módulo de distribución, ADR-004 Nakamoto Bonus y migraciones de gobernanza.",
+        "highlights.b3": "<strong>Hermez:</strong> backend en Go para flujos del operador Ethereum L2 zk-SNARK rollup.",
+        "highlights.b4": "<strong>ignite/network · spn:</strong> coordinación de lanzamiento y ciclo de vida de chains Cosmos soberanas.",
+        "highlights.b5": "<strong>Cosmos SDK + IBC-Go:</strong> manejo upstream de interface-registry y helpers de capability-keeper.",
+        "highlights.b6": "<strong>Trust Wallet blockatlas:</strong> 200+ PRs públicos integrados en indexación multi-chain y tooling para full nodes.",
+
+        "edu.title": "Formación y Docencia",
+        "edu.mackenzie.body": "Ciencias de la Computación — 6 semestres<br>Ingeniería Eléctrica — 8 semestres<br>São Paulo, Brasil",
+        "edu.fiap.body": "Profesor invitado de Blockchain en el MBA, desde 2021",
+        "edu.speaking.title": "Charlas",
+        "edu.speaking.body": "Ponente sobre Ethereum, sistemas zk, Web3, ZK-SNARKs y Layer-2 — incluyendo el ETH São Paulo.",
+        "edu.certs.title": "Certificaciones Seleccionadas",
+        "edu.certs.body": "Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy",
+
+        "langs.title": "Idiomas",
+        "langs.portuguese": "Portugués",
+        "langs.portuguese.level": "Nativo",
+        "langs.english": "Inglés",
+        "langs.english.level": "Avanzado",
+        "langs.spanish": "Español",
+        "langs.spanish.level": "Avanzado",
+        "langs.tag.tooling": "Tooling",
+        "langs.tag.prompting": "Prompting Avanzado",
+
+        "share.title": "Vista previa social",
+        "share.hint": "Una tarjeta social de 1200×630 que puedes capturar y publicar como <span style=\"font-family: var(--mono);\">og-image.png</span>.",
+        "share.cardTitle": "Ingeniero Go Senior &amp;<br><em>Blockchain</em>",
+        "share.cardRole": "Cosmos SDK · IBC · CometBFT · Infraestructura Web3 · Sistemas Distribuidos",
+        "share.stat.years": "Años",
+        "share.stat.ignite": "PRs Ignite CLI",
+        "share.stat.blockatlas": "PRs blockatlas",
+
+        "footer.copy": "© 2026 Danilo Pantani · Hecho con cuidado",
+        "footer.version": "v2 · Actualizado en 2026"
+      }
+    };
+
+    let currentLanguage = "en";
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLanguage = lang;
+
+      document.documentElement.lang = lang === "pt" ? "pt-BR" : lang;
+
+      const dict = translations[lang];
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const v = dict[el.dataset.i18n];
+        if (v != null) el.textContent = v;
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const v = dict[el.dataset.i18nHtml];
+        if (v != null) el.innerHTML = v;
+      });
+
+      document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+        const attr = el.dataset.i18nAttr;
+        const key = el.dataset.i18nAttrKey;
+        const v = key ? dict[key] : null;
+        if (attr && v != null) el.setAttribute(attr, v);
+      });
+
+      if (dict["meta.title"]) document.title = dict["meta.title"];
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && dict["meta.description"]) {
+        metaDesc.setAttribute("content", dict["meta.description"]);
+      }
+
+      document.querySelectorAll(".lang-button").forEach((btn) => {
+        const isActive = btn.dataset.lang === lang;
+        btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    document.querySelectorAll(".lang-button").forEach((btn) => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+
+    // ─── Copy email (language-aware) ───
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const copyLabel = copyBtn.querySelector('span');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('danpantani@gmail.com');
+        copyLabel.textContent = translations[currentLanguage]["toolbar.copied"];
+        copyLabel.classList.add('copied');
+        setTimeout(() => {
+          copyLabel.textContent = translations[currentLanguage]["toolbar.copyEmail"];
+          copyLabel.classList.remove('copied');
+        }, 1800);
+      } catch (e) {
+        copyLabel.textContent = 'danpantani@gmail.com';
+        setTimeout(() => {
+          copyLabel.textContent = translations[currentLanguage]["toolbar.copyEmail"];
+        }, 2400);
+      }
     });
   </script>
 </body>
