@@ -3,35 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Danilo Pantani - Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, AI-assisted engineering workflows, and validator infrastructure.">
-  <title>Danilo Pantani - Senior Go / Blockchain Protocol Engineer</title>
+  <title>Danilo Pantani — Senior Go / Blockchain Protocol Engineer</title>
+
+  <meta name="description" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
+  <meta name="theme-color" content="#5b3a7a">
+  <link rel="canonical" href="https://pantani.github.io/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer">
+  <meta property="og:description" content="Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and AI-assisted engineering workflows.">
+  <meta property="og:url" content="https://pantani.github.io/">
+  <meta property="og:site_name" content="Danilo Pantani">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Danilo Pantani — Senior Go / Blockchain Protocol Engineer">
+  <meta name="twitter:description" content="Cosmos SDK · IBC · Go · Web3 Infrastructure · Distributed Systems · Developer Tooling">
+
+  <!--
+    TODO for richer social previews:
+    Create /og-image.png at 1200x630 (you can screenshot the .social-preview-card section
+    inside this page) and then add:
+      <meta property="og:image" content="https://pantani.github.io/og-image.png">
+      <meta name="twitter:image" content="https://pantani.github.io/og-image.png">
+  -->
+
+  <!-- Inline SVG favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='%23704a96'/><stop offset='1' stop-color='%23c98455'/></linearGradient></defs><rect width='64' height='64' rx='14' fill='%23f6f1e8'/><text x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='700' fill='url(%23g)' dominant-baseline='middle'>P</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --paper: #ffffff;
-      --canvas: #eef3f5;
-      --ink: #14212b;
-      --ink-strong: #08141c;
-      --muted: #52616d;
-      --muted-2: #6d7b86;
-      --line: #d9e2e8;
-      --line-strong: #bdccd5;
-      --accent: #174b5f;
-      --accent-2: #256176;
-      --accent-soft: #e6f0f3;
-      --panel: #f7fafb;
-      --panel-2: #f1f6f8;
-      --focus: #8a4dff;
-      --shadow: 0 28px 80px rgba(8, 20, 28, 0.12);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      /* Warm ivory premium palette */
+      --paper: #fbf6ec;          /* main background — warm cream */
+      --paper-2: #f6efe1;        /* subtly deeper cream for layering */
+      --paper-3: #efe6d3;        /* card lift */
+      --ink: #1c1814;            /* deep warm charcoal */
+      --ink-strong: #0d0a07;     /* near-black for headlines */
+      --muted: #5a5048;          /* warm muted */
+      --muted-2: #8a7d70;        /* secondary muted */
+      --line: #e3d8c0;           /* hairline */
+      --line-strong: #cdbfa3;    /* stronger line */
+
+      /* Accents — share chroma, vary hue */
+      --plum: oklch(0.45 0.09 320);
+      --plum-2: oklch(0.55 0.10 320);
+      --plum-soft: oklch(0.93 0.03 320);
+      --copper: oklch(0.62 0.12 50);
+      --copper-soft: oklch(0.94 0.04 60);
+      --indigo: oklch(0.45 0.09 280);
+
+      --focus: oklch(0.55 0.18 290);
+
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+
+      --shadow-sm: 0 1px 2px rgba(28, 24, 20, 0.04), 0 2px 6px rgba(28, 24, 20, 0.04);
+      --shadow-md: 0 1px 2px rgba(28, 24, 20, 0.05), 0 14px 32px -12px rgba(28, 24, 20, 0.10);
+      --shadow-lg: 0 1px 2px rgba(28, 24, 20, 0.05), 0 28px 60px -20px rgba(28, 24, 20, 0.18);
+
+      --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      --serif: "Fraunces", "Instrument Serif", ui-serif, Georgia, serif;
+      --mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -39,651 +81,1228 @@
 
     body {
       margin: 0;
-      background: radial-gradient(circle at top left, rgba(37, 97, 118, 0.13), transparent 32rem), var(--canvas);
       color: var(--ink);
-      font-family: var(--font);
+      font-family: var(--sans);
       font-size: 15px;
-      line-height: 1.48;
+      line-height: 1.55;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+
+      background:
+        radial-gradient(1200px 600px at 85% -10%, oklch(0.92 0.04 60 / 0.55), transparent 60%),
+        radial-gradient(900px 500px at -10% 30%, oklch(0.90 0.04 320 / 0.45), transparent 60%),
+        radial-gradient(700px 400px at 50% 110%, oklch(0.93 0.03 50 / 0.4), transparent 60%),
+        var(--paper);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Subtle paper grain (very faint) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+      background-image:
+        radial-gradient(circle at 25% 35%, rgba(122, 90, 50, 0.025) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 75% 65%, rgba(122, 90, 50, 0.02) 0 1px, transparent 1.5px);
+      background-size: 4px 4px, 7px 7px;
+    }
+
+    /* Mouse-follow glow — extremely subtle */
+    .glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(420px 420px at var(--mx, 50%) var(--my, 30%),
+          oklch(0.7 0.12 320 / 0.10),
+          transparent 70%);
+      transition: background-position 200ms ease;
     }
 
     a {
-      color: var(--accent);
+      color: var(--plum);
       text-decoration: none;
-      text-underline-offset: 3px;
+      position: relative;
+      transition: color 180ms ease;
     }
+    a:hover { color: var(--plum-2); }
 
-    a:hover {
-      text-decoration: underline;
+    /* Animated underline for inline links */
+    .link-underline,
+    .contact-value a,
+    .project-link {
+      background-image: linear-gradient(var(--plum), var(--plum));
+      background-repeat: no-repeat;
+      background-size: 0% 1px;
+      background-position: 0 100%;
+      transition: background-size 280ms ease, color 180ms ease;
+      padding-bottom: 1px;
+    }
+    .link-underline:hover,
+    .contact-value a:hover,
+    .project-link:hover {
+      background-size: 100% 1px;
     }
 
     a:focus-visible,
     button:focus-visible {
-      outline: 3px solid var(--focus);
+      outline: 2px solid var(--focus);
       outline-offset: 3px;
-      border-radius: 8px;
+      border-radius: 6px;
     }
 
+    h1, h2, h3, h4, p, ul { margin-top: 0; }
+
+    /* ───── Toolbar ───── */
     .toolbar {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       display: flex;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 16px;
-      background: rgba(238, 243, 245, 0.85);
-      border-bottom: 1px solid rgba(189, 204, 213, 0.55);
-      backdrop-filter: blur(16px);
+      gap: 8px;
+      padding: 12px 14px;
+      background: oklch(0.98 0.01 75 / 0.7);
+      backdrop-filter: saturate(140%) blur(14px);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      border-bottom: 1px solid oklch(0.85 0.02 70 / 0.5);
     }
 
-    .toolbar button {
+    .tb-btn {
       appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       border: 1px solid var(--line-strong);
       border-radius: 999px;
       background: var(--paper);
       color: var(--ink);
       cursor: pointer;
-      font: 700 13px/1 var(--font);
-      letter-spacing: 0.01em;
-      padding: 10px 15px;
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      font: 600 13px/1 var(--sans);
+      letter-spacing: -0.005em;
+      padding: 9px 14px;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
     }
-
-    .toolbar button:hover {
-      border-color: var(--accent-2);
-      box-shadow: 0 10px 28px rgba(8, 20, 28, 0.1);
+    .tb-btn:hover {
+      border-color: var(--plum);
+      box-shadow: var(--shadow-md);
       transform: translateY(-1px);
     }
-
-    .resume {
-      width: min(1120px, calc(100% - 28px));
-      margin: 28px auto 48px;
-      padding: 46px;
-      background: var(--paper);
-      border: 1px solid rgba(189, 204, 213, 0.75);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
+    .tb-btn svg { width: 14px; height: 14px; }
+    .tb-btn .copied {
+      color: oklch(0.55 0.10 150);
+      font-weight: 700;
     }
 
+    /* ───── Resume container ───── */
+    .resume {
+      position: relative;
+      width: min(1180px, calc(100% - 28px));
+      margin: 28px auto 60px;
+      padding: 56px 56px 48px;
+      background: linear-gradient(180deg, oklch(0.99 0.005 75) 0%, var(--paper) 100%);
+      border: 1px solid oklch(0.88 0.02 70 / 0.7);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    /* Animated gradient hairline at top of resume */
+    .resume::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--plum) 25%,
+        var(--copper) 55%,
+        var(--indigo) 80%,
+        transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 12s linear infinite;
+      opacity: 0.55;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* ───── Hero ───── */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
-      gap: 34px;
-      padding-bottom: 26px;
-      border-bottom: 2px solid var(--ink-strong);
+      grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.6fr);
+      gap: 44px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
+      gap: 7px;
       width: fit-content;
-      margin: 0 0 14px;
-      padding: 7px 10px;
-      border: 1px solid rgba(23, 75, 95, 0.22);
+      margin-bottom: 22px;
+      padding: 6px 11px 6px 9px;
+      border: 1px solid oklch(0.85 0.04 60 / 0.7);
       border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
+      background: oklch(0.97 0.02 60 / 0.6);
+      color: var(--muted);
       font-family: var(--mono);
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
-
-    h1,
-    h2,
-    h3,
-    p,
-    ul {
-      margin-top: 0;
+    .eyebrow .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: oklch(0.65 0.15 150);
+      box-shadow: 0 0 0 0 oklch(0.65 0.15 150 / 0.55);
+      animation: pulse 2.6s ease-out infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 oklch(0.65 0.15 150 / 0.55); }
+      80%, 100% { box-shadow: 0 0 0 7px oklch(0.65 0.15 150 / 0); }
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
       color: var(--ink-strong);
-      font-size: clamp(42px, 5vw, 64px);
-      line-height: 0.94;
-      letter-spacing: -0.07em;
+      font-family: var(--serif);
+      font-optical-sizing: auto;
+      font-variation-settings: "opsz" 144, "SOFT" 50;
+      font-size: clamp(48px, 6.5vw, 84px);
+      font-weight: 500;
+      line-height: 0.96;
+      letter-spacing: -0.035em;
+    }
+    h1 .name-accent {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--plum);
     }
 
     .title {
-      max-width: 760px;
-      margin: 0;
-      color: var(--accent);
-      font-size: clamp(18px, 2vw, 24px);
-      font-weight: 750;
-      line-height: 1.22;
-      letter-spacing: -0.03em;
+      max-width: 640px;
+      margin: 0 0 18px;
+      color: var(--ink);
+      font-size: clamp(17px, 1.6vw, 21px);
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.012em;
+    }
+    .title .pipe {
+      display: inline-block;
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--copper);
+      vertical-align: middle;
+      margin: 0 9px 4px;
     }
 
+    .hero-summary {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: var(--paper);
+      color: var(--ink-strong);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+    .cta:hover {
+      transform: translateY(-1px);
+      border-color: var(--plum);
+      box-shadow: var(--shadow-md);
+      color: var(--plum);
+    }
+    .cta.primary {
+      background: var(--ink-strong);
+      border-color: var(--ink-strong);
+      color: var(--paper);
+    }
+    .cta.primary:hover {
+      background: var(--plum);
+      border-color: var(--plum);
+      color: #fff;
+    }
+    .cta svg { width: 14px; height: 14px; }
+
+    /* Contact card */
     .contact-card {
       align-self: stretch;
+      position: relative;
       display: grid;
-      gap: 9px;
-      padding: 18px;
+      gap: 4px;
+      padding: 22px;
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: linear-gradient(180deg, var(--panel), #fff);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(180deg, oklch(0.99 0.01 75) 0%, oklch(0.97 0.015 70) 100%);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(180px 180px at 100% 0%, oklch(0.85 0.07 320 / 0.25), transparent 70%);
+    }
+
+    .contact-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--line);
+    }
+    .contact-card-head h2 {
+      margin: 0;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+    }
+    .avatar-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, var(--plum) 0%, var(--copper) 100%);
+      color: #fff;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
     }
 
     .contact-item {
       display: grid;
-      grid-template-columns: 72px minmax(0, 1fr);
-      gap: 12px;
-      align-items: baseline;
+      grid-template-columns: 16px 64px minmax(0, 1fr);
+      gap: 9px;
+      align-items: center;
+      padding: 7px 0;
       min-width: 0;
     }
-
+    .contact-item + .contact-item {
+      border-top: 1px solid oklch(0.91 0.02 70 / 0.6);
+    }
+    .contact-item .ico {
+      width: 14px; height: 14px;
+      color: var(--muted-2);
+      flex-shrink: 0;
+    }
     .contact-label {
       color: var(--muted-2);
       font-family: var(--mono);
       font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-
     .contact-value {
       color: var(--ink);
       font-size: 13px;
-      font-weight: 650;
+      font-weight: 500;
       overflow-wrap: anywhere;
     }
+    .contact-value a { color: var(--ink); }
+    .contact-value a:hover { color: var(--plum); }
 
-    .summary {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 32px;
-      padding: 28px 0 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-kicker {
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .summary p {
-      max-width: 860px;
-      margin-bottom: 0;
-      color: var(--ink);
-      font-size: 17px;
-      font-weight: 500;
-      line-height: 1.55;
-      letter-spacing: -0.01em;
-    }
-
+    /* ───── Proof strip ───── */
     .proof-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      padding: 22px 0 28px;
+      gap: 14px;
+      margin: 36px 0 8px;
     }
-
     .proof-card {
-      padding: 16px;
+      position: relative;
+      padding: 22px 20px 20px;
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: var(--panel);
-      min-height: 104px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, oklch(0.99 0.005 75) 0%, oklch(0.97 0.015 70) 100%);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
-
+    .proof-card:hover {
+      transform: translateY(-2px);
+      border-color: oklch(0.78 0.06 60 / 0.7);
+      box-shadow: var(--shadow-md);
+    }
+    .proof-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 36px; height: 1px;
+      background: var(--copper);
+    }
+    .proof-icon {
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 18px; height: 18px;
+      color: var(--muted-2);
+      opacity: 0.55;
+    }
     .proof-value {
       display: block;
       margin-bottom: 6px;
       color: var(--ink-strong);
-      font-size: 24px;
-      font-weight: 850;
-      letter-spacing: -0.05em;
+      font-family: var(--serif);
+      font-variation-settings: "opsz" 96;
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: -0.04em;
       line-height: 1;
     }
-
+    .proof-value .small {
+      font-size: 22px;
+      vertical-align: top;
+      letter-spacing: -0.02em;
+    }
     .proof-label {
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-      line-height: 1.35;
+      font-size: 12.5px;
+      line-height: 1.4;
+      max-width: 24ch;
     }
 
-    .body-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.86fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .section {
-      margin-bottom: 28px;
-    }
+    /* ───── Section heads ───── */
+    .section { margin-top: 44px; }
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .section-title h2 {
+      margin: 0;
       color: var(--ink-strong);
-      font-size: 13px;
-      font-weight: 850;
-      letter-spacing: 0.12em;
+      font-family: var(--serif);
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1;
+    }
+    .section-title .num {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted-2);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
     }
-
-    .section-title::after {
+    .section-title .num::before {
       content: "";
-      flex: 1 1 auto;
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--copper);
+    }
+    .section-title .rule {
+      flex: 1;
       height: 1px;
-      background: var(--line);
+      background: linear-gradient(90deg, var(--line) 0%, transparent 100%);
     }
 
-    .main-column .section-title {
-      font-size: 14px;
+    /* ───── Body grid ───── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr);
+      gap: 44px;
+      align-items: start;
     }
 
-    .job,
-    .project-card,
-    .side-panel {
+    /* ───── Expertise cards (in main, full-width row) ───── */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .expertise-card {
+      position: relative;
+      padding: 18px;
       border: 1px solid var(--line);
       border-radius: var(--radius-md);
-      background: var(--paper);
+      background: oklch(0.99 0.005 75 / 0.7);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
     }
+    .expertise-card:hover {
+      transform: translateY(-2px);
+      border-color: oklch(0.65 0.08 320 / 0.4);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+    .expertise-card .ec-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .expertise-card .ec-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: var(--plum-soft);
+      color: var(--plum);
+    }
+    .expertise-card .ec-icon svg { width: 14px; height: 14px; }
+    .expertise-card h3 {
+      margin: 0;
+      color: var(--ink-strong);
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .expertise-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .expertise-card.copper .ec-icon { background: var(--copper-soft); color: var(--copper); }
+    .expertise-card.indigo .ec-icon { background: oklch(0.93 0.03 280); color: var(--indigo); }
 
-    .job {
-      padding: 18px 0 18px 22px;
-      border-width: 0 0 0 3px;
-      border-radius: 0;
-      border-left-color: var(--line-strong);
-      background: transparent;
+    /* ───── Open Source Highlights ───── */
+    .os-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .os-card {
+      position: relative;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: oklch(0.99 0.005 75 / 0.7);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+      overflow: hidden;
+    }
+    .os-card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--plum), var(--copper));
+      opacity: 0.5;
+    }
+    .os-card:hover {
+      transform: translateY(-2px);
+      border-color: oklch(0.65 0.08 320 / 0.4);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+    .os-card .os-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+    .os-card h3 {
+      margin: 0;
+      color: var(--ink-strong);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .os-card .os-badge {
+      flex-shrink: 0;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--copper);
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--copper-soft);
+      border: 1px solid oklch(0.85 0.06 60 / 0.5);
+      white-space: nowrap;
+    }
+    .os-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+    .os-card strong { color: var(--ink); font-weight: 600; }
+
+    /* ───── Experience timeline ───── */
+    .experience {
       position: relative;
     }
-
+    .job {
+      position: relative;
+      padding: 0 0 24px 32px;
+    }
     .job::before {
       content: "";
       position: absolute;
-      top: 23px;
-      left: -7px;
-      width: 11px;
-      height: 11px;
-      border: 2px solid var(--paper);
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent);
+      left: 6px; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, var(--line-strong), var(--line));
+    }
+    .job:last-child::before { background: linear-gradient(180deg, var(--line-strong) 0%, var(--line-strong) 30px, transparent 30px); }
+    .job::after {
+      content: "";
+      position: absolute;
+      left: 0; top: 6px;
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 2px solid var(--plum);
+      box-shadow: 0 0 0 4px var(--paper);
+      transition: background 200ms ease, transform 200ms ease;
+    }
+    .job:hover::after {
+      background: var(--plum);
+      transform: scale(1.1);
+    }
+    .job.featured::after {
+      background: var(--plum);
+      box-shadow: 0 0 0 4px var(--paper), 0 0 0 7px oklch(0.7 0.10 320 / 0.3);
     }
 
-    .job:first-of-type {
-      padding-top: 0;
+    .job-card {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: oklch(0.99 0.005 75 / 0.6);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
     }
-
-    .job:first-of-type::before {
-      top: 5px;
+    .job-card:hover {
+      transform: translateY(-1px);
+      border-color: oklch(0.65 0.08 320 / 0.4);
+      box-shadow: var(--shadow-md);
+      background: #fff;
+    }
+    .job.featured .job-card {
+      background: linear-gradient(180deg, oklch(0.97 0.02 320 / 0.4) 0%, oklch(0.99 0.005 75) 100%);
+      border-color: oklch(0.83 0.04 320 / 0.5);
     }
 
     .job-head {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       gap: 16px;
-      align-items: start;
-      margin-bottom: 8px;
+      align-items: baseline;
+      margin-bottom: 10px;
     }
-
-    .job h3,
-    .project-card h3 {
-      margin-bottom: 3px;
+    .job h3 {
+      margin: 0 0 3px;
       color: var(--ink-strong);
-      font-size: 17px;
-      line-height: 1.18;
-      letter-spacing: -0.03em;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
-
     .role {
       margin: 0;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
+      color: var(--plum);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.005em;
     }
-
     .job-meta {
       color: var(--muted);
       font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 10.5px;
+      font-weight: 500;
       line-height: 1.4;
       text-align: right;
       white-space: nowrap;
     }
-
-    ul {
-      margin-bottom: 0;
-      padding-left: 1.1rem;
+    .job-meta .now {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: oklch(0.94 0.06 150 / 0.5);
+      color: oklch(0.45 0.10 150);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+    .job-meta .now::before {
+      content: "";
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: oklch(0.55 0.13 150);
     }
 
-    li {
-      margin-bottom: 6px;
+    .job ul {
+      margin-bottom: 0;
+      padding-left: 1.05rem;
+    }
+    .job ul li {
+      margin-bottom: 7px;
       color: var(--ink);
+      font-size: 13.5px;
+      line-height: 1.55;
     }
-
-    li:last-child {
-      margin-bottom: 0;
+    .job ul li::marker {
+      color: var(--copper);
     }
+    .job ul li:last-child { margin-bottom: 0; }
+    .job li strong { color: var(--ink-strong); font-weight: 700; }
 
-    .job li,
-    .project-card p,
-    .impact-list li,
-    .compact-text {
+    .earlier-roles {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.46;
+      line-height: 1.55;
+    }
+    .earlier-roles strong {
+      color: var(--ink-strong);
+      font-weight: 600;
     }
 
-    .job li strong,
-    .impact-list strong,
-    .project-card strong {
-      color: var(--ink);
-      font-weight: 800;
-    }
-
+    /* ───── Project cards ───── */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
-
     .project-card {
-      padding: 16px;
-      background: linear-gradient(180deg, #fff, var(--panel));
+      position: relative;
+      padding: 16px 18px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: oklch(0.99 0.005 75 / 0.6);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
     }
-
-    .project-link {
-      display: inline-block;
-      margin-bottom: 9px;
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 750;
-      overflow-wrap: anywhere;
+    .project-card:hover {
+      transform: translateY(-2px);
+      border-color: oklch(0.65 0.08 320 / 0.4);
+      box-shadow: var(--shadow-md);
+      background: #fff;
     }
-
-    .project-card p {
-      margin-bottom: 0;
+    .project-card .pc-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
     }
-
-    .repo-card {
-      padding: 13px 14px;
-    }
-
-    .repo-card h3 {
+    .project-card h3 {
+      margin: 0;
+      color: var(--ink-strong);
       font-family: var(--mono);
       font-size: 13px;
-      letter-spacing: -0.02em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
-
+    .pc-ext {
+      width: 14px; height: 14px;
+      color: var(--muted-2);
+      transition: transform 220ms ease, color 220ms ease;
+      flex-shrink: 0;
+    }
+    .project-card:hover .pc-ext {
+      color: var(--plum);
+      transform: translate(2px, -2px);
+    }
+    .project-link {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--plum);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
     .project-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 0 10px;
-      margin-bottom: 7px;
-    }
-
-    .project-links .project-link {
-      margin-bottom: 2px;
-    }
-
-    .sidebar {
-      display: grid;
-      gap: 16px;
-    }
-
-    .side-panel {
-      padding: 18px;
-      background: var(--panel);
-    }
-
-    .side-panel .section-title {
-      margin-bottom: 13px;
-      font-size: 12px;
-    }
-
-    .expertise-block {
-      padding: 12px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .expertise-block:first-of-type {
-      padding-top: 0;
-      border-top: 0;
-    }
-
-    .expertise-block:last-child {
-      padding-bottom: 0;
-    }
-
-    .expertise-block h3 {
-      margin-bottom: 6px;
-      color: var(--ink-strong);
-      font-size: 12px;
-      font-weight: 850;
-      letter-spacing: -0.01em;
-    }
-
-    .keyword-line {
-      margin: 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.48;
-    }
-
-    .impact-list {
-      padding-left: 1rem;
-    }
-
-    .impact-list li {
+      gap: 0 12px;
       margin-bottom: 8px;
     }
-
-    .education-group {
-      padding: 11px 0;
-      border-top: 1px solid var(--line);
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
     }
 
-    .education-group:first-of-type {
-      padding-top: 0;
-      border-top: 0;
+    /* ───── Sidebar panels ───── */
+    .sidebar { display: grid; gap: 14px; }
+    .side-panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, oklch(0.99 0.005 75) 0%, oklch(0.97 0.015 70) 100%);
+      box-shadow: var(--shadow-sm);
     }
-
-    .education-group:last-child {
-      padding-bottom: 0;
+    .side-panel-head {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--line);
     }
-
-    .education-group h3 {
-      margin-bottom: 4px;
+    .side-panel-head h2 {
+      margin: 0;
       color: var(--ink-strong);
-      font-size: 13px;
-      letter-spacing: -0.02em;
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.015em;
     }
+    .side-panel-head .sp-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px; height: 24px;
+      border-radius: 7px;
+      background: var(--copper-soft);
+      color: var(--copper);
+    }
+    .side-panel-head .sp-icon svg { width: 13px; height: 13px; }
 
-    .education-group p,
-    .language-list p {
+    /* Impact list */
+    .impact-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .impact-list li {
+      position: relative;
+      padding: 10px 0 10px 18px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+      border-top: 1px solid oklch(0.91 0.02 70 / 0.6);
+    }
+    .impact-list li:first-child { border-top: 0; padding-top: 2px; }
+    .impact-list li:last-child { padding-bottom: 0; }
+    .impact-list li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 17px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--copper);
+    }
+    .impact-list li:first-child::before { top: 9px; }
+    .impact-list strong { color: var(--ink-strong); font-weight: 600; }
+
+    /* Education */
+    .edu-group {
+      padding: 12px 0;
+      border-top: 1px solid oklch(0.91 0.02 70 / 0.6);
+    }
+    .edu-group:first-of-type { padding-top: 0; border-top: 0; }
+    .edu-group:last-child { padding-bottom: 0; }
+    .edu-group h3 {
+      margin: 0 0 4px;
+      color: var(--ink-strong);
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .edu-group p {
       margin: 0;
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.48;
+      line-height: 1.5;
     }
 
-    .language-list {
+    /* Languages */
+    .lang-list {
       display: grid;
-      gap: 8px;
+      gap: 10px;
+    }
+    .lang-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .lang-row strong {
+      color: var(--ink-strong);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .lang-row span {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.02em;
     }
 
-    .language-list strong {
-      color: var(--ink);
-    }
-
+    /* Tag row */
     .tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 10px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--line);
     }
-
     .tag {
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(23, 75, 95, 0.2);
+      border: 1px solid oklch(0.85 0.04 70 / 0.6);
       border-radius: 999px;
-      background: #fff;
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: 0.02em;
-      padding: 5px 7px;
-    }
-
-    .earlier-roles {
-      margin-top: 8px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      background: var(--panel);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.48;
-    }
-
-    .earlier-roles strong {
+      background: oklch(0.97 0.01 75 / 0.8);
       color: var(--ink);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.005em;
+      padding: 4px 9px;
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+    .tag:hover {
+      border-color: var(--plum);
+      color: var(--plum);
+      background: var(--plum-soft);
     }
 
-    body.compact [data-compact-hide="true"] {
-      display: none !important;
+    /* ───── Social Preview Card ───── */
+    .social-preview-section {
+      margin-top: 56px;
+    }
+    .sps-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .sps-head .left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .sps-head h2 {
+      margin: 0;
+      color: var(--ink-strong);
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .sps-head .num {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted-2);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sps-head .num::before {
+      content: "";
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--copper);
+    }
+    .sps-hint {
+      color: var(--muted);
+      font-size: 12px;
+      max-width: 360px;
     }
 
-    body.compact .resume {
-      padding: 40px;
+    .social-preview-card {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 1200 / 630;
+      margin: 0 auto;
+      padding: 64px 72px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      color: oklch(0.97 0.01 75);
+      background:
+        radial-gradient(900px 500px at 100% 0%, oklch(0.55 0.13 50 / 0.55), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, oklch(0.45 0.12 280 / 0.55), transparent 60%),
+        linear-gradient(135deg, oklch(0.22 0.05 320) 0%, oklch(0.16 0.04 290) 100%);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
     }
 
-    body.compact .proof-strip {
-      padding-bottom: 22px;
+    /* Subtle node motif */
+    .social-preview-card svg.nodes {
+      position: absolute;
+      right: -40px; bottom: -40px;
+      width: 360px; height: 360px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .social-preview-card .grid-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(oklch(0.97 0.01 75 / 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, oklch(0.97 0.01 75 / 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(ellipse at 50% 50%, #000 30%, transparent 80%);
     }
 
-    body.compact .section {
-      margin-bottom: 22px;
+    .sps-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+    }
+    .sps-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: oklch(0.85 0.05 60);
+    }
+    .sps-mark .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, oklch(0.7 0.15 50), oklch(0.55 0.12 320));
+      box-shadow: 0 0 18px oklch(0.7 0.15 50 / 0.6);
+    }
+    .sps-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: oklch(0.75 0.04 60 / 0.85);
+      letter-spacing: 0.04em;
     }
 
-    @media (max-width: 900px) {
-      .resume {
-        padding: 30px 24px;
-        border-radius: 20px;
+    .sps-body {
+      align-self: center;
+      position: relative;
+    }
+    .sps-name {
+      margin: 0 0 14px;
+      color: oklch(0.98 0.01 75);
+      font-family: var(--serif);
+      font-size: 96px;
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+    .sps-name em {
+      font-style: italic;
+      font-weight: 400;
+      color: oklch(0.78 0.10 50);
+    }
+    .sps-role {
+      margin: 0 0 20px;
+      color: oklch(0.88 0.03 60);
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.012em;
+      max-width: 80%;
+    }
+    .sps-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 90%;
+    }
+    .sps-keywords span {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid oklch(0.97 0.01 75 / 0.18);
+      background: oklch(0.97 0.01 75 / 0.06);
+      backdrop-filter: blur(4px);
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.02em;
+      color: oklch(0.92 0.02 75);
+    }
+
+    .sps-bottom {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+    }
+    .sps-stats {
+      display: flex;
+      gap: 36px;
+    }
+    .sps-stat {
+      display: grid;
+      gap: 4px;
+    }
+    .sps-stat b {
+      color: oklch(0.97 0.01 75);
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .sps-stat span {
+      color: oklch(0.78 0.04 60);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .sps-handle {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: oklch(0.85 0.04 60);
+      letter-spacing: 0.04em;
+    }
+
+    /* ───── Footer ───── */
+    .resume-footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--muted-2);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ───── Reduced motion ───── */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
+    }
 
-      .hero,
-      .summary,
+    /* ───── Responsive ───── */
+    @media (max-width: 1000px) {
+      .resume { padding: 40px 32px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
       .body-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
-
-      .hero {
-        gap: 20px;
-      }
-
-      .summary {
-        gap: 12px;
-      }
-
-      .proof-strip,
-      .project-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .sidebar {
-        order: -1;
-      }
+      .proof-strip { grid-template-columns: repeat(2, 1fr); }
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+      .os-grid, .project-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 60px; }
+      .sps-name { font-size: 64px; }
+      .sps-role { font-size: 18px; }
+      .sps-stat b { font-size: 24px; }
     }
 
     @media (max-width: 620px) {
-      body {
-        font-size: 14px;
-      }
-
+      body { font-size: 14px; }
       .toolbar {
         position: static;
         flex-wrap: wrap;
       }
-
       .resume {
-        width: min(100% - 18px, 1120px);
-        margin: 10px auto 28px;
-        padding: 24px 18px;
+        width: min(100% - 16px, 1180px);
+        margin: 12px auto 32px;
+        padding: 26px 20px;
+        border-radius: 22px;
       }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .title,
-      .summary p {
-        font-size: 16px;
-      }
-
-      .contact-item,
+      h1 { font-size: 44px; }
+      .title { font-size: 16px; }
+      .proof-strip { grid-template-columns: 1fr; gap: 10px; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .job { padding-left: 26px; }
       .job-head {
         grid-template-columns: 1fr;
-        gap: 2px;
+        gap: 4px;
       }
-
-      .job-meta {
-        text-align: left;
-        white-space: normal;
-      }
-
-      .proof-strip,
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
+      .job-meta { text-align: left; white-space: normal; }
+      .section-title h2 { font-size: 24px; }
+      .social-preview-card { padding: 32px 28px; aspect-ratio: auto; }
+      .sps-name { font-size: 38px; }
+      .sps-role { font-size: 14px; max-width: 100%; }
+      .sps-stat b { font-size: 20px; }
+      .sps-keywords span { font-size: 10.5px; padding: 5px 10px; }
+      .sps-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
 
+    /* ───── Print ───── */
     @page {
       size: A4;
-      margin: 8mm;
+      margin: 10mm;
     }
-
     @media print {
       :root {
-        --paper: #fff;
-        --canvas: #fff;
-        --ink: #17202a;
-        --ink-strong: #07111a;
-        --muted: #3f4d56;
-        --muted-2: #4f5d66;
-        --line: #cfd9df;
-        --line-strong: #aebdc6;
-        --accent: #123f50;
-        --accent-soft: #edf4f6;
-        --panel: #f7f9fa;
+        --paper: #ffffff;
+        --paper-2: #f8f4ec;
+        --ink: #18130d;
+        --ink-strong: #0a0703;
+        --muted: #3d362e;
+        --muted-2: #5a5048;
+        --line: #d8cdb6;
+        --line-strong: #b9a988;
       }
-
-      html,
-      body {
+      html, body {
         background: #fff !important;
       }
-
       body {
-        font-size: 8.6pt;
-        line-height: 1.25;
+        font-size: 9pt;
+        line-height: 1.32;
         color-adjust: exact;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-
-      .toolbar {
-        display: none !important;
-      }
-
+      body::before, .glow { display: none !important; }
+      .toolbar, .social-preview-section, .resume-footer { display: none !important; }
       .resume {
         width: 100%;
         max-width: none;
@@ -692,285 +1311,132 @@
         border: 0;
         border-radius: 0;
         box-shadow: none;
+        background: #fff !important;
       }
-
+      .resume::before { display: none; }
       .hero {
-        grid-template-columns: minmax(0, 1.32fr) minmax(245px, 0.68fr);
+        grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
         gap: 18px;
-        padding-bottom: 11px;
-        border-bottom-width: 1.5px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line-strong);
       }
-
       .eyebrow {
         margin-bottom: 6px;
-        padding: 4px 7px;
+        padding: 3px 7px;
         font-size: 7.4pt;
       }
-
-      h1 {
-        margin-bottom: 5px;
-        font-size: 29pt;
-        letter-spacing: -0.055em;
-      }
-
-      .title {
-        font-size: 12pt;
-        line-height: 1.16;
-      }
-
-      .contact-card {
-        gap: 4px;
-        padding: 9px 10px;
-        border-radius: 10px;
-        background: #fff;
-      }
-
+      h1 { font-size: 28pt; line-height: 0.96; margin-bottom: 6px; }
+      .title { font-size: 11.5pt; margin-bottom: 8px; }
+      .hero-summary { font-size: 8.6pt; line-height: 1.32; margin-bottom: 0; }
+      .ctas { display: none; }
+      .contact-card { padding: 10px 12px; border-radius: 10px; background: #fff; box-shadow: none; }
+      .contact-card::after { display: none; }
+      .contact-card-head { margin-bottom: 7px; padding-bottom: 7px; }
+      .contact-card-head h2 { font-size: 7pt; }
+      .avatar-mark { width: 22px; height: 22px; font-size: 12px; }
       .contact-item {
-        grid-template-columns: 52px minmax(0, 1fr);
-        gap: 7px;
+        grid-template-columns: 12px 50px minmax(0, 1fr);
+        gap: 6px;
+        padding: 4px 0;
       }
-
-      .contact-label {
-        font-size: 6.7pt;
-      }
-
-      .contact-value {
-        font-size: 8.6pt;
-      }
-
-      .summary {
-        grid-template-columns: 122px minmax(0, 1fr);
-        gap: 18px;
-        padding: 12px 0 10px;
-      }
-
-      .section-kicker {
-        font-size: 7.6pt;
-      }
-
-      .summary p {
-        font-size: 9.5pt;
-        line-height: 1.3;
-      }
+      .contact-label { font-size: 6.5pt; }
+      .contact-value { font-size: 8.4pt; }
 
       .proof-strip {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 12px 0 0;
         gap: 7px;
-        padding: 9px 0 11px;
       }
-
       .proof-card {
-        min-height: 0;
-        padding: 6px 7px;
-        border-radius: 8px;
-        background: var(--panel);
+        padding: 9px 10px;
+        border-radius: 9px;
+        background: var(--paper-2) !important;
+        box-shadow: none;
       }
+      .proof-card:hover { transform: none; box-shadow: none; }
+      .proof-icon { display: none; }
+      .proof-value { font-size: 17pt; margin-bottom: 3px; }
+      .proof-value .small { font-size: 11pt; }
+      .proof-label { font-size: 7.4pt; line-height: 1.25; }
 
-      .proof-value {
-        margin-bottom: 3px;
-        font-size: 12.8pt;
-      }
-
-      .proof-label {
-        font-size: 7.6pt;
-        line-height: 1.24;
-      }
+      .section { margin-top: 18px; }
+      .section-title { gap: 10px; margin-bottom: 9px; }
+      .section-title h2 { font-size: 14pt; }
+      .section-title .num { font-size: 7pt; }
 
       .body-grid {
-        grid-template-columns: minmax(0, 1.63fr) minmax(210px, 0.77fr);
-        gap: 17px;
-        align-items: start;
+        grid-template-columns: minmax(0, 1.55fr) minmax(230px, 0.85fr);
+        gap: 18px;
       }
 
-      /* Undo the @media (max-width: 900px) mobile reorder when printing.
-         Chrome's print viewport is ~733px (below 900px), so without this
-         override the sidebar would be placed in column 1 (the wide left
-         track), pushing Professional Experience into the narrow right
-         column and reordering the page visually. Keeping order: 0 here
-         preserves the desktop layout: main-column on the left, sidebar
-         on the right. */
-      .main-column {
-        order: 0;
-      }
+      .expertise-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .expertise-card { padding: 8px 9px; border-radius: 8px; background: #fff !important; box-shadow: none; }
+      .expertise-card:hover { transform: none; box-shadow: none; }
+      .expertise-card .ec-head { gap: 6px; margin-bottom: 5px; }
+      .expertise-card .ec-icon { width: 16px; height: 16px; border-radius: 5px; }
+      .expertise-card .ec-icon svg { width: 9px; height: 9px; }
+      .expertise-card h3 { font-size: 8pt; }
+      .expertise-card p { font-size: 7.2pt; line-height: 1.28; }
 
-      .sidebar {
-        order: 0;
-      }
+      .os-grid { grid-template-columns: repeat(2, 1fr); gap: 7px; }
+      .os-card { padding: 8px 10px; border-radius: 8px; background: #fff !important; box-shadow: none; }
+      .os-card::before { width: 2px; }
+      .os-card:hover { transform: none; box-shadow: none; }
+      .os-card .os-head { margin-bottom: 4px; }
+      .os-card h3 { font-size: 8.2pt; }
+      .os-card .os-badge { font-size: 6.6pt; padding: 2px 5px; }
+      .os-card p { font-size: 7.2pt; line-height: 1.28; }
 
-      .section {
-        margin-bottom: 13px;
-      }
+      .job { padding: 0 0 11px 18px; }
+      .job::before { left: 4px; width: 1px; }
+      .job::after { width: 8px; height: 8px; box-shadow: 0 0 0 2px #fff; top: 4px; }
+      .job.featured::after { box-shadow: 0 0 0 2px #fff; }
+      .job-card { padding: 9px 11px; border-radius: 8px; background: #fff !important; box-shadow: none; }
+      .job-card:hover { transform: none; box-shadow: none; }
+      .job.featured .job-card { background: var(--paper-2) !important; }
+      .job-head { gap: 9px; margin-bottom: 4px; }
+      .job h3 { font-size: 9.8pt; }
+      .role { font-size: 7.6pt; }
+      .job-meta { font-size: 7pt; }
+      .job-meta .now { padding: 1px 5px; font-size: 6.4pt; }
+      .job ul { padding-left: 0.95rem; }
+      .job ul li { font-size: 7.6pt; line-height: 1.28; margin-bottom: 2.5px; }
+      .earlier-roles { font-size: 7.6pt; line-height: 1.28; }
 
-      .section-title {
-        gap: 8px;
-        margin-bottom: 7px;
-        font-size: 8.2pt !important;
-        letter-spacing: 0.09em;
-      }
+      .project-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+      .project-card { padding: 7px 9px; border-radius: 7px; background: #fff !important; box-shadow: none; }
+      .project-card:hover { transform: none; box-shadow: none; }
+      .project-card .pc-head { margin-bottom: 4px; }
+      .pc-ext { display: none; }
+      .project-card h3 { font-size: 7.6pt; }
+      .project-link { font-size: 6.8pt; margin-bottom: 3px; }
+      .project-card p { font-size: 7pt; line-height: 1.22; }
+      .project-links { gap: 0 6px; margin-bottom: 3px; }
 
-      .job {
-        padding: 7px 0 7px 14px;
-        border-left-width: 2px;
-      }
+      .sidebar { gap: 8px; }
+      .side-panel { padding: 9px 11px; border-radius: 9px; background: #fff !important; box-shadow: none; }
+      .side-panel-head { margin-bottom: 7px; padding-bottom: 5px; gap: 6px; }
+      .side-panel-head h2 { font-size: 9.8pt; }
+      .side-panel-head .sp-icon { width: 16px; height: 16px; }
+      .side-panel-head .sp-icon svg { width: 9px; height: 9px; }
+      .impact-list li { padding: 5px 0 5px 12px; font-size: 7.2pt; line-height: 1.28; }
+      .impact-list li::before { width: 4px; height: 4px; top: 11px; }
+      .impact-list li:first-child::before { top: 5px; }
+      .edu-group { padding: 5px 0; }
+      .edu-group h3 { font-size: 7.8pt; margin-bottom: 2px; }
+      .edu-group p { font-size: 7pt; line-height: 1.28; }
+      .lang-list { gap: 5px; }
+      .lang-row strong { font-size: 7.6pt; }
+      .lang-row span { font-size: 6.8pt; }
+      .tag-row { display: none; }
 
-      .job::before {
-        top: 12px;
-        left: -5px;
-        width: 7px;
-        height: 7px;
-        border-width: 1px;
-      }
-
-      .job:first-of-type::before {
-        top: 2px;
-      }
-
-      .job-head {
-        gap: 9px;
-        margin-bottom: 3px;
-      }
-
-      .job h3,
-      .project-card h3 {
-        margin-bottom: 2px;
-        font-size: 9.5pt;
-      }
-
-      .role {
-        font-size: 7.8pt;
-      }
-
-      .job-meta {
-        font-size: 7.1pt;
-      }
-
-      ul {
-        padding-left: 0.92rem;
-      }
-
-      li {
-        margin-bottom: 2.2px;
-      }
-
-      .job li,
-      .project-card p,
-      .impact-list li,
-      .compact-text,
-      .earlier-roles {
-        font-size: 7.4pt;
-        line-height: 1.23;
-      }
-
-      .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 7px;
-      }
-
-      .project-card {
-        padding: 6px 7px;
-        border-radius: 8px;
-        background: #fff;
-      }
-
-      .project-link {
-        margin-bottom: 4px;
-        font-size: 6.9pt;
-      }
-
-      .repo-card {
-        padding: 5px 6px;
-      }
-
-      .repo-card h3 {
-        font-size: 7.6pt;
-      }
-
-      .repo-card p {
-        font-size: 6.9pt;
-        line-height: 1.16;
-      }
-
-      .project-links {
-        gap: 0 5px;
-        margin-bottom: 2px;
-      }
-
-      .side-panel {
-        padding: 7px 8px;
-        border-radius: 9px;
-        background: var(--panel);
-      }
-
-      .sidebar {
-        gap: 9px;
-      }
-
-      .expertise-block {
-        padding: 5px 0;
-      }
-
-      .expertise-block h3,
-      .education-group h3 {
-        margin-bottom: 3px;
-        font-size: 7.8pt;
-      }
-
-      .keyword-line,
-      .education-group p,
-      .language-list p {
-        font-size: 7.05pt;
-        line-height: 1.22;
-      }
-
-      .impact-list {
-        padding-left: 0.85rem;
-      }
-
-      .impact-list li {
-        margin-bottom: 4px;
-      }
-
-      .education-group {
-        padding: 5px 0;
-      }
-
-      .language-list {
-        gap: 4px;
-      }
-
-      .tag-row {
-        display: none;
-      }
-
-      .tag {
-        padding: 3px 5px;
-        font-size: 6.7pt;
-      }
-
-      .earlier-roles {
-        margin-top: 5px;
-        padding: 7px 8px;
-        border-radius: 8px;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .contact-value a,
-      .project-link {
+      a { color: inherit; text-decoration: none; background-image: none !important; }
+      .contact-value a, .project-link {
         text-decoration: underline;
-        text-decoration-thickness: 0.6px;
+        text-decoration-thickness: 0.5px;
         text-underline-offset: 2px;
       }
 
-      .job,
-      .project-card,
-      .side-panel,
-      .expertise-block,
-      .education-group,
-      .proof-card {
+      .job, .job-card, .project-card, .os-card, .expertise-card, .side-panel, .edu-group, .proof-card {
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -978,251 +1444,486 @@
   </style>
 </head>
 <body>
-  <div class="toolbar" aria-label="CV actions">
-    <button type="button" onclick="window.print()">Print / Save as PDF</button>
-    <button type="button" id="compactToggle" aria-pressed="false">Compact CV</button>
-  </div>
+  <div class="glow" aria-hidden="true"></div>
+
+  <nav class="toolbar" aria-label="CV actions">
+    <button type="button" class="tb-btn" id="printBtn" title="Print or save as PDF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="4" y="9" width="16" height="9" rx="2"/><path d="M6 14h12v6H6z"/></svg>
+      Print / Save as PDF
+    </button>
+    <button type="button" class="tb-btn" id="copyEmailBtn" title="Copy email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      <span data-state="default">Copy email</span>
+    </button>
+    <button type="button" class="tb-btn" id="shareBtn" title="Toggle social share preview">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="m8.6 13.5 6.8 3M15.4 7.5l-6.8 3"/></svg>
+      Share preview
+    </button>
+  </nav>
 
   <main class="resume" aria-label="Danilo Pantani CV">
     <header class="hero">
       <div>
-        <p class="eyebrow">Remote · UTC−3 · São Paulo, Brazil</p>
-        <h1>Danilo Pantani</h1>
-        <p class="title">Senior Go / Blockchain Protocol Engineer · Cosmos SDK · IBC · Web3 Infrastructure</p>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Available · Remote · UTC−3 · São Paulo, Brazil</p>
+        <h1>Danilo <span class="name-accent">Pantani</span></h1>
+        <p class="title">Senior Go / Blockchain Protocol Engineer<span class="pipe" aria-hidden="true"></span>Cosmos SDK · IBC · Web3 Infrastructure</p>
+        <p class="hero-summary">Building production blockchain protocols, developer tooling, and distributed systems for over a decade — currently focused on Cosmos SDK, IBC, validator infrastructure, and AI-assisted engineering workflows.</p>
+
+        <div class="ctas">
+          <a class="cta primary" href="https://github.com/Pantani" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+            View GitHub
+          </a>
+          <a class="cta" href="https://www.linkedin.com/in/dpantani/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9.5h4v11.5H3V9.5zM10 9.5h3.83v1.57h.05c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.79 2.66 4.79 6.13V21H18.6v-5.05c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.66V21H10V9.5z"/></svg>
+            View LinkedIn
+          </a>
+          <a class="cta" href="mailto:danpantani@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Email me
+          </a>
+        </div>
       </div>
 
       <address class="contact-card" aria-label="Contact information">
+        <div class="contact-card-head">
+          <h2>Contact</h2>
+          <span class="avatar-mark" aria-hidden="true">DP</span>
+        </div>
+
         <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span class="contact-label">Location</span>
-          <span class="contact-value">São Paulo, Brazil · Remote · UTC−3</span>
+          <span class="contact-value">São Paulo, Brazil</span>
         </div>
         <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span class="contact-label">Remote</span>
+          <span class="contact-value">UTC−3 · Worldwide</span>
+        </div>
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
           <span class="contact-label">Email</span>
           <span class="contact-value"><a href="mailto:danpantani@gmail.com">danpantani@gmail.com</a></span>
         </div>
         <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span class="contact-label">Phone</span>
           <span class="contact-value"><a href="tel:+5511983587422">+55 11 98358-7422</a></span>
         </div>
         <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
           <span class="contact-label">GitHub</span>
-          <span class="contact-value"><a href="https://github.com/Pantani">github.com/Pantani</a></span>
+          <span class="contact-value"><a href="https://github.com/Pantani" target="_blank" rel="noopener">github.com/Pantani</a></span>
         </div>
         <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9.5h4v11.5H3V9.5zM10 9.5h3.83v1.57h.05c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.79 2.66 4.79 6.13V21H18.6v-5.05c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.66V21H10V9.5z"/></svg>
           <span class="contact-label">LinkedIn</span>
-          <span class="contact-value"><a href="https://www.linkedin.com/in/dpantani/">linkedin.com/in/dpantani</a></span>
+          <span class="contact-value"><a href="https://www.linkedin.com/in/dpantani/" target="_blank" rel="noopener">linkedin.com/in/dpantani</a></span>
         </div>
       </address>
     </header>
 
-    <section class="summary" aria-labelledby="summary-title">
-      <h2 class="section-kicker" id="summary-title">Professional Summary</h2>
-      <p>Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200+ public merged PRs in Trust Wallet blockatlas, plus upstream contributions across Cosmos SDK, IBC-Go, ignite/network, tendermint/spn, and hermeznetwork/hermez-node infrastructure. Experienced with Claude Code and ChatGPT/Codex for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.</p>
-    </section>
-
+    <!-- ───── Impact Highlights ───── -->
     <section class="proof-strip" aria-label="Career highlights">
       <div class="proof-card">
-        <span class="proof-value">10+</span>
-        <span class="proof-label">years building production software and blockchain systems</span>
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="proof-value">10<span class="small">+</span></span>
+        <span class="proof-label">years building production software &amp; blockchain systems</span>
       </div>
       <div class="proof-card">
-        <span class="proof-value">300+</span>
-        <span class="proof-label">public merged PRs across Ignite CLI and Cosmos SDK tooling</span>
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M8.2 17.2 15.8 9.6"/><path d="M14 6h6v6"/></svg>
+        <span class="proof-value">300<span class="small">+</span></span>
+        <span class="proof-label">public merged PRs across Ignite CLI &amp; Cosmos SDK tooling</span>
       </div>
       <div class="proof-card">
-        <span class="proof-value">200+</span>
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 7H3M21 12H3M21 17H3"/><circle cx="7" cy="7" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="17" cy="17" r="1.6" fill="currentColor"/></svg>
+        <span class="proof-value">200<span class="small">+</span></span>
         <span class="proof-label">public merged PRs in Trust Wallet blockatlas</span>
       </div>
       <div class="proof-card">
-        <span class="proof-value">L1/L2</span>
-        <span class="proof-label">Cosmos SDK, IBC, validator infra, wallets, and rollups</span>
+        <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5z"/><path d="m12 7 4.5 2.5v5L12 17l-4.5-2.5v-5L12 7z"/></svg>
+        <span class="proof-value">L1<span class="small">/</span>L2</span>
+        <span class="proof-label">Cosmos SDK, IBC, validator infra, wallets &amp; rollups</span>
       </div>
     </section>
 
-    <div class="body-grid">
+    <!-- ───── Core Expertise ───── -->
+    <section class="section" aria-labelledby="expertise-title">
+      <div class="section-title">
+        <span class="num">01</span>
+        <h2 id="expertise-title">Core Expertise</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="expertise-grid">
+        <div class="expertise-card">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8M7.5 7.5l3 3M16.5 7.5l-3 3M7.5 16.5l3-3M16.5 16.5l-3-3"/></svg>
+            </span>
+            <h3>Blockchain &amp; Protocols</h3>
+          </div>
+          <p>Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.</p>
+        </div>
+
+        <div class="expertise-card copper">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>
+            </span>
+            <h3>Backend &amp; Distributed Systems</h3>
+          </div>
+          <p>Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems.</p>
+        </div>
+
+        <div class="expertise-card indigo">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4 4 8l4 4M16 4l4 4-4 4M14 4l-4 16"/></svg>
+            </span>
+            <h3>Tooling &amp; Developer Experience</h3>
+          </div>
+          <p>CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.</p>
+        </div>
+
+        <div class="expertise-card copper">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <h3>Infrastructure &amp; DevOps</h3>
+          </div>
+          <p>Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, observability, production operations; working knowledge of Terraform, Ansible, Helm Charts.</p>
+        </div>
+
+        <div class="expertise-card">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.5 5.5l2 2M16.5 16.5l2 2M5.5 18.5l2-2M16.5 7.5l2-2"/><circle cx="12" cy="12" r="3.5"/></svg>
+            </span>
+            <h3>AI-Assisted Engineering</h3>
+          </div>
+          <p>Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review/refactor loops, test generation.</p>
+        </div>
+
+        <div class="expertise-card indigo">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+            </span>
+            <h3>Languages &amp; Data</h3>
+          </div>
+          <p>Go, TypeScript, Rust, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───── Body grid: experience + sidebar ───── -->
+    <div class="body-grid" style="margin-top: 44px;">
       <div class="main-column">
-        <section class="section" aria-labelledby="experience-title">
-          <h2 class="section-title" id="experience-title">Professional Experience</h2>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Ignite / AtomOne / All in Bits</h3>
-                <p class="role">Senior Blockchain Engineer, Go</p>
+        <!-- Open Source -->
+        <section class="section" style="margin-top: 0;" aria-labelledby="os-title">
+          <div class="section-title">
+            <span class="num">02</span>
+            <h2 id="os-title">Open Source &amp; Protocol Impact</h2>
+            <span class="rule"></span>
+          </div>
+          <div class="os-grid">
+            <article class="os-card">
+              <div class="os-head">
+                <h3>Ignite CLI</h3>
+                <span class="os-badge">300+ PRs</span>
               </div>
-              <div class="job-meta">Jun 2021 — Present · Remote</div>
-            </header>
-            <ul>
-              <li>Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
-              <li>Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.</li>
-              <li>Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup, and VaaS / Validator-as-a-Service</strong> workflows.</li>
-              <li>Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.</li>
-              <li>Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
-              <li data-compact-hide="true">Improved developer experience for Cosmos SDK teams through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with Claude Code and ChatGPT/Codex.</li>
-            </ul>
-          </article>
+              <p>Protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes across the all-in-one platform for building Cosmos SDK chains.</p>
+            </article>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Interchain / Cosmos Hub</h3>
-                <p class="role">Blockchain Engineer, Go</p>
+            <article class="os-card">
+              <div class="os-head">
+                <h3>AtomOne</h3>
+                <span class="os-badge">Cosmos fork</span>
               </div>
-              <div class="job-meta">Jun 2022 — Dec 2022 · Remote</div>
-            </header>
-            <ul>
-              <li>Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.</li>
-              <li>Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
-            </ul>
-          </article>
+              <p>Distribution-module implementation, <strong>ADR-004 Nakamoto Bonus</strong> mechanics, governance-migration fixes, and validator-commission update logic on the AtomOne Cosmos SDK fork.</p>
+            </article>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Polygon Hermez</h3>
-                <p class="role">Blockchain / Layer-2 Engineer, Go</p>
+            <article class="os-card">
+              <div class="os-head">
+                <h3>Hermez Node</h3>
+                <span class="os-badge">Eth L2</span>
               </div>
-              <div class="job-meta">Feb 2021 — Jun 2021 · Remote</div>
-            </header>
-            <ul>
-              <li>Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
-              <li>Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
-            </ul>
-          </article>
+              <p>Go backend and protocol-adjacent work for the <strong>zk-SNARK rollup</strong> operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.</p>
+            </article>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Energi</h3>
-                <p class="role">Backend Engineer / Architecture</p>
+            <article class="os-card">
+              <div class="os-head">
+                <h3>Ignite Network · tendermint/spn</h3>
+                <span class="os-badge">SPN</span>
               </div>
-              <div class="job-meta">Apr 2020 — Feb 2021 · Remote</div>
-            </header>
-            <ul>
-              <li>Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
-              <li>Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
-              <li>Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
-            </ul>
-          </article>
+              <p>Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations for sovereign network bootstrapping.</p>
+            </article>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Trust Wallet / Binance</h3>
-                <p class="role">Backend Lead, Go</p>
+            <article class="os-card">
+              <div class="os-head">
+                <h3>Cosmos SDK · IBC-Go</h3>
+                <span class="os-badge">Upstream</span>
               </div>
-              <div class="job-meta">Aug 2019 — Apr 2020 · Remote</div>
-            </header>
-            <ul>
-              <li>Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
-              <li>Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
-              <li>Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
-              <li data-compact-hide="true">Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.</li>
-            </ul>
-          </article>
+              <p>Upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</p>
+            </article>
 
-          <article class="job">
-            <header class="job-head">
-              <div>
-                <h3>Mercado Bitcoin</h3>
-                <p class="role">Tech Lead — Backend &amp; Mobile</p>
+            <article class="os-card">
+              <div class="os-head">
+                <h3>Trust Wallet blockatlas</h3>
+                <span class="os-badge">200+ PRs</span>
               </div>
-              <div class="job-meta">Mar 2018 — Aug 2019 · São Paulo</div>
-            </header>
-            <ul>
-              <li>Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
-              <li>Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
-              <li>Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
-            </ul>
-          </article>
-
-          <article class="job" data-compact-hide="true">
-            <header class="job-head">
-              <div>
-                <h3>Earlier Roles</h3>
-                <p class="role">Tech Lead / Founder / Mobile Engineer</p>
-              </div>
-              <div class="job-meta">2011 — 2018 · São Paulo</div>
-            </header>
-            <div class="earlier-roles"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</div>
-          </article>
+              <p>Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration across a high-traffic crypto wallet backend.</p>
+            </article>
+          </div>
         </section>
 
+        <!-- Experience timeline -->
+        <section class="section" aria-labelledby="experience-title">
+          <div class="section-title">
+            <span class="num">03</span>
+            <h2 id="experience-title">Professional Experience</h2>
+            <span class="rule"></span>
+          </div>
+
+          <div class="experience">
+            <article class="job featured">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Ignite / AtomOne / All in Bits</h3>
+                    <p class="role">Senior Blockchain Engineer, Go</p>
+                  </div>
+                  <div class="job-meta"><span class="now">Now</span>Jun 2021 — Present<br>Remote</div>
+                </div>
+                <ul>
+                  <li>Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
+                  <li>Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.</li>
+                  <li>Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.</li>
+                  <li>Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.</li>
+                  <li>Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
+                  <li>Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with <strong>Claude Code</strong> and <strong>ChatGPT/Codex</strong>.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Interchain / Cosmos Hub</h3>
+                    <p class="role">Blockchain Engineer, Go</p>
+                  </div>
+                  <div class="job-meta">Jun 2022 — Dec 2022<br>Remote</div>
+                </div>
+                <ul>
+                  <li>Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.</li>
+                  <li>Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Polygon Hermez</h3>
+                    <p class="role">Blockchain / Layer-2 Engineer, Go</p>
+                  </div>
+                  <div class="job-meta">Feb 2021 — Jun 2021<br>Remote</div>
+                </div>
+                <ul>
+                  <li>Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
+                  <li>Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Energi</h3>
+                    <p class="role">Backend Engineer / Architecture</p>
+                  </div>
+                  <div class="job-meta">Apr 2020 — Feb 2021<br>Remote</div>
+                </div>
+                <ul>
+                  <li>Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
+                  <li>Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
+                  <li>Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Trust Wallet / Binance</h3>
+                    <p class="role">Backend Lead, Go</p>
+                  </div>
+                  <div class="job-meta">Aug 2019 — Apr 2020<br>Remote</div>
+                </div>
+                <ul>
+                  <li>Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
+                  <li>Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
+                  <li>Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
+                  <li>Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Mercado Bitcoin</h3>
+                    <p class="role">Tech Lead — Backend &amp; Mobile</p>
+                  </div>
+                  <div class="job-meta">Mar 2018 — Aug 2019<br>São Paulo</div>
+                </div>
+                <ul>
+                  <li>Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
+                  <li>Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
+                  <li>Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Earlier Roles</h3>
+                    <p class="role">Tech Lead / Founder / Mobile Engineer</p>
+                  </div>
+                  <div class="job-meta">2011 — 2018<br>São Paulo</div>
+                </div>
+                <p class="earlier-roles"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Selected Projects -->
         <section class="section" aria-labelledby="projects-title">
-          <h2 class="section-title" id="projects-title">Selected Projects</h2>
+          <div class="section-title">
+            <span class="num">04</span>
+            <h2 id="projects-title">Selected Projects</h2>
+            <span class="rule"></span>
+          </div>
           <div class="project-grid">
-            <article class="project-card repo-card">
-              <h3>ignite/cli</h3>
-              <a class="project-link" href="https://github.com/ignite/cli">github.com/ignite/cli</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>ignite/cli</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/ignite/cli" target="_blank" rel="noopener">github.com/ignite/cli</a>
               <p>Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>ignite/apps</h3>
-              <a class="project-link" href="https://github.com/ignite/apps">github.com/ignite/apps</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>ignite/apps</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/ignite/apps" target="_blank" rel="noopener">github.com/ignite/apps</a>
               <p>Ignite ecosystem application tooling and Web3 developer-experience infrastructure.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>ignite/network · tendermint/spn</h3>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>ignite/network · tendermint/spn</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
               <div class="project-links">
-                <a class="project-link" href="https://github.com/ignite/network">github.com/ignite/network</a>
-                <a class="project-link" href="https://github.com/tendermint/spn">github.com/tendermint/spn</a>
+                <a class="project-link" href="https://github.com/ignite/network" target="_blank" rel="noopener">github.com/ignite/network</a>
+                <a class="project-link" href="https://github.com/tendermint/spn" target="_blank" rel="noopener">github.com/tendermint/spn</a>
               </div>
               <p>Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>hermeznetwork/hermez-node</h3>
-              <a class="project-link" href="https://github.com/hermeznetwork/hermez-node">github.com/hermeznetwork/hermez-node</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>hermeznetwork/hermez-node</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/hermeznetwork/hermez-node" target="_blank" rel="noopener">github.com/hermeznetwork/hermez-node</a>
               <p>Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>cosmos/gaia</h3>
-              <a class="project-link" href="https://github.com/cosmos/gaia">github.com/cosmos/gaia</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>cosmos/gaia</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/cosmos/gaia" target="_blank" rel="noopener">github.com/cosmos/gaia</a>
               <p>Cosmos Hub / ATOM chain code and protocol-adjacent tooling.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>cosmos/cosmos-sdk</h3>
-              <a class="project-link" href="https://github.com/cosmos/cosmos-sdk">github.com/cosmos/cosmos-sdk</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>cosmos/cosmos-sdk</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/cosmos/cosmos-sdk" target="_blank" rel="noopener">github.com/cosmos/cosmos-sdk</a>
               <p>Upstream Cosmos SDK protocol framework contributions and module-composition fixes.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>cosmos/ibc-go</h3>
-              <a class="project-link" href="https://github.com/cosmos/ibc-go">github.com/cosmos/ibc-go</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>cosmos/ibc-go</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/cosmos/ibc-go" target="_blank" rel="noopener">github.com/cosmos/ibc-go</a>
               <p>IBC implementation work, capability-keeper helpers, and downstream chain composition support.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>atomone-hub/atomone</h3>
-              <a class="project-link" href="https://github.com/atomone-hub/atomone">github.com/atomone-hub/atomone</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>atomone-hub/atomone</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/atomone-hub/atomone" target="_blank" rel="noopener">github.com/atomone-hub/atomone</a>
               <p>AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>atomone-hub/cosmos-sdk</h3>
-              <a class="project-link" href="https://github.com/atomone-hub/cosmos-sdk">github.com/atomone-hub/cosmos-sdk</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>atomone-hub/cosmos-sdk</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/atomone-hub/cosmos-sdk" target="_blank" rel="noopener">github.com/atomone-hub/cosmos-sdk</a>
               <p>AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>allinbits/vaas</h3>
-              <a class="project-link" href="https://github.com/allinbits/vaas">github.com/allinbits/vaas</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>allinbits/vaas</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/allinbits/vaas" target="_blank" rel="noopener">github.com/allinbits/vaas</a>
               <p>Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>Pantani/gnorender</h3>
-              <a class="project-link" href="https://github.com/Pantani/gnorender">github.com/Pantani/gnorender</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>Pantani/gnorender</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/Pantani/gnorender" target="_blank" rel="noopener">github.com/Pantani/gnorender</a>
               <p>Gno rendering helpers for composable Markdown / ASCII realm interfaces and Render(path) workflows.</p>
             </article>
 
-            <article class="project-card repo-card">
-              <h3>trustwallet/blockatlas</h3>
-              <a class="project-link" href="https://github.com/trustwallet/blockatlas">github.com/trustwallet/blockatlas</a>
+            <article class="project-card">
+              <div class="pc-head">
+                <h3>trustwallet/blockatlas</h3>
+                <svg class="pc-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </div>
+              <a class="project-link" href="https://github.com/trustwallet/blockatlas" target="_blank" rel="noopener">github.com/trustwallet/blockatlas</a>
               <p>Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work.</p>
             </article>
           </div>
@@ -1230,76 +1931,69 @@
       </div>
 
       <aside class="sidebar" aria-label="Supporting CV sections">
-        <section class="side-panel" aria-labelledby="expertise-title">
-          <h2 class="section-title" id="expertise-title">Core Expertise</h2>
-          <div class="expertise-block">
-            <h3>Blockchain / Protocols</h3>
-            <p class="keyword-line">Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure</p>
+        <section class="side-panel" aria-labelledby="summary-title">
+          <div class="side-panel-head">
+            <span class="sp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <h2 id="summary-title">Summary</h2>
           </div>
-          <div class="expertise-block">
-            <h3>Backend / Distributed Systems</h3>
-            <p class="keyword-line">Go, Golang, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, production services, distributed systems</p>
-          </div>
-          <div class="expertise-block">
-            <h3>Infrastructure / DevOps</h3>
-            <p class="keyword-line">Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, chain nodes, observability, production operations; working knowledge of Terraform, Ansible, and Helm Charts</p>
-          </div>
-          <div class="expertise-block">
-            <h3>Tooling / Developer Experience</h3>
-            <p class="keyword-line">CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows</p>
-          </div>
-          <div class="expertise-block">
-            <h3>AI-Assisted Engineering</h3>
-            <p class="keyword-line">Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review / refactor loops, test generation, documentation workflows</p>
-          </div>
-          <div class="expertise-block">
-            <h3>Data / Storage</h3>
-            <p class="keyword-line">PostgreSQL, Redis, LevelDB, InfluxDB</p>
-          </div>
-          <div class="expertise-block">
-            <h3>Languages</h3>
-            <p class="keyword-line">Go, TypeScript, Rust, Solidity, Python</p>
-          </div>
+          <p style="margin: 0; color: var(--ink); font-size: 13px; line-height: 1.6;">Senior Go / Blockchain Protocol Engineer with <strong style="color: var(--ink-strong); font-weight: 600;">10+ years</strong> building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Experienced with <strong style="color: var(--ink-strong); font-weight: 600;">Claude Code and ChatGPT/Codex</strong> for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.</p>
         </section>
 
         <section class="side-panel" aria-labelledby="impact-title">
-          <h2 class="section-title" id="impact-title">Open Source &amp; Protocol Impact</h2>
+          <div class="side-panel-head">
+            <span class="sp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 3 7h7l-5.5 4.5L18 21l-6-4.5L6 21l1.5-7.5L2 9h7l3-7z"/></svg>
+            </span>
+            <h2 id="impact-title">Highlights</h2>
+          </div>
           <ul class="impact-list">
-            <li><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes.</li>
-            <li><strong>AtomOne:</strong> Cosmos SDK fork work across distribution-module implementation, ADR-004 Nakamoto Bonus, governance-migration fixes, and validator-commission update logic.</li>
-            <li><strong>hermeznetwork/hermez-node:</strong> Go backend and protocol-adjacent work around Ethereum Layer-2 infrastructure, zk-SNARK rollup operator workflows, and prover / coordinator integration.</li>
-            <li><strong>ignite/network · tendermint/spn:</strong> contributions around Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations.</li>
-            <li><strong>Cosmos SDK + IBC-Go:</strong> upstream work including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</li>
-            <li><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration.</li>
+            <li><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.</li>
+            <li><strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.</li>
+            <li><strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.</li>
+            <li><strong>ignite/network · spn:</strong> Cosmos chain-launch coordination &amp; sovereign-chain lifecycle workflows.</li>
+            <li><strong>Cosmos SDK + IBC-Go:</strong> upstream interface-registry handling and capability-keeper helpers.</li>
+            <li><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing &amp; full-node tooling.</li>
           </ul>
         </section>
 
         <section class="side-panel" aria-labelledby="education-title">
-          <h2 class="section-title" id="education-title">Education, Teaching &amp; Certifications</h2>
-          <div class="education-group">
+          <div class="side-panel-head">
+            <span class="sp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            </span>
+            <h2 id="education-title">Education &amp; Teaching</h2>
+          </div>
+          <div class="edu-group">
             <h3>Universidade Presbiteriana Mackenzie</h3>
             <p>Computer Science — 6 semesters<br>Electrical Engineering — 8 semesters<br>São Paulo, Brazil</p>
           </div>
-          <div class="education-group">
+          <div class="edu-group">
             <h3>FIAP</h3>
             <p>MBA Blockchain Instructor, since 2021</p>
           </div>
-          <div class="education-group">
+          <div class="edu-group">
             <h3>Speaking</h3>
-            <p>Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 for Ethereum, including ETH São Paulo.</p>
+            <p>Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 — including ETH São Paulo.</p>
           </div>
-          <div class="education-group" data-compact-hide="true">
+          <div class="edu-group">
             <h3>Selected Certifications</h3>
             <p>Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy</p>
           </div>
         </section>
 
         <section class="side-panel" aria-labelledby="languages-title">
-          <h2 class="section-title" id="languages-title">Languages</h2>
-          <div class="language-list">
-            <p><strong>Portuguese</strong> — Native</p>
-            <p><strong>English</strong> — Advanced</p>
-            <p><strong>Spanish</strong> — Advanced</p>
+          <div class="side-panel-head">
+            <span class="sp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+            </span>
+            <h2 id="languages-title">Languages</h2>
+          </div>
+          <div class="lang-list">
+            <div class="lang-row"><strong>Portuguese</strong><span>Native</span></div>
+            <div class="lang-row"><strong>English</strong><span>Advanced</span></div>
+            <div class="lang-row"><strong>Spanish</strong><span>Advanced</span></div>
           </div>
           <div class="tag-row" aria-label="Positioning keywords">
             <span class="tag">Go</span>
@@ -1318,15 +2012,123 @@
         </section>
       </aside>
     </div>
+
+    <!-- ───── Social Preview Card ───── -->
+    <section class="social-preview-section" id="sharePreview" aria-labelledby="sps-title">
+      <div class="sps-head">
+        <div class="left">
+          <span class="num">05</span>
+          <h2 id="sps-title">Share preview</h2>
+        </div>
+        <p class="sps-hint">A 1200×630 social card you can screenshot and host as <span style="font-family: var(--mono);">og-image.png</span>.</p>
+      </div>
+
+      <article class="social-preview-card" aria-label="Social sharing preview card">
+        <div class="grid-bg" aria-hidden="true"></div>
+        <svg class="nodes" viewBox="0 0 200 200" aria-hidden="true">
+          <g stroke="currentColor" stroke-width="0.5" fill="none">
+            <line x1="40" y1="60" x2="120" y2="40"/>
+            <line x1="40" y1="60" x2="80" y2="120"/>
+            <line x1="120" y1="40" x2="160" y2="100"/>
+            <line x1="80" y1="120" x2="160" y2="100"/>
+            <line x1="80" y1="120" x2="140" y2="160"/>
+            <line x1="160" y1="100" x2="140" y2="160"/>
+          </g>
+          <g fill="currentColor">
+            <circle cx="40" cy="60" r="3"/>
+            <circle cx="120" cy="40" r="3"/>
+            <circle cx="80" cy="120" r="3"/>
+            <circle cx="160" cy="100" r="4"/>
+            <circle cx="140" cy="160" r="3"/>
+          </g>
+        </svg>
+
+        <div class="sps-top">
+          <div class="sps-mark">
+            <span class="dot" aria-hidden="true"></span>
+            Danilo Pantani
+          </div>
+          <div class="sps-meta">pantani.github.io</div>
+        </div>
+
+        <div class="sps-body">
+          <h3 class="sps-name">Senior Go &amp;<br><em>Blockchain</em> Engineer</h3>
+          <p class="sps-role">Cosmos SDK · IBC · CometBFT · Web3 Infrastructure · Distributed Systems</p>
+          <div class="sps-keywords">
+            <span>Go</span>
+            <span>Cosmos SDK</span>
+            <span>IBC</span>
+            <span>CometBFT</span>
+            <span>AtomOne</span>
+            <span>zk-SNARKs</span>
+            <span>Claude Code</span>
+          </div>
+        </div>
+
+        <div class="sps-bottom">
+          <div class="sps-stats">
+            <div class="sps-stat"><b>10+</b><span>Years</span></div>
+            <div class="sps-stat"><b>300+</b><span>Ignite CLI PRs</span></div>
+            <div class="sps-stat"><b>200+</b><span>blockatlas PRs</span></div>
+          </div>
+          <div class="sps-handle">github.com/Pantani</div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="resume-footer">
+      <span>© 2026 Danilo Pantani · Crafted with care</span>
+      <span>v2 · Updated 2026</span>
+    </footer>
   </main>
 
   <script>
-    const compactToggle = document.getElementById('compactToggle');
+    // ─── Mouse-follow soft glow (skipped on reduced motion / touch) ───
+    (function() {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const isTouch = matchMedia('(pointer: coarse)').matches;
+      if (mq.matches || isTouch) return;
+      const glow = document.querySelector('.glow');
+      let raf = 0;
+      let tx = 50, ty = 30;
+      window.addEventListener('pointermove', (e) => {
+        tx = (e.clientX / window.innerWidth) * 100;
+        ty = (e.clientY / window.innerHeight) * 100;
+        if (!raf) raf = requestAnimationFrame(() => {
+          glow.style.setProperty('--mx', tx + '%');
+          glow.style.setProperty('--my', ty + '%');
+          raf = 0;
+        });
+      }, { passive: true });
+    })();
 
-    compactToggle.addEventListener('click', () => {
-      const compact = document.body.classList.toggle('compact');
-      compactToggle.setAttribute('aria-pressed', String(compact));
-      compactToggle.textContent = compact ? 'Full CV' : 'Compact CV';
+    // ─── Print ───
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    // ─── Copy email ───
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const copyLabel = copyBtn.querySelector('span');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText('danpantani@gmail.com');
+        copyLabel.textContent = 'Copied ✓';
+        copyLabel.classList.add('copied');
+        setTimeout(() => {
+          copyLabel.textContent = 'Copy email';
+          copyLabel.classList.remove('copied');
+        }, 1800);
+      } catch (e) {
+        copyLabel.textContent = 'danpantani@gmail.com';
+        setTimeout(() => { copyLabel.textContent = 'Copy email'; }, 2400);
+      }
+    });
+
+    // ─── Share preview anchor scroll ───
+    document.getElementById('shareBtn').addEventListener('click', () => {
+      const target = document.getElementById('sharePreview');
+      const rect = target.getBoundingClientRect();
+      const top = rect.top + window.scrollY - 24;
+      window.scrollTo({ top, behavior: 'smooth' });
     });
   </script>
 </body>
