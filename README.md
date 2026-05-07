@@ -11,9 +11,11 @@ São Paulo, Brazil · Remote · UTC−3
 
 ## Professional Summary
 
-Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure.
+Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, AI-assisted engineering workflows, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure.
 
 Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200+ public merged PRs in Trust Wallet blockatlas, plus upstream contributions across Cosmos SDK, IBC-Go, ignite/network, tendermint/spn, and hermeznetwork/hermez-node infrastructure.
+
+Experienced with Claude Code and ChatGPT/Codex for advanced prompt design, repository context design, codebase exploration, implementation planning, review/refactor loops, test generation, and documentation workflows.
 
 ---
 
@@ -26,6 +28,7 @@ Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200
 | **Open source** | 300+ public merged PRs in Ignite CLI; 200+ public merged PRs in Trust Wallet blockatlas |
 | **Protocol scope** | Cosmos SDK modules, IBC, validator infrastructure, AtomOne, Cosmos Hub, Ignite Network / SPN |
 | **Production scope** | Wallets, custodial systems, multi-chain indexing, full nodes, Ethereum L2 / zk-SNARK rollup infrastructure |
+| **AI-assisted engineering** | Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, implementation planning, review/refactor loops, tests, documentation workflows |
 
 ---
 
@@ -37,6 +40,7 @@ Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200
 | **Backend / Distributed Systems** | Go, Golang, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, production services, distributed systems |
 | **Infrastructure / DevOps** | Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, chain nodes, observability, production operations; working knowledge of Terraform, Ansible, and Helm Charts |
 | **Tooling / Developer Experience** | CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows |
+| **AI-Assisted Engineering** | Claude Code, ChatGPT/Codex, advanced prompt design, repository context design, task decomposition, implementation planning, review/refactor loops, test generation, documentation workflows |
 | **Data / Storage** | PostgreSQL, Redis, LevelDB, InfluxDB |
 | **Languages** | Go, TypeScript, Rust, Solidity, Python |
 
@@ -64,7 +68,7 @@ Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200
 - Implemented and reviewed code around **IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup, and VaaS / Validator-as-a-Service** workflows.
 - Contributed to **Gno / allinbits/gno-realms** with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.
 - Contributed upstream fixes and helpers to **Cosmos SDK and IBC-Go**, including gogoproto registry resolver handling and capability-keeper helper functionality.
-- Improved developer experience for Cosmos SDK teams through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, and CI / Sentry noise reduction.
+- Improved developer experience for Cosmos SDK teams through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, CI / Sentry noise reduction, and AI-assisted codebase workflows with Claude Code and ChatGPT/Codex.
 
 ### Interchain / Cosmos Hub
 
@@ -120,18 +124,18 @@ Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200
 
 | Repository | Scope |
 |---|---|
-| [`ignite/cli`](https://github.com/ignite/cli) | Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows |
-| [`ignite/apps`](https://github.com/ignite/apps) | Ignite ecosystem application tooling and Web3 developer-experience infrastructure |
-| [`ignite/network`](https://github.com/ignite/network) / [`tendermint/spn`](https://github.com/tendermint/spn) | Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows |
-| [`hermeznetwork/hermez-node`](https://github.com/hermeznetwork/hermez-node) | Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows |
-| [`cosmos/gaia`](https://github.com/cosmos/gaia) | Cosmos Hub / ATOM chain code and protocol-adjacent tooling |
-| [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) | Upstream Cosmos SDK protocol framework contributions and module-composition fixes |
-| [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go) | IBC implementation work, capability-keeper helpers, and downstream chain composition support |
-| [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) | AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes |
-| [`atomone-hub/cosmos-sdk`](https://github.com/atomone-hub/cosmos-sdk) | AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes |
-| [`allinbits/vaas`](https://github.com/allinbits/vaas) | Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations |
-| [`Pantani/gnorender`](https://github.com/Pantani/gnorender) | Gno rendering helpers for composable Markdown / ASCII realm interfaces and `Render(path)` workflows |
-| [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas) | Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work |
+| [`ignite/cli`](https://github.com/ignite/cli) | Cosmos SDK tooling, protoanalysis, AST/codegen, CLI UX |
+| [`ignite/apps`](https://github.com/ignite/apps) | Ignite app workflows, chain developer experience, ecosystem tooling |
+| [`ignite/network`](https://github.com/ignite/network) / [`tendermint/spn`](https://github.com/tendermint/spn) | Network launch tooling, SPN, Ignite/Tendermint history |
+| [`hermeznetwork/hermez-node`](https://github.com/hermeznetwork/hermez-node) | Ethereum L2, zk-SNARK rollup, node/operator services |
+| [`cosmos/gaia`](https://github.com/cosmos/gaia) | Cosmos Hub, Gaia chain app, ATOM tooling |
+| [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) | Cosmos SDK, protocol modules, interface registry |
+| [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go) | IBC-Go, capability keeper, module composition |
+| [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) | AtomOne chain, distribution module, ADR-004 |
+| [`atomone-hub/cosmos-sdk`](https://github.com/atomone-hub/cosmos-sdk) | AtomOne SDK fork, governance migration, validator commission |
+| [`allinbits/vaas`](https://github.com/allinbits/vaas) | VaaS, IBC provider hardening, consumer-chain lifecycle |
+| [`Pantani/gnorender`](https://github.com/Pantani/gnorender) | Gno rendering, realm UI helpers, Markdown/ASCII views |
+| [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas) | Multi-chain indexing, chain integrations, full-node tooling |
 
 ---
 
@@ -166,7 +170,7 @@ Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 for Ethereum, incl
 - English — Advanced
 - Spanish — Advanced
 
-**Technical keywords:** Go, TypeScript, Cosmos SDK, IBC, CometBFT, tooling, Terraform, Ansible, Helm Charts.
+**Technical keywords:** Go, TypeScript, Cosmos SDK, IBC, CometBFT, tooling, Claude Code, ChatGPT/Codex, advanced prompt design, AI-assisted engineering, Terraform, Ansible, Helm Charts.
 
 ---
 
