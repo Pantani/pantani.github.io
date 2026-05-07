@@ -1,0 +1,1328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danilo Pantani - Senior Go / Blockchain Protocol Engineer focused on Cosmos SDK, IBC, Web3 infrastructure, distributed systems, developer tooling, and validator infrastructure.">
+  <title>Danilo Pantani - Senior Go / Blockchain Protocol Engineer</title>
+  <style>
+    :root {
+      --paper: #ffffff;
+      --canvas: #eef3f5;
+      --ink: #14212b;
+      --ink-strong: #08141c;
+      --muted: #52616d;
+      --muted-2: #6d7b86;
+      --line: #d9e2e8;
+      --line-strong: #bdccd5;
+      --accent: #174b5f;
+      --accent-2: #256176;
+      --accent-soft: #e6f0f3;
+      --panel: #f7fafb;
+      --panel-2: #f1f6f8;
+      --focus: #8a4dff;
+      --shadow: 0 28px 80px rgba(8, 20, 28, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top left, rgba(37, 97, 118, 0.13), transparent 32rem), var(--canvas);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.48;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: rgba(238, 243, 245, 0.85);
+      border-bottom: 1px solid rgba(189, 204, 213, 0.55);
+      backdrop-filter: blur(16px);
+    }
+
+    .toolbar button {
+      appearance: none;
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      background: var(--paper);
+      color: var(--ink);
+      cursor: pointer;
+      font: 700 13px/1 var(--font);
+      letter-spacing: 0.01em;
+      padding: 10px 15px;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .toolbar button:hover {
+      border-color: var(--accent-2);
+      box-shadow: 0 10px 28px rgba(8, 20, 28, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .resume {
+      width: min(1120px, calc(100% - 28px));
+      margin: 28px auto 48px;
+      padding: 46px;
+      background: var(--paper);
+      border: 1px solid rgba(189, 204, 213, 0.75);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 34px;
+      padding-bottom: 26px;
+      border-bottom: 2px solid var(--ink-strong);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin: 0 0 14px;
+      padding: 7px 10px;
+      border: 1px solid rgba(23, 75, 95, 0.22);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    ul {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      color: var(--ink-strong);
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+    }
+
+    .title {
+      max-width: 760px;
+      margin: 0;
+      color: var(--accent);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 750;
+      line-height: 1.22;
+      letter-spacing: -0.03em;
+    }
+
+    .contact-card {
+      align-self: stretch;
+      display: grid;
+      gap: 9px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, var(--panel), #fff);
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 12px;
+      align-items: baseline;
+      min-width: 0;
+    }
+
+    .contact-label {
+      color: var(--muted-2);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .contact-value {
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 32px;
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .summary p {
+      max-width: 860px;
+      margin-bottom: 0;
+      color: var(--ink);
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      padding: 22px 0 28px;
+    }
+
+    .proof-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+      min-height: 104px;
+    }
+
+    .proof-value {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink-strong);
+      font-size: 24px;
+      font-weight: 850;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .proof-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .body-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.86fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--ink-strong);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .main-column .section-title {
+      font-size: 14px;
+    }
+
+    .job,
+    .project-card,
+    .side-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+    }
+
+    .job {
+      padding: 18px 0 18px 22px;
+      border-width: 0 0 0 3px;
+      border-radius: 0;
+      border-left-color: var(--line-strong);
+      background: transparent;
+      position: relative;
+    }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      top: 23px;
+      left: -7px;
+      width: 11px;
+      height: 11px;
+      border: 2px solid var(--paper);
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .job:first-of-type {
+      padding-top: 0;
+    }
+
+    .job:first-of-type::before {
+      top: 5px;
+    }
+
+    .job-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .job h3,
+    .project-card h3 {
+      margin-bottom: 3px;
+      color: var(--ink-strong);
+      font-size: 17px;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .role {
+      margin: 0;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .job-meta {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.4;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin-bottom: 0;
+      padding-left: 1.1rem;
+    }
+
+    li {
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .job li,
+    .project-card p,
+    .impact-list li,
+    .compact-text {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.46;
+    }
+
+    .job li strong,
+    .impact-list strong,
+    .project-card strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .repository-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .project-card {
+      padding: 16px;
+      background: linear-gradient(180deg, #fff, var(--panel));
+    }
+
+    .repository-card {
+      padding: 13px 14px;
+    }
+
+    .repository-card h3 {
+      margin-bottom: 5px;
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: -0.02em;
+      overflow-wrap: anywhere;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .project-link-list {
+      display: grid;
+      gap: 2px;
+      margin-bottom: 9px;
+    }
+
+    .project-link-list .project-link {
+      margin-bottom: 0;
+    }
+
+    .project-card p {
+      margin-bottom: 0;
+    }
+
+    .repository-card p {
+      font-size: 12px;
+      line-height: 1.38;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 16px;
+    }
+
+    .side-panel {
+      padding: 18px;
+      background: var(--panel);
+    }
+
+    .side-panel .section-title {
+      margin-bottom: 13px;
+      font-size: 12px;
+    }
+
+    .expertise-block {
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .expertise-block:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .expertise-block:last-child {
+      padding-bottom: 0;
+    }
+
+    .expertise-block h3 {
+      margin-bottom: 6px;
+      color: var(--ink-strong);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: -0.01em;
+    }
+
+    .keyword-line {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.48;
+    }
+
+    .impact-list {
+      padding-left: 1rem;
+    }
+
+    .impact-list li {
+      margin-bottom: 8px;
+    }
+
+    .education-group {
+      padding: 11px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .education-group:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .education-group:last-child {
+      padding-bottom: 0;
+    }
+
+    .education-group h3 {
+      margin-bottom: 4px;
+      color: var(--ink-strong);
+      font-size: 13px;
+      letter-spacing: -0.02em;
+    }
+
+    .education-group p,
+    .language-list p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.48;
+    }
+
+    .language-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .language-list strong {
+      color: var(--ink);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(23, 75, 95, 0.2);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      padding: 5px 7px;
+    }
+
+    .earlier-roles {
+      margin-top: 8px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.48;
+    }
+
+    .earlier-roles strong {
+      color: var(--ink);
+    }
+
+    body.compact [data-compact-hide="true"] {
+      display: none !important;
+    }
+
+    body.compact .resume {
+      padding: 40px;
+    }
+
+    body.compact .proof-strip {
+      padding-bottom: 22px;
+    }
+
+    body.compact .section {
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .resume {
+        padding: 30px 24px;
+        border-radius: 20px;
+      }
+
+      .hero,
+      .summary,
+      .body-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        gap: 20px;
+      }
+
+      .summary {
+        gap: 12px;
+      }
+
+      .proof-strip,
+      .project-grid,
+      .repository-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .sidebar {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        font-size: 14px;
+      }
+
+      .toolbar {
+        position: static;
+        flex-wrap: wrap;
+      }
+
+      .resume {
+        width: min(100% - 18px, 1120px);
+        margin: 10px auto 28px;
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .title,
+      .summary p {
+        font-size: 16px;
+      }
+
+      .contact-item,
+      .job-head {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .job-meta {
+        text-align: left;
+        white-space: normal;
+      }
+
+      .proof-strip,
+      .project-grid,
+      .repository-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 8mm;
+    }
+
+    @media print {
+      :root {
+        --paper: #fff;
+        --canvas: #fff;
+        --ink: #17202a;
+        --ink-strong: #07111a;
+        --muted: #3f4d56;
+        --muted-2: #4f5d66;
+        --line: #cfd9df;
+        --line-strong: #aebdc6;
+        --accent: #123f50;
+        --accent-soft: #edf4f6;
+        --panel: #f7f9fa;
+      }
+
+      html,
+      body {
+        background: #fff !important;
+      }
+
+      body {
+        font-size: 8.6pt;
+        line-height: 1.25;
+        color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .resume {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1.32fr) minmax(245px, 0.68fr);
+        gap: 18px;
+        padding-bottom: 11px;
+        border-bottom-width: 1.5px;
+      }
+
+      .eyebrow {
+        margin-bottom: 6px;
+        padding: 4px 7px;
+        font-size: 7.4pt;
+      }
+
+      h1 {
+        margin-bottom: 5px;
+        font-size: 29pt;
+        letter-spacing: -0.055em;
+      }
+
+      .title {
+        font-size: 12pt;
+        line-height: 1.16;
+      }
+
+      .contact-card {
+        gap: 4px;
+        padding: 9px 10px;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .contact-item {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 7px;
+      }
+
+      .contact-label {
+        font-size: 6.7pt;
+      }
+
+      .contact-value {
+        font-size: 8.6pt;
+      }
+
+      .summary {
+        grid-template-columns: 122px minmax(0, 1fr);
+        gap: 18px;
+        padding: 12px 0 10px;
+      }
+
+      .section-kicker {
+        font-size: 7.6pt;
+      }
+
+      .summary p {
+        font-size: 9.5pt;
+        line-height: 1.3;
+      }
+
+      .proof-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 7px;
+        padding: 9px 0 11px;
+      }
+
+      .proof-card {
+        min-height: 0;
+        padding: 6px 7px;
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .proof-value {
+        margin-bottom: 3px;
+        font-size: 12.8pt;
+      }
+
+      .proof-label {
+        font-size: 7.6pt;
+        line-height: 1.24;
+      }
+
+      .body-grid {
+        grid-template-columns: minmax(0, 1.63fr) minmax(210px, 0.77fr);
+        gap: 17px;
+      }
+
+      .section {
+        margin-bottom: 13px;
+      }
+
+      .section-title {
+        gap: 8px;
+        margin-bottom: 7px;
+        font-size: 8.2pt !important;
+        letter-spacing: 0.09em;
+      }
+
+      .job {
+        padding: 7px 0 7px 14px;
+        border-left-width: 2px;
+      }
+
+      .job::before {
+        top: 12px;
+        left: -5px;
+        width: 7px;
+        height: 7px;
+        border-width: 1px;
+      }
+
+      .job:first-of-type::before {
+        top: 2px;
+      }
+
+      .job-head {
+        gap: 9px;
+        margin-bottom: 3px;
+      }
+
+      .job h3,
+      .project-card h3 {
+        margin-bottom: 2px;
+        font-size: 9.5pt;
+      }
+
+      .role {
+        font-size: 7.8pt;
+      }
+
+      .job-meta {
+        font-size: 7.1pt;
+      }
+
+      ul {
+        padding-left: 0.92rem;
+      }
+
+      li {
+        margin-bottom: 2.2px;
+      }
+
+      .job li,
+      .project-card p,
+      .impact-list li,
+      .compact-text,
+      .earlier-roles {
+        font-size: 7.4pt;
+        line-height: 1.23;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+      }
+
+      .repository-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 5px;
+      }
+
+      .project-card {
+        padding: 6px 7px;
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .repository-card {
+        padding: 5px 6px;
+      }
+
+      .repository-card h3 {
+        margin-bottom: 2px;
+        font-size: 7.4pt;
+        line-height: 1.12;
+      }
+
+      .repository-card p {
+        font-size: 6.8pt;
+        line-height: 1.16;
+      }
+
+      .project-link,
+      .project-link-list .project-link {
+        margin-bottom: 3px;
+        font-size: 6.4pt;
+      }
+
+      .project-link-list {
+        gap: 1px;
+        margin-bottom: 3px;
+      }
+
+      .side-panel {
+        padding: 7px 8px;
+        border-radius: 9px;
+        background: var(--panel);
+      }
+
+      .sidebar {
+        gap: 9px;
+      }
+
+      .expertise-block {
+        padding: 5px 0;
+      }
+
+      .expertise-block h3,
+      .education-group h3 {
+        margin-bottom: 3px;
+        font-size: 7.8pt;
+      }
+
+      .keyword-line,
+      .education-group p,
+      .language-list p {
+        font-size: 7.05pt;
+        line-height: 1.22;
+      }
+
+      .impact-list {
+        padding-left: 0.85rem;
+      }
+
+      .impact-list li {
+        margin-bottom: 4px;
+      }
+
+      .education-group {
+        padding: 5px 0;
+      }
+
+      .language-list {
+        gap: 4px;
+      }
+
+      .tag-row {
+        display: none;
+      }
+
+      .tag {
+        padding: 3px 5px;
+        font-size: 6.7pt;
+      }
+
+      .earlier-roles {
+        margin-top: 5px;
+        padding: 7px 8px;
+        border-radius: 8px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .contact-value a,
+      .project-link {
+        text-decoration: underline;
+        text-decoration-thickness: 0.6px;
+        text-underline-offset: 2px;
+      }
+
+      .job,
+      .project-card,
+      .side-panel,
+      .expertise-block,
+      .education-group,
+      .proof-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" aria-label="CV actions">
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+    <button type="button" id="compactToggle" aria-pressed="false">Compact CV</button>
+  </div>
+
+  <main class="resume" aria-label="Danilo Pantani CV">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Remote · UTC−3 · São Paulo, Brazil</p>
+        <h1>Danilo Pantani</h1>
+        <p class="title">Senior Go / Blockchain Protocol Engineer · Cosmos SDK · IBC · Web3 Infrastructure</p>
+      </div>
+
+      <address class="contact-card" aria-label="Contact information">
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">São Paulo, Brazil · Remote · UTC−3</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><a href="mailto:danpantani@gmail.com">danpantani@gmail.com</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value"><a href="tel:+5511983587422">+55 11 98358-7422</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value"><a href="https://github.com/Pantani">github.com/Pantani</a></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value"><a href="https://www.linkedin.com/in/dpantani/">linkedin.com/in/dpantani</a></span>
+        </div>
+      </address>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 class="section-kicker" id="summary-title">Professional Summary</h2>
+      <p>Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200+ public merged PRs in Trust Wallet blockatlas, plus upstream contributions to Cosmos SDK, IBC-Go, and Gno-based infrastructure.</p>
+    </section>
+
+    <section class="proof-strip" aria-label="Career highlights">
+      <div class="proof-card">
+        <span class="proof-value">10+</span>
+        <span class="proof-label">years building production software and blockchain systems</span>
+      </div>
+      <div class="proof-card">
+        <span class="proof-value">300+</span>
+        <span class="proof-label">public merged PRs across Ignite CLI and Cosmos SDK tooling</span>
+      </div>
+      <div class="proof-card">
+        <span class="proof-value">200+</span>
+        <span class="proof-label">public merged PRs in Trust Wallet blockatlas</span>
+      </div>
+      <div class="proof-card">
+        <span class="proof-value">L1/L2</span>
+        <span class="proof-label">Cosmos SDK, IBC, validator infra, wallets, and rollups</span>
+      </div>
+    </section>
+
+    <div class="body-grid">
+      <div class="main-column">
+        <section class="section" aria-labelledby="experience-title">
+          <h2 class="section-title" id="experience-title">Professional Experience</h2>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Ignite / AtomOne / All in Bits</h3>
+                <p class="role">Senior Blockchain Engineer, Go</p>
+              </div>
+              <div class="job-meta">Jun 2021 — Present · Remote</div>
+            </header>
+            <ul>
+              <li>Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
+              <li>Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.</li>
+              <li>Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup, and VaaS / Validator-as-a-Service</strong> workflows.</li>
+              <li>Contributed to <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer realm functionality, including MsgCall helpers for IBC voucher tokens and restrictions on relayed IBC operations.</li>
+              <li>Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
+              <li data-compact-hide="true">Improved developer experience for Cosmos SDK teams through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, and CI / Sentry noise reduction.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Interchain / Cosmos Hub</h3>
+                <p class="role">Blockchain Engineer, Go</p>
+              </div>
+              <div class="job-meta">Jun 2022 — Dec 2022 · Remote</div>
+            </header>
+            <ul>
+              <li>Contributed Go code and supporting tooling for <strong>Cosmos Hub / ATOM</strong> chain development alongside the Interchain core ecosystem.</li>
+              <li>Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Polygon Hermez</h3>
+                <p class="role">Blockchain / Layer-2 Engineer, Go</p>
+              </div>
+              <div class="job-meta">Feb 2021 — Jun 2021 · Remote</div>
+            </header>
+            <ul>
+              <li>Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
+              <li>Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Energi</h3>
+                <p class="role">Backend Engineer / Architecture</p>
+              </div>
+              <div class="job-meta">Apr 2020 — Feb 2021 · Remote</div>
+            </header>
+            <ul>
+              <li>Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
+              <li>Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
+              <li>Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Trust Wallet / Binance</h3>
+                <p class="role">Backend Lead, Go</p>
+              </div>
+              <div class="job-meta">Aug 2019 — Apr 2020 · Remote</div>
+            </header>
+            <ul>
+              <li>Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
+              <li>Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
+              <li>Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
+              <li data-compact-hide="true">Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <header class="job-head">
+              <div>
+                <h3>Mercado Bitcoin</h3>
+                <p class="role">Tech Lead — Backend &amp; Mobile</p>
+              </div>
+              <div class="job-meta">Mar 2018 — Aug 2019 · São Paulo</div>
+            </header>
+            <ul>
+              <li>Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
+              <li>Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
+              <li>Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
+            </ul>
+          </article>
+
+          <article class="job" data-compact-hide="true">
+            <header class="job-head">
+              <div>
+                <h3>Earlier Roles</h3>
+                <p class="role">Tech Lead / Founder / Mobile Engineer</p>
+              </div>
+              <div class="job-meta">2011 — 2018 · São Paulo</div>
+            </header>
+            <div class="earlier-roles"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</div>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="projects-title">
+          <h2 class="section-title" id="projects-title">Selected Projects</h2>
+          <div class="project-grid repository-grid">
+            <article class="project-card repository-card">
+              <h3>ignite/cli</h3>
+              <a class="project-link" href="https://github.com/ignite/cli">github.com/ignite/cli</a>
+              <p>Cosmos SDK tooling · Protoanalysis · AST/codegen · CLI UX</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>ignite/apps</h3>
+              <a class="project-link" href="https://github.com/ignite/apps">github.com/ignite/apps</a>
+              <p>Ignite app workflows · Chain DX · Ecosystem tooling</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>ignite/network · tendermint/spn</h3>
+              <div class="project-link-list">
+                <a class="project-link" href="https://github.com/ignite/network">github.com/ignite/network</a>
+                <a class="project-link" href="https://github.com/tendermint/spn">github.com/tendermint/spn</a>
+              </div>
+              <p>Network launch tooling · SPN · Ignite/Tendermint history</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>hermeznetwork/hermez-node</h3>
+              <a class="project-link" href="https://github.com/hermeznetwork/hermez-node">github.com/hermeznetwork/hermez-node</a>
+              <p>Ethereum L2 · zk-SNARK rollup · Node/operator services</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>cosmos/gaia</h3>
+              <a class="project-link" href="https://github.com/cosmos/gaia">github.com/cosmos/gaia</a>
+              <p>Cosmos Hub · Gaia chain app · ATOM tooling</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>cosmos/cosmos-sdk</h3>
+              <a class="project-link" href="https://github.com/cosmos/cosmos-sdk">github.com/cosmos/cosmos-sdk</a>
+              <p>Cosmos SDK · Protocol modules · Interface registry</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>cosmos/ibc-go</h3>
+              <a class="project-link" href="https://github.com/cosmos/ibc-go">github.com/cosmos/ibc-go</a>
+              <p>IBC-Go · Capability keeper · Module composition</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>atomone-hub/atomone</h3>
+              <a class="project-link" href="https://github.com/atomone-hub/atomone">github.com/atomone-hub/atomone</a>
+              <p>AtomOne chain · Distribution module · ADR-004</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>atomone-hub/cosmos-sdk</h3>
+              <a class="project-link" href="https://github.com/atomone-hub/cosmos-sdk">github.com/atomone-hub/cosmos-sdk</a>
+              <p>AtomOne SDK fork · Governance migration · Validator commission</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>allinbits/vaas</h3>
+              <a class="project-link" href="https://github.com/allinbits/vaas">github.com/allinbits/vaas</a>
+              <p>VaaS · IBC provider hardening · Consumer-chain lifecycle</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>Pantani/gnorender</h3>
+              <a class="project-link" href="https://github.com/Pantani/gnorender">github.com/Pantani/gnorender</a>
+              <p>Gno rendering · Realm UI helpers · Markdown/ASCII views</p>
+            </article>
+
+            <article class="project-card repository-card">
+              <h3>trustwallet/blockatlas</h3>
+              <a class="project-link" href="https://github.com/trustwallet/blockatlas">github.com/trustwallet/blockatlas</a>
+              <p>Multi-chain indexing · Chain integrations · Full-node tooling</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <aside class="sidebar" aria-label="Supporting CV sections">
+        <section class="side-panel" aria-labelledby="expertise-title">
+          <h2 class="section-title" id="expertise-title">Core Expertise</h2>
+          <div class="expertise-block">
+            <h3>Blockchain / Protocols</h3>
+            <p class="keyword-line">Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure</p>
+          </div>
+          <div class="expertise-block">
+            <h3>Backend / Distributed Systems</h3>
+            <p class="keyword-line">Go, Golang, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, production services, distributed systems</p>
+          </div>
+          <div class="expertise-block">
+            <h3>Infrastructure / DevOps</h3>
+            <p class="keyword-line">Docker, Kubernetes, Helm, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, chain nodes, observability, production operations, Terraform, Ansible</p>
+          </div>
+          <div class="expertise-block">
+            <h3>Tooling / Developer Experience</h3>
+            <p class="keyword-line">CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows</p>
+          </div>
+          <div class="expertise-block">
+            <h3>Data / Storage</h3>
+            <p class="keyword-line">PostgreSQL, Redis, LevelDB, InfluxDB</p>
+          </div>
+          <div class="expertise-block">
+            <h3>Languages</h3>
+            <p class="keyword-line">Go, Rust, Solidity, TypeScript, Python</p>
+          </div>
+        </section>
+
+        <section class="side-panel" aria-labelledby="impact-title">
+          <h2 class="section-title" id="impact-title">Open Source &amp; Protocol Impact</h2>
+          <ul class="impact-list">
+            <li><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes.</li>
+            <li><strong>AtomOne:</strong> Cosmos SDK fork work across distribution-module implementation, ADR-004 Nakamoto Bonus, governance-migration fixes, and validator-commission update logic.</li>
+            <li><strong>Gno / gno-realms:</strong> IBC core and transfer realm improvements, MsgCall helpers for IBC voucher tokens, render content, memo support, and relayed-operation restrictions.</li>
+            <li><strong>Cosmos SDK + IBC-Go:</strong> upstream work including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</li>
+            <li><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration.</li>
+            <li><strong>Public tooling:</strong> chainops, gnorender, and stellar-forge as technical proof of Go/Rust infrastructure and developer tooling depth.</li>
+          </ul>
+        </section>
+
+        <section class="side-panel" aria-labelledby="education-title">
+          <h2 class="section-title" id="education-title">Education, Teaching &amp; Certifications</h2>
+          <div class="education-group">
+            <h3>Universidade Presbiteriana Mackenzie</h3>
+            <p>Computer Science — 6 semesters<br>Electrical Engineering — 8 semesters<br>São Paulo, Brazil</p>
+          </div>
+          <div class="education-group">
+            <h3>FIAP</h3>
+            <p>MBA Blockchain Instructor, since 2021</p>
+          </div>
+          <div class="education-group">
+            <h3>Speaking</h3>
+            <p>Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 for Ethereum, including ETH São Paulo.</p>
+          </div>
+          <div class="education-group" data-compact-hide="true">
+            <h3>Selected Certifications</h3>
+            <p>Programming Blockchain — Jimmy Song<br>Ethereum Blockchain Developer — Go Blockchain<br>Smart Contracts in Ethereum — FIAP<br>Data Science — Let's Code Academy</p>
+          </div>
+        </section>
+
+        <section class="side-panel" aria-labelledby="languages-title">
+          <h2 class="section-title" id="languages-title">Languages</h2>
+          <div class="language-list">
+            <p><strong>Portuguese</strong> — Native</p>
+            <p><strong>English</strong> — Advanced</p>
+            <p><strong>Spanish</strong> — Advanced</p>
+          </div>
+          <div class="tag-row" aria-label="Positioning keywords">
+            <span class="tag">Go</span>
+            <span class="tag">Cosmos SDK</span>
+            <span class="tag">IBC</span>
+            <span class="tag">CometBFT</span>
+            <span class="tag">Validator Infra</span>
+            <span class="tag">Tooling</span>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const compactToggle = document.getElementById('compactToggle');
+
+    compactToggle.addEventListener('click', () => {
+      const compact = document.body.classList.toggle('compact');
+      compactToggle.setAttribute('aria-pressed', String(compact));
+      compactToggle.textContent = compact ? 'Full CV' : 'Compact CV';
+    });
+  </script>
+</body>
+</html>
