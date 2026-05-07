@@ -779,6 +779,22 @@
       .body-grid {
         grid-template-columns: minmax(0, 1.63fr) minmax(210px, 0.77fr);
         gap: 17px;
+        align-items: start;
+      }
+
+      /* Undo the @media (max-width: 900px) mobile reorder when printing.
+         Chrome's print viewport is ~733px (below 900px), so without this
+         override the sidebar would be placed in column 1 (the wide left
+         track), pushing Professional Experience into the narrow right
+         column and reordering the page visually. Keeping order: 0 here
+         preserves the desktop layout: main-column on the left, sidebar
+         on the right. */
+      .main-column {
+        order: 0;
+      }
+
+      .sidebar {
+        order: 0;
       }
 
       .section {
