@@ -176,7 +176,12 @@ Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 for Ethereum, incl
 
 ## Repository
 
-This repository contains a static, self-contained HTML CV designed for browser viewing and PDF export.
+This repository contains a static, self-contained HTML CV designed for browser viewing and PDF export, deployed at [pantani.github.io](https://pantani.github.io/) via GitHub Pages.
 
-- [`index.html`](./index.html) — visual CV / portfolio page
+- [`index.html`](./index.html) — visual CV / portfolio page (EN / PT-BR / ES, single-file)
 - [`README.md`](./README.md) — GitHub-friendly markdown version
+- [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, X
+- [`robots.txt`](./robots.txt) — allows all crawlers, references the sitemap
+- [`sitemap.xml`](./sitemap.xml) — single-URL sitemap for the canonical home
+- [`humans.txt`](./humans.txt) — human-readable contact card
+- `googlecf632249c921a46c.html` — Google Search Console site-verification file
