@@ -393,26 +393,9 @@
       gap: 12px;
     }
 
-    .repository-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-
     .project-card {
       padding: 16px;
       background: linear-gradient(180deg, #fff, var(--panel));
-    }
-
-    .repository-card {
-      padding: 13px 14px;
-    }
-
-    .repository-card h3 {
-      margin-bottom: 5px;
-      font-family: var(--mono);
-      font-size: 13px;
-      letter-spacing: -0.02em;
-      overflow-wrap: anywhere;
     }
 
     .project-link {
@@ -425,23 +408,29 @@
       overflow-wrap: anywhere;
     }
 
-    .project-link-list {
-      display: grid;
-      gap: 2px;
-      margin-bottom: 9px;
-    }
-
-    .project-link-list .project-link {
-      margin-bottom: 0;
-    }
-
     .project-card p {
       margin-bottom: 0;
     }
 
-    .repository-card p {
-      font-size: 12px;
-      line-height: 1.38;
+    .repo-card {
+      padding: 13px 14px;
+    }
+
+    .repo-card h3 {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: -0.02em;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 10px;
+      margin-bottom: 7px;
+    }
+
+    .project-links .project-link {
+      margin-bottom: 2px;
     }
 
     .sidebar {
@@ -607,8 +596,7 @@
       }
 
       .proof-strip,
-      .project-grid,
-      .repository-grid {
+      .project-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -654,8 +642,7 @@
       }
 
       .proof-strip,
-      .project-grid,
-      .repository-grid {
+      .project-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -863,41 +850,33 @@
         gap: 7px;
       }
 
-      .repository-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 5px;
-      }
-
       .project-card {
         padding: 6px 7px;
         border-radius: 8px;
         background: #fff;
       }
 
-      .repository-card {
+      .project-link {
+        margin-bottom: 4px;
+        font-size: 6.9pt;
+      }
+
+      .repo-card {
         padding: 5px 6px;
       }
 
-      .repository-card h3 {
-        margin-bottom: 2px;
-        font-size: 7.4pt;
-        line-height: 1.12;
+      .repo-card h3 {
+        font-size: 7.6pt;
       }
 
-      .repository-card p {
-        font-size: 6.8pt;
+      .repo-card p {
+        font-size: 6.9pt;
         line-height: 1.16;
       }
 
-      .project-link,
-      .project-link-list .project-link {
-        margin-bottom: 3px;
-        font-size: 6.4pt;
-      }
-
-      .project-link-list {
-        gap: 1px;
-        margin-bottom: 3px;
+      .project-links {
+        gap: 0 5px;
+        margin-bottom: 2px;
       }
 
       .side-panel {
@@ -1022,7 +1001,7 @@
 
     <section class="summary" aria-labelledby="summary-title">
       <h2 class="section-kicker" id="summary-title">Professional Summary</h2>
-      <p>Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200+ public merged PRs in Trust Wallet blockatlas, plus upstream contributions to Cosmos SDK, IBC-Go, and Gno-based infrastructure.</p>
+      <p>Senior Go / Blockchain Protocol Engineer with 10+ years building production software and blockchain infrastructure. Deep hands-on experience across Cosmos SDK protocol code, IBC, CometBFT/Tendermint, validator infrastructure, CLI tooling, code generation, wallets, multi-chain indexing, and Ethereum Layer-2 infrastructure. Proven open-source contributor with 300+ public merged PRs in Ignite CLI and 200+ public merged PRs in Trust Wallet blockatlas, plus upstream contributions across Cosmos SDK, IBC-Go, ignite/network, tendermint/spn, and hermeznetwork/hermez-node infrastructure.</p>
     </section>
 
     <section class="proof-strip" aria-label="Career highlights">
@@ -1155,80 +1134,80 @@
 
         <section class="section" aria-labelledby="projects-title">
           <h2 class="section-title" id="projects-title">Selected Projects</h2>
-          <div class="project-grid repository-grid">
-            <article class="project-card repository-card">
+          <div class="project-grid repo-grid">
+            <article class="project-card repo-card">
               <h3>ignite/cli</h3>
               <a class="project-link" href="https://github.com/ignite/cli">github.com/ignite/cli</a>
-              <p>Cosmos SDK tooling · Protoanalysis · AST/codegen · CLI UX</p>
+              <p>Cosmos SDK chain tooling, scaffolding, protoanalysis, AST-driven code generation, CLI UX, and developer workflows.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>ignite/apps</h3>
               <a class="project-link" href="https://github.com/ignite/apps">github.com/ignite/apps</a>
-              <p>Ignite app workflows · Chain DX · Ecosystem tooling</p>
+              <p>Ignite ecosystem application tooling and Web3 developer-experience infrastructure.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>ignite/network · tendermint/spn</h3>
-              <div class="project-link-list">
+              <div class="project-links">
                 <a class="project-link" href="https://github.com/ignite/network">github.com/ignite/network</a>
                 <a class="project-link" href="https://github.com/tendermint/spn">github.com/tendermint/spn</a>
               </div>
-              <p>Network launch tooling · SPN · Ignite/Tendermint history</p>
+              <p>Cosmos network-launch and coordination infrastructure around sovereign chain lifecycle workflows.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>hermeznetwork/hermez-node</h3>
               <a class="project-link" href="https://github.com/hermeznetwork/hermez-node">github.com/hermeznetwork/hermez-node</a>
-              <p>Ethereum L2 · zk-SNARK rollup · Node/operator services</p>
+              <p>Ethereum Layer-2 node infrastructure connected to zk-SNARK rollup operator workflows.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>cosmos/gaia</h3>
               <a class="project-link" href="https://github.com/cosmos/gaia">github.com/cosmos/gaia</a>
-              <p>Cosmos Hub · Gaia chain app · ATOM tooling</p>
+              <p>Cosmos Hub / ATOM chain code and protocol-adjacent tooling.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>cosmos/cosmos-sdk</h3>
               <a class="project-link" href="https://github.com/cosmos/cosmos-sdk">github.com/cosmos/cosmos-sdk</a>
-              <p>Cosmos SDK · Protocol modules · Interface registry</p>
+              <p>Upstream Cosmos SDK protocol framework contributions and module-composition fixes.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>cosmos/ibc-go</h3>
               <a class="project-link" href="https://github.com/cosmos/ibc-go">github.com/cosmos/ibc-go</a>
-              <p>IBC-Go · Capability keeper · Module composition</p>
+              <p>IBC implementation work, capability-keeper helpers, and downstream chain composition support.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>atomone-hub/atomone</h3>
               <a class="project-link" href="https://github.com/atomone-hub/atomone">github.com/atomone-hub/atomone</a>
-              <p>AtomOne chain · Distribution module · ADR-004</p>
+              <p>AtomOne chain work including distribution-module logic, Nakamoto Bonus mechanics, and governance-migration fixes.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>atomone-hub/cosmos-sdk</h3>
               <a class="project-link" href="https://github.com/atomone-hub/cosmos-sdk">github.com/atomone-hub/cosmos-sdk</a>
-              <p>AtomOne SDK fork · Governance migration · Validator commission</p>
+              <p>AtomOne Cosmos SDK fork work around protocol modules, validator-commission logic, and SDK-level changes.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>allinbits/vaas</h3>
               <a class="project-link" href="https://github.com/allinbits/vaas">github.com/allinbits/vaas</a>
-              <p>VaaS · IBC provider hardening · Consumer-chain lifecycle</p>
+              <p>Validator-as-a-Service infrastructure for IBC provider hardening, lifecycle handling, and validator operations.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>Pantani/gnorender</h3>
               <a class="project-link" href="https://github.com/Pantani/gnorender">github.com/Pantani/gnorender</a>
-              <p>Gno rendering · Realm UI helpers · Markdown/ASCII views</p>
+              <p>Gno rendering helpers for composable Markdown / ASCII realm interfaces and Render(path) workflows.</p>
             </article>
 
-            <article class="project-card repository-card">
+            <article class="project-card repo-card">
               <h3>trustwallet/blockatlas</h3>
               <a class="project-link" href="https://github.com/trustwallet/blockatlas">github.com/trustwallet/blockatlas</a>
-              <p>Multi-chain indexing · Chain integrations · Full-node tooling</p>
+              <p>Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration work.</p>
             </article>
           </div>
         </section>
@@ -1247,7 +1226,7 @@
           </div>
           <div class="expertise-block">
             <h3>Infrastructure / DevOps</h3>
-            <p class="keyword-line">Docker, Kubernetes, Helm, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, chain nodes, observability, production operations, Terraform, Ansible</p>
+            <p class="keyword-line">Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, full nodes, chain nodes, observability, production operations; working knowledge of Terraform, Ansible, and Helm Charts</p>
           </div>
           <div class="expertise-block">
             <h3>Tooling / Developer Experience</h3>
@@ -1259,7 +1238,7 @@
           </div>
           <div class="expertise-block">
             <h3>Languages</h3>
-            <p class="keyword-line">Go, Rust, Solidity, TypeScript, Python</p>
+            <p class="keyword-line">Go, TypeScript, Rust, Solidity, Python</p>
           </div>
         </section>
 
@@ -1268,10 +1247,10 @@
           <ul class="impact-list">
             <li><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes.</li>
             <li><strong>AtomOne:</strong> Cosmos SDK fork work across distribution-module implementation, ADR-004 Nakamoto Bonus, governance-migration fixes, and validator-commission update logic.</li>
-            <li><strong>Gno / gno-realms:</strong> IBC core and transfer realm improvements, MsgCall helpers for IBC voucher tokens, render content, memo support, and relayed-operation restrictions.</li>
+            <li><strong>hermeznetwork/hermez-node:</strong> Go backend and protocol-adjacent work around Ethereum Layer-2 infrastructure, zk-SNARK rollup operator workflows, and prover / coordinator integration.</li>
+            <li><strong>ignite/network · tendermint/spn:</strong> contributions around Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations.</li>
             <li><strong>Cosmos SDK + IBC-Go:</strong> upstream work including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.</li>
             <li><strong>Trust Wallet blockatlas:</strong> 200+ public merged PRs across multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration.</li>
-            <li><strong>Public tooling:</strong> chainops, gnorender, and stellar-forge as technical proof of Go/Rust infrastructure and developer tooling depth.</li>
           </ul>
         </section>
 
@@ -1304,11 +1283,14 @@
           </div>
           <div class="tag-row" aria-label="Positioning keywords">
             <span class="tag">Go</span>
+            <span class="tag">TypeScript</span>
             <span class="tag">Cosmos SDK</span>
             <span class="tag">IBC</span>
             <span class="tag">CometBFT</span>
-            <span class="tag">Validator Infra</span>
             <span class="tag">Tooling</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Ansible</span>
+            <span class="tag">Helm Charts</span>
           </div>
         </section>
       </aside>
