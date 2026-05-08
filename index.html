@@ -1397,7 +1397,7 @@
     /* ───── Print ───── */
     @page {
       size: A4;
-      margin: 10mm;
+      margin: 0;
     }
     @media print {
       :root {
@@ -1426,7 +1426,7 @@
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 0;
+        padding: 10mm;
         border: 0;
         border-radius: 0;
         box-shadow: none;
@@ -1440,7 +1440,7 @@
         border-bottom: 1px solid var(--line-strong);
       }
       .eyebrow {
-        margin-bottom: 6px;
+        margin-bottom: 18px;
         padding: 3px 7px;
         font-size: 7.4pt;
       }
@@ -1454,7 +1454,7 @@
       .contact-card-head h2 { font-size: 7pt; }
       .avatar-mark { width: 22px; height: 22px; font-size: 12px; }
       .contact-item {
-        grid-template-columns: 12px 50px minmax(0, 1fr);
+        grid-template-columns: 12px 64px minmax(0, 1fr);
         gap: 6px;
         padding: 4px 0;
       }
@@ -2850,11 +2850,32 @@
         const isActive = btn.dataset.lang === lang;
         btn.setAttribute("aria-pressed", isActive ? "true" : "false");
       });
+
+      // Sync URL with the chosen language so it can be shared/bookmarked.
+      try {
+        const params = new URLSearchParams(location.search);
+        if (lang === "en") {
+          params.delete("lang");
+        } else {
+          params.set("lang", lang === "pt" ? "pt-BR" : lang);
+        }
+        const qs = params.toString();
+        const newUrl = location.pathname + (qs ? "?" + qs : "") + location.hash;
+        history.replaceState(null, "", newUrl);
+      } catch (_) { /* ignore in unsupported environments */ }
     }
 
     document.querySelectorAll(".lang-button").forEach((btn) => {
       btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
     });
+
+    // ─── Initial language from URL (?lang=pt-BR | pt | es | en) ───
+    (function initLangFromURL() {
+      const raw = (new URLSearchParams(location.search).get("lang") || "").toLowerCase();
+      const map = { en: "en", pt: "pt", "pt-br": "pt", ptbr: "pt", "pt_br": "pt", es: "es", "es-es": "es", "es-419": "es" };
+      const target = map[raw];
+      if (target && target !== "en") setLanguage(target);
+    })();
 
     // ─── Copy email (language-aware) ───
     const copyBtn = document.getElementById('copyEmailBtn');
