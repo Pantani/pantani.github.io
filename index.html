@@ -1449,8 +1449,8 @@
 
     /* ───── Footer ───── */
     .resume-footer {
-      margin-top: 56px;
-      padding-top: 24px;
+      margin-top: 96px;
+      padding-top: 28px;
       border-top: 1px solid var(--line);
       display: flex;
       align-items: center;
@@ -1744,11 +1744,16 @@
          PDF carries clickable / readable references back to the live site. */
       .resume-footer {
         display: block !important;
-        margin-top: 12px;
-        padding-top: 6px;
+        margin-top: 18mm;
+        padding-top: 5mm;
         border-top: 1px solid var(--line);
         font-size: 7pt;
         color: var(--muted);
+      }
+      /* Extra breathing room before the very last section bottoms out
+         against the URL footer, especially after the compact repo chips. */
+      .repo-chips {
+        margin-bottom: 6mm;
       }
       .resume-footer::after {
         content: "pantani.github.io · github.com/Pantani · linkedin.com/in/dpantani";
