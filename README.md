@@ -1,8 +1,9 @@
 # Danilo Pantani
 
-**Senior Go / Blockchain Protocol Engineer · Cosmos SDK · IBC · Validator Infrastructure · Ethereum L2**
+**Staff Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · Validator Infrastructure · Ethereum L2**
 
-São Paulo, Brazil · Remote · UTC−3 · Available for Senior & Staff Web3 roles
+São Paulo, Brazil · Remote · UTC−3 · Available for Staff & Founding Web3 roles
+Brazilian & Italian citizen · EU work-eligible · Open to remote roles and Europe-based opportunities
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [+55 11 98358-7422](tel:+5511983587422) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/)
 
 [Live HTML CV](https://pantani.github.io) · [HTML source](./index.html)
@@ -11,9 +12,11 @@ São Paulo, Brazil · Remote · UTC−3 · Available for Senior & Staff Web3 rol
 
 ## Professional Summary
 
-Senior Go Engineer focused on **blockchain protocol engineering**: Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling. 10+ years shipping production code; current work spans the AtomOne distribution module (ADR-004 Nakamoto Bonus, governance migrations), Ignite CLI maintenance (300+ merged PRs across protoanalysis, AST code generation, scaffold migrations), and upstream fixes to Cosmos SDK / IBC-Go.
+Staff Blockchain Protocol Engineer focused on **Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling**. 10+ years shipping Go in production. Maintainer-level contributor to **Ignite CLI** (300+ merged PRs); authored **ADR-004 Nakamoto Bonus** and shipped the AtomOne distribution module; upstream patches in **Cosmos SDK** and **IBC-Go**; backend lead on **Trust Wallet blockatlas** (200+ merged PRs).
 
 Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-assisted workflows (Claude Code, Codex) as a productivity multiplier, not a deliverable.
+
+Additional experience across **full-stack engineering**, React, Node.js, cloud deployments on AWS and GCP, and NoSQL-backed production systems.
 
 ---
 
@@ -22,6 +25,7 @@ Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends
 | Area | Highlights |
 |---|---|
 | **Experience** | 10+ years building production software and blockchain systems |
+| **Citizenship** | Brazilian and Italian citizen · Open to remote roles and Europe-based opportunities |
 | **Primary stack** | Go / Golang, Cosmos SDK, IBC, CometBFT, distributed systems |
 | **Open source** | 300+ public merged PRs in Ignite CLI; 200+ public merged PRs in Trust Wallet blockatlas |
 | **Protocol scope** | Cosmos SDK modules, IBC, validator infrastructure, AtomOne, Cosmos Hub, Ignite Network / SPN |
@@ -36,12 +40,13 @@ Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends
 | Area | Technologies and Focus |
 |---|---|
 | **Blockchain & Protocols** | Cosmos SDK, CometBFT, Tendermint, IBC, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
-| **Backend & Distributed Systems** | Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems |
+| **Backend & Distributed Systems** | Go, Node.js, gRPC, REST APIs, full-stack engineering, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems |
 | **Validator Infrastructure & Operations** | Validator-as-a-Service workflows, consumer-chain lifecycle handling, misbehaviour validation, validator-commission updates, full-node operations across multiple Cosmos chains |
 | **Tooling & Developer Experience** | CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows |
-| **Infrastructure & DevOps** | Docker, Kubernetes, GitHub Actions, CI/CD, Prometheus, Grafana, Helm, full nodes, observability, production operations |
+| **Frontend & Full-Stack** | React, TypeScript, full-stack engineering, developer portals, dashboards, internal tools, Web3 application interfaces |
+| **Infrastructure & DevOps** | Docker, Kubernetes, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, Helm, full nodes, observability, production operations |
 | **AI-Assisted Engineering** | Daily-driver use of Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
-| **Languages & Storage** | Go, Rust, TypeScript, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB |
+| **Languages & Storage** | Go, Rust, TypeScript, Solidity, Python · PostgreSQL, Redis, LevelDB, InfluxDB, NoSQL |
 
 ---
 
@@ -163,10 +168,10 @@ Speaker on Ethereum, zk-systems, Web3, ZK-SNARKs, and Layer-2 — including ETH 
 ## Languages
 
 - Portuguese — Native
-- English — Fluent (professional working proficiency)
-- Spanish — Fluent (professional working proficiency)
+- English — Advanced (professional working proficiency)
+- Spanish — Advanced (professional working proficiency)
 
-**Technical keywords:** Go, Rust, TypeScript, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, zk-SNARKs, Protobuf, gRPC, Kubernetes, Prometheus, Helm, Claude Code, Codex.
+**Technical keywords:** Go, Rust, TypeScript, Node.js, React, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, zk-SNARKs, Protobuf, gRPC, Kubernetes, Prometheus, Helm, AWS, GCP, Cloud Deployments, Full-Stack, NoSQL, Claude Code, Codex.
 
 ---
 
