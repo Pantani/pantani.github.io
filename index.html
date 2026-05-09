@@ -1537,7 +1537,9 @@
     /* ───── Print ───── */
     @page {
       size: A4;
-      margin: 0;
+      /* 10mm margin on every page so content gets breathing room
+         on every page break, not only on the first/last page. */
+      margin: 10mm;
     }
     @media print {
       :root {
@@ -1566,7 +1568,10 @@
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 10mm;
+        /* Padding zeroed because @page already provides the 10mm margin
+           around every printed page. Keeping both would double the gutter
+           on page 1 only and look inconsistent across page breaks. */
+        padding: 0;
         border: 0;
         border-radius: 0;
         box-shadow: none;
@@ -1584,22 +1589,38 @@
         padding: 3px 7px;
         font-size: 7.4pt;
       }
-      h1 { font-size: 28pt; line-height: 0.96; margin-bottom: 6px; }
-      .title { font-size: 11.5pt; margin-bottom: 8px; }
-      .hero-summary { font-size: 8.6pt; line-height: 1.32; margin-bottom: 0; }
+      h1 { font-size: 26pt; line-height: 0.96; margin-bottom: 4px; }
+      .title { font-size: 11pt; margin-bottom: 6px; }
+      .hero-pitch {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 9.4pt;
+        line-height: 1.3;
+        margin: 0 0 6px;
+        color: var(--ink);
+      }
+      .hero-summary { font-size: 8.4pt; line-height: 1.32; margin-bottom: 0; }
+      .hero-summary a { color: inherit; text-decoration: none; }
       .ctas { display: none; }
-      .contact-card { padding: 10px 12px; border-radius: 10px; background: #fff; box-shadow: none; }
+      .contact-card { padding: 9px 10px; border-radius: 10px; background: #fff; box-shadow: none; }
       .contact-card::after { display: none; }
-      .contact-card-head { margin-bottom: 7px; padding-bottom: 7px; }
+      .contact-card-head { margin-bottom: 6px; padding-bottom: 6px; }
       .contact-card-head h2 { font-size: 7pt; }
       .avatar-mark { width: 22px; height: 22px; font-size: 12px; }
       .contact-item {
-        grid-template-columns: 12px 80px minmax(0, 1fr);
-        gap: 6px;
-        padding: 4px 0;
+        grid-template-columns: 11px 56px minmax(0, 1fr);
+        gap: 5px;
+        padding: 3px 0;
       }
-      .contact-label { font-size: 6.5pt; }
-      .contact-value { font-size: 8.4pt; }
+      .contact-item .ico { width: 11px; height: 11px; }
+      .contact-label { font-size: 6.2pt; letter-spacing: 0.04em; }
+      .contact-value {
+        font-size: 7.6pt;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+        line-height: 1.25;
+      }
+      .contact-value a { word-break: break-word; overflow-wrap: anywhere; }
 
       .proof-strip {
         margin: 12px 0 0;
@@ -1617,16 +1638,16 @@
       .proof-value .small { font-size: 11pt; }
       .proof-label { font-size: 7.4pt; line-height: 1.25; }
 
-      .section { margin-top: 18px; }
+      .section { margin-top: 13px; }
       .section-title {
-        gap: 10px;
-        margin-bottom: 9px;
+        gap: 9px;
+        margin-bottom: 7px;
         /* Keep the title attached to its first item to prevent
            orphaned section headers at the bottom of a page. */
         break-after: avoid;
         page-break-after: avoid;
       }
-      .section-title h2 { font-size: 14pt; }
+      .section-title h2 { font-size: 13pt; }
       .section-title .num { font-size: 7pt; }
 
       /* ─── Print: replace the CSS grid body with floats ───
@@ -1679,21 +1700,21 @@
       .os-card .os-badge { font-size: 6.6pt; padding: 2px 5px; }
       .os-card p { font-size: 7.2pt; line-height: 1.28; }
 
-      .job { padding: 0 0 11px 18px; }
+      .job { padding: 0 0 8px 16px; }
       .job::before { left: 4px; width: 1px; }
-      .job::after { width: 8px; height: 8px; box-shadow: 0 0 0 2px #fff; top: 4px; }
+      .job::after { width: 7px; height: 7px; box-shadow: 0 0 0 2px #fff; top: 4px; }
       .job.featured::after { box-shadow: 0 0 0 2px #fff; }
-      .job-card { padding: 9px 11px; border-radius: 8px; background: #fff !important; box-shadow: none; }
+      .job-card { padding: 7px 10px; border-radius: 8px; background: #fff !important; box-shadow: none; }
       .job-card:hover { transform: none; box-shadow: none; }
       .job.featured .job-card { background: var(--paper-2) !important; }
-      .job-head { gap: 9px; margin-bottom: 4px; }
-      .job h3 { font-size: 9.8pt; }
-      .role { font-size: 7.6pt; }
-      .job-meta { font-size: 7pt; }
-      .job-meta .now { padding: 1px 5px; font-size: 6.4pt; }
-      .job ul { padding-left: 0.95rem; }
-      .job ul li { font-size: 7.6pt; line-height: 1.28; margin-bottom: 2.5px; }
-      .earlier-roles { font-size: 7.6pt; line-height: 1.28; }
+      .job-head { gap: 8px; margin-bottom: 3px; }
+      .job h3 { font-size: 9.4pt; }
+      .role { font-size: 7.4pt; }
+      .job-meta { font-size: 6.8pt; }
+      .job-meta .now { padding: 1px 5px; font-size: 6.2pt; }
+      .job ul { padding-left: 0.9rem; margin: 2px 0 0; }
+      .job ul li { font-size: 7.4pt; line-height: 1.26; margin-bottom: 2px; }
+      .earlier-roles { font-size: 7.4pt; line-height: 1.26; }
 
       .project-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
       .project-card { padding: 7px 9px; border-radius: 7px; background: #fff !important; box-shadow: none; }
@@ -1706,21 +1727,56 @@
       .project-links { gap: 0 6px; margin-bottom: 3px; }
 
       .sidebar { gap: 8px; }
-      .side-panel { padding: 9px 11px; border-radius: 9px; background: #fff !important; box-shadow: none; }
-      .side-panel-head { margin-bottom: 7px; padding-bottom: 5px; gap: 6px; }
-      .side-panel-head h2 { font-size: 9.8pt; }
+      .side-panel { padding: 8px 10px; border-radius: 9px; background: #fff !important; box-shadow: none; }
+      .side-panel-head { margin-bottom: 6px; padding-bottom: 4px; gap: 6px; }
+      .side-panel-head h2 { font-size: 9.4pt; }
       .side-panel-head .sp-icon { width: 16px; height: 16px; }
       .side-panel-head .sp-icon svg { width: 9px; height: 9px; }
-      .impact-list li { padding: 5px 0 5px 12px; font-size: 7.2pt; line-height: 1.28; }
-      .impact-list li::before { width: 4px; height: 4px; top: 11px; }
+      .summary-body p {
+        font-size: 7.4pt;
+        line-height: 1.32;
+        margin: 0 0 4px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .summary-body p:last-child { margin-bottom: 0; }
+      .impact-list li {
+        padding: 4px 0 4px 11px;
+        font-size: 7.2pt;
+        line-height: 1.26;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .impact-list li::before { width: 4px; height: 4px; top: 9px; }
       .impact-list li:first-child::before { top: 5px; }
-      .edu-group { padding: 5px 0; }
-      .edu-group h3 { font-size: 7.8pt; margin-bottom: 2px; }
-      .edu-group p { font-size: 7pt; line-height: 1.28; }
-      .lang-list { gap: 5px; }
-      .lang-row strong { font-size: 7.6pt; }
-      .lang-row span { font-size: 6.8pt; }
+      .edu-group { padding: 4px 0; break-inside: avoid; }
+      .edu-group h3 { font-size: 7.6pt; margin-bottom: 2px; }
+      .edu-group p { font-size: 6.9pt; line-height: 1.26; }
+      .lang-list { gap: 4px; }
+      .lang-row { break-inside: avoid; }
+      .lang-row strong { font-size: 7.4pt; }
+      .lang-row span { font-size: 6.6pt; }
       .tag-row { display: none; }
+
+      /* Selected Repositories — compact print */
+      .repo-intro {
+        font-size: 7.4pt;
+        line-height: 1.3;
+        margin: 0 0 4px;
+        max-width: 100%;
+      }
+      .repo-chips {
+        gap: 4px 5px;
+        margin: 6px 0 0;
+      }
+      a.tag.repo-chip {
+        font-size: 6.8pt;
+        padding: 2px 6px 2px 5px;
+        background: #fff !important;
+        border-color: var(--line-strong);
+        text-decoration: none;
+      }
+      a.tag.repo-chip::before { font-size: 7pt; margin-right: 3px; opacity: 0.6; }
 
       a { color: inherit; text-decoration: none; background-image: none !important; }
       .contact-value a, .project-link {
@@ -1730,12 +1786,14 @@
       }
 
       /* Keep small UNITS together (jobs, project cards, OS cards, etc.).
-         Removed .side-panel from this list because the Summary side-panel
-         is tall enough that "avoid" forced the whole sidebar onto page 2,
-         leaving the right half of page 1 blank. Letting the Summary panel
-         (single paragraph) split mid-text is fine; Education and Languages
-         panels are kept together via their inner .edu-group rule. */
-      .job, .job-card, .project-card, .os-card, .expertise-card, .edu-group, .proof-card {
+         Removed the OUTER .side-panel from this list intentionally —
+         a single tall side-panel forced the whole sidebar onto page 2
+         and left the right half of page 1 blank. Inside the Summary
+         panel, individual <p> children carry their own break-inside:
+         avoid so paragraphs never split mid-word. Education / Languages
+         keep cohesion via .edu-group / .lang-row. */
+      .job, .job-card, .project-card, .os-card, .expertise-card,
+      .edu-group, .proof-card, .repo-chips {
         break-inside: avoid;
         page-break-inside: avoid;
       }
