@@ -494,6 +494,18 @@
       margin: 0 9px 4px;
     }
 
+    .hero-pitch {
+      max-width: 640px;
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.6vw, 20px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.005em;
+    }
+
     .hero-summary {
       max-width: 640px;
       color: var(--muted);
@@ -1189,6 +1201,19 @@
       background: var(--plum-soft);
     }
 
+    /* ───── Sidebar Summary (3-paragraph form) ───── */
+    .summary-body p {
+      margin: 0 0 9px;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .summary-body p:last-child { margin-bottom: 0; }
+    .summary-body strong {
+      color: var(--ink-strong);
+      font-weight: 600;
+    }
+
     /* ───── Compact repository chips ───── */
     .repo-intro {
       margin: 4px 0 0;
@@ -1777,6 +1802,7 @@
         <p class="eyebrow"><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.eyebrow">Available · Remote · UTC−3 · EU work-eligible (IT) · Staff &amp; Founding Web3 roles</span></p>
         <h1>Danilo <span class="name-accent">Pantani</span></h1>
         <p class="title" data-i18n-html="hero.title">Staff Blockchain Protocol Engineer · Go<span class="pipe" aria-hidden="true"></span>Cosmos SDK · IBC · Validator Infrastructure · Ethereum L2</p>
+        <p class="hero-pitch" data-i18n="hero.pitch">I help Web3 teams ship protocol-grade Go: from ADRs to mainnet — Cosmos SDK modules, IBC integrations, validator infrastructure, and developer tooling that other engineers actually use.</p>
         <p class="hero-summary" data-i18n-html="hero.summary">Maintainer-level contributor to <strong><a href="https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged" target="_blank" rel="noopener">Ignite CLI</a></strong> (300+ merged PRs); protocol contributor to <strong>AtomOne</strong> — authored <strong>ADR-004 Nakamoto Bonus</strong> and shipped the distribution module. Upstream patches in <strong>Cosmos SDK</strong> and <strong>IBC-Go</strong>; backend lead on <strong><a href="https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged" target="_blank" rel="noopener">Trust Wallet blockatlas</a></strong> (200+ merged PRs). <strong>10+ years</strong> shipping Go in production.</p>
 
         <div class="ctas">
@@ -1863,8 +1889,8 @@
       </div>
       <div class="proof-card">
         <svg class="proof-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5z"/><path d="m12 7 4.5 2.5v5L12 17l-4.5-2.5v-5L12 7z"/></svg>
-        <span class="proof-value">L1<span class="small">/</span>L2</span>
-        <span class="proof-label" data-i18n="proof.l1l2">Cosmos SDK, IBC, validator infra, wallets &amp; rollups</span>
+        <span class="proof-value">10<span class="small">+</span></span>
+        <span class="proof-label" data-i18n="proof.chains">chains integrated or operated across Cosmos, Ethereum &amp; wallet backends</span>
       </div>
     </section>
 
@@ -2161,7 +2187,11 @@
             </span>
             <h2 id="summary-title" data-i18n="summary.title">Summary</h2>
           </div>
-          <p data-i18n-html="summary.body" style="margin: 0; color: var(--ink); font-size: 13px; line-height: 1.6;">Senior Go Engineer focused on <strong style="color: var(--ink-strong); font-weight: 600;">blockchain protocol engineering</strong>: Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling. <strong style="color: var(--ink-strong); font-weight: 600;">10+ years</strong> shipping production code; current work spans the AtomOne distribution module (ADR-004 Nakamoto Bonus, governance migrations), Ignite CLI maintenance (300+ merged PRs across protoanalysis, AST code generation, scaffold migrations), and upstream fixes to Cosmos SDK / IBC-Go. Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-assisted workflows (Claude Code, Codex) as a productivity multiplier. Additional experience across <strong style="color: var(--ink-strong); font-weight: 600;">full-stack engineering</strong>, React, Node.js, cloud deployments on AWS and GCP, and NoSQL-backed production systems.</p>
+          <div class="summary-body" data-i18n-html="summary.body">
+            <p>Staff blockchain protocol engineer focused on <strong>Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling</strong>.</p>
+            <p>Current work: AtomOne distribution module (authored <strong>ADR-004 Nakamoto Bonus</strong>), Ignite CLI maintenance (300+ merged PRs), upstream Cosmos SDK / IBC-Go patches.</p>
+            <p>Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability. AI-native workflows as a productivity multiplier.</p>
+          </div>
         </section>
 
         <section class="side-panel" aria-labelledby="impact-title">
@@ -2381,6 +2411,7 @@
 
         "hero.eyebrow": "Available · Remote · UTC−3 · EU work-eligible (IT) · Staff & Founding Web3 roles",
         "hero.title": "Staff Blockchain Protocol Engineer · Go<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Validator Infrastructure · Ethereum L2",
+        "hero.pitch": "I help Web3 teams ship protocol-grade Go: from ADRs to mainnet — Cosmos SDK modules, IBC integrations, validator infrastructure, and developer tooling that other engineers actually use.",
         "hero.summary": "Maintainer-level contributor to <strong><a href=\"https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Ignite CLI</a></strong> (300+ merged PRs); protocol contributor to <strong>AtomOne</strong> — authored <strong>ADR-004 Nakamoto Bonus</strong> and shipped the distribution module. Upstream patches in <strong>Cosmos SDK</strong> and <strong>IBC-Go</strong>; backend lead on <strong><a href=\"https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Trust Wallet blockatlas</a></strong> (200+ merged PRs). <strong>10+ years</strong> shipping Go in production.",
         "hero.cta.github": "View GitHub",
         "hero.cta.linkedin": "View LinkedIn",
@@ -2401,7 +2432,7 @@
         "proof.years": "years building production software & blockchain systems",
         "proof.ignitePRs": "public merged PRs across Ignite CLI & Cosmos SDK tooling",
         "proof.blockatlasPRs": "public merged PRs in Trust Wallet blockatlas",
-        "proof.l1l2": "Cosmos SDK, IBC, validator infra, wallets & rollups",
+        "proof.chains": "chains integrated or operated across Cosmos, Ethereum & wallet backends",
 
         "expertise.title": "Core Expertise",
         "expertise.blockchain.title": "Blockchain & Protocols",
@@ -2486,7 +2517,7 @@
         "seeking.b3": "Fully remote, UTC−3 friendly. <strong>EU work-eligible</strong> (Italian citizen) and open to occasional travel.",
 
         "summary.title": "Summary",
-        "summary.body": "Senior Go Engineer focused on <strong style=\"color: var(--ink-strong); font-weight: 600;\">blockchain protocol engineering</strong>: Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling. <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ years</strong> shipping production code; current work spans the AtomOne distribution module (ADR-004 Nakamoto Bonus, governance migrations), Ignite CLI maintenance (300+ merged PRs across protoanalysis, AST code generation, scaffold migrations), and upstream fixes to Cosmos SDK / IBC-Go. Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-assisted workflows (Claude Code, Codex) as a productivity multiplier. Additional experience across <strong style=\"color: var(--ink-strong); font-weight: 600;\">full-stack engineering</strong>, React, Node.js, cloud deployments on AWS and GCP, and NoSQL-backed production systems.",
+        "summary.body": "<p>Staff blockchain protocol engineer focused on <strong>Cosmos SDK, IBC, CometBFT, validator infrastructure, and developer tooling</strong>.</p><p>Current work: AtomOne distribution module (authored <strong>ADR-004 Nakamoto Bonus</strong>), Ignite CLI maintenance (300+ merged PRs), upstream Cosmos SDK / IBC-Go patches.</p><p>Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability. AI-native workflows as a productivity multiplier.</p>",
 
         "highlights.title": "Highlights",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.",
@@ -2545,6 +2576,7 @@
 
         "hero.eyebrow": "Disponível · Remoto · UTC−3 · Elegível para EU (IT) · Vagas Staff & Founding Web3",
         "hero.title": "Engenheiro Staff de Protocolo Blockchain · Go<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Infraestrutura de Validadores · Ethereum L2",
+        "hero.pitch": "Ajudo times Web3 a entregar Go de nível protocolo: do ADR à mainnet — módulos Cosmos SDK, integrações IBC, infraestrutura de validadores e tooling para devs que outros engenheiros realmente usam.",
         "hero.summary": "Contribuidor de nível mantenedor do <strong><a href=\"https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Ignite CLI</a></strong> (300+ PRs públicos mergeados); contribuidor de protocolo no <strong>AtomOne</strong> — autor do <strong>ADR-004 Nakamoto Bonus</strong> e responsável pelo módulo de distribuição. Patches upstream no <strong>Cosmos SDK</strong> e <strong>IBC-Go</strong>; backend lead no <strong><a href=\"https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Trust Wallet blockatlas</a></strong> (200+ PRs mergeados). <strong>10+ anos</strong> entregando Go em produção.",
         "hero.cta.github": "Ver GitHub",
         "hero.cta.linkedin": "Ver LinkedIn",
@@ -2565,7 +2597,7 @@
         "proof.years": "anos entregando software em produção e sistemas blockchain",
         "proof.ignitePRs": "PRs públicos mergeados no Ignite CLI e em ferramentas Cosmos SDK",
         "proof.blockatlasPRs": "PRs públicos mergeados no Trust Wallet blockatlas",
-        "proof.l1l2": "Cosmos SDK, IBC, infra de validadores, wallets e rollups",
+        "proof.chains": "chains integradas ou operadas em Cosmos, Ethereum e backends de wallet",
 
         "expertise.title": "Áreas de Especialização",
         "expertise.blockchain.title": "Blockchain e Protocolos",
@@ -2650,7 +2682,7 @@
         "seeking.b3": "Remoto integral, UTC−3 friendly. <strong>Elegível para EU</strong> (cidadão italiano) e disponível para viagens ocasionais.",
 
         "summary.title": "Resumo",
-        "summary.body": "Engenheiro Go Sênior focado em <strong style=\"color: var(--ink-strong); font-weight: 600;\">engenharia de protocolo blockchain</strong>: Cosmos SDK, IBC, CometBFT, infraestrutura de validadores e tooling para developers. <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ anos</strong> entregando código em produção; trabalho atual envolve o módulo de distribuição do AtomOne (ADR-004 Nakamoto Bonus, migrações de governança), manutenção do Ignite CLI (300+ PRs públicos mergeados em protoanalysis, geração de código com AST e migrações de scaffold) e correções upstream no Cosmos SDK / IBC-Go. Confortável em todo o stack — Ethereum L2 (Hermez zk-SNARKs), backends de wallet (Trust Wallet, Mercado Bitcoin), Kubernetes, observabilidade — e uso fluxos com IA (Claude Code, Codex) como multiplicador de produtividade. Experiência adicional em <strong style=\"color: var(--ink-strong); font-weight: 600;\">engenharia full-stack</strong>, React, Node.js, deploys em cloud na AWS e GCP, e sistemas em produção com NoSQL.",
+        "summary.body": "<p>Engenheiro Staff de protocolo blockchain focado em <strong>Cosmos SDK, IBC, CometBFT, infraestrutura de validadores e tooling para devs</strong>.</p><p>Trabalho atual: módulo de distribuição do AtomOne (autor do <strong>ADR-004 Nakamoto Bonus</strong>), manutenção do Ignite CLI (300+ PRs mergeados) e correções upstream no Cosmos SDK / IBC-Go.</p><p>Confortável em todo o stack — Ethereum L2 (Hermez zk-SNARKs), backends de wallet (Trust Wallet, Mercado Bitcoin), Kubernetes, observabilidade. Fluxos AI-native como multiplicador de produtividade.</p>",
 
         "highlights.title": "Destaques",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos mergeados em protoanalysis, geração de código com AST, migrações de scaffold e UX de CLI.",
@@ -2709,6 +2741,7 @@
 
         "hero.eyebrow": "Disponible · Remoto · UTC−3 · Elegible UE (IT) · Puestos Staff & Founding Web3",
         "hero.title": "Ingeniero Staff de Protocolo Blockchain · Go<span class=\"pipe\" aria-hidden=\"true\"></span>Cosmos SDK · IBC · Infraestructura de Validadores · Ethereum L2",
+        "hero.pitch": "Ayudo a equipos Web3 a entregar Go de nivel protocolo: del ADR a mainnet — módulos Cosmos SDK, integraciones IBC, infraestructura de validadores y tooling para devs que otros ingenieros realmente usan.",
         "hero.summary": "Contribuidor de nivel mantenedor en <strong><a href=\"https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Ignite CLI</a></strong> (300+ PRs públicos integrados); contribuidor de protocolo en <strong>AtomOne</strong> — autor del <strong>ADR-004 Nakamoto Bonus</strong> y responsable del módulo de distribución. Patches upstream en <strong>Cosmos SDK</strong> e <strong>IBC-Go</strong>; backend lead en <strong><a href=\"https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Trust Wallet blockatlas</a></strong> (200+ PRs integrados). <strong>10+ años</strong> entregando Go en producción.",
         "hero.cta.github": "Ver GitHub",
         "hero.cta.linkedin": "Ver LinkedIn",
@@ -2729,7 +2762,7 @@
         "proof.years": "años entregando software en producción y sistemas blockchain",
         "proof.ignitePRs": "PRs públicos integrados en Ignite CLI y herramientas de Cosmos SDK",
         "proof.blockatlasPRs": "PRs públicos integrados en Trust Wallet blockatlas",
-        "proof.l1l2": "Cosmos SDK, IBC, infra de validadores, wallets y rollups",
+        "proof.chains": "chains integradas u operadas en Cosmos, Ethereum y backends de wallet",
 
         "expertise.title": "Áreas de Especialización",
         "expertise.blockchain.title": "Blockchain y Protocolos",
@@ -2814,7 +2847,7 @@
         "seeking.b3": "Remoto integral, UTC−3 friendly. <strong>Elegible para UE</strong> (ciudadano italiano) y disponible para viajes ocasionales.",
 
         "summary.title": "Resumen",
-        "summary.body": "Ingeniero Go Senior enfocado en <strong style=\"color: var(--ink-strong); font-weight: 600;\">ingeniería de protocolo blockchain</strong>: Cosmos SDK, IBC, CometBFT, infraestructura de validadores y tooling para developers. <strong style=\"color: var(--ink-strong); font-weight: 600;\">10+ años</strong> entregando código en producción; trabajo actual en el módulo de distribución de AtomOne (ADR-004 Nakamoto Bonus, migraciones de gobernanza), mantenimiento de Ignite CLI (300+ PRs públicos integrados en protoanalysis, generación de código con AST y migraciones de scaffold) y correcciones upstream en Cosmos SDK / IBC-Go. Cómodo en todo el stack — Ethereum L2 (Hermez zk-SNARKs), backends de wallet (Trust Wallet, Mercado Bitcoin), Kubernetes, observabilidad — y uso flujos con IA (Claude Code, Codex) como multiplicador de productividad. Experiencia adicional en <strong style=\"color: var(--ink-strong); font-weight: 600;\">ingeniería full-stack</strong>, React, Node.js, despliegues en cloud en AWS y GCP, y sistemas en producción con NoSQL.",
+        "summary.body": "<p>Ingeniero Staff de protocolo blockchain enfocado en <strong>Cosmos SDK, IBC, CometBFT, infraestructura de validadores y tooling para devs</strong>.</p><p>Trabajo actual: módulo de distribución de AtomOne (autor del <strong>ADR-004 Nakamoto Bonus</strong>), mantenimiento de Ignite CLI (300+ PRs integrados) y correcciones upstream en Cosmos SDK / IBC-Go.</p><p>Cómodo en todo el stack — Ethereum L2 (Hermez zk-SNARKs), backends de wallet (Trust Wallet, Mercado Bitcoin), Kubernetes, observabilidad. Flujos AI-native como multiplicador de productividad.</p>",
 
         "highlights.title": "Logros Destacados",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados en protoanalysis, generación de código con AST, migraciones de scaffold y UX de CLI.",
