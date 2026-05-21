@@ -2596,7 +2596,12 @@
     }
 
     // ─── Print ───
-    document.getElementById('printBtn').addEventListener('click', () => window.print());
+    document.getElementById('printBtn').addEventListener('click', () => {
+      const prev = document.title;
+      document.title = 'CV Danilo Pantani - Full-Stack Blockchain Engineer';
+      window.print();
+      document.title = prev;
+    });
 
     // ─── Share preview: reveal on demand and scroll to it ───
     document.getElementById('shareBtn').addEventListener('click', () => {

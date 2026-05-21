@@ -1,6 +1,6 @@
 # Danilo Pantani
 
-**Staff Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · validator infrastructure**
+**Staff Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · Full-Stack · DevOps**
 
 São Paulo, Brazil · Remote · UTC−3 · Open to new roles — Blockchain Protocol, Go & Web3 Infrastructure (full-stack & DevOps range)
 Brazilian & Italian citizen · EU work-eligible · Open to remote roles and Europe-based opportunities
@@ -14,7 +14,7 @@ Brazilian & Italian citizen · EU work-eligible · Open to remote roles and Euro
 
 Staff-level Blockchain Protocol Engineer with 10+ years shipping production **Go**. I build **Cosmos SDK modules, IBC, and validator infrastructure** from ADR to mainnet — maintainer-level contributor to **Ignite CLI** (300+ merged PRs), author of **ADR-004 Nakamoto Bonus** and the AtomOne distribution module, with upstream patches in **Cosmos SDK** and **IBC-Go**; backend lead on **Trust Wallet blockatlas** (200+ merged PRs). Backend is the core — distributed systems, gRPC/REST APIs, high-concurrency architecture — with the **full-stack (TypeScript, React) and DevOps (Docker, Kubernetes, Terraform, Pulumi)** range to own a feature end-to-end.
 
-Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-assisted workflows (Claude Code, Codex) as a productivity multiplier, not a deliverable.
+Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-native workflows (Claude Code, Codex) as a productivity multiplier, not a deliverable.
 
 Additional experience across **full-stack engineering** — JavaScript, TypeScript, React, Vue, Angular, and PHP — plus Node.js, cloud deployments on AWS and GCP, and NoSQL-backed production systems.
 
@@ -31,7 +31,7 @@ Additional experience across **full-stack engineering** — JavaScript, TypeScri
 | **Protocol scope** | Cosmos SDK modules, IBC, validator infrastructure, AtomOne, Cosmos Hub, Ignite Network / SPN |
 | **Validator infra** | Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates, full-node operations |
 | **Production scope** | Wallets, custodial systems, multi-chain indexing, full nodes, Ethereum L2 / zk-SNARK rollup infrastructure |
-| **AI-assisted engineering** | Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
+| **AI-native workflows** | Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
 
 ---
 
@@ -39,12 +39,12 @@ Additional experience across **full-stack engineering** — JavaScript, TypeScri
 
 | Area | Technologies and Focus |
 |---|---|
-| **Blockchain & Protocols** | Cosmos SDK, CometBFT, Tendermint, IBC, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
-| **Backend & Distributed Systems** | Go, Node.js, gRPC, REST APIs, full-stack engineering, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems, Validator-as-a-Service workflows, consumer-chain lifecycle, misbehaviour validation, validator-commission updates |
+| **Blockchain & Protocols** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
+| **Backend & Distributed Systems** | Go, Node.js, gRPC, REST APIs, full-stack engineering, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems, Validator-as-a-Service workflows, consumer-chain lifecycle, misbehaviour validation, and validator-commission updates |
 | **Tooling & Developer Experience** | CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows |
-| **Frontend & Full-Stack** | JavaScript, TypeScript, React, Vue, Angular, PHP, responsive UI, component architecture, full-stack engineering, developer portals, dashboards, internal tools, Web3 application interfaces |
-| **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations, observability, production operations |
-| **AI-Assisted Engineering** | Daily-driver use of Claude Code, Codex, Cursor, and GitHub Copilot for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
+| **Front-end & Full-Stack** | JavaScript, TypeScript, React, Vue, Angular, PHP, responsive UI, component architecture, and full-stack delivery from API to interface |
+| **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations, observability, and production operations |
+| **AI-Native Workflows** | Daily-driver use of Claude Code, Codex, Cursor, and GitHub Copilot for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
 | **Languages & Storage** | Go, Java, Python, C++, C#, Objective-C, TypeScript, JavaScript, PHP, Solidity · PostgreSQL, Redis, LevelDB, InfluxDB, NoSQL |
 
 ---
@@ -173,7 +173,7 @@ Speaker on Web3, Ethereum, ZK-SNARKs, and Layer-2 — including ETH São Paulo.
 - English — Advanced (professional working proficiency)
 - Spanish — Advanced (professional working proficiency)
 
-**Technical keywords:** Go, Java, Python, C++, C#, Objective-C, OpenCV, Computer Vision, TypeScript, JavaScript, Node.js, React, Vue, Angular, PHP, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, zk-SNARKs, Protobuf, gRPC, Docker, Kubernetes, Terraform, Pulumi, Ansible, Prometheus, Helm, AWS, GCP, Cloud Deployments, Full-Stack, NoSQL, Claude Code, Codex, Cursor, GitHub Copilot, Prompt Engineering, GitHub Actions, CI/CD.
+**Technical keywords:** Go, Java, Python, C++, C#, Objective-C, OpenCV, Computer Vision, TypeScript, JavaScript, Node.js, React, Vue, Angular, PHP, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, Solana, zk-SNARKs, Protobuf, gRPC, Docker, Kubernetes, Terraform, Pulumi, Ansible, Prometheus, Helm, AWS, GCP, Cloud Deployments, Full-Stack, NoSQL, Claude Code, Codex, Cursor, GitHub Copilot, Prompt Engineering, GitHub Actions, CI/CD.
 
 ---
 
