@@ -487,6 +487,7 @@
       font-style: italic;
       font-weight: 400;
       color: var(--plum);
+      padding-right: 0.2em;
     }
 
     .title {
@@ -1631,9 +1632,10 @@
                 background-clip: text;
         -webkit-text-fill-color: transparent;
                 color: transparent;
-        /* Italic overhang of the final glyph would be clipped by
-           background-clip: text — pad the box so it isn't cut off. */
-        padding-right: 0.12em;
+        /* Italic overhang and tight line-height can clip the dot of the final
+           "i" — pad the box on top and right so nothing is cut off. */
+        padding-top: 0.1em;
+        padding-right: 0.2em;
       }
     }
 
