@@ -8,7 +8,7 @@
   <meta name="description" content="Staff Blockchain Protocol Engineer — Go, Cosmos SDK, IBC, CometBFT, validator infrastructure. Ignite CLI maintainer (300+ PRs), ADR-004 author. 10+ yrs. Remote, UTC−3, EU.">
   <meta name="author" content="Danilo Pantani">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="keywords" content="Danilo Pantani, Staff Blockchain Protocol Engineer, Blockchain Protocol Engineer, Cosmos SDK Engineer, IBC Engineer, Go Blockchain Engineer, Golang Engineer, Staff Go Engineer, Senior Go Engineer, CometBFT, Tendermint, AtomOne, ADR-004 Nakamoto Bonus, Ignite CLI Maintainer, Validator Infrastructure, Web3 Infrastructure Engineer, Distributed Systems Engineer, Developer Tooling, Ethereum L2, zk-SNARKs, Hermez, Trust Wallet blockatlas, Protobuf, gRPC, Kubernetes, Docker, Terraform, Wallet Backend Engineer, Indexing Engineer, Founding Engineer, Remote Blockchain Engineer Brazil, Full-Stack Engineer, React, TypeScript, Node.js, Java, Python, C++, C#, Objective-C, OpenCV, Computer Vision, Claude Code, Codex, Cursor, GitHub Copilot, Prompt Engineering, GitHub Actions, CI/CD, EU work-eligible, São Paulo, Brazil">
+  <meta name="keywords" content="Danilo Pantani, Staff Blockchain Protocol Engineer, Cosmos SDK Engineer, IBC Engineer, Go Blockchain Engineer, CometBFT, AtomOne, ADR-004 Nakamoto Bonus, Ignite CLI Maintainer, Validator Infrastructure, Distributed Systems Engineer, Developer Tooling, Ethereum L2, zk-SNARKs, Remote Blockchain Engineer, EU work-eligible">
   <meta name="theme-color" content="#5b3a7a" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1c1814" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://pantani.github.io/">
@@ -24,8 +24,8 @@
   <meta property="og:locale:alternate" content="es_ES">
   <meta property="profile:first_name" content="Danilo">
   <meta property="profile:last_name" content="Pantani">
-  <meta property="og:image" content="https://pantani.github.io/og-image.jpg?v=20260521d">
-  <meta property="og:image:secure_url" content="https://pantani.github.io/og-image.jpg?v=20260521d">
+  <meta property="og:image" content="https://pantani.github.io/og-image.jpg?v=20260521e">
+  <meta property="og:image:secure_url" content="https://pantani.github.io/og-image.jpg?v=20260521e">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -36,7 +36,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Danilo Pantani — Staff Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · Full-Stack · DevOps">
   <meta name="twitter:description" content="Go · Cosmos SDK · IBC · CometBFT · validator infrastructure · Ignite CLI maintainer (300+ PRs) · ADR-004 author · upstream Cosmos SDK &amp; IBC-Go · 10+ yrs · Remote, UTC−3, EU.">
-  <meta name="twitter:image" content="https://pantani.github.io/og-image.jpg?v=20260521d">
+  <meta name="twitter:image" content="https://pantani.github.io/og-image.jpg?v=20260521e">
   <meta name="twitter:image:alt" content="Danilo Pantani — Staff Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · Full-Stack · DevOps">
 
   <!--
@@ -57,7 +57,7 @@
       "givenName": "Danilo",
       "familyName": "Pantani",
       "url": "https://pantani.github.io/",
-      "image": "https://pantani.github.io/og-image.jpg?v=20260521d",
+      "image": "https://pantani.github.io/og-image.jpg?v=20260521e",
       "email": "mailto:danpantani@gmail.com",
       "jobTitle": "Staff Blockchain Protocol Engineer (Go)",
       "description": "Staff-level blockchain protocol engineer with 10+ years shipping production Go. Builds Cosmos SDK modules, IBC, and validator infrastructure from ADR to mainnet: maintainer-level contributor to Ignite CLI (300+ merged PRs), author of AtomOne's ADR-004 Nakamoto Bonus and the AtomOne distribution module, with upstream patches in Cosmos SDK and IBC-Go. Backend is the core — distributed systems, gRPC/REST APIs, high-concurrency Go — with full-stack (TypeScript/React) and DevOps (Docker/Kubernetes/Terraform) range to own a feature end-to-end. Backend lead on Trust Wallet blockatlas (200+ merged PRs).",
@@ -115,7 +115,6 @@
       },
       "knowsAbout": [
         "Go",
-        "Golang",
         "Cosmos SDK",
         "IBC",
         "CometBFT",
@@ -124,13 +123,8 @@
         "Ignite CLI",
         "Blockchain Protocol Engineering",
         "Validator Infrastructure",
-        "Web3 Infrastructure",
         "Distributed Systems",
-        "Backend Engineering",
-        "REST APIs",
-        "Microservices",
         "High-concurrency systems",
-        "Software Architecture",
         "Developer Tooling",
         "Code Generation",
         "AST Manipulation",
@@ -138,43 +132,14 @@
         "gRPC",
         "Ethereum Layer 2",
         "zk-SNARKs",
-        "Hermez",
-        "Kubernetes",
-        "Prometheus",
-        "Grafana",
-        "Terraform",
-        "Helm Charts",
-        "AI-assisted engineering",
-        "Claude Code",
-        "Codex",
-        "Cursor",
-        "GitHub Copilot",
-        "Prompt Engineering",
-        "Node.js",
-        "React",
-        "Vue",
-        "Angular",
         "TypeScript",
-        "JavaScript",
-        "PHP",
-        "Java",
-        "Python",
-        "C++",
-        "C#",
-        "Objective-C",
-        "OpenCV",
-        "Computer Vision",
-        "NoSQL",
+        "React",
         "Full-stack engineering",
         "Docker",
-        "Pulumi",
-        "Ansible",
-        "GitHub Actions",
+        "Kubernetes",
+        "Terraform",
         "CI/CD",
-        "DevOps",
-        "AWS",
-        "GCP",
-        "Cloud deployments"
+        "DevOps"
       ]
     }
   }
@@ -1890,25 +1855,34 @@
       .job-head { break-inside: avoid; break-after: avoid; page-break-after: avoid; }
 
       /* ─── 3-page pagination ───
-         The MAIN column is paginated deterministically (Experience → page 2,
-         Selected Repositories → page 3). The SIDEBAR flows naturally down the
-         right side so it packs tightly: Summary + Languages lead on page 1,
-         then Highlights / What-I'm-looking-for / Tech Stack / Education /
-         Teaching fill pages 1→3 without forced gaps. (A forced break before
-         Highlights used to strand page-1 space and pushed Teaching onto a 4th
-         page in the longer PT/ES copy.) break-inside rules below keep each
-         block cohesive so nothing is orphaned at a page bottom. */
+         Both columns are paginated deterministically so each PDF page lines up:
+         MAIN column  — Experience → page 2, Selected Repositories → page 3.
+         SIDEBAR      — Highlights → page 2, Education → page 3.
+         Page 1 leads with the hero/proof/expertise + (sidebar) Summary +
+         Languages; page 2 with Experience + (sidebar) Highlights / What-I'm-
+         looking-for / Tech Stack; page 3 with Repositories + (sidebar)
+         Teaching & Talks / Education. break-inside rules below keep each block
+         cohesive so nothing is orphaned at a page bottom. */
       .section[aria-labelledby="experience-title"],
-      .repos-section {
+      .repos-section,
+      .side-panel[aria-labelledby="impact-title"],
+      .side-panel[aria-labelledby="education-title"] {
         break-before: page;
         page-break-before: always;
       }
-      /* Sections start flush at the page top; the Highlights box keeps its
-         normal padding so it isn't cramped. */
+      /* Main-column sections start flush at the page top (their heading has no
+         box border, so flush looks clean). */
       .section[aria-labelledby="experience-title"],
       .repos-section {
         margin-top: 0 !important;
         padding-top: 0 !important;
+      }
+      /* The forced-break sidebar boxes keep generous internal top padding so
+         their heading isn't cramped against the box edge at the page top. */
+      .side-panel[aria-labelledby="impact-title"],
+      .side-panel[aria-labelledby="education-title"] {
+        margin-top: 0 !important;
+        padding-top: 12px !important;
       }
 
       /* The sidebar flows freely now, so guard every panel/sub-group heading
@@ -2012,9 +1986,6 @@
         <div class="contact-card-head">
           <h2 data-i18n="contact.heading">Contact</h2>
           <span class="contact-head-actions">
-            <a class="contact-bubble" href="https://wa.me/5511983587422" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            </a>
             <a class="contact-bubble" href="https://t.me/dpantani" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.32 18.6 20.07c-.25 1.11-.91 1.38-1.84.86l-5.09-3.75-2.46 2.36c-.27.27-.5.5-1.03.5l.36-5.18 9.42-8.51c.41-.36-.09-.56-.63-.2L6.69 12.49 1.67 10.92c-1.09-.34-1.11-1.09.23-1.61l19.62-7.56c.91-.34 1.7.2 1.42 2.57z"/></svg>
             </a>
@@ -2043,11 +2014,6 @@
           <span class="contact-value"><a href="mailto:danpantani@gmail.com">danpantani@gmail.com</a></span>
         </div>
         <div class="contact-item">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span class="contact-label" data-i18n="contact.phone.label">Phone</span>
-          <span class="contact-value"><a href="tel:+5511983587422">+55 11 98358-7422</a></span>
-        </div>
-        <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.55 0-.27-.01-.99-.02-1.94-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.9-.39.99 0 1.98.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
           <span class="contact-label">GitHub</span>
           <span class="contact-value"><a href="https://github.com/Pantani" target="_blank" rel="noopener">github.com/Pantani</a></span>
@@ -2056,6 +2022,11 @@
           <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5.001 2.5 2.5 0 0 1 0-5zM3 9.5h4v11.5H3V9.5zM10 9.5h3.83v1.57h.05c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.79 2.66 4.79 6.13V21H18.6v-5.05c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.66V21H10V9.5z"/></svg>
           <span class="contact-label">LinkedIn</span>
           <span class="contact-value"><a href="https://www.linkedin.com/in/dpantani/" target="_blank" rel="noopener">linkedin.com/in/dpantani</a></span>
+        </div>
+        <div class="contact-item">
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.94 4.32 18.6 20.07c-.25 1.11-.91 1.38-1.84.86l-5.09-3.75-2.46 2.36c-.27.27-.5.5-1.03.5l.36-5.18 9.42-8.51c.41-.36-.09-.56-.63-.2L6.69 12.49 1.67 10.92c-1.09-.34-1.11-1.09.23-1.61l19.62-7.56c.91-.34 1.7.2 1.42 2.57z"/></svg>
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value"><a href="https://t.me/dpantani" target="_blank" rel="noopener">t.me/dpantani</a></span>
         </div>
         <div class="contact-item">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01"/></svg>
@@ -2144,7 +2115,7 @@
             </span>
             <h3 data-i18n="expertise.ai.title">AI-Native Workflows</h3>
           </div>
-          <p data-i18n="expertise.ai.body">Daily-driver use of Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases.</p>
+          <p data-i18n="expertise.ai.body">Daily-driver use of AI coding assistants for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -2154,7 +2125,7 @@
             </span>
             <h3 data-i18n="expertise.frontend.title">Front-end &amp; Full-Stack</h3>
           </div>
-          <p data-i18n="expertise.frontend.body">JavaScript, TypeScript, React, Vue, Angular, PHP, responsive UI, component architecture, and full-stack delivery from API to interface.</p>
+          <p data-i18n="expertise.frontend.body">JavaScript, TypeScript, React, responsive UI, component architecture, and full-stack delivery from API to interface.</p>
         </div>
       </div>
     </section>
@@ -2235,7 +2206,7 @@
                 <div class="job-head">
                   <div>
                     <h3>Ignite / AtomOne / All in Bits</h3>
-                    <p class="role" data-i18n="exp.ignite.role">Senior Blockchain Engineer, Go</p>
+                    <p class="role" data-i18n="exp.ignite.role">Staff / Senior Blockchain Engineer, Go</p>
                   </div>
                   <div class="job-meta" data-i18n-html="exp.ignite.meta"><time datetime="2021-06">Jun 2021</time> — <time datetime="2026-03">Mar 2026</time><br>Remote</div>
                 </div>
@@ -2257,7 +2228,7 @@
                     <h3>Interchain / Cosmos Hub</h3>
                     <p class="role" data-i18n="exp.interchain.role">Blockchain Engineer, Go</p>
                   </div>
-                  <div class="job-meta" data-i18n-html="exp.interchain.meta"><time datetime="2022-06">Jun 2022</time> — <time datetime="2022-12">Dec 2022</time><br>Remote</div>
+                  <div class="job-meta" data-i18n-html="exp.interchain.meta"><time datetime="2022-06">Jun 2022</time> — <time datetime="2022-12">Dec 2022</time> · leave from Ignite<br>Remote</div>
                 </div>
                 <ul>
                   <li data-i18n-html="exp.interchain.b1">Stepped away from Ignite for a focused engagement on <strong>Cosmos Hub / ATOM</strong> chain development with the Interchain core ecosystem, then returned to Ignite.</li>
@@ -2343,7 +2314,7 @@
                   </div>
                   <div class="job-meta" data-i18n-html="exp.earlier.meta"><time datetime="2011">2011</time> — <time datetime="2018">2018</time><br>São Paulo</div>
                 </div>
-                <p class="earlier-roles" data-i18n-html="exp.earlier.body"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.</p>
+                <p class="earlier-roles" data-i18n-html="exp.earlier.body"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows.</p>
               </div>
             </article>
           </div>
@@ -2399,7 +2370,7 @@
           </div>
           <div class="lang-list">
             <div class="lang-row"><strong data-i18n="langs.portuguese">Portuguese</strong><span data-i18n="langs.portuguese.level">Native</span></div>
-            <div class="lang-row"><strong data-i18n="langs.english">English</strong><span data-i18n="langs.english.level">Advanced</span></div>
+            <div class="lang-row"><strong data-i18n="langs.english">English</strong><span data-i18n="langs.english.level">Fluent</span></div>
             <div class="lang-row"><strong data-i18n="langs.spanish">Spanish</strong><span data-i18n="langs.spanish.level">Advanced</span></div>
           </div>
         </section>
@@ -2444,20 +2415,6 @@
           </div>
           <div class="tag-row" aria-label="Tech stack">
             <span class="tag">Go</span>
-            <span class="tag">Java</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Python</span>
-            <span class="tag">C++</span>
-            <span class="tag">C#</span>
-            <span class="tag">Swift</span>
-            <span class="tag">Objective-C</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Vue</span>
-            <span class="tag">Angular</span>
-            <span class="tag">PHP</span>
             <span class="tag">Cosmos SDK</span>
             <span class="tag">IBC</span>
             <span class="tag">CometBFT</span>
@@ -2468,41 +2425,17 @@
             <span class="tag">Ethereum</span>
             <span class="tag">EVM</span>
             <span class="tag">L2</span>
-            <span class="tag">Solana</span>
-            <span class="tag">Bitcoin</span>
-            <span class="tag">Ripple</span>
-            <span class="tag">Stellar</span>
             <span class="tag">Protobuf</span>
             <span class="tag">gRPC</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Python</span>
             <span class="tag">Docker</span>
             <span class="tag">Kubernetes</span>
             <span class="tag">Terraform</span>
-            <span class="tag">Pulumi</span>
-            <span class="tag">Ansible</span>
             <span class="tag">GitHub Actions</span>
             <span class="tag">CI/CD</span>
-            <span class="tag">Claude Code</span>
-            <span class="tag">Codex</span>
-            <span class="tag">Cursor</span>
-            <span class="tag">Copilot</span>
-            <span class="tag">AI Prompt</span>
-          </div>
-        </section>
-
-        <section class="side-panel" aria-labelledby="education-title">
-          <div class="side-panel-head">
-            <span class="sp-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
-            </span>
-            <h2 id="education-title" data-i18n="edu.title">Education</h2>
-          </div>
-          <div class="edu-group">
-            <h3>Universidade Presbiteriana Mackenzie</h3>
-            <p data-i18n-html="edu.mackenzie.body">Coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters)<br>São Paulo, Brazil — self-taught the rest in production.</p>
-          </div>
-          <div class="edu-group">
-            <h3 data-i18n="edu.certs.title">Certifications</h3>
-            <p data-i18n-html="edu.certs.body">Data Science (2021) — Let's Code Academy · 48h<br>Programming Blockchain (2018) — Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) — Go Blockchain · 16h<br>Bitcoin, Trading &amp; Blockchain (2017) — Finchain · 9h<br>Blockchain Immersion Day (2017) — Blockchain Academy · 13h<br>Smart Contracts in Ethereum (2017) — FIAP · 8h<br>Blockchain Development (2017) — Finchain / Blockchain Brazil · 16h</p>
+            <span class="tag">AI-Assisted Dev</span>
           </div>
         </section>
 
@@ -2522,16 +2455,25 @@
             <p data-i18n-html="edu.gobc.body">Instructor<br>· Ethereum Blockchain Developer<br>· Smart Contracts for Mobile</p>
           </div>
           <div class="edu-group">
-            <h3>Let's Code Academy · 2016</h3>
-            <p data-i18n-html="edu.letscode.body">Instructor<br>· Programming Blockchain<br>· Android Dev (Kotlin)<br>· iOS Dev (Swift)<br>· Java Dev with Processing<br>· Programming Logic for Teens</p>
-          </div>
-          <div class="edu-group">
-            <h3>IAI · 2012</h3>
-            <p data-i18n-html="edu.iai.body">Instructor<br>· Android Dev (Java)<br>· iOS Dev (Objective-C)</p>
-          </div>
-          <div class="edu-group">
             <h3 data-i18n="edu.speaking.title">Speaking &amp; Workshops</h3>
-            <p data-i18n-html="edu.speaking.body">Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlin<br>ZK-SNARKs &amp; Layer-2 for Ethereum — ETH São Paulo 2021, Brazil<br>Mobile and IoT Apps in Ethereum — XP Investimentos 2018, Brazil<br>Ripple Blockchain — Go Blockchain 2018, Brazil<br>Smart Contracts with Ethereum — Go Blockchain 2018, Brazil<br>Building Apps with Web3j — Go Blockchain 2018, Brazil<br>The Future of Micro-location (Beacons / WiFi) — Engineering Week 2016, PUC Campinas</p>
+            <p data-i18n-html="edu.speaking.body">Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlin<br>ZK-SNARKs &amp; Layer-2 for Ethereum — ETH São Paulo 2021, Brazil</p>
+          </div>
+        </section>
+
+        <section class="side-panel" aria-labelledby="education-title">
+          <div class="side-panel-head">
+            <span class="sp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>
+            </span>
+            <h2 id="education-title" data-i18n="edu.title">Education</h2>
+          </div>
+          <div class="edu-group">
+            <h3>Universidade Presbiteriana Mackenzie</h3>
+            <p data-i18n-html="edu.mackenzie.body">Coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters)<br>São Paulo, Brazil — self-taught the rest in production.</p>
+          </div>
+          <div class="edu-group">
+            <h3 data-i18n="edu.certs.title">Certifications</h3>
+            <p data-i18n-html="edu.certs.body">Programming Blockchain (2018) — Jimmy Song · 16h<br>Data Science (2021) — Let's Code Academy · 48h</p>
           </div>
         </section>
 
@@ -2577,7 +2519,7 @@
         </div>
 
         <div class="sps-body">
-          <h3 class="sps-name" data-i18n-html="share.cardTitle">Blockchain Engineer<br><em>Go · Full-Stack</em></h3>
+          <h3 class="sps-name" data-i18n-html="share.cardTitle">Staff Blockchain<br><em>Protocol · Go</em></h3>
           <p class="sps-role" data-i18n="share.cardRole">Blockchain Protocol · Go · Cosmos SDK · Full-Stack · DevOps</p>
           <div class="sps-keywords">
             <span>Go</span>
@@ -2603,8 +2545,8 @@
     </section>
 
     <footer class="resume-footer">
-      <span data-i18n="footer.copy">© 2026 Danilo Pantani · Crafted with care</span>
-      <span data-i18n="footer.version">v2 · Updated 2026</span>
+      <span data-i18n="footer.copy">© 2026 Danilo Pantani</span>
+      <span data-i18n="footer.version">Updated May 2026</span>
     </footer>
   </main>
 
@@ -2704,13 +2646,13 @@
         "expertise.backend.title": "Backend & Distributed Systems",
         "expertise.backend.body": "Go, Node.js, gRPC, REST APIs, full-stack engineering, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems, Validator-as-a-Service workflows, consumer-chain lifecycle, misbehaviour validation, and validator-commission updates.",
         "expertise.frontend.title": "Front-end & Full-Stack",
-        "expertise.frontend.body": "JavaScript, TypeScript, React, Vue, Angular, PHP, responsive UI, component architecture, and full-stack delivery from API to interface.",
+        "expertise.frontend.body": "JavaScript, TypeScript, React, responsive UI, component architecture, and full-stack delivery from API to interface.",
         "expertise.tooling.title": "Tooling & Developer Experience",
         "expertise.tooling.body": "CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.",
         "expertise.infra.title": "Infrastructure & DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations, observability, and production operations.",
         "expertise.ai.title": "AI-Native Workflows",
-        "expertise.ai.body": "Daily-driver use of Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases.",
+        "expertise.ai.body": "Daily-driver use of AI coding assistants for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases.",
 
         "os.title": "Open Source & Protocol Impact",
         "os.ignite.badge": "300+ PRs",
@@ -2728,7 +2670,7 @@
 
         "exp.title": "Professional Experience",
 
-        "exp.ignite.role": "Senior Blockchain Engineer, Go",
+        "exp.ignite.role": "Staff / Senior Blockchain Engineer, Go",
         "exp.ignite.meta": "Jun 2021 — Mar 2026<br>Remote",
         "exp.ignite.b1": "Maintained and extended <strong>Ignite CLI</strong>, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed <strong>300+ public merged PRs</strong> across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.",
         "exp.ignite.b2": "Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.",
@@ -2738,7 +2680,7 @@
         "exp.ignite.b6": "Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, and CI / Sentry noise reduction; integrated <strong>Claude Code</strong> and <strong>Codex</strong> into review and refactor loops as a productivity multiplier across Go and Cosmos SDK codebases.",
 
         "exp.interchain.role": "Blockchain Engineer, Go",
-        "exp.interchain.meta": "Jun 2022 — Dec 2022<br>Remote",
+        "exp.interchain.meta": "Jun 2022 — Dec 2022 · leave from Ignite<br>Remote",
         "exp.interchain.b1": "Stepped away from Ignite for a focused engagement on <strong>Cosmos Hub / ATOM</strong> chain development with the Interchain core ecosystem, then returned to Ignite.",
         "exp.interchain.b2": "Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.",
 
@@ -2769,7 +2711,7 @@
         "exp.earlier.title": "Earlier Roles",
         "exp.earlier.role": "Tech Lead / Founder / Mobile Engineer",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows using OpenCV and C++. <strong>Miya / Pixon</strong> — real-time people-tracking systems using IoT, Arduino, Raspberry Pi, beacons, Wi-Fi micro-location, and computer-vision components.",
+        "exp.earlier.body": "<strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows.",
 
         "projects.title": "Selected Repositories",
         "projects.intro": "Public work across the Cosmos and Web3 ecosystem. Detailed scope and impact for each is in <em>Open Source &amp; Protocol Impact</em> above.",
@@ -2795,18 +2737,16 @@
         "edu.mackenzie.body": "Coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters)<br>São Paulo, Brazil — self-taught the rest in production.",
         "edu.fiap.body": "Instructor<br>· Decentralized App Dev (MBA)<br>· Smart Contracts with Ethereum",
         "edu.gobc.body": "Instructor<br>· Ethereum Blockchain Developer<br>· Smart Contracts for Mobile",
-        "edu.letscode.body": "Instructor<br>· Programming Blockchain<br>· Android Dev (Kotlin)<br>· iOS Dev (Swift)<br>· Java Dev with Processing<br>· Programming Logic for Teens",
-        "edu.iai.body": "Instructor<br>· Android Dev (Java)<br>· iOS Dev (Objective-C)",
         "edu.speaking.title": "Speaking & Workshops",
-        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlin<br>ZK-SNARKs &amp; Layer-2 for Ethereum — ETH São Paulo 2021, Brazil<br>Mobile and IoT Apps in Ethereum — XP Investimentos 2018, Brazil<br>Ripple Blockchain — Go Blockchain 2018, Brazil<br>Smart Contracts with Ethereum — Go Blockchain 2018, Brazil<br>Building Apps with Web3j — Go Blockchain 2018, Brazil<br>The Future of Micro-location (Beacons / WiFi) — Engineering Week 2016, PUC Campinas",
+        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlin<br>ZK-SNARKs &amp; Layer-2 for Ethereum — ETH São Paulo 2021, Brazil",
         "edu.certs.title": "Certifications",
-        "edu.certs.body": "Data Science (2021) — Let's Code Academy · 48h<br>Programming Blockchain (2018) — Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) — Go Blockchain · 16h<br>Bitcoin, Trading &amp; Blockchain (2017) — Finchain · 9h<br>Blockchain Immersion Day (2017) — Blockchain Academy · 13h<br>Smart Contracts in Ethereum (2017) — FIAP · 8h<br>Blockchain Development (2017) — Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Programming Blockchain (2018) — Jimmy Song · 16h<br>Data Science (2021) — Let's Code Academy · 48h",
 
         "langs.title": "Languages",
         "langs.portuguese": "Portuguese",
         "langs.portuguese.level": "Native",
         "langs.english": "English",
-        "langs.english.level": "Advanced",
+        "langs.english.level": "Fluent",
         "langs.spanish": "Spanish",
         "langs.spanish.level": "Advanced",
         "langs.tag.validator": "Validator Infrastructure",
@@ -2814,14 +2754,14 @@
 
         "share.title": "Share preview",
         "share.hint": "A 1200×630 social card you can screenshot and host as <span style=\"font-family: var(--mono);\">og-image.jpg</span>.",
-        "share.cardTitle": "Blockchain Engineer<br><em>Go · Full-Stack</em>",
+        "share.cardTitle": "Staff Blockchain<br><em>Protocol · Go</em>",
         "share.cardRole": "Blockchain Protocol · Go · Cosmos SDK · Full-Stack · DevOps",
         "share.stat.years": "Years",
         "share.stat.ignite": "Ignite CLI PRs",
         "share.stat.blockatlas": "blockatlas PRs",
 
-        "footer.copy": "© 2026 Danilo Pantani · Crafted with care",
-        "footer.version": "v2 · Updated 2026"
+        "footer.copy": "© 2026 Danilo Pantani",
+        "footer.version": "Updated May 2026"
       },
 
       pt: {
@@ -2845,7 +2785,7 @@
         "hero.eyebrow": "Disponível imediatamente · Go · Cosmos SDK · Protocolo · UTC−3 · Elegível para UE",
         "hero.title": "Blockchain Protocol · Go · Cosmos SDK · Full-Stack · DevOps",
         "hero.pitch": "Eu projeto e entrego protocolos blockchain em Go — módulos Cosmos SDK, IBC e infraestrutura de validadores — do ADR à mainnet. Contribuidor em nível de mantenedor do Ignite CLI e autor do ADR-004 do AtomOne. 10+ anos em produção, com a abrangência full-stack e DevOps para fechar uma feature de ponta a ponta.",
-        "hero.summary": "<strong>300+ PRs mergeados</strong> no <strong><a href=\"https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Ignite CLI</a></strong> · autor do <strong>ADR-004 Nakamoto Bonus</strong> e responsável pelo módulo de distribuição do AtomOne · upstream no <strong>Cosmos SDK</strong> & <strong>IBC-Go</strong> · backend lead no <strong><a href=\"https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Trust Wallet blockatlas</a></strong> (200+ PRs mergeados).",
+        "hero.summary": "<strong>300+ PRs integrados</strong> no <strong><a href=\"https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Ignite CLI</a></strong> · autor do <strong>ADR-004 Nakamoto Bonus</strong> e responsável pelo módulo de distribuição do AtomOne · upstream no <strong>Cosmos SDK</strong> & <strong>IBC-Go</strong> · backend lead no <strong><a href=\"https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged\" target=\"_blank\" rel=\"noopener\">Trust Wallet blockatlas</a></strong> (200+ PRs integrados).",
         "hero.cta.github": "Ver GitHub",
         "hero.cta.linkedin": "Ver LinkedIn",
         "hero.cta.email": "Enviar e-mail",
@@ -2863,9 +2803,9 @@
         "contact.portfolio.label": "Portfólio",
 
         "proof.years": "anos entregando software em produção e sistemas blockchain",
-        "proof.ignitePRs": "PRs públicos mergeados no Ignite CLI e em ferramentas Cosmos SDK",
-        "proof.blockatlasPRs": "PRs públicos mergeados no Trust Wallet blockatlas",
-        "proof.ossPRs": "PRs públicos mergeados em open source (Cosmos, Ethereum e backends de wallet)",
+        "proof.ignitePRs": "PRs públicos integrados no Ignite CLI e em ferramentas Cosmos SDK",
+        "proof.blockatlasPRs": "PRs públicos integrados no Trust Wallet blockatlas",
+        "proof.ossPRs": "PRs públicos integrados em open source (Cosmos, Ethereum e backends de wallet)",
 
         "expertise.title": "Áreas de Especialização",
         "expertise.blockchain.title": "Blockchain e Protocolos",
@@ -2873,13 +2813,13 @@
         "expertise.backend.title": "Backend e Sistemas Distribuídos",
         "expertise.backend.body": "Go, Node.js, gRPC, APIs REST, engenharia full-stack, arquitetura de backend, concorrência, goroutines, channels, worker pools, pipelines fan-out, cancelamento de contexto, sistemas distribuídos, fluxos Validator-as-a-Service, ciclo de vida de consumer chains, validação de misbehaviour e atualização de comissão de validadores.",
         "expertise.frontend.title": "Front-end e Full-Stack",
-        "expertise.frontend.body": "JavaScript, TypeScript, React, Vue, Angular, PHP, UI responsiva, arquitetura de componentes e entrega full-stack da API à interface.",
+        "expertise.frontend.body": "JavaScript, TypeScript, React, UI responsiva, arquitetura de componentes e entrega full-stack da API à interface.",
         "expertise.tooling.title": "Tooling e Experiência do Desenvolvedor",
         "expertise.tooling.body": "Ferramentas de CLI, Cobra, Viper, geração de código, manipulação de AST, protobuf, protoanalysis, migrações de scaffold, ergonomia para devs e fluxos de release.",
         "expertise.infra.title": "Infraestrutura e DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, deploys em cloud, GitHub Actions, CI/CD, Prometheus, Grafana, operação de full nodes em múltiplas chains Cosmos, observabilidade e operação em produção.",
         "expertise.ai.title": "Fluxos AI-Native",
-        "expertise.ai.body": "Uso diário de Claude Code e Codex para contextualização de repositórios, prompting e ciclos de revisão/refatoração em bases Go e Cosmos SDK.",
+        "expertise.ai.body": "Uso diário de assistentes de código com IA para contextualização de repositórios, prompting e ciclos de revisão/refatoração em bases Go e Cosmos SDK.",
 
         "os.title": "Open Source e Impacto em Protocolos",
         "os.ignite.badge": "300+ PRs",
@@ -2897,9 +2837,9 @@
 
         "exp.title": "Experiência Profissional",
 
-        "exp.ignite.role": "Engenheiro Sênior Blockchain, Go",
+        "exp.ignite.role": "Engenheiro Staff / Sênior Blockchain, Go",
         "exp.ignite.meta": "Jun 2021 — Mar 2026<br>Remoto",
-        "exp.ignite.b1": "Mantive e evoluí o <strong>Ignite CLI</strong>, plataforma all-in-one para construir, lançar e manter blockchains Cosmos SDK; entreguei <strong>300+ PRs públicos mergeados</strong> em protoanalysis, geração de código com AST, migrações de scaffold, UX de CLI e ergonomia para devs.",
+        "exp.ignite.b1": "Mantive e evoluí o <strong>Ignite CLI</strong>, plataforma all-in-one para construir, lançar e manter blockchains Cosmos SDK; entreguei <strong>300+ PRs públicos integrados</strong> em protoanalysis, geração de código com AST, migrações de scaffold, UX de CLI e ergonomia para devs.",
         "exp.ignite.b2": "Atuei no protocolo e nos módulos do <strong>AtomOne / fork do Cosmos SDK</strong>: implementação do módulo de distribuição, mecânica do ADR-004 Nakamoto Bonus, correções na migração de governança e atualização da lógica de comissão de validadores.",
         "exp.ignite.b3": "Implementei e revisei código em <strong>IBC, infraestrutura de validadores, ciclo de vida de consumer chains, validação de misbehaviour, limpeza de parâmetros</strong> e fluxos Validator-as-a-Service.",
         "exp.ignite.b4": "Contribuí no <strong>Gno / allinbits/gno-realms</strong> com funcionalidades de IBC core e do realm de transfer, incluindo helpers de MsgCall para tokens voucher de IBC e restrições em operações IBC retransmitidas.",
@@ -2907,7 +2847,7 @@
         "exp.ignite.b6": "Melhorei a experiência de desenvolvimento com scaffolding de CLI, análise de protobuf, resolução de mensagens RPC aninhadas, arrays customizados, modo daemon e redução de ruído em CI / Sentry; integrei <strong>Claude Code</strong> e <strong>Codex</strong> aos ciclos de revisão e refatoração como multiplicador de produtividade em bases Go e Cosmos SDK.",
 
         "exp.interchain.role": "Engenheiro Blockchain, Go",
-        "exp.interchain.meta": "Jun 2022 — Dez 2022<br>Remoto",
+        "exp.interchain.meta": "Jun 2022 — Dez 2022 · afastamento do Ignite<br>Remoto",
         "exp.interchain.b1": "Saí do Ignite para um trabalho focado no desenvolvimento da chain <strong>Cosmos Hub / ATOM</strong> com o core do ecossistema Interchain, e depois retornei ao Ignite.",
         "exp.interchain.b2": "Construí composição de módulos e funcionalidades de IBC para chains Cosmos SDK downstream, incluindo melhorias de capability-keeper no IBC-Go.",
 
@@ -2924,7 +2864,7 @@
 
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
-        "exp.trustwallet.b1": "Liderei o backend da plataforma de indexação e integração multi-chain da Trust Wallet, <strong>blockatlas</strong>, com <strong>200+ PRs públicos mergeados</strong> em integração de chains, indexadores, rotas de market data e tooling para full nodes.",
+        "exp.trustwallet.b1": "Liderei o backend da plataforma de indexação e integração multi-chain da Trust Wallet, <strong>blockatlas</strong>, com <strong>200+ PRs públicos integrados</strong> em integração de chains, indexadores, rotas de market data e tooling para full nodes.",
         "exp.trustwallet.b2": "Migrei serviços legados de Node.js para Go, padronizando worker pools, processamento fan-out, cancelamento de contexto e padrões de concorrência para produção.",
         "exp.trustwallet.b3": "Operei e monitorei full nodes em produção em diversas chains, sustentando a infraestrutura backend de uma wallet cripto em larga escala.",
         "exp.trustwallet.b4": "Construí e mantive rotas de dados blockchain, fluxos de metadados de ativos, parsing de transações, lógica de validadores, batching de RPC e integrações específicas por chain.",
@@ -2938,7 +2878,7 @@
         "exp.earlier.title": "Atuações Anteriores",
         "exp.earlier.role": "Tech Lead / Fundador / Engenheiro Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — engenharia de serviços de exchange em .NET. <strong>Finchain / FlowBTC</strong> — fluxos de wallet ERC-20, integrações com smart contracts e sistemas de compliance. <strong>Neon Bank</strong> — engenharia iOS / Android e fluxos de reconhecimento de documentos com OpenCV e C++. <strong>Miya / Pixon</strong> — sistemas de tracking de pessoas em tempo real com IoT, Arduino, Raspberry Pi, beacons, micro-localização Wi-Fi e visão computacional.",
+        "exp.earlier.body": "<strong>XDEX</strong> — engenharia de serviços de exchange em .NET. <strong>Finchain / FlowBTC</strong> — fluxos de wallet ERC-20, integrações com smart contracts e sistemas de compliance. <strong>Neon Bank</strong> — engenharia iOS / Android e fluxos de reconhecimento de documentos.",
 
         "projects.title": "Repositórios Selecionados",
         "projects.intro": "Trabalho público pelo ecossistema Cosmos e Web3. O escopo e o impacto detalhado de cada um estão em <em>Open Source e Impacto em Protocolos</em> acima.",
@@ -2949,33 +2889,31 @@
         "seeking.b3": "Remoto integral, UTC−3 friendly. <strong>Elegível para UE</strong> (cidadão italiano) e disponível para viagens ocasionais.",
 
         "summary.title": "Resumo",
-        "summary.body": "<p>Engenheiro de protocolo blockchain em nível Staff, com <strong>10+ anos</strong> entregando Go em produção.</p><p>Construo <strong>módulos Cosmos SDK, IBC e infraestrutura de validadores</strong> do ADR à mainnet — contribuidor em nível de mantenedor do <strong>Ignite CLI</strong> (300+ PRs mergeados), autor do <strong>ADR-004 Nakamoto Bonus</strong> do AtomOne, com patches upstream no <strong>Cosmos SDK</strong> e <strong>IBC-Go</strong>.</p><p>Backend é o núcleo — sistemas distribuídos, gRPC/REST, Go de alta concorrência — com a <strong>abrangência full-stack (TypeScript/React) e DevOps (Docker/Kubernetes/Terraform)</strong> para fechar uma feature de ponta a ponta. Fluxos AI-native (Claude Code, Codex) como multiplicador diário.</p>",
+        "summary.body": "<p>Engenheiro de protocolo blockchain em nível Staff, com <strong>10+ anos</strong> entregando Go em produção.</p><p>Construo <strong>módulos Cosmos SDK, IBC e infraestrutura de validadores</strong> do ADR à mainnet — contribuidor em nível de mantenedor do <strong>Ignite CLI</strong> (300+ PRs integrados), autor do <strong>ADR-004 Nakamoto Bonus</strong> do AtomOne, com patches upstream no <strong>Cosmos SDK</strong> e <strong>IBC-Go</strong>.</p><p>Backend é o núcleo — sistemas distribuídos, gRPC/REST, Go de alta concorrência — com a <strong>abrangência full-stack (TypeScript/React) e DevOps (Docker/Kubernetes/Terraform)</strong> para fechar uma feature de ponta a ponta. Fluxos AI-native (Claude Code, Codex) como multiplicador diário.</p>",
 
         "highlights.title": "Destaques",
-        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos mergeados em protoanalysis, geração de código com AST, migrações de scaffold e UX de CLI.",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados em protoanalysis, geração de código com AST, migrações de scaffold e UX de CLI.",
         "highlights.b2": "<strong>AtomOne:</strong> atuação no fork Cosmos SDK — módulo de distribuição, ADR-004 Nakamoto Bonus e migrações de governança.",
         "highlights.b3": "<strong>Hermez:</strong> backend em Go para fluxos do operador Ethereum L2 zk-SNARK rollup.",
         "highlights.b4": "<strong>ignite/network · spn:</strong> coordenação de lançamento e ciclo de vida de chains Cosmos soberanas.",
         "highlights.b5": "<strong>Cosmos SDK + IBC-Go:</strong> tratamento upstream de interface-registry e helpers de capability-keeper.",
-        "highlights.b6": "<strong>Trust Wallet blockatlas:</strong> 200+ PRs públicos mergeados em indexação multi-chain e tooling para full nodes.",
+        "highlights.b6": "<strong>Trust Wallet blockatlas:</strong> 200+ PRs públicos integrados em indexação multi-chain e tooling para full nodes.",
 
         "edu.title": "Formação",
         "teach.title": "Docência e Palestras",
         "edu.mackenzie.body": "Cursos em Ciência da Computação (6 semestres) e Engenharia Elétrica (8 semestres)<br>São Paulo, Brasil — o resto, autodidata em produção.",
         "edu.fiap.body": "Professor<br>· Desenvolvimento de Aplicações Descentralizadas (MBA)<br>· Smart Contracts com Ethereum",
         "edu.gobc.body": "Professor<br>· Ethereum Blockchain Developer<br>· Smart Contracts para Mobile",
-        "edu.letscode.body": "Professor<br>· Programming Blockchain<br>· Desenvolvimento Android (Kotlin)<br>· Desenvolvimento iOS (Swift)<br>· Java com Processing<br>· Lógica de Programação para Adolescentes",
-        "edu.iai.body": "Professor<br>· Desenvolvimento Android (Java)<br>· Desenvolvimento iOS (Objective-C)",
         "edu.speaking.title": "Palestras e Workshops",
-        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlim<br>ZK-SNARKs &amp; Layer-2 para Ethereum — ETH São Paulo 2021, Brasil<br>Mobile e IoT Apps em Ethereum — XP Investimentos 2018, Brasil<br>Ripple Blockchain — Go Blockchain 2018, Brasil<br>Smart Contracts com Ethereum — Go Blockchain 2018, Brasil<br>Building Apps with Web3j — Go Blockchain 2018, Brasil<br>O Futuro da Micro-localização (Beacons / WiFi) — Semana de Engenharia 2016, PUC Campinas",
+        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlim<br>ZK-SNARKs &amp; Layer-2 para Ethereum — ETH São Paulo 2021, Brasil",
         "edu.certs.title": "Certificações",
-        "edu.certs.body": "Data Science (2021) — Let's Code Academy · 48h<br>Programming Blockchain (2018) — Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) — Go Blockchain · 16h<br>Bitcoin, Trading &amp; Blockchain (2017) — Finchain · 9h<br>Blockchain Immersion Day (2017) — Blockchain Academy · 13h<br>Smart Contracts em Ethereum (2017) — FIAP · 8h<br>Blockchain Development (2017) — Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Programming Blockchain (2018) — Jimmy Song · 16h<br>Data Science (2021) — Let's Code Academy · 48h",
 
         "langs.title": "Idiomas",
         "langs.portuguese": "Português",
         "langs.portuguese.level": "Nativo",
         "langs.english": "Inglês",
-        "langs.english.level": "Avançado",
+        "langs.english.level": "Fluente",
         "langs.spanish": "Espanhol",
         "langs.spanish.level": "Avançado",
         "langs.tag.validator": "Infraestrutura de Validadores",
@@ -2983,14 +2921,14 @@
 
         "share.title": "Pré-visualização social",
         "share.hint": "Um card social 1200×630 que você pode capturar e hospedar como <span style=\"font-family: var(--mono);\">og-image.jpg</span>.",
-        "share.cardTitle": "Blockchain Engineer<br><em>Go · Full-Stack</em>",
+        "share.cardTitle": "Staff Blockchain<br><em>Protocol · Go</em>",
         "share.cardRole": "Blockchain Protocol · Go · Cosmos SDK · Full-Stack · DevOps",
         "share.stat.years": "Anos",
         "share.stat.ignite": "PRs Ignite CLI",
         "share.stat.blockatlas": "PRs blockatlas",
 
-        "footer.copy": "© 2026 Danilo Pantani · Feito com cuidado",
-        "footer.version": "v2 · Atualizado em 2026"
+        "footer.copy": "© 2026 Danilo Pantani",
+        "footer.version": "Atualizado em Mai 2026"
       },
 
       es: {
@@ -3042,13 +2980,13 @@
         "expertise.backend.title": "Backend y Sistemas Distribuidos",
         "expertise.backend.body": "Go, Node.js, gRPC, APIs REST, ingeniería full-stack, arquitectura de backend, concurrencia, goroutines, channels, worker pools, pipelines fan-out, cancelación de contexto, sistemas distribuidos, flujos Validator-as-a-Service, ciclo de vida de consumer chains, validación de misbehaviour y actualización de comisión de validadores.",
         "expertise.frontend.title": "Front-end y Full-Stack",
-        "expertise.frontend.body": "JavaScript, TypeScript, React, Vue, Angular, PHP, UI responsiva, arquitectura de componentes y entrega full-stack de la API a la interfaz.",
+        "expertise.frontend.body": "JavaScript, TypeScript, React, UI responsiva, arquitectura de componentes y entrega full-stack de la API a la interfaz.",
         "expertise.tooling.title": "Tooling y Experiencia del Desarrollador",
         "expertise.tooling.body": "Tooling de CLI, Cobra, Viper, generación de código, manipulación de AST, protobuf, protoanalysis, migraciones de scaffold, ergonomía para devs y flujos de release.",
         "expertise.infra.title": "Infraestructura y DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, despliegues en cloud, GitHub Actions, CI/CD, Prometheus, Grafana, operación de full nodes en múltiples chains Cosmos, observabilidad y operación en producción.",
         "expertise.ai.title": "Flujos AI-Native",
-        "expertise.ai.body": "Uso diario de Claude Code y Codex para contexto de repositorios, prompting y ciclos de revisión/refactor en bases Go y Cosmos SDK.",
+        "expertise.ai.body": "Uso diario de asistentes de código con IA para contexto de repositorios, prompting y ciclos de revisión/refactor en bases Go y Cosmos SDK.",
 
         "os.title": "Open Source e Impacto en Protocolos",
         "os.ignite.badge": "300+ PRs",
@@ -3066,7 +3004,7 @@
 
         "exp.title": "Experiencia Profesional",
 
-        "exp.ignite.role": "Ingeniero Senior Blockchain, Go",
+        "exp.ignite.role": "Ingeniero Staff / Senior Blockchain, Go",
         "exp.ignite.meta": "Jun 2021 — Mar 2026<br>Remoto",
         "exp.ignite.b1": "Mantuve y evolucioné <strong>Ignite CLI</strong>, plataforma all-in-one para construir, lanzar y mantener blockchains Cosmos SDK; entregué <strong>300+ PRs públicos integrados</strong> en protoanalysis, generación de código con AST, migraciones de scaffold, UX de CLI y ergonomía para devs.",
         "exp.ignite.b2": "Trabajé en protocolo y módulos del <strong>AtomOne / fork de Cosmos SDK</strong>: implementación del módulo de distribución, mecánica del ADR-004 Nakamoto Bonus, correcciones en la migración de gobernanza y actualización de la lógica de comisión de validadores.",
@@ -3076,7 +3014,7 @@
         "exp.ignite.b6": "Mejoré la experiencia de desarrollo con scaffolding de CLI, análisis de protobuf, resolución de mensajes RPC anidados, arrays personalizados, modo daemon y reducción de ruido en CI / Sentry; integré <strong>Claude Code</strong> y <strong>Codex</strong> en los ciclos de revisión y refactor como multiplicador de productividad en bases Go y Cosmos SDK.",
 
         "exp.interchain.role": "Ingeniero Blockchain, Go",
-        "exp.interchain.meta": "Jun 2022 — Dic 2022<br>Remoto",
+        "exp.interchain.meta": "Jun 2022 — Dic 2022 · licencia de Ignite<br>Remoto",
         "exp.interchain.b1": "Dejé Ignite para una colaboración enfocada en el desarrollo de la chain <strong>Cosmos Hub / ATOM</strong> con el core del ecosistema Interchain, y luego regresé a Ignite.",
         "exp.interchain.b2": "Construí composición de módulos y funcionalidades de IBC para chains Cosmos SDK downstream, incluyendo mejoras de capability-keeper en IBC-Go.",
 
@@ -3107,7 +3045,7 @@
         "exp.earlier.title": "Roles Anteriores",
         "exp.earlier.role": "Tech Lead / Fundador / Ingeniero Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — ingeniería de servicios de exchange en .NET. <strong>Finchain / FlowBTC</strong> — flujos de wallet ERC-20, integraciones con smart contracts y sistemas de compliance. <strong>Neon Bank</strong> — ingeniería iOS / Android y flujos de reconocimiento de documentos con OpenCV y C++. <strong>Miya / Pixon</strong> — sistemas de tracking de personas en tiempo real con IoT, Arduino, Raspberry Pi, beacons, micro-localización Wi-Fi y visión por computadora.",
+        "exp.earlier.body": "<strong>XDEX</strong> — ingeniería de servicios de exchange en .NET. <strong>Finchain / FlowBTC</strong> — flujos de wallet ERC-20, integraciones con smart contracts y sistemas de compliance. <strong>Neon Bank</strong> — ingeniería iOS / Android y flujos de reconocimiento de documentos.",
 
         "projects.title": "Repositorios Seleccionados",
         "projects.intro": "Trabajo público en el ecosistema Cosmos y Web3. El alcance e impacto detallado de cada uno está en <em>Open Source e Impacto en Protocolos</em> arriba.",
@@ -3133,18 +3071,16 @@
         "edu.mackenzie.body": "Cursos en Ciencias de la Computación (6 semestres) e Ingeniería Eléctrica (8 semestres)<br>São Paulo, Brasil — el resto, autodidacta en producción.",
         "edu.fiap.body": "Profesor<br>· Desarrollo de Aplicaciones Descentralizadas (MBA)<br>· Smart Contracts con Ethereum",
         "edu.gobc.body": "Profesor<br>· Ethereum Blockchain Developer<br>· Smart Contracts para Mobile",
-        "edu.letscode.body": "Profesor<br>· Programming Blockchain<br>· Desarrollo Android (Kotlin)<br>· Desarrollo iOS (Swift)<br>· Java con Processing<br>· Lógica de Programación para Adolescentes",
-        "edu.iai.body": "Profesor<br>· Desarrollo Android (Java)<br>· Desarrollo iOS (Objective-C)",
         "edu.speaking.title": "Charlas y Workshops",
-        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlín<br>ZK-SNARKs &amp; Layer-2 para Ethereum — ETH São Paulo 2021, Brasil<br>Mobile e IoT Apps en Ethereum — XP Investimentos 2018, Brasil<br>Ripple Blockchain — Go Blockchain 2018, Brasil<br>Smart Contracts con Ethereum — Go Blockchain 2018, Brasil<br>Building Apps with Web3j — Go Blockchain 2018, Brasil<br>El Futuro de la Micro-localización (Beacons / WiFi) — Semana de Ingeniería 2016, PUC Campinas",
+        "edu.speaking.body": "Building Chains and Tools with Ignite — Web3FC 2023, Barcelona<br>Building Chains and Tools with Ignite — AwesomWasm 2023, Berlín<br>ZK-SNARKs &amp; Layer-2 para Ethereum — ETH São Paulo 2021, Brasil",
         "edu.certs.title": "Certificaciones",
-        "edu.certs.body": "Data Science (2021) — Let's Code Academy · 48h<br>Programming Blockchain (2018) — Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) — Go Blockchain · 16h<br>Bitcoin, Trading &amp; Blockchain (2017) — Finchain · 9h<br>Blockchain Immersion Day (2017) — Blockchain Academy · 13h<br>Smart Contracts en Ethereum (2017) — FIAP · 8h<br>Blockchain Development (2017) — Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Programming Blockchain (2018) — Jimmy Song · 16h<br>Data Science (2021) — Let's Code Academy · 48h",
 
         "langs.title": "Idiomas",
         "langs.portuguese": "Portugués",
         "langs.portuguese.level": "Nativo",
         "langs.english": "Inglés",
-        "langs.english.level": "Avanzado",
+        "langs.english.level": "Fluido",
         "langs.spanish": "Español",
         "langs.spanish.level": "Avanzado",
         "langs.tag.validator": "Infraestructura de Validadores",
@@ -3152,14 +3088,14 @@
 
         "share.title": "Vista previa social",
         "share.hint": "Una tarjeta social de 1200×630 que puedes capturar y publicar como <span style=\"font-family: var(--mono);\">og-image.jpg</span>.",
-        "share.cardTitle": "Blockchain Engineer<br><em>Go · Full-Stack</em>",
+        "share.cardTitle": "Staff Blockchain<br><em>Protocol · Go</em>",
         "share.cardRole": "Blockchain Protocol · Go · Cosmos SDK · Full-Stack · DevOps",
         "share.stat.years": "Años",
         "share.stat.ignite": "PRs Ignite CLI",
         "share.stat.blockatlas": "PRs blockatlas",
 
-        "footer.copy": "© 2026 Danilo Pantani · Hecho con cuidado",
-        "footer.version": "v2 · Actualizado en 2026"
+        "footer.copy": "© 2026 Danilo Pantani",
+        "footer.version": "Actualizado en May 2026"
       }
     };
 
