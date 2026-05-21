@@ -44,7 +44,7 @@ Additional experience across **full-stack engineering** — JavaScript, TypeScri
 | **Tooling & Developer Experience** | CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows |
 | **Frontend & Full-Stack** | JavaScript, TypeScript, React, Vue, Angular, PHP, responsive UI, component architecture, full-stack engineering, developer portals, dashboards, internal tools, Web3 application interfaces |
 | **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations, observability, production operations |
-| **AI-Assisted Engineering** | Daily-driver use of Claude Code and Codex for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
+| **AI-Assisted Engineering** | Daily-driver use of Claude Code, Codex, Cursor, and GitHub Copilot for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
 | **Languages & Storage** | Go, Java, Python, C++, C#, Objective-C, TypeScript, JavaScript, PHP, Solidity · PostgreSQL, Redis, LevelDB, InfluxDB, NoSQL |
 
 ---
@@ -140,7 +140,7 @@ Additional experience across **full-stack engineering** — JavaScript, TypeScri
 
 ---
 
-## Education, Teaching & Certifications
+## Education & Teaching
 
 ### Universidade Presbiteriana Mackenzie
 
@@ -173,7 +173,7 @@ Speaker on Web3, Ethereum, ZK-SNARKs, and Layer-2 — including ETH São Paulo.
 - English — Advanced (professional working proficiency)
 - Spanish — Advanced (professional working proficiency)
 
-**Technical keywords:** Go, Java, Python, C++, C#, Objective-C, OpenCV, Computer Vision, TypeScript, JavaScript, Node.js, React, Vue, Angular, PHP, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, zk-SNARKs, Protobuf, gRPC, Docker, Kubernetes, Terraform, Pulumi, Ansible, Prometheus, Helm, AWS, GCP, Cloud Deployments, Full-Stack, NoSQL, Claude Code, Codex.
+**Technical keywords:** Go, Java, Python, C++, C#, Objective-C, OpenCV, Computer Vision, TypeScript, JavaScript, Node.js, React, Vue, Angular, PHP, Cosmos SDK, IBC, CometBFT, AtomOne, Validator Infrastructure, Ethereum L2, zk-SNARKs, Protobuf, gRPC, Docker, Kubernetes, Terraform, Pulumi, Ansible, Prometheus, Helm, AWS, GCP, Cloud Deployments, Full-Stack, NoSQL, Claude Code, Codex, Cursor, GitHub Copilot, Prompt Engineering, GitHub Actions, CI/CD.
 
 ---
 
