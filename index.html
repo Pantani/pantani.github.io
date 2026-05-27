@@ -50,7 +50,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    "dateModified": "2026-05-20",
+    "dateModified": "2026-05-27T00:00:00-03:00",
     "mainEntity": {
       "@type": "Person",
       "name": "Danilo Pantani",
@@ -79,14 +79,32 @@
           "@type": "Event",
           "name": "AwesomWasm 2023 — Ignite stack workshop",
           "startDate": "2023-07-13",
-          "location": { "@type": "Place", "name": "Berlin, Germany" },
+          "endDate": "2023-07-13",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Berlin, Germany",
+            "address": { "@type": "PostalAddress", "addressLocality": "Berlin", "addressCountry": "DE" }
+          },
+          "organizer": { "@type": "Organization", "name": "Confio GmbH", "url": "https://confio.gmbh/" },
+          "performer": { "@type": "Person", "name": "Danilo Pantani" },
           "description": "Workshop on the Ignite stack — its latest developments and roadmap — hosted as an Ignite core developer."
         },
         {
           "@type": "Event",
           "name": "Building Chains and Tools with Ignite",
           "startDate": "2023-09-22",
-          "location": { "@type": "Place", "name": "Barcelona, Spain" },
+          "endDate": "2023-09-22",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Barcelona, Spain",
+            "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" }
+          },
+          "organizer": { "@type": "Organization", "name": "Web3 Family", "url": "https://www.web3family.com/" },
+          "performer": { "@type": "Person", "name": "Danilo Pantani" },
           "description": "Talk on building Cosmos SDK blockchains and developer tooling with Ignite (Web3Family)."
         }
       ],
