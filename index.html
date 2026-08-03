@@ -2351,7 +2351,9 @@
       .proof-value .small { font-size: 10pt; }
       .proof-label { font-size: 7pt; line-height: 1.2; }
 
-      .section { margin-top: 13px; }
+      /* Keep adjacent sections visually distinct in exported PDFs without
+         spending enough vertical space to disturb the two-page layout. */
+      .section { margin-top: 18px; }
       .section-title { margin-bottom: 7px; gap: 8px; }
       .section-title h2 { font-size: 12pt; }
       .section-title .num { font-size: 6.5pt; }
@@ -2397,7 +2399,7 @@
       .job ul li { font-size: 6.5pt; line-height: 1.2; margin-bottom: 1px; }
       .earlier-roles { font-size: 6.5pt; line-height: 1.2; }
 
-      .repos-section { margin-top: 8px !important; break-before: auto; page-break-before: auto; }
+      .repos-section { margin-top: 12px !important; break-before: auto; page-break-before: auto; }
       .repo-intro { font-size: 6.8pt; line-height: 1.24; }
       .repo-chips { margin: 5px 0 0; gap: 4px; }
       a.tag.repo-chip { font-size: 6.3pt; padding: 1px 5px; }
