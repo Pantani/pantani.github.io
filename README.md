@@ -1,185 +1,153 @@
 # Danilo Pantani
 
-**Staff / Senior Blockchain Protocol Engineer · Go · Cosmos SDK · IBC**
+**Senior Blockchain Protocol Engineer**<br>
+**Go · Cosmos SDK · IBC · Distributed Systems**
 
-São Paulo, Brazil · Remote · UTC−3 · Open to new roles — Blockchain Protocol, Go & Web3 Infrastructure
-Brazilian & Italian citizen · EU work-eligible · Open to remote roles and Europe-based opportunities
+São Paulo, Brazil · Remote · UTC−3<br>
+Brazilian and Italian citizen · EU work-eligible<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
 
-[Live HTML CV](https://pantani.github.io) · [HTML source](./index.html)
+[Live HTML résumé](https://pantani.github.io/) · [HTML source](./index.html)
 
 ---
 
-## Professional Summary
+## Professional summary
 
-Staff-level Blockchain Protocol Engineer with 10+ years shipping production **Go**. I build **Cosmos SDK modules, IBC, and validator infrastructure** from ADR to mainnet — maintainer-level contributor to **Ignite CLI** (300+ merged PRs), author of **ADR-004 Nakamoto Bonus** and the AtomOne distribution module, with upstream patches in **Cosmos SDK** and **IBC-Go**; backend lead on **Trust Wallet blockatlas** (200+ merged PRs). Backend is the core — distributed systems, gRPC/REST APIs, high-concurrency architecture — with the **full-stack (TypeScript, React) and DevOps (Docker, Kubernetes, Terraform)** range to own a feature end-to-end.
+Senior blockchain protocol engineer with 10+ years shipping production blockchain and distributed systems—from ADR to mainnet. 1,100+ public merged open-source PRs across the Cosmos, Ethereum, wallet-backend, and developer-tooling ecosystems.
 
-Comfortable across the stack — Ethereum L2 (Hermez zk-SNARKs), wallet backends (Trust Wallet, Mercado Bitcoin), Kubernetes, observability — and uses AI-native workflows as a productivity multiplier, not a deliverable.
+Author of AtomOne ADR-004 Nakamoto Bonus, maintainer-level contributor to Ignite CLI with 300+ merged PRs, upstream contributor to Cosmos SDK and IBC-Go, and backend lead on Trust Wallet blockatlas with 200+ merged PRs.
 
----
+Backend and protocol engineering at the core, with full-stack and DevOps range for end-to-end ownership.
 
-## At a Glance
+## Selected protocol impact
 
-| Area | Highlights |
+### AtomOne
+
+- Authored ADR-004 Nakamoto Bonus and implemented distribution-module behavior.
+- Delivered governance migrations and validator-commission logic in the AtomOne Cosmos SDK fork.
+- Evidence: [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) · [`atomone-hub/atomone-sdk`](https://github.com/atomone-hub/atomone-sdk)
+
+### Ignite CLI
+
+- Contributed 300+ public merged PRs.
+- Advanced protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer tooling.
+- Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
+
+### Cosmos SDK and IBC-Go
+
+- Contributed interface-registry and gogoproto handling plus capability-keeper helpers.
+- Strengthened downstream module composition and cross-chain interoperability.
+- Evidence: [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) · [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go)
+
+### Trust Wallet blockatlas
+
+- Contributed 200+ public merged PRs.
+- Led multi-chain indexing, integrations, full-node tooling, and a Node.js-to-Go migration.
+- Established production concurrency patterns across wallet-backend services.
+- Evidence: [merged PRs](https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas)
+
+## Core expertise
+
+| Area | Technologies and focus |
 |---|---|
-| **Experience** | 10+ years building production software and blockchain systems |
-| **Citizenship** | Brazilian and Italian citizen · Open to remote roles and Europe-based opportunities |
-| **Primary stack** | Go, Cosmos SDK, IBC, CometBFT, gRPC, TypeScript, React |
-| **Open source** | 300+ public merged PRs in Ignite CLI; 200+ public merged PRs in Trust Wallet blockatlas |
-| **Protocol scope** | Cosmos SDK modules, IBC, validator infrastructure, AtomOne, Cosmos Hub, Ignite Network / SPN |
-| **Validator infra** | Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates, full-node operations |
-| **Production scope** | Wallets, custodial systems, multi-chain indexing, full nodes, Ethereum L2 / zk-SNARK rollup infrastructure |
-| **AI-native workflows** | AI coding assistants for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
+| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
+| **Go Backend & Distributed Systems** | Go, gRPC, REST APIs, concurrency, goroutines, worker pools, context cancellation, Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates |
+| **Developer Tooling** | Cobra, Viper, protobuf, protoanalysis, AST manipulation, code generation, scaffold migrations, CLI UX, release workflows |
+| **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain full-node operations |
+| **Full-Stack Delivery** | TypeScript, React, JavaScript, responsive UI, component architecture, API-to-interface delivery |
 
----
+## Professional experience
 
-## Core Expertise
+### All in Bits (Ignite)
 
-| Area | Technologies and Focus |
-|---|---|
-| **Blockchain & Protocols** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
-| **Backend & Distributed Systems** | Go, gRPC, REST APIs, backend architecture, concurrency, goroutines, channels, worker pools, fan-out pipelines, context cancellation, distributed systems, Validator-as-a-Service workflows, consumer-chain lifecycle, misbehaviour validation, and validator-commission updates |
-| **Tooling & Developer Experience** | CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows |
-| **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm Charts, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations |
-| **AI-Native Workflows** | Daily-driver use of AI coding assistants for repository context engineering, prompt design, and review/refactor loops on Go and Cosmos SDK codebases |
-| **Front-end & Full-Stack** | TypeScript, React, JavaScript, responsive UI, component architecture, and full-stack delivery from API to interface |
+**Staff / Senior Blockchain Engineer, Go** · Dec 2022 — Mar 2026 · Remote
 
----
+- Advanced Ignite CLI with 300+ public merged PRs spanning protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.
+- Implemented and reviewed IBC, validator infrastructure, consumer-chain lifecycle, misbehaviour validation, parameter cleanup, and Validator-as-a-Service workflows.
+- Extended Gno / allinbits/gno-realms with IBC core and transfer-realm functionality.
+- Contributed upstream fixes and helpers to Cosmos SDK and IBC-Go.
 
-## Open Source & Protocol Impact
+### Interchain Foundation
 
-- **Ignite CLI:** maintainer-level contributor with **300+ public merged PRs** across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and release-quality fixes — the all-in-one platform for building, launching, and maintaining Cosmos SDK chains.
-- **AtomOne:** protocol-level contributor — implemented the **distribution module**, designed **ADR-004 Nakamoto Bonus** mechanics, fixed governance migrations, and rebuilt validator-commission update logic on the AtomOne Cosmos SDK fork.
-- **hermeznetwork/hermez-node:** Go backend and protocol-adjacent work for the **zk-SNARK rollup** operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.
-- **ignite/network · tendermint/spn:** Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations.
-- **Cosmos SDK + IBC-Go:** upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.
-- **Trust Wallet blockatlas:** **200+ public merged PRs** across multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration.
+**Blockchain Engineer, Go** · Jun 2022 — Dec 2022 · Remote
 
----
+- Contributed Go code and tooling for Cosmos Hub / ATOM chain development.
+- Built module-composition and IBC functionality, including capability-keeper improvements in IBC-Go.
 
-## Professional Experience
+### All in Bits (Ignite)
 
-### Ignite / AtomOne / All in Bits
+**Senior Blockchain Engineer, Go** · Jun 2021 — Jun 2022 · Remote
 
-**Staff / Senior Blockchain Engineer, Go** · Jun 2021 — Mar 2026 · Remote
-
-- Maintained and extended **Ignite CLI**, an all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains; contributed **300+ public merged PRs** across protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.
-- Shipped protocol and module work for **AtomOne / Cosmos SDK fork** efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.
-- Implemented and reviewed code around **IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup, and Validator-as-a-Service** workflows.
-- Contributed to **Gno / allinbits/gno-realms** with IBC core and transfer realm functionality.
-- Contributed upstream fixes and helpers to **Cosmos SDK and IBC-Go**, including gogoproto registry resolver handling and capability-keeper helper functionality.
-
-### Interchain / Cosmos Hub
-
-**Blockchain Engineer, Go** · Jun 2022 — Dec 2022 · Remote *(leave from Ignite)*
-
-- Contributed Go code and supporting tooling for **Cosmos Hub / ATOM** chain development alongside the Interchain core ecosystem.
-- Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.
+- Joined Ignite CLI as a core engineer, shipping scaffold, protobuf, and CLI UX work.
 
 ### Polygon Hermez
 
 **Blockchain / Layer-2 Engineer, Go** · Feb 2021 — Jun 2021 · Remote
 
-- Built backend and protocol-adjacent Go services for **Hermez**, an Ethereum Layer-2 system based on zk-SNARKs.
-- Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.
+- Built Go backend and protocol-adjacent services for an Ethereum Layer-2 system based on zk-SNARKs.
+- Integrated Go services with Ethereum tooling and the prover / coordinator pipeline.
 
 ### Energi
 
 **Backend Engineer / Architecture** · Apr 2020 — Feb 2021 · Remote
 
-- Built Go backend services for the **Energi DeFi stack** and custodial wallet systems handling private-key custody flows.
-- Owned Kubernetes deployment architecture using **Helm and GitHub Actions CI/CD** for blockchain services and chain-node operations.
-- Implemented observability with **Prometheus and Grafana** for service and node monitoring across production environments.
+- Built Go backend services for the Energi DeFi stack and custodial wallet systems.
+- Owned Kubernetes deployment architecture with Helm and GitHub Actions CI/CD and implemented Prometheus / Grafana observability.
 
 ### Trust Wallet / Binance
 
 **Backend Lead, Go** · Aug 2019 — Apr 2020 · Remote
 
-- Led backend work on Trust Wallet's multi-chain indexing and integration platform, **blockatlas**, with **200+ public merged PRs** across chain integrations, indexers, market-data routes, and full-node tooling.
-- Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.
-- Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.
+- Led backend work on blockatlas, contributing 200+ public merged PRs across integrations, indexers, market-data routes, and full-node tooling.
+- Migrated legacy Node.js services to Go and standardized worker pools, fan-out processing, context cancellation, and production concurrency patterns.
+- Operated and monitored production full nodes across multiple chains.
 
 ### Mercado Bitcoin
 
 **Tech Lead — Backend & Mobile** · Mar 2018 — Aug 2019 · São Paulo, Brazil
 
-- Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.
-- Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.
-- Led backend, mobile, and web product engineering for customer-facing exchange workflows across iOS, Android, and web.
+- Built Go and Python services for multi-chain transaction tracking and payload signing.
+- Led backend, mobile, and web product engineering and maintained wallet key-management workflows.
 
-### Earlier Roles
+### Earlier experience
 
 **Tech Lead / Founder / Mobile Engineer** · 2011 — 2018 · São Paulo, Brazil
 
-- **XDEX:** led exchange-service engineering in .NET.
-- **Finchain / FlowBTC:** built ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems.
-- **Neon Bank:** delivered iOS / Android engineering and document-recognition workflows using OpenCV and C++.
+- **XDEX:** exchange-service engineering in .NET.
+- **Finchain / FlowBTC:** ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems.
+- **Neon Bank:** iOS / Android engineering and document-recognition workflows with OpenCV and C++.
 
----
+## Selected repositories / evidence
 
-## Selected Repositories
+- [`ignite/cli`](https://github.com/ignite/cli) — Cosmos SDK tooling, protoanalysis, AST/code generation, CLI UX
+- [`ignite/network`](https://github.com/ignite/network) / [`tendermint/spn`](https://github.com/tendermint/spn) — chain-launch tooling and sovereign-chain lifecycle
+- [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) / [`atomone-hub/atomone-sdk`](https://github.com/atomone-hub/atomone-sdk) — AtomOne chain and Cosmos SDK fork
+- [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) — protocol modules and interface registry
+- [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go) — interoperability, capability keeper, module composition
+- [`cosmos/gaia`](https://github.com/cosmos/gaia) — Cosmos Hub / ATOM chain application
+- [`allinbits/vaas`](https://github.com/allinbits/vaas) — validator and consumer-chain lifecycle workflows
+- [`hermeznetwork/hermez-node`](https://github.com/hermeznetwork/hermez-node) — Ethereum Layer 2 and zk-SNARK rollup operator services
+- [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas) — multi-chain indexing, integrations, and full-node tooling
 
-| Repository | Scope |
-|---|---|
-| [`ignite/cli`](https://github.com/ignite/cli) | Cosmos SDK tooling, protoanalysis, AST/codegen, CLI UX |
-| [`ignite/apps`](https://github.com/ignite/apps) | Ignite app workflows, chain developer experience, ecosystem tooling |
-| [`ignite/network`](https://github.com/ignite/network) / [`tendermint/spn`](https://github.com/tendermint/spn) | Network launch tooling, SPN, Ignite/Tendermint history |
-| [`hermeznetwork/hermez-node`](https://github.com/hermeznetwork/hermez-node) | Ethereum L2, zk-SNARK rollup, node/operator services |
-| [`cosmos/gaia`](https://github.com/cosmos/gaia) | Cosmos Hub, Gaia chain app, ATOM tooling |
-| [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) | Cosmos SDK, protocol modules, interface registry |
-| [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go) | IBC-Go, capability keeper, module composition |
-| [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) / [`atomone-hub/cosmos-sdk`](https://github.com/atomone-hub/cosmos-sdk) | AtomOne chain & SDK fork — distribution module, ADR-004 Nakamoto Bonus, governance migrations, validator-commission logic |
-| [`allinbits/vaas`](https://github.com/allinbits/vaas) | VaaS, IBC provider hardening, consumer-chain lifecycle |
-| [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas) | Multi-chain indexing, chain integrations, full-node tooling |
+## Teaching and talks
 
----
+- **FIAP (2021):** MBA instructor in decentralized application development and Ethereum smart contracts.
+- **Go Blockchain (2018):** instructor in Ethereum blockchain development and smart contracts for mobile.
+- **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.
+- **AwesomWasm 2023, Berlin:** workshop on the Ignite stack and roadmap.
+- **ETH São Paulo 2021:** zk-SNARKs and Ethereum Layer-2 rollup infrastructure.
 
-## Education & Teaching
+## Education, certifications and languages
 
-### Universidade Presbiteriana Mackenzie
-
-Coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters)
-São Paulo, Brazil — self-taught the rest in production.
-
-### FIAP
-
-MBA Blockchain Instructor, since 2021
-
-### Speaking
-
-- **Web3Family Conference 2023 (Barcelona)** — talk on building Cosmos SDK chains and developer tooling with Ignite.
-- **AwesomWasm 2023 (Berlin)** — workshop on the Ignite stack, its latest developments and roadmap, as an Ignite core developer.
-- **ETH São Paulo 2021** — talk on zk-SNARKs and Ethereum Layer-2 rollup infrastructure.
-
-### Certifications
-
-- Programming Blockchain — Jimmy Song
-- Data Science — Let's Code Academy (2021)
-
----
-
-## Languages
-
-- Portuguese — Native
-- English — Fluent (professional working proficiency)
-- Spanish — Advanced (professional working proficiency)
-
----
-
-## Tech Stack
-
-Go · Cosmos SDK · IBC · CometBFT · AtomOne · Gno · Validator Infrastructure · zk-SNARKs · Ethereum · EVM · L2 · Protobuf · gRPC · TypeScript · React · Python · Docker · Kubernetes · Terraform · GitHub Actions · CI/CD · AI-Assisted Dev
-
----
+- **Universidade Presbiteriana Mackenzie:** coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters), São Paulo, Brazil.
+- **Certifications:** Programming Blockchain — Jimmy Song (2018, 16h); Data Science — Let's Code Academy (2021, 48h).
+- **Languages:** Portuguese — native; English — fluent; Spanish — advanced.
 
 ## Repository
 
-This repository contains a static, self-contained HTML CV designed for browser viewing and PDF export, deployed at [pantani.github.io](https://pantani.github.io/) via GitHub Pages.
+This repository contains a static, self-contained, trilingual HTML résumé designed for browser viewing and a clean two-page A4 print / PDF export.
 
-- [`index.html`](./index.html) — visual CV / portfolio page (EN / PT-BR / ES, single-file)
-- [`README.md`](./README.md) — GitHub-friendly markdown version
-- [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, X
-- [`robots.txt`](./robots.txt) — allows all crawlers, references the sitemap
-- [`sitemap.xml`](./sitemap.xml) — single-URL sitemap for the canonical home
+- [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish résumé
+- [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
+- [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
-- `googlecf632249c921a46c.html` — Google Search Console site-verification file
