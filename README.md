@@ -55,6 +55,7 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 | **Developer Tooling** | Cobra, Viper, protobuf, protoanalysis, AST manipulation, code generation, scaffold migrations, CLI UX, release workflows |
 | **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain full-node operations |
 | **Full-Stack Delivery** | TypeScript, React, JavaScript, responsive UI, component architecture, API-to-interface delivery |
+| **AI-Augmented Engineering** | Repository context engineering, prompt design, AI-assisted review/refactor loops for Go and Cosmos SDK, MCP tooling, tdmcp |
 
 ## Professional experience
 
@@ -145,9 +146,16 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 
 ## Repository
 
-This repository contains a static, self-contained, trilingual HTML résumé designed for browser viewing and a clean two-page A4 print / PDF export.
+This repository contains a static, self-contained, trilingual HTML résumé designed for browser viewing and clean A4 PDF downloads.
 
 - [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish résumé
+- [`output/pdf/`](./output/pdf/) — ready-to-download English, Brazilian Portuguese, and Spanish PDFs
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
+
+Regenerate the three PDFs after changing résumé content or print styles:
+
+```sh
+./scripts/generate-pdfs.sh
+```
