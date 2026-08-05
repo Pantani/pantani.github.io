@@ -76,11 +76,11 @@ PASS. The repository now separates the human-facing visual portfolio from three 
 - PASS: desktop and 390 px mobile layouts were inspected; browser measurements show no horizontal document overflow.
 - PASS: 12 GitHub evidence URLs, the published homepage, and Telegram returned HTTP 200 during validation.
 - PARTIAL: LinkedIn returned HTTP 999 to an automated request, but its authenticated browser profile was inspected during the audit.
+- PASS: the scoped changes were committed and pushed to `main`; GitHub Pages completed its build and deployment successfully, and the live ATS pages and PDF checksums matched the repository artifacts.
 
 ## Remaining limitations and external inconsistencies
 
-- The live GitHub Pages site and new ATS routes are not deployment proof until these local changes are committed, pushed, and the Pages build completes. No commit, push, or deployment was performed.
-- The external GitHub profile README still describes the role as `Full-stack / Blockchain Engineer` and the company as `Ignite`; that repository was outside the authorized edit scope.
-- The LinkedIn headline remains blockchain-first. The experience entry was useful for reconciling dates and the most recent title, but no LinkedIn edit was requested or performed.
+- The external GitHub account has no current company set, but its profile README still describes the role as `Full-stack / Blockchain Engineer`, the account bio is limited to ENS-style identities, the website field points to LinkedIn instead of the portfolio, and the pinned order does not lead with the strongest Go evidence. That repository was outside the authorized edit scope.
+- The LinkedIn headline is now aligned with Senior Go, backend, distributed systems, platform engineering, and blockchain infrastructure. However, the About, most recent experience, Featured AtomOne item, and AtomOne project still say `Authored ADR-004`; the Featured Ignite item says `maintainer-level contributor` without confirmed formal status. No LinkedIn edit was requested or performed.
 - The older 2011-2018 roles and some private-company impact statements are based primarily on the supplied career record rather than independently accessible source code. The ATS resumes keep those entries compact and avoid unsupported metrics.
 - No RPS, user-count, revenue, latency, performance-improvement, payment-volume, or network-count metrics were added because they were not verified.

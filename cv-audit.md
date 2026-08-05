@@ -37,8 +37,8 @@ The new ATS set addresses these problems with three separate English resumes, on
 1. The HTML title, metadata, JSON-LD, hero, README, `humans.txt`, and existing PDFs all lead with `Senior Blockchain Protocol Engineer`.
 2. The first page repeats protocol projects and PR counts before professional experience.
 3. Transferable Go backend, distributed systems, platform, financial systems, infrastructure, and technical leadership experience is present, but framed as secondary support for blockchain.
-4. The current LinkedIn headline and About section repeat the same blockchain-first message. External profiles were audited but not edited by this repository task.
-5. The public GitHub profile README still says `Company: "Ignite"`, while the verified LinkedIn experience ends in March 2026. This is an external inconsistency and remains unresolved here.
+4. The current LinkedIn headline is aligned with the broader Go/backend positioning, but the About, most recent experience, Featured AtomOne item, and AtomOne project still claim authorship of ADR-004. The Featured Ignite item also uses `maintainer-level contributor` without confirmed formal status. External profiles were audited but not edited by this repository task.
+5. The public GitHub account has no current company set, but the profile README still leads with `Blockchain Engineer` and `Full-stack / Blockchain Engineer`; its bio is limited to ENS-style identities, its website field points to LinkedIn instead of the portfolio, and Rust/creative-tool projects precede the strongest Go evidence in the pinned-repository order.
 
 ## Factual corrections
 
@@ -46,7 +46,7 @@ The new ATS set addresses these problems with three separate English resumes, on
 
 - `10+ years shipping production Go/blockchain/distributed systems` was narrowed to `10+ years in software engineering`. The visible chronology supports a software career beginning in 2011, but professional Go is explicitly shown from 2018.
 - `Authored AtomOne ADR-004` was removed. The ADR document was created by other contributors. Danilo's verified contribution is implementation of ADR-004 in [atomone-sdk PR #10](https://github.com/atomone-hub/atomone-sdk/pull/10), followed by epoch timing, governance migration, and validator commission fixes.
-- The 2022-2026 Ignite role is presented as `Blockchain Engineer, Go / Cosmos SDK / IBC`, matching the authenticated LinkedIn experience, rather than the unsupported `Staff / Senior` label used by the previous repository version.
+- The 2022-2026 Ignite role is presented conservatively as `Blockchain Engineer, Go / Cosmos SDK / IBC`, rather than copying the current LinkedIn label `Staff / Senior Go Engineer` without separate proof of formal seniority.
 - English proficiency is `Advanced`, matching the supplied career context, rather than `Fluent`.
 - Current employment is not implied. The most recent verified role ends in March 2026.
 - `300+` Ignite CLI and `200+` Trust Wallet blockatlas merged PRs are retained only as supporting evidence. Current GitHub searches returned 326 and 246 respectively on the audit date.
@@ -88,7 +88,7 @@ The new ATS set addresses these problems with three separate English resumes, on
 - Exact production scale, reliability targets, incident ownership, database technologies, and messaging systems for backend/platform roles.
 - Whether English should be upgraded from `Advanced` to `Fluent` based on a formal or self-confirmed level.
 - Current preferred city display (`Brazil` versus `São Paulo, Brazil`). The ATS versions use the more portable `Brazil / UTC-3` supplied in the brief.
-- External profile updates: LinkedIn headline/About/Open to Work and the GitHub profile README still need separate, explicit publication workflows.
+- External profile updates: correct the AtomOne authorship language and unverified Ignite status on LinkedIn; then align the GitHub bio, website, profile README, and pinned-repository order with the Senior Go/backend positioning. These require separate, explicit publication workflows.
 
 ## Implementation boundary
 
