@@ -149,7 +149,7 @@ This repository contains two complementary resume systems: a static, trilingual 
 
 - [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish resume
 - [`ats/`](./ats/) — ATS landing page plus role-specific HTML resumes
-- [`resume-source/`](./resume-source/) — canonical English Markdown sources for the ATS variants
+- [`resume-source/`](./resume-source/) — editable English Markdown mirrors of the ATS variants
 - [`output/pdf/`](./output/pdf/) — visual and ATS-ready PDF outputs
 - [`output/text/`](./output/text/) — text extracted from the ATS PDFs for reading-order QA
 - [`cv-audit.md`](./cv-audit.md) and [`career-positioning.md`](./career-positioning.md) — evidence audit and positioning strategy
@@ -167,5 +167,6 @@ Regenerate and validate the ATS resumes:
 
 ```sh
 ./scripts/generate-ats-pdfs.sh
+./scripts/test_validate_ats_resumes.py
 ./scripts/validate-ats-resumes.py
 ```

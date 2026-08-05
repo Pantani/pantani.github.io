@@ -3,3 +3,5 @@
 .claude/_workspace_prev/
 
 CLAUDE.md
+__pycache__/
+*.py[cod]

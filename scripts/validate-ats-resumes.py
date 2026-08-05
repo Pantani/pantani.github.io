@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
+from html import unescape
 from pathlib import Path
 
 
@@ -55,17 +56,25 @@ REQUIRED_URLS = (
     "pantani.github.io",
 )
 
-FORBIDDEN_TEXT = (
-    "[VERIFY",
-    "Authored AtomOne ADR-004",
-    "10+ years shipping production Go",
-    "10+ years shipping production blockchain",
-    "Staff / Senior Blockchain Engineer",
-    "Telegram",
-    "IBCGo",
-    "marketdata",
-    "endtoend",
-    "�",
+FORBIDDEN_PATTERNS = (
+    ("verification placeholder", re.compile(r"\[VERIFY", re.IGNORECASE)),
+    (
+        "ADR-004 authorship claim",
+        re.compile(r"\bauthor(?:ed|ship)?\b.{0,80}\bADR[-\s]?004\b", re.IGNORECASE | re.DOTALL),
+    ),
+    (
+        "unsupported 10+ years of production Go/blockchain claim",
+        re.compile(
+            r"10\+\s+years\s+shipping\s+production\s+(?:Go|blockchain)",
+            re.IGNORECASE,
+        ),
+    ),
+    ("unsupported combined Staff/Senior title", re.compile(r"\bStaff\s*/\s*Senior\b", re.IGNORECASE)),
+    ("Telegram contact", re.compile(r"\bTelegram\b", re.IGNORECASE)),
+    ("unexpanded IBC-Go name", re.compile(r"\bIBCGo\b", re.IGNORECASE)),
+    ("compressed market-data wording", re.compile(r"\bmarketdata\b", re.IGNORECASE)),
+    ("compressed end-to-end wording", re.compile(r"\bendtoend\b", re.IGNORECASE)),
+    ("replacement character", re.compile("�")),
 )
 
 
@@ -84,6 +93,29 @@ def run(*args: str) -> str:
 def fail(message: str) -> None:
     print(f"FAIL: {message}", file=sys.stderr)
     raise SystemExit(1)
+
+
+def validate_forbidden_text(text: str, document: str) -> None:
+    for label, pattern in FORBIDDEN_PATTERNS:
+        if pattern.search(text):
+            fail(f"{document}: forbidden content ({label})")
+
+
+def validate_target_title(source: str, expected_title: str, document: str) -> None:
+    matches = re.findall(
+        r'<p\s+class="target-title"\s*>(.*?)</p>',
+        source,
+        re.DOTALL,
+    )
+    if len(matches) != 1:
+        fail(f"{document}: expected one target-title line")
+    target_title = " ".join(
+        unescape(re.sub(r"<[^>]+>", " ", matches[0])).split()
+    )
+    if target_title != expected_title:
+        fail(
+            f"{document}: target title is {target_title!r}, expected {expected_title!r}"
+        )
 
 
 def section_line_indexes(lines: list[str], document: str) -> list[int]:
@@ -121,7 +153,7 @@ def validate_html() -> None:
     if "column-count" in css or "position: absolute" in css:
         fail("ATS print stylesheet contains multi-column or absolute positioning")
 
-    for slug, _ in VARIANTS:
+    for slug, expected_title in VARIANTS:
         source_name = slug.removeprefix("danilo-pantani-") + ".html"
         source = (ROOT / "ats" / source_name).read_text(encoding="utf-8")
         for forbidden_markup in ("<table", "<img", "<aside"):
@@ -129,6 +161,16 @@ def validate_html() -> None:
                 fail(f"{source_name}: forbidden ATS markup {forbidden_markup}")
         if source.count("<h1>Danilo Pantani</h1>") != 1:
             fail(f"{source_name}: expected one candidate-name heading")
+        source_text = unescape(re.sub(r"<[^>]+>", " ", source))
+        validate_target_title(source, expected_title, source_name)
+        validate_forbidden_text(source_text, source_name)
+
+        markdown_name = f"{slug}.md"
+        markdown = (ROOT / "resume-source" / markdown_name).read_text(encoding="utf-8")
+        expected_prefix = f"# Danilo Pantani\n\n## {expected_title}\n"
+        if not markdown.startswith(expected_prefix):
+            fail(f"{markdown_name}: candidate name and title are not the first headings")
+        validate_forbidden_text(markdown, markdown_name)
 
 
 def validate_pdf(slug: str, expected_title: str) -> None:
@@ -168,9 +210,7 @@ def validate_pdf(slug: str, expected_title: str) -> None:
     )
     if employer_indexes != sorted(employer_indexes):
         fail(f"{pdf_path.name}: experience is not reverse chronological")
-    for forbidden in FORBIDDEN_TEXT:
-        if forbidden in text:
-            fail(f"{pdf_path.name}: forbidden text {forbidden!r}")
+    validate_forbidden_text(text, pdf_path.name)
 
     urls = run("pdfinfo", "-url", str(pdf_path))
     for required_url in REQUIRED_URLS:
