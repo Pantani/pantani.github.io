@@ -1,29 +1,29 @@
 # Danilo Pantani
 
-**Senior Blockchain Protocol Engineer**<br>
-**Go · Cosmos SDK · IBC · Distributed Systems**
+**Senior Go Engineer**<br>
+**Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure**
 
 São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen · EU work-eligible<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
 
-[Live HTML resume](https://pantani.github.io/) · [HTML source](./index.html)
+[Live visual resume](https://pantani.github.io/) · [ATS resume versions](https://pantani.github.io/ats/) · [HTML source](./index.html)
 
 ---
 
 ## Professional summary
 
-Senior blockchain protocol engineer with 10+ years shipping production blockchain and distributed systems—from ADR to mainnet. 1,100+ public merged open-source PRs across the Cosmos, Ethereum, wallet-backend, and developer-tooling ecosystems.
+Senior Go engineer with 10+ years in software engineering across backend platforms, distributed systems, financial systems, developer tooling, platform engineering, and blockchain infrastructure.
 
-Author of AtomOne ADR-004 Nakamoto Bonus, maintainer-level contributor to Ignite CLI with 300+ merged PRs, upstream contributor to Cosmos SDK and IBC-Go, and backend lead on Trust Wallet blockatlas with 200+ merged PRs.
+Implemented the AtomOne ADR-004 Nakamoto Bonus distribution-module behavior, contributed 300+ merged PRs to Ignite CLI, shipped upstream fixes to Cosmos SDK and IBC-Go, and led backend work on Trust Wallet blockatlas with 200+ merged PRs.
 
-Backend and protocol engineering at the core, with full-stack and DevOps range for end-to-end ownership.
+Go and distributed-systems engineering are the core, with technical leadership from system design through production operations. Blockchain is a deep specialization rather than the only positioning.
 
-## Selected protocol impact
+## Selected engineering impact
 
 ### AtomOne
 
-- Authored ADR-004 Nakamoto Bonus and implemented distribution-module behavior.
+- Implemented the distribution-module behavior defined by ADR-004 Nakamoto Bonus.
 - Delivered governance migrations and validator-commission logic in the AtomOne Cosmos SDK fork.
 - Evidence: [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) · [`atomone-hub/atomone-sdk`](https://github.com/atomone-hub/atomone-sdk)
 
@@ -61,11 +61,10 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 
 ### All in Bits (Ignite)
 
-**Staff / Senior Blockchain Engineer, Go** · Dec 2022 — Mar 2026 · Remote
+**Blockchain Engineer, Go · Cosmos SDK · IBC** · Dec 2022 — Mar 2026 · Remote
 
 - Advanced Ignite CLI with 300+ public merged PRs spanning protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.
 - Implemented and reviewed IBC, validator infrastructure, consumer-chain lifecycle, misbehaviour validation, parameter cleanup, and Validator-as-a-Service workflows.
-- Extended Gno / allinbits/gno-realms with IBC core and transfer-realm functionality.
 - Contributed upstream fixes and helpers to Cosmos SDK and IBC-Go.
 
 ### Interchain Foundation
@@ -81,7 +80,7 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 
 - Joined Ignite CLI as a core engineer, shipping scaffold, protobuf, and CLI UX work.
 
-### Polygon Hermez
+### Hermez Network
 
 **Blockchain / Layer-2 Engineer, Go** · Feb 2021 — Jun 2021 · Remote
 
@@ -142,14 +141,18 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 
 - **Universidade Presbiteriana Mackenzie:** coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters), São Paulo, Brazil.
 - **Certifications:** Programming Blockchain — Jimmy Song (2018, 16h); Data Science — Let's Code Academy (2021, 48h).
-- **Languages:** Portuguese — native; English — fluent; Spanish — advanced.
+- **Languages:** Portuguese — native; English — advanced; Spanish — advanced.
 
 ## Repository
 
-This repository contains a static, self-contained, trilingual HTML resume designed for browser viewing and clean A4 PDF downloads.
+This repository contains two complementary resume systems: a static, trilingual visual portfolio and three English, single-column ATS variants.
 
 - [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish resume
-- [`output/pdf/`](./output/pdf/) — ready-to-download English, Brazilian Portuguese, and Spanish PDFs
+- [`ats/`](./ats/) — ATS landing page plus role-specific HTML resumes
+- [`resume-source/`](./resume-source/) — canonical English Markdown sources for the ATS variants
+- [`output/pdf/`](./output/pdf/) — visual and ATS-ready PDF outputs
+- [`output/text/`](./output/text/) — text extracted from the ATS PDFs for reading-order QA
+- [`cv-audit.md`](./cv-audit.md) and [`career-positioning.md`](./career-positioning.md) — evidence audit and positioning strategy
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
@@ -158,4 +161,11 @@ Regenerate the three PDFs after changing resume content or print styles:
 
 ```sh
 ./scripts/generate-pdfs.sh
+```
+
+Regenerate and validate the ATS resumes:
+
+```sh
+./scripts/generate-ats-pdfs.sh
+./scripts/validate-ats-resumes.py
 ```

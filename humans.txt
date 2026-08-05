@@ -1,5 +1,5 @@
 Danilo Pantani
-Senior Blockchain Protocol Engineer · Go · Cosmos SDK · IBC · Distributed Systems
+Senior Go Engineer · Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure
 GitHub: https://github.com/Pantani
 LinkedIn: https://www.linkedin.com/in/dpantani/
 Site: https://pantani.github.io/
