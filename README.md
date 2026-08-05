@@ -7,7 +7,7 @@ São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen · EU work-eligible<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
 
-[Live HTML résumé](https://pantani.github.io/) · [HTML source](./index.html)
+[Live HTML resume](https://pantani.github.io/) · [HTML source](./index.html)
 
 ---
 
@@ -146,15 +146,15 @@ Backend and protocol engineering at the core, with full-stack and DevOps range f
 
 ## Repository
 
-This repository contains a static, self-contained, trilingual HTML résumé designed for browser viewing and clean A4 PDF downloads.
+This repository contains a static, self-contained, trilingual HTML resume designed for browser viewing and clean A4 PDF downloads.
 
-- [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish résumé
+- [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish resume
 - [`output/pdf/`](./output/pdf/) — ready-to-download English, Brazilian Portuguese, and Spanish PDFs
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
 
-Regenerate the three PDFs after changing résumé content or print styles:
+Regenerate the three PDFs after changing resume content or print styles:
 
 ```sh
 ./scripts/generate-pdfs.sh
