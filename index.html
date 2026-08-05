@@ -2240,7 +2240,15 @@
       .contact-card { padding: 9px 10px; border-radius: 10px; background: #fff; box-shadow: none; }
       .contact-card-head { margin-bottom: 6px; padding-bottom: 6px; }
       .contact-card-head h2 { font-size: 7pt; }
-      .avatar-mark { width: 22px; height: 22px; font-size: 12px; }
+      .avatar-mark {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+        /* macOS Preview/Quick Look paints the translucent screen shadow as
+           its rectangular PDF transparency group. Keep the circular mark
+           and gradient, but remove that shadow in print. */
+        box-shadow: none;
+      }
       .contact-item {
         grid-template-columns: 11px 56px minmax(0, 1fr);
         gap: 5px;
