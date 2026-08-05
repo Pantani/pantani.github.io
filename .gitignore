@@ -1,7 +1,6 @@
 .DS_Store
-.claude/_workspace/
-.claude/_workspace_prev/
-
+.claude/
 CLAUDE.md
+output/text/
 __pycache__/
 *.py[cod]

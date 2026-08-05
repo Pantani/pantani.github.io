@@ -151,11 +151,11 @@ This repository contains two complementary resume systems: a static, trilingual 
 - [`ats/`](./ats/) — ATS landing page plus role-specific HTML resumes
 - [`resume-source/`](./resume-source/) — editable English Markdown mirrors of the ATS variants
 - [`output/pdf/`](./output/pdf/) — visual and ATS-ready PDF outputs
-- [`output/text/`](./output/text/) — text extracted from the ATS PDFs for reading-order QA
-- [`cv-audit.md`](./cv-audit.md) and [`career-positioning.md`](./career-positioning.md) — evidence audit and positioning strategy
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
+
+ATS validation extracts PDF text into the ignored `output/text/` directory on demand.
 
 Regenerate the three PDFs after changing resume content or print styles:
 
