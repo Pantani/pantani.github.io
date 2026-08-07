@@ -1,6 +1,41 @@
+# Operating system files
 .DS_Store
-.claude/
+
+# IDEs and editors
+/.idea/
+/.vscode/
+*.code-workspace
+*.iml
+*.swp
+*.swo
+*~
+
+# Local AI tooling
+/.claude/
+/.codex/
+/.continue/
+/.cursor/
+/.windsurf/
+.aider*
 CLAUDE.md
-output/text/
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python caches and test artifacts
 __pycache__/
 *.py[cod]
+/.mypy_cache/
+/.pytest_cache/
+/.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Generated local artifacts
+/output/text/
+/tmp/
