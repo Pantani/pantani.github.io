@@ -13,7 +13,7 @@ Brazilian and Italian citizen · EU work-eligible<br>
 
 ## Professional summary
 
-I started my career building mobile apps in São Paulo in 2011. Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure.
+I began my software engineering career in São Paulo in 2011. Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure.
 
 At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling. More than 300 of my public Ignite CLI pull requests were merged. Earlier, I led backend work on Trust Wallet blockatlas, where more than 200 of my public pull requests were merged.
 
