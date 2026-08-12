@@ -7,17 +7,15 @@ São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen · EU work-eligible<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
 
-[Live visual resume](https://pantani.github.io/) · [ATS resume versions](https://pantani.github.io/ats/) · [HTML source](./index.html)
+[Live visual resume](https://pantani.github.io/) · [HTML source](./index.html)
 
 ---
 
 ## Professional summary
 
-Senior Go engineer with 10+ years in software engineering across backend platforms, distributed systems, financial systems, developer tooling, platform engineering, and blockchain infrastructure.
+I started my career building mobile apps in São Paulo in 2011. Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure.
 
-Implemented the AtomOne ADR-004 Nakamoto Bonus distribution-module behavior, contributed 300+ merged PRs to Ignite CLI, shipped upstream fixes to Cosmos SDK and IBC-Go, and led backend work on Trust Wallet blockatlas with 200+ merged PRs.
-
-Go and distributed-systems engineering are the core, with technical leadership from system design through production operations. Blockchain is a deep specialization rather than the only positioning.
+At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling. More than 300 of my public Ignite CLI pull requests were merged. Earlier, I led backend work on Trust Wallet blockatlas, where more than 200 of my public pull requests were merged.
 
 ## Selected engineering impact
 
@@ -30,20 +28,20 @@ Go and distributed-systems engineering are the core, with technical leadership f
 ### Ignite CLI
 
 - Contributed 300+ public merged PRs.
-- Advanced protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer tooling.
+- Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior.
 - Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
 
 ### Cosmos SDK and IBC-Go
 
 - Contributed interface-registry and gogoproto handling plus capability-keeper helpers.
-- Strengthened downstream module composition and cross-chain interoperability.
+- Added small upstream changes used by downstream Cosmos SDK modules.
 - Evidence: [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) · [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go)
 
 ### Trust Wallet blockatlas
 
 - Contributed 200+ public merged PRs.
-- Led multi-chain indexing, integrations, full-node tooling, and a Node.js-to-Go migration.
-- Established production concurrency patterns across wallet-backend services.
+- Led backend work for multi-chain indexing, integrations, and full-node tooling.
+- Contributed to the Node.js-to-Go migration and standardized concurrency patterns in the Go services.
 - Evidence: [merged PRs](https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas)
 
 ## Core expertise
@@ -52,10 +50,10 @@ Go and distributed-systems engineering are the core, with technical leadership f
 |---|---|
 | **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
 | **Go Backend & Distributed Systems** | Go, gRPC, REST APIs, concurrency, goroutines, worker pools, context cancellation, Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates |
-| **Developer Tooling** | Cobra, Viper, protobuf, protoanalysis, AST manipulation, code generation, scaffold migrations, CLI UX, release workflows |
+| **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
 | **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain full-node operations |
 | **Full-Stack Delivery** | TypeScript, React, JavaScript, responsive UI, component architecture, API-to-interface delivery |
-| **AI-Augmented Engineering** | Repository context engineering, prompt design, AI-assisted review/refactor loops for Go and Cosmos SDK, MCP tooling, tdmcp |
+| **Engineering Workflow** | Repository context, code review, refactoring, MCP tooling for TouchDesigner through tdmcp |
 
 ## Professional experience
 
@@ -63,51 +61,51 @@ Go and distributed-systems engineering are the core, with technical leadership f
 
 **Blockchain Engineer, Go · Cosmos SDK · IBC** · Dec 2022 — Mar 2026 · Remote
 
-- Advanced Ignite CLI with 300+ public merged PRs spanning protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.
-- Implemented and reviewed IBC, validator infrastructure, consumer-chain lifecycle, misbehaviour validation, parameter cleanup, and Validator-as-a-Service workflows.
-- Contributed upstream fixes and helpers to Cosmos SDK and IBC-Go.
+- On Ignite CLI, I worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. More than 300 of my public pull requests were merged.
+- The same role also covered IBC, validator infrastructure, consumer-chain lifecycle work, misbehaviour validation, parameter cleanup, and Validator-as-a-Service.
+- I contributed smaller upstream fixes to Cosmos SDK and IBC-Go.
 
 ### Interchain Foundation
 
 **Blockchain Engineer, Go** · Jun 2022 — Dec 2022 · Remote
 
-- Contributed Go code and tooling for Cosmos Hub / ATOM chain development.
-- Built module-composition and IBC functionality, including capability-keeper improvements in IBC-Go.
+- During a six-month engagement with the Interchain Foundation core team, I contributed to Gaia and nearby Cosmos SDK modules for the Cosmos Hub.
+- The work included module composition, IBC functionality for downstream chains, and a capability-keeper improvement in IBC-Go.
 
 ### All in Bits (Ignite)
 
 **Senior Blockchain Engineer, Go** · Jun 2021 — Jun 2022 · Remote
 
-- Joined Ignite CLI as a core engineer, shipping scaffold, protobuf, and CLI UX work.
+- I joined Ignite CLI as a core engineer in 2021, working on scaffolding, protobuf analysis, generated code, and CLI flows.
 
 ### Hermez Network
 
 **Blockchain / Layer-2 Engineer, Go** · Feb 2021 — Jun 2021 · Remote
 
-- Built Go backend and protocol-adjacent services for an Ethereum Layer-2 system based on zk-SNARKs.
-- Integrated Go services with Ethereum tooling and the prover / coordinator pipeline.
+- At Hermez, I wrote Go services for the backend and protocol-facing parts of its Ethereum Layer-2 operator stack.
+- Those services connected Ethereum tooling with the zk-SNARK prover and coordinator pipeline.
 
 ### Energi
 
 **Backend Engineer / Architecture** · Apr 2020 — Feb 2021 · Remote
 
-- Built Go backend services for the Energi DeFi stack and custodial wallet systems.
-- Owned Kubernetes deployment architecture with Helm and GitHub Actions CI/CD and implemented Prometheus / Grafana observability.
+- At Energi, I built Go services for the DeFi stack and custodial-wallet flows.
+- I also designed the Kubernetes and Helm deployment setup, its GitHub Actions delivery pipeline, and Prometheus / Grafana monitoring.
 
 ### Trust Wallet / Binance
 
 **Backend Lead, Go** · Aug 2019 — Apr 2020 · Remote
 
-- Led backend work on blockatlas, contributing 200+ public merged PRs across integrations, indexers, market-data routes, and full-node tooling.
-- Migrated legacy Node.js services to Go and standardized worker pools, fan-out processing, context cancellation, and production concurrency patterns.
-- Operated and monitored production full nodes across multiple chains.
+- At Trust Wallet, I led backend work on blockatlas. More than 200 of my public pull requests were merged across integrations, indexers, market-data routes, and full-node tooling.
+- As services moved from Node.js to Go, I standardized worker pools, fan-out processing, batching, and context cancellation.
+- I also operated and monitored full nodes for the wallet's multi-chain backend.
 
 ### Mercado Bitcoin
 
 **Tech Lead — Backend & Mobile** · Mar 2018 — Aug 2019 · São Paulo, Brazil
 
-- Built Go and Python services for multi-chain transaction tracking and payload signing.
-- Led backend, mobile, and web product engineering and maintained wallet key-management workflows.
+- At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.
+- The role also included wallet scripts tied to the exchange ledger and delivery across iOS, Android, and web.
 
 ### Earlier experience
 
@@ -119,7 +117,7 @@ Go and distributed-systems engineering are the core, with technical leadership f
 
 ## Selected repositories / evidence
 
-- [`ignite/cli`](https://github.com/ignite/cli) — Cosmos SDK tooling, protoanalysis, AST/code generation, CLI UX
+- [`ignite/cli`](https://github.com/ignite/cli) — Cosmos SDK tooling, protobuf analysis, AST-based code generation, CLI behavior
 - [`ignite/network`](https://github.com/ignite/network) / [`tendermint/spn`](https://github.com/tendermint/spn) — chain-launch tooling and sovereign-chain lifecycle
 - [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) / [`atomone-hub/atomone-sdk`](https://github.com/atomone-hub/atomone-sdk) — AtomOne chain and Cosmos SDK fork
 - [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) — protocol modules and interface registry
@@ -145,28 +143,16 @@ Go and distributed-systems engineering are the core, with technical leadership f
 
 ## Repository
 
-This repository contains two complementary resume systems: a static, trilingual visual portfolio and three English, single-column ATS variants.
+This repository contains a static, trilingual visual portfolio.
 
 - [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish resume
-- [`ats/`](./ats/) — ATS landing page plus role-specific HTML resumes
-- [`resume-source/`](./resume-source/) — editable English Markdown mirrors of the ATS variants
-- [`output/pdf/`](./output/pdf/) — visual and ATS-ready PDF outputs
+- [`output/pdf/`](./output/pdf/) — generated resume PDFs
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
-
-ATS validation extracts PDF text into the ignored `output/text/` directory on demand.
 
 Regenerate the three PDFs after changing resume content or print styles:
 
 ```sh
 ./scripts/generate-pdfs.sh
-```
-
-Regenerate and validate the ATS resumes:
-
-```sh
-./scripts/generate-ats-pdfs.sh
-./scripts/test_validate_ats_resumes.py
-./scripts/validate-ats-resumes.py
 ```

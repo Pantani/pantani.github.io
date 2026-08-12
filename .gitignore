@@ -37,5 +37,4 @@ coverage.xml
 htmlcov/
 
 # Generated local artifacts
-/output/text/
 /tmp/

@@ -2621,9 +2621,9 @@
       .resume-footer { margin-top: 5mm; padding-top: 2mm; font-size: 6.5pt; }
       .resume-footer::after { font-size: 6.5pt; }
 
-      /* ─── Three-page editorial layout ───
-         Restores the hierarchy and page rhythm of the previous PDF while
-         keeping the current protocol-first content. Print backgrounds and
+      /* ─── Editorial print layout ───
+         Keeps the protocol-first hierarchy while using a compact second page
+         for experience, teaching, and credentials. Print backgrounds and
          text gradients are explicitly neutralized to avoid purple bands in
          Chrome/Skia PDF exports. */
       .print-only { display: block !important; }
@@ -2732,7 +2732,7 @@
       .expertise-card h3 { font-size: 7.2pt; line-height: 1.12; }
       .expertise-card p { font-size: 6.15pt; line-height: 1.18; }
 
-      /* Pages 2–3: the previous wide timeline + evidence sidebar. */
+      /* Page 2: wide timeline + supporting evidence sidebar. */
       .body-grid {
         display: block;
         clear: both;
@@ -2780,12 +2780,12 @@
       .teaching-grid p,
       .credentials-grid p { margin-bottom: 2px; font-size: 6.3pt; line-height: 1.21; }
 
-      .repos-section,
+      .repos-section { display: none !important; }
       .credentials-section {
         margin-top: 0 !important;
         padding-top: 0 !important;
-        break-before: page;
-        page-break-before: always;
+        break-before: auto;
+        page-break-before: auto;
       }
       .repo-intro { font-size: 7.1pt; line-height: 1.26; }
       .repo-chips { margin: 5px 0 0; gap: 4px; }
@@ -2795,10 +2795,8 @@
       .resume-footer { clear: both; margin-top: 8mm; padding-top: 3mm; font-size: 6.8pt; }
       .resume-footer::after { font-size: 6.8pt; }
 
-      /* Classic pagination after the protocol section is placed inside the
-         main column: page 1 mirrors the former website composition, page 2
-         carries experience + evidence, and page 3 closes with repositories
-         + credentials. */
+      /* Page 1 keeps positioning and protocol evidence; page 2 carries
+         experience, selected highlights, teaching, and credentials. */
       .section[aria-labelledby="expertise-title"] {
         float: none;
         width: 100%;
@@ -2819,6 +2817,11 @@
         margin-top: 0;
       }
       .print-sidebar-only { display: block !important; }
+      .print-sidebar-only .side-panel[aria-labelledby="sidebar-summary-title"],
+      .print-sidebar-only .side-panel[aria-labelledby="print-seeking-title"] {
+        display: none !important;
+      }
+      .supporting-sections > .section .section-title .num { display: none; }
       .print-sidebar-only .summary-body p {
         font-size: 6.8pt;
         line-height: 1.22;
@@ -2856,14 +2859,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
       <span data-i18n="toolbar.downloadPdf">Download PDF</span>
     </a>
-    <a class="tb-btn"
-       href="output/pdf/danilo-pantani-senior-go-engineer.pdf"
-       download="Danilo-Pantani-Senior-Go-Engineer.pdf"
-       title="Download ATS resume"
-       data-i18n-attr="title" data-i18n-attr-key="toolbar.downloadAtsTitle">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-      <span data-i18n="toolbar.downloadAts">ATS resume</span>
-    </a>
     <button type="button" class="tb-btn" id="copyEmailBtn"
             title="Copy email"
             data-i18n-attr="title" data-i18n-attr-key="toolbar.copyEmailTitle">
@@ -2885,8 +2880,8 @@
         <p class="person-name">Danilo <span class="name-accent">Pantani</span></p>
         <h1 data-i18n-html="hero.title">Senior <span class="name-accent">Go Engineer</span></h1>
         <p class="title technical-line" data-i18n="hero.technical">Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure</p>
-        <p class="hero-pitch" data-i18n="hero.pitch">10+ years in software engineering across backend platforms, financial systems, developer tooling, and blockchain infrastructure.</p>
-        <p class="hero-summary" data-i18n="hero.summary">Go and distributed-systems engineering at the core, with technical leadership from system design through production operations.</p>
+        <p class="hero-pitch" data-i18n="hero.pitch">I started my career building mobile apps in São Paulo in 2011.</p>
+        <p class="hero-summary" data-i18n="hero.summary">Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure. At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling.</p>
 
         <div class="ctas">
           <a class="cta primary" href="#experience-title">
@@ -2993,30 +2988,30 @@
         <h2 id="protocol-impact-title" data-i18n="impact.title">Selected Protocol Impact</h2>
         <span class="rule"></span>
       </div>
-      <p class="section-intro" data-i18n="impact.intro">Protocol decisions and production implementation, paired with public evidence.</p>
+      <p class="section-intro" data-i18n="impact.intro">A few examples of protocol and backend work, with links to the public repositories.</p>
       <div class="impact-grid">
         <article class="impact-card">
           <div class="impact-card-head"><h3>AtomOne</h3><span class="os-badge" data-i18n="impact.atomone.badge">Protocol + implementation</span></div>
           <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.atomone.contribution">Implemented ADR-004 Nakamoto Bonus distribution-module behavior.</span></p>
-          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.atomone.scope">Governance migrations and validator-commission logic in the AtomOne Cosmos SDK fork.</span></p>
+          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.atomone.scope">Later work covered governance migrations and validator-commission updates in the AtomOne SDK fork.</span></p>
           <div class="evidence-links"><span data-i18n="impact.evidence">Evidence</span><a href="https://github.com/atomone-hub/atomone" target="_blank" rel="noopener">atomone</a><a href="https://github.com/atomone-hub/atomone-sdk" target="_blank" rel="noopener">atomone-sdk</a></div>
         </article>
         <article class="impact-card">
           <div class="impact-card-head"><h3>Ignite CLI</h3><span class="os-badge">300+ PRs</span></div>
-          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.ignite.contribution">Advanced protoanalysis, AST-driven code generation and scaffold migrations.</span></p>
-          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.ignite.scope">Improved CLI UX and developer tooling for building Cosmos SDK chains.</span></p>
+          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.ignite.contribution">Worked on protobuf analysis, AST-based generation, and scaffold migrations.</span></p>
+          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.ignite.scope">More than 300 merged PRs across the CLI and its developer workflows.</span></p>
           <div class="evidence-links"><span data-i18n="impact.evidence">Evidence</span><a href="https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged" target="_blank" rel="noopener" data-i18n="impact.mergedPRs">Merged PRs</a><a href="https://github.com/ignite/cli" target="_blank" rel="noopener">ignite/cli</a></div>
         </article>
         <article class="impact-card">
           <div class="impact-card-head"><h3>Cosmos SDK · IBC-Go</h3><span class="os-badge" data-i18n="impact.upstream.badge">Upstream</span></div>
-          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.upstream.contribution">Contributed interface-registry and gogoproto handling plus capability-keeper helpers.</span></p>
-          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.upstream.scope">Strengthened downstream module composition and cross-chain interoperability.</span></p>
+          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.upstream.contribution">Added interface-registry and gogoproto handling plus a capability-keeper helper.</span></p>
+          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.upstream.scope">Small upstream changes used by downstream Cosmos SDK modules.</span></p>
           <div class="evidence-links"><span data-i18n="impact.evidence">Evidence</span><a href="https://github.com/cosmos/cosmos-sdk" target="_blank" rel="noopener">cosmos-sdk</a><a href="https://github.com/cosmos/ibc-go" target="_blank" rel="noopener">ibc-go</a></div>
         </article>
         <article class="impact-card">
           <div class="impact-card-head"><h3>Trust Wallet blockatlas</h3><span class="os-badge">200+ PRs</span></div>
-          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.blockatlas.contribution">Led multi-chain indexing, integrations, full-node tooling and a Node.js-to-Go migration.</span></p>
-          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.blockatlas.scope">Established production concurrency patterns across wallet-backend services.</span></p>
+          <p><strong data-i18n="impact.contribution">Contribution</strong><span data-i18n="impact.blockatlas.contribution">Led backend work for multi-chain indexing, integrations, and full-node tooling.</span></p>
+          <p><strong data-i18n="impact.scope">Scope</strong><span data-i18n="impact.blockatlas.scope">More than 200 merged PRs, including work on the Node.js-to-Go migration.</span></p>
           <div class="evidence-links"><span data-i18n="impact.evidence">Evidence</span><a href="https://github.com/trustwallet/blockatlas/pulls?q=is%3Apr+author%3APantani+is%3Amerged" target="_blank" rel="noopener" data-i18n="impact.mergedPRs">Merged PRs</a><a href="https://github.com/trustwallet/blockatlas" target="_blank" rel="noopener">blockatlas</a></div>
         </article>
       </div>
@@ -3029,7 +3024,7 @@
         <h2 id="expertise-title" data-i18n="expertise.title">Core Expertise</h2>
         <span class="rule"></span>
       </div>
-      <p class="section-intro" data-i18n="expertise.intro">Backend and protocol engineering at the core, with full-stack and DevOps range for end-to-end ownership.</p>
+      <p class="section-intro" data-i18n="expertise.intro">Most of my work is in backend and protocol engineering. I also handle deployment, observability, and frontend work when a project needs it.</p>
       <div class="expertise-grid">
         <div class="expertise-card">
           <div class="ec-head">
@@ -3058,7 +3053,7 @@
             </span>
             <h3 data-i18n="expertise.tooling.title">Developer Tooling</h3>
           </div>
-          <p data-i18n="expertise.tooling.body">CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.</p>
+          <p data-i18n="expertise.tooling.body">Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, and release tooling.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -3086,9 +3081,9 @@
             <span class="ec-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 2 2-2 2M11 13h3M16 8h2M16 12h2M16 16h2"/></svg>
             </span>
-            <h3 data-i18n="expertise.ai.title">AI-Augmented Engineering</h3>
+            <h3 data-i18n="expertise.ai.title">Engineering Workflow</h3>
           </div>
-          <p data-i18n="expertise.ai.body">AI coding assistants for repository context engineering, prompt design, and review/refactor loops across Go and Cosmos SDK codebases, plus MCP tooling authored for TouchDesigner through tdmcp.</p>
+          <p data-i18n="expertise.ai.body">Repository context, code review, refactoring, and MCP tooling for TouchDesigner through tdmcp.</p>
         </div>
       </div>
     </section>
@@ -3116,9 +3111,9 @@
                   <div class="job-meta" data-i18n-html="exp.ignite.meta"><time datetime="2022-12">Dec 2022</time> — <time datetime="2026-03">Mar 2026</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.ignite.b1">Advanced <strong>Ignite CLI</strong> with <strong>300+ public merged PRs</strong> spanning protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.</li>
-                  <li data-i18n-html="exp.ignite.b3">Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.</li>
-                  <li data-i18n-html="exp.ignite.b5">Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.</li>
+                  <li data-i18n-html="exp.ignite.b1">On <strong>Ignite CLI</strong>, I worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. More than <strong>300 of my public pull requests</strong> were merged.</li>
+                  <li data-i18n-html="exp.ignite.b3">The same role also covered <strong>IBC, validator infrastructure, consumer-chain lifecycle work, misbehaviour validation</strong>, parameter cleanup, and Validator-as-a-Service.</li>
+                  <li data-i18n-html="exp.ignite.b5">I contributed smaller upstream fixes to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolution and a capability-keeper helper.</li>
                 </ul>
               </div>
             </article>
@@ -3133,8 +3128,8 @@
                   <div class="job-meta" data-i18n-html="exp.interchain.meta"><time datetime="2022-06">Jun 2022</time> — <time datetime="2022-12">Dec 2022</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.interchain.b1">Focused engagement on <strong>Cosmos Hub / ATOM</strong> chain development with the Interchain Foundation core team, contributing to gaia and surrounding Cosmos SDK module work.</li>
-                  <li data-i18n-html="exp.interchain.b2">Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.</li>
+                  <li data-i18n-html="exp.interchain.b1">During a six-month engagement with the Interchain Foundation core team, I contributed to <strong>Gaia</strong> and nearby Cosmos SDK modules for the Cosmos Hub.</li>
+                  <li data-i18n-html="exp.interchain.b2">The work included module composition, IBC functionality for downstream chains, and a capability-keeper improvement in IBC-Go.</li>
                 </ul>
               </div>
             </article>
@@ -3149,7 +3144,7 @@
                   <div class="job-meta" data-i18n-html="exp.ignite2.meta"><time datetime="2021-06">Jun 2021</time> — <time datetime="2022-06">Jun 2022</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.ignite2.b1">Joined <strong>Ignite CLI</strong> as a core engineer on the all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains — shipping scaffold, protobuf, and CLI-UX work that fed the long-running 300+ public merged PR run continued through 2026.</li>
+                  <li data-i18n-html="exp.ignite2.b1">I joined <strong>Ignite CLI</strong> as a core engineer in 2021, working on scaffolding, protobuf analysis, generated code, and the CLI flows used to build and maintain Cosmos SDK chains.</li>
                 </ul>
               </div>
             </article>
@@ -3164,8 +3159,8 @@
                   <div class="job-meta" data-i18n-html="exp.hermez.meta"><time datetime="2021-02">Feb 2021</time> — <time datetime="2021-06">Jun 2021</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.hermez.b1">Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.</li>
-                  <li data-i18n-html="exp.hermez.b2">Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.</li>
+                  <li data-i18n-html="exp.hermez.b1">At <strong>Hermez</strong>, I wrote Go services for the backend and protocol-facing parts of its Ethereum Layer-2 operator stack.</li>
+                  <li data-i18n-html="exp.hermez.b2">Those services connected Ethereum tooling with the zk-SNARK prover and coordinator pipeline.</li>
                 </ul>
               </div>
             </article>
@@ -3180,9 +3175,9 @@
                   <div class="job-meta" data-i18n-html="exp.energi.meta"><time datetime="2020-04">Apr 2020</time> — <time datetime="2021-02">Feb 2021</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.energi.b1">Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.</li>
-                  <li data-i18n-html="exp.energi.b2">Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.</li>
-                  <li data-i18n-html="exp.energi.b3">Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.</li>
+                  <li data-i18n-html="exp.energi.b1">At Energi, I built Go services for the <strong>DeFi stack</strong> and custodial-wallet flows, including systems that handled private-key custody.</li>
+                  <li data-i18n-html="exp.energi.b2">I also designed the Kubernetes and Helm deployment setup and its <strong>GitHub Actions</strong> delivery pipeline.</li>
+                  <li data-i18n-html="exp.energi.b3"><strong>Prometheus and Grafana</strong> covered monitoring for services and blockchain nodes in production.</li>
                 </ul>
               </div>
             </article>
@@ -3197,9 +3192,9 @@
                   <div class="job-meta" data-i18n-html="exp.trustwallet.meta"><time datetime="2019-08">Aug 2019</time> — <time datetime="2020-04">Apr 2020</time><br>Remote</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.trustwallet.b1">Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.</li>
-                  <li data-i18n-html="exp.trustwallet.b2">Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.</li>
-                  <li data-i18n-html="exp.trustwallet.b3">Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.</li>
+                  <li data-i18n-html="exp.trustwallet.b1">At Trust Wallet, I led backend work on <strong>blockatlas</strong>. More than <strong>200 of my public pull requests</strong> were merged across chain integrations, indexers, market-data routes, and full-node tooling.</li>
+                  <li data-i18n-html="exp.trustwallet.b2">As services moved from Node.js to Go, I standardized worker pools, fan-out processing, batching, and context cancellation.</li>
+                  <li data-i18n-html="exp.trustwallet.b3">I also operated and monitored full nodes for the wallet's multi-chain backend.</li>
                 </ul>
               </div>
             </article>
@@ -3214,9 +3209,9 @@
                   <div class="job-meta" data-i18n-html="exp.mb.meta"><time datetime="2018-03">Mar 2018</time> — <time datetime="2019-08">Aug 2019</time><br>São Paulo</div>
                 </div>
                 <ul>
-                  <li data-i18n-html="exp.mb.b1">Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.</li>
-                  <li data-i18n-html="exp.mb.b2">Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.</li>
-                  <li data-i18n-html="exp.mb.b3">Led backend and mobile product engineering for customer-facing exchange workflows across iOS, Android, and web.</li>
+                  <li data-i18n-html="exp.mb.b1">At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.</li>
+                  <li data-i18n-html="exp.mb.b2">The role also included hot, warm, and cold wallet scripts tied to the exchange ledger and matching systems.</li>
+                  <li data-i18n-html="exp.mb.b3">I led backend and mobile delivery across iOS, Android, and web.</li>
                 </ul>
               </div>
             </article>
@@ -3230,7 +3225,7 @@
                   </div>
                   <div class="job-meta" data-i18n-html="exp.earlier.meta"><time datetime="2011">2011</time> — <time datetime="2018">2018</time><br>São Paulo</div>
                 </div>
-                <p class="earlier-roles" data-i18n-html="exp.earlier.body"><strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows.</p>
+                <p class="earlier-roles" data-i18n-html="exp.earlier.body"><strong>XDEX:</strong> .NET exchange services. <strong>Finchain / FlowBTC:</strong> ERC-20 wallets, smart-contract integrations, and compliance systems. <strong>Neon Bank:</strong> iOS / Android applications and document-recognition flows.</p>
               </div>
             </article>
           </div>
@@ -3274,8 +3269,8 @@
               <h2 id="sidebar-summary-title" data-i18n="summary.title">Summary</h2>
             </div>
             <div class="summary-body" data-i18n-html="summary.body">
-              <p>Senior Go engineer with <strong>10+ years</strong> in software engineering.</p>
-              <p>Backend, distributed systems, platform engineering, and blockchain infrastructure.</p>
+              <p>I started with mobile apps in <strong>São Paulo in 2011</strong>.</p>
+              <p>Recent work includes Ignite CLI, Cosmos SDK, IBC, AtomOne, and validator tooling.</p>
             </div>
           </section>
 
@@ -3313,7 +3308,7 @@
               <h2 id="print-highlights-title" data-i18n="highlights.title">Highlights</h2>
             </div>
             <ul class="impact-list">
-              <li data-i18n-html="highlights.b1"><strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.</li>
+              <li data-i18n-html="highlights.b1"><strong>Ignite CLI:</strong> 300+ public merged PRs. The work included protobuf analysis, AST-based generation, scaffold migrations, and CLI behavior.</li>
               <li data-i18n-html="highlights.b2"><strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.</li>
               <li data-i18n-html="highlights.b3"><strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.</li>
               <li data-i18n-html="highlights.b4"><strong>ignite/network · spn:</strong> Cosmos chain-launch coordination &amp; sovereign-chain lifecycle workflows.</li>
@@ -3328,7 +3323,7 @@
             </div>
             <ul class="impact-list">
               <li data-i18n-html="seeking.b1"><strong>Senior Go Engineer</strong> roles in backend, distributed systems, platform engineering, or blockchain infrastructure.</li>
-              <li data-i18n-html="seeking.b2">Owning reliable services end-to-end — from <strong>architecture and APIs through delivery and production operations</strong>.</li>
+              <li data-i18n-html="seeking.b2">Responsibility for services from <strong>architecture and APIs to deployment and production support</strong>.</li>
               <li data-i18n-html="seeking.b3">Fully remote, UTC−3 friendly. <strong>EU work-eligible</strong> (Italian citizen) and open to occasional travel.</li>
             </ul>
           </section>
@@ -3520,8 +3515,6 @@
 
         "toolbar.downloadPdf": "Download PDF",
         "toolbar.downloadPdfTitle": "Download resume as PDF",
-        "toolbar.downloadAts": "ATS resume",
-        "toolbar.downloadAtsTitle": "Download ATS resume",
         "toolbar.copyEmail": "Copy email",
         "toolbar.copyEmailTitle": "Copy email",
         "toolbar.copied": "Copied ✓",
@@ -3531,8 +3524,8 @@
         "hero.eyebrow": "Available for Senior Go, Backend & Distributed Systems roles · Remote · UTC−3 · EU work-eligible",
         "hero.title": "Senior <span class=\"name-accent\">Go Engineer</span>",
         "hero.technical": "Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure",
-        "hero.pitch": "10+ years in software engineering across backend platforms, financial systems, developer tooling, and blockchain infrastructure.",
-        "hero.summary": "Go and distributed-systems engineering at the core, with technical leadership from system design through production operations.",
+        "hero.pitch": "I started my career building mobile apps in São Paulo in 2011.",
+        "hero.summary": "Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure. At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling.",
         "hero.cta.protocol": "View engineering impact",
         "hero.cta.downloadPdf": "Download resume (PDF)",
 
@@ -3553,24 +3546,24 @@
         "proof.ossPRs": "public merged PRs across open source (Cosmos, Ethereum & wallet backends)",
 
         "impact.title": "Selected Protocol Impact",
-        "impact.intro": "Protocol decisions and production implementation, paired with public evidence.",
+        "impact.intro": "A few examples of protocol and backend work, with links to the public repositories.",
         "impact.contribution": "Contribution",
         "impact.scope": "Impact and scope",
         "impact.evidence": "Evidence",
         "impact.mergedPRs": "Merged PRs",
         "impact.atomone.badge": "Protocol + implementation",
         "impact.atomone.contribution": "Implemented ADR-004 Nakamoto Bonus distribution-module behavior.",
-        "impact.atomone.scope": "Governance migrations and validator-commission logic in the AtomOne Cosmos SDK fork.",
-        "impact.ignite.contribution": "Advanced protoanalysis, AST-driven code generation and scaffold migrations.",
-        "impact.ignite.scope": "Improved CLI UX and developer tooling for building Cosmos SDK chains.",
+        "impact.atomone.scope": "Later work covered governance migrations and validator-commission updates in the AtomOne SDK fork.",
+        "impact.ignite.contribution": "Worked on protobuf analysis, AST-based generation, and scaffold migrations.",
+        "impact.ignite.scope": "More than 300 merged PRs across the CLI and its developer workflows.",
         "impact.upstream.badge": "Upstream",
-        "impact.upstream.contribution": "Contributed interface-registry and gogoproto handling plus capability-keeper helpers.",
-        "impact.upstream.scope": "Strengthened downstream module composition and cross-chain interoperability.",
-        "impact.blockatlas.contribution": "Led multi-chain indexing, integrations, full-node tooling and a Node.js-to-Go migration.",
-        "impact.blockatlas.scope": "Established production concurrency patterns across wallet-backend services.",
+        "impact.upstream.contribution": "Added interface-registry and gogoproto handling plus a capability-keeper helper.",
+        "impact.upstream.scope": "Small upstream changes used by downstream Cosmos SDK modules.",
+        "impact.blockatlas.contribution": "Led backend work for multi-chain indexing, integrations, and full-node tooling.",
+        "impact.blockatlas.scope": "More than 200 merged PRs, including work on the Node.js-to-Go migration.",
 
         "expertise.title": "Core Expertise",
-        "expertise.intro": "Backend and protocol engineering at the core, with full-stack and DevOps range for end-to-end ownership.",
+        "expertise.intro": "Most of my work is in backend and protocol engineering. I also handle deployment, observability, and frontend work when a project needs it.",
         "expertise.blockchain.title": "Blockchain & Protocol Engineering",
         "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.",
         "expertise.backend.title": "Go Backend & Distributed Systems",
@@ -3578,88 +3571,88 @@
         "expertise.frontend.title": "Full-Stack Delivery",
         "expertise.frontend.body": "JavaScript, TypeScript, React, responsive UI, component architecture, and full-stack delivery from API to interface.",
         "expertise.tooling.title": "Developer Tooling",
-        "expertise.tooling.body": "CLI tooling, Cobra, Viper, code generation, AST manipulation, protobuf, protoanalysis, scaffold migrations, developer ergonomics, release workflows.",
+        "expertise.tooling.body": "Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, and release tooling.",
         "expertise.infra.title": "Infrastructure & DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, cloud deployments, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain Cosmos full-node operations, observability, and production operations.",
-        "expertise.ai.title": "AI-Augmented Engineering",
-        "expertise.ai.body": "AI coding assistants for repository context engineering, prompt design, and review/refactor loops across Go and Cosmos SDK codebases, plus MCP tooling authored for TouchDesigner through tdmcp.",
+        "expertise.ai.title": "Engineering Workflow",
+        "expertise.ai.body": "Repository context, code review, refactoring, and MCP tooling for TouchDesigner through tdmcp.",
 
         "os.title": "Open Source & Protocol Impact",
         "os.ignite.badge": "300+ PRs",
-        "os.ignite.body": "Protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, developer ergonomics, and release-quality fixes across the all-in-one platform for building Cosmos SDK chains.",
+        "os.ignite.body": "Protobuf analysis, AST-based code generation, scaffold migrations, CLI behavior, and release fixes for teams building Cosmos SDK chains.",
         "os.atomone.badge": "Cosmos fork",
-        "os.atomone.body": "Distribution-module implementation, <strong>ADR-004 Nakamoto Bonus</strong> mechanics, governance-migration fixes, and validator-commission update logic on the AtomOne Cosmos SDK fork.",
+        "os.atomone.body": "Implemented <strong>ADR-004 Nakamoto Bonus</strong> distribution behavior, then worked on governance migrations and validator-commission updates in the AtomOne SDK fork.",
         "os.hermez.badge": "Eth L2",
-        "os.hermez.body": "Go backend and protocol-adjacent work for the <strong>zk-SNARK rollup</strong> operator stack — prover/coordinator integration and Ethereum Layer-2 infrastructure.",
+        "os.hermez.body": "Wrote Go backend services that connected Ethereum tooling with the prover and coordinator pipeline for the <strong>zk-SNARK rollup</strong> operator stack.",
         "os.spn.badge": "SPN",
-        "os.spn.body": "Cosmos chain-launch coordination, sovereign-chain lifecycle workflows, and validator-oriented launch operations for sovereign network bootstrapping.",
+        "os.spn.body": "Worked on Cosmos chain launches, sovereign-chain lifecycle workflows, and validator operations used during network bootstrapping.",
         "os.sdk.badge": "Upstream",
-        "os.sdk.body": "Upstream contributions including interface-registry / gogoproto resolver handling and capability-keeper helpers for downstream module composition.",
+        "os.sdk.body": "Added smaller upstream changes for interface-registry and gogoproto resolution, plus a capability-keeper helper used by downstream modules.",
         "os.blockatlas.badge": "200+ PRs",
-        "os.blockatlas.body": "Multi-chain indexing, chain integrations, market-data routes, full-node tooling, and Node.js-to-Go migration across a high-traffic crypto wallet backend.",
+        "os.blockatlas.body": "Led backend work on multi-chain indexing, integrations, market-data routes, and full-node tooling. More than 200 of my public pull requests were merged.",
 
         "exp.title": "Professional Experience",
 
         "exp.ignite.role": "Blockchain Engineer, Go · Cosmos SDK · IBC",
         "exp.ignite.meta": "Dec 2022 — Mar 2026<br>Remote",
-        "exp.ignite.b1": "Advanced <strong>Ignite CLI</strong> with <strong>300+ public merged PRs</strong> spanning protoanalysis, AST-driven code generation, scaffold migrations, CLI UX, and developer ergonomics.",
+        "exp.ignite.b1": "On <strong>Ignite CLI</strong>, I worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. More than <strong>300 of my public pull requests</strong> were merged.",
         "exp.ignite.b2": "Shipped protocol and module work for <strong>AtomOne / Cosmos SDK fork</strong> efforts, including distribution-module implementation, ADR-004 Nakamoto Bonus mechanics, governance-migration fixes, and validator-commission update logic.",
-        "exp.ignite.b3": "Implemented and reviewed code around <strong>IBC, validator infrastructure, consumer-chain lifecycle handling, misbehaviour validation, parameter cleanup</strong>, and Validator-as-a-Service workflows.",
+        "exp.ignite.b3": "The same role also covered <strong>IBC, validator infrastructure, consumer-chain lifecycle work, misbehaviour validation</strong>, parameter cleanup, and Validator-as-a-Service.",
         "exp.ignite.b4": "Extended <strong>Gno / allinbits/gno-realms</strong> with IBC core and transfer-realm functionality, including MsgCall helpers and restrictions on relayed IBC operations.",
-        "exp.ignite.b5": "Contributed upstream fixes and helpers to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolver handling and capability-keeper helper functionality.",
-        "exp.ignite.b6": "Improved developer experience through CLI scaffolding, protobuf analysis, nested RPC message resolution, custom typed arrays, daemon-mode behavior, and CI / Sentry noise reduction; integrated <strong>Claude Code</strong> and <strong>Codex</strong> into review and refactor loops as a productivity multiplier across Go and Cosmos SDK codebases.",
+        "exp.ignite.b5": "I contributed smaller upstream fixes to <strong>Cosmos SDK and IBC-Go</strong>, including gogoproto registry resolution and a capability-keeper helper.",
+        "exp.ignite.b6": "The role also included nested RPC messages, custom typed arrays, daemon behavior, CI failures, and Sentry noise. I used <strong>Claude Code</strong> and <strong>Codex</strong> during review and refactoring, with the resulting code and tests checked before merge.",
 
         "exp.interchain.role": "Blockchain Engineer, Go",
         "exp.interchain.meta": "Jun 2022 — Dec 2022<br>Remote",
-        "exp.interchain.b1": "Focused engagement on <strong>Cosmos Hub / ATOM</strong> chain development with the Interchain Foundation core team, contributing to gaia and surrounding Cosmos SDK module work.",
-        "exp.interchain.b2": "Built module-composition and IBC-related functionality for downstream Cosmos SDK chains, including capability-keeper improvements in IBC-Go.",
+        "exp.interchain.b1": "During a six-month engagement with the Interchain Foundation core team, I contributed to <strong>Gaia</strong> and nearby Cosmos SDK modules for the Cosmos Hub.",
+        "exp.interchain.b2": "The work included module composition, IBC functionality for downstream chains, and a capability-keeper improvement in IBC-Go.",
 
         "exp.ignite2.role": "Senior Blockchain Engineer, Go",
         "exp.ignite2.meta": "Jun 2021 — Jun 2022<br>Remote",
-        "exp.ignite2.b1": "Joined <strong>Ignite CLI</strong> as a core engineer on the all-in-one platform for building, launching, and maintaining Cosmos SDK blockchains — shipping scaffold, protobuf, and CLI-UX work that fed the long-running 300+ public merged PR run continued through 2026.",
+        "exp.ignite2.b1": "I joined <strong>Ignite CLI</strong> as a core engineer in 2021, working on scaffolding, protobuf analysis, generated code, and the CLI flows used to build and maintain Cosmos SDK chains.",
 
         "exp.hermez.role": "Blockchain / Layer-2 Engineer, Go",
         "exp.hermez.meta": "Feb 2021 — Jun 2021<br>Remote",
-        "exp.hermez.b1": "Built backend and protocol-adjacent Go services for <strong>Hermez</strong>, an Ethereum Layer-2 system based on zk-SNARKs.",
-        "exp.hermez.b2": "Integrated Go services with Ethereum tooling and the prover / coordinator pipeline used by the rollup operator stack.",
+        "exp.hermez.b1": "At <strong>Hermez</strong>, I wrote Go services for the backend and protocol-facing parts of its Ethereum Layer-2 operator stack.",
+        "exp.hermez.b2": "Those services connected Ethereum tooling with the zk-SNARK prover and coordinator pipeline.",
 
         "exp.energi.role": "Backend Engineer / Architecture",
         "exp.energi.meta": "Apr 2020 — Feb 2021<br>Remote",
-        "exp.energi.b1": "Built Go backend services for the <strong>Energi DeFi stack</strong> and custodial wallet systems handling private-key custody flows.",
-        "exp.energi.b2": "Owned Kubernetes deployment architecture using <strong>Helm and GitHub Actions CI/CD</strong> for blockchain services and chain-node operations.",
-        "exp.energi.b3": "Implemented observability with <strong>Prometheus and Grafana</strong> for service and node monitoring across production environments.",
+        "exp.energi.b1": "At Energi, I built Go services for the <strong>DeFi stack</strong> and custodial-wallet flows, including systems that handled private-key custody.",
+        "exp.energi.b2": "I also designed the Kubernetes and Helm deployment setup and its <strong>GitHub Actions</strong> delivery pipeline.",
+        "exp.energi.b3": "<strong>Prometheus and Grafana</strong> covered monitoring for services and blockchain nodes in production.",
 
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Aug 2019 — Apr 2020<br>Remote",
-        "exp.trustwallet.b1": "Led backend work on Trust Wallet's multi-chain indexing and integration platform, <strong>blockatlas</strong>, with <strong>200+ public merged PRs</strong> across chain integrations, indexers, market-data routes, and full-node tooling.",
-        "exp.trustwallet.b2": "Migrated legacy Node.js services to Go, standardizing worker pools, fan-out processing, context cancellation, and production-grade concurrency patterns.",
-        "exp.trustwallet.b3": "Operated and monitored production full nodes across multiple chains, supporting wallet backend infrastructure used by a large-scale crypto wallet user base.",
+        "exp.trustwallet.b1": "At Trust Wallet, I led backend work on <strong>blockatlas</strong>. More than <strong>200 of my public pull requests</strong> were merged across chain integrations, indexers, market-data routes, and full-node tooling.",
+        "exp.trustwallet.b2": "As services moved from Node.js to Go, I standardized worker pools, fan-out processing, batching, and context cancellation.",
+        "exp.trustwallet.b3": "I also operated and monitored full nodes for the wallet's multi-chain backend.",
         "exp.trustwallet.b4": "Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.",
 
         "exp.mb.role": "Tech Lead — Backend & Mobile",
         "exp.mb.meta": "Mar 2018 — Aug 2019<br>São Paulo",
-        "exp.mb.b1": "Built Go and Python services for multi-chain transaction tracking and payload signing at one of LATAM's largest crypto exchanges.",
-        "exp.mb.b2": "Maintained hot / warm / cold wallet scripts and key-management procedures integrated with exchange ledger and matching systems.",
-        "exp.mb.b3": "Led backend and mobile product engineering for customer-facing exchange workflows across iOS, Android, and web.",
+        "exp.mb.b1": "At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.",
+        "exp.mb.b2": "The role also included hot, warm, and cold wallet scripts tied to the exchange ledger and matching systems.",
+        "exp.mb.b3": "I led backend and mobile delivery across iOS, Android, and web.",
 
         "exp.earlier.title": "Earlier Roles",
         "exp.earlier.role": "Tech Lead / Founder / Mobile Engineer",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — exchange-service engineering in .NET. <strong>Finchain / FlowBTC</strong> — ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems. <strong>Neon Bank</strong> — iOS / Android engineering and document-recognition workflows.",
+        "exp.earlier.body": "<strong>XDEX:</strong> .NET exchange services. <strong>Finchain / FlowBTC:</strong> ERC-20 wallets, smart-contract integrations, and compliance systems. <strong>Neon Bank:</strong> iOS / Android applications and document-recognition flows.",
 
         "projects.title": "Selected Repositories / Evidence",
         "projects.intro": "Public repositories that support the protocol, backend, interoperability, and developer-tooling work above.",
 
         "seeking.title": "What I'm looking for",
         "seeking.b1": "<strong>Senior Go Engineer</strong> roles in backend, distributed systems, platform engineering, or blockchain infrastructure.",
-        "seeking.b2": "Owning reliable services end-to-end — from <strong>architecture and APIs through delivery and production operations</strong>.",
+        "seeking.b2": "Responsibility for services from <strong>architecture and APIs to deployment and production support</strong>.",
         "seeking.b3": "Fully remote, UTC−3 friendly. <strong>EU work-eligible</strong> (Italian citizen) and open to occasional travel.",
 
         "summary.title": "Summary",
-        "summary.body": "<p>Senior Go engineer with <strong>10+ years</strong> in software engineering.</p><p>Backend, distributed systems, platform engineering, and blockchain infrastructure.</p>",
+        "summary.body": "<p>I started with mobile apps in <strong>São Paulo in 2011</strong>.</p><p>Recent work includes Ignite CLI, Cosmos SDK, IBC, AtomOne, and validator tooling.</p>",
 
         "highlights.title": "Highlights",
-        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ public merged PRs across protoanalysis, AST code generation, scaffold migrations, CLI UX.",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ public merged PRs. The work included protobuf analysis, AST-based generation, scaffold migrations, and CLI behavior.",
         "highlights.b2": "<strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.",
         "highlights.b3": "<strong>Hermez:</strong> Go backend for Ethereum L2 zk-SNARK rollup operator workflows.",
         "highlights.b4": "<strong>ignite/network · spn:</strong> Cosmos chain-launch coordination &amp; sovereign-chain lifecycle workflows.",
@@ -3716,8 +3709,6 @@
 
         "toolbar.downloadPdf": "Baixar PDF",
         "toolbar.downloadPdfTitle": "Baixar currículo em PDF",
-        "toolbar.downloadAts": "Currículo ATS",
-        "toolbar.downloadAtsTitle": "Baixar currículo ATS",
         "toolbar.copyEmail": "Copiar e-mail",
         "toolbar.copyEmailTitle": "Copiar e-mail",
         "toolbar.copied": "Copiado ✓",
@@ -3727,8 +3718,8 @@
         "hero.eyebrow": "Disponível para vagas de Go Sênior, Backend e Sistemas Distribuídos · Remoto · UTC−3 · Elegível para a UE",
         "hero.title": "Engenheiro Sênior <span class=\"name-accent\">Go</span>",
         "hero.technical": "Backend · Sistemas Distribuídos · Engenharia de Plataforma · Infraestrutura Blockchain",
-        "hero.pitch": "10+ anos em engenharia de software, incluindo plataformas backend, sistemas financeiros, ferramentas para desenvolvedores e infraestrutura blockchain.",
-        "hero.summary": "Engenharia Go e sistemas distribuídos no centro, com liderança técnica do desenho de sistemas à operação em produção.",
+        "hero.pitch": "Comecei minha carreira desenvolvendo aplicativos mobile em São Paulo, em 2011.",
+        "hero.summary": "Desde então, passei por plataformas financeiras, backends em Go e infraestrutura blockchain. Na Ignite, trabalhei no CLI, Cosmos SDK, IBC, AtomOne e ferramentas para validadores.",
         "hero.cta.protocol": "Ver impacto de engenharia",
         "hero.cta.downloadPdf": "Baixar currículo (PDF)",
 
@@ -3749,24 +3740,24 @@
         "proof.ossPRs": "PRs públicos integrados em open source (Cosmos, Ethereum e backends de wallet)",
 
         "impact.title": "Impacto Selecionado em Protocolos",
-        "impact.intro": "Decisões de protocolo e implementação em produção, acompanhadas de evidência pública.",
+        "impact.intro": "Alguns exemplos de trabalho em protocolos e backend, com links para os repositórios públicos.",
         "impact.contribution": "Contribuição",
         "impact.scope": "Impacto e escopo",
         "impact.evidence": "Evidência",
         "impact.mergedPRs": "PRs integrados",
         "impact.atomone.badge": "Protocolo + implementação",
-        "impact.atomone.contribution": "Implementou o comportamento do módulo de distribuição definido no ADR-004 Nakamoto Bonus.",
-        "impact.atomone.scope": "Migrações de governança e lógica de comissão de validadores no fork do Cosmos SDK usado pelo AtomOne.",
-        "impact.ignite.contribution": "Evoluiu protoanalysis, geração de código orientada por AST e migrações de scaffold.",
-        "impact.ignite.scope": "Melhorou a UX da CLI e as ferramentas para construir chains com Cosmos SDK.",
+        "impact.atomone.contribution": "Implementei o comportamento do módulo de distribuição definido no ADR-004 Nakamoto Bonus.",
+        "impact.atomone.scope": "O trabalho posterior incluiu migrações de governança e atualizações na comissão de validadores no fork do SDK usado pelo AtomOne.",
+        "impact.ignite.contribution": "Trabalhei com análise de protobuf, geração baseada em AST e migrações de scaffold.",
+        "impact.ignite.scope": "Mais de 300 PRs integrados no CLI e em seus fluxos para desenvolvedores.",
         "impact.upstream.badge": "Upstream",
-        "impact.upstream.contribution": "Contribuiu com tratamento de interface-registry e gogoproto, além de helpers de capability-keeper.",
-        "impact.upstream.scope": "Fortaleceu a composição de módulos downstream e a interoperabilidade entre chains.",
-        "impact.blockatlas.contribution": "Liderou indexação multi-chain, integrações, ferramentas para full nodes e a migração de Node.js para Go.",
-        "impact.blockatlas.scope": "Estabeleceu padrões de concorrência para produção em serviços de backend de carteira.",
+        "impact.upstream.contribution": "Adicionei tratamento de interface-registry e gogoproto, além de um helper de capability-keeper.",
+        "impact.upstream.scope": "Pequenas mudanças upstream usadas por módulos downstream do Cosmos SDK.",
+        "impact.blockatlas.contribution": "Liderei o backend de indexação multi-chain, integrações e ferramentas para full nodes.",
+        "impact.blockatlas.scope": "Mais de 200 PRs integrados, incluindo trabalho na migração de Node.js para Go.",
 
         "expertise.title": "Áreas de Especialização",
-        "expertise.intro": "Engenharia de backend e protocolos no centro, com amplitude full-stack e DevOps para assumir entregas de ponta a ponta.",
+        "expertise.intro": "A maior parte do meu trabalho está em backend e protocolos. Também cuido de deploy, observabilidade e frontend quando o projeto precisa.",
         "expertise.blockchain.title": "Engenharia de Blockchain e Protocolos",
         "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestrutura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestrutura de rollups.",
         "expertise.backend.title": "Backend em Go e Sistemas Distribuídos",
@@ -3774,88 +3765,88 @@
         "expertise.frontend.title": "Entrega Full-Stack",
         "expertise.frontend.body": "JavaScript, TypeScript, React, UI responsiva, arquitetura de componentes e entrega full-stack da API à interface.",
         "expertise.tooling.title": "Ferramentas para Desenvolvedores",
-        "expertise.tooling.body": "Ferramentas de CLI, Cobra, Viper, geração de código, manipulação de AST, protobuf, protoanalysis, migrações de scaffold, ergonomia para devs e fluxos de release.",
+        "expertise.tooling.body": "Cobra, Viper, análise de protobuf, geração de código baseada em AST, scaffolding, migrações, design de CLI e ferramentas de release.",
         "expertise.infra.title": "Infraestrutura e DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, deploys em cloud, GitHub Actions, CI/CD, Prometheus, Grafana, operação de full nodes em múltiplas chains Cosmos, observabilidade e operação em produção.",
-        "expertise.ai.title": "Engenharia Potencializada por IA",
-        "expertise.ai.body": "Assistentes de código com IA para contextualização de repositórios, prompting e ciclos de revisão/refatoração em bases Go e Cosmos SDK, além de tooling MCP próprio para TouchDesigner com o tdmcp.",
+        "expertise.ai.title": "Fluxo de Engenharia",
+        "expertise.ai.body": "Contexto de repositório, revisão de código, refatoração e ferramentas MCP para TouchDesigner com o tdmcp.",
 
         "os.title": "Open Source e Impacto em Protocolos",
         "os.ignite.badge": "300+ PRs",
-        "os.ignite.body": "Protoanalysis, geração de código com AST, migrações de scaffold, UX de CLI, ergonomia para devs e correções de qualidade de release na plataforma all-in-one para construir blockchains Cosmos SDK.",
+        "os.ignite.body": "Análise de protobuf, geração de código baseada em AST, migrações de scaffold, comportamento do CLI e correções de release para equipes que constroem chains com Cosmos SDK.",
         "os.atomone.badge": "Fork Cosmos",
-        "os.atomone.body": "Implementação do módulo de distribuição, mecânica do <strong>ADR-004 Nakamoto Bonus</strong>, correções na migração de governança e atualização da lógica de comissão de validadores no fork AtomOne do Cosmos SDK.",
+        "os.atomone.body": "Implementei o comportamento de distribuição do <strong>ADR-004 Nakamoto Bonus</strong> e depois trabalhei em migrações de governança e atualizações de comissão de validadores no fork do SDK do AtomOne.",
         "os.hermez.badge": "Eth L2",
-        "os.hermez.body": "Backend em Go e atuação a nível de protocolo no stack do operador <strong>zk-SNARK rollup</strong> — integração de prover/coordinator e infraestrutura Ethereum Layer-2.",
+        "os.hermez.body": "Escrevi serviços Go que conectavam as ferramentas Ethereum ao pipeline de prover e coordinator do stack do operador <strong>zk-SNARK rollup</strong>.",
         "os.spn.badge": "SPN",
-        "os.spn.body": "Coordenação do lançamento de chains Cosmos, ciclo de vida de chains soberanas e operações de bootstrap orientadas a validadores.",
+        "os.spn.body": "Trabalhei com lançamento de chains Cosmos, ciclo de vida de chains soberanas e operações de validadores durante o bootstrap de redes.",
         "os.sdk.badge": "Upstream",
-        "os.sdk.body": "Contribuições upstream incluindo o tratamento de interface-registry / resolver gogoproto e helpers de capability-keeper para composição de módulos downstream.",
+        "os.sdk.body": "Adicionei pequenas mudanças upstream para resolução de interface-registry e gogoproto, além de um helper de capability-keeper usado por módulos downstream.",
         "os.blockatlas.badge": "200+ PRs",
-        "os.blockatlas.body": "Indexação multi-chain, integração de chains, rotas de market data, tooling para full nodes e migração de Node.js para Go em um backend de wallet de alto tráfego.",
+        "os.blockatlas.body": "Liderei o backend de indexação multi-chain, integrações, rotas de market data e ferramentas para full nodes. Mais de 200 dos meus PRs públicos foram integrados.",
 
         "exp.title": "Experiência Profissional",
 
         "exp.ignite.role": "Engenheiro Blockchain, Go · Cosmos SDK · IBC",
         "exp.ignite.meta": "Dez 2022 — Mar 2026<br>Remoto",
-        "exp.ignite.b1": "Evoluí o <strong>Ignite CLI</strong> com <strong>300+ PRs públicos integrados</strong> em protoanalysis, geração de código orientada por AST, migrações de scaffold, UX de CLI e ergonomia para devs.",
+        "exp.ignite.b1": "No <strong>Ignite CLI</strong>, trabalhei com análise de protobuf, geração de código baseada em AST, migrações de scaffold e comportamento do CLI. Mais de <strong>300 dos meus PRs públicos</strong> foram integrados.",
         "exp.ignite.b2": "Atuei no protocolo e nos módulos do <strong>AtomOne / fork do Cosmos SDK</strong>: implementação do módulo de distribuição, mecânica do ADR-004 Nakamoto Bonus, correções na migração de governança e atualização da lógica de comissão de validadores.",
-        "exp.ignite.b3": "Implementei e revisei código em <strong>IBC, infraestrutura de validadores, ciclo de vida de consumer chains, validação de misbehaviour, limpeza de parâmetros</strong> e fluxos Validator-as-a-Service.",
+        "exp.ignite.b3": "A mesma função também envolveu <strong>IBC, infraestrutura de validadores, ciclo de vida de consumer chains e validação de misbehaviour</strong>, além de limpeza de parâmetros e Validator-as-a-Service.",
         "exp.ignite.b4": "Ampliei o <strong>Gno / allinbits/gno-realms</strong> com funcionalidades de IBC core e do realm de transferência, incluindo helpers de MsgCall e restrições em operações IBC retransmitidas.",
-        "exp.ignite.b5": "Contribuí com correções e helpers upstream no <strong>Cosmos SDK e IBC-Go</strong>, incluindo o tratamento do registry resolver do gogoproto e funcionalidades de capability-keeper.",
-        "exp.ignite.b6": "Melhorei a experiência de desenvolvimento com scaffolding de CLI, análise de protobuf, resolução de mensagens RPC aninhadas, arrays customizados, modo daemon e redução de ruído em CI / Sentry; integrei <strong>Claude Code</strong> e <strong>Codex</strong> aos ciclos de revisão e refatoração como multiplicador de produtividade em bases Go e Cosmos SDK.",
+        "exp.ignite.b5": "Também contribuí com correções upstream menores no <strong>Cosmos SDK e IBC-Go</strong>, incluindo resolução do registry do gogoproto e um helper de capability-keeper.",
+        "exp.ignite.b6": "O trabalho ainda incluiu mensagens RPC aninhadas, arrays customizados, modo daemon, falhas de CI e ruído no Sentry. Usei <strong>Claude Code</strong> e <strong>Codex</strong> durante revisão e refatoração, conferindo o código e os testes antes do merge.",
 
         "exp.interchain.role": "Engenheiro Blockchain, Go",
         "exp.interchain.meta": "Jun 2022 — Dez 2022<br>Remoto",
-        "exp.interchain.b1": "Engajamento focado no desenvolvimento da chain <strong>Cosmos Hub / ATOM</strong> com o time core da Interchain Foundation, contribuindo no gaia e em módulos adjacentes do Cosmos SDK.",
-        "exp.interchain.b2": "Construí composição de módulos e funcionalidades de IBC para chains Cosmos SDK downstream, incluindo melhorias de capability-keeper no IBC-Go.",
+        "exp.interchain.b1": "Durante seis meses com o time core da Interchain Foundation, contribuí com o <strong>Gaia</strong> e módulos próximos do Cosmos SDK para o Cosmos Hub.",
+        "exp.interchain.b2": "O trabalho incluiu composição de módulos, funcionalidades de IBC para chains downstream e uma melhoria de capability-keeper no IBC-Go.",
 
         "exp.ignite2.role": "Engenheiro Sênior Blockchain, Go",
         "exp.ignite2.meta": "Jun 2021 — Jun 2022<br>Remoto",
-        "exp.ignite2.b1": "Entrei no <strong>Ignite CLI</strong> como engenheiro core na plataforma all-in-one para construir, lançar e manter blockchains Cosmos SDK — entregando trabalho de scaffold, protobuf e UX de CLI que alimentou a longa trajetória de 300+ PRs públicos integrados, sustentada até 2026.",
+        "exp.ignite2.b1": "Entrei no <strong>Ignite CLI</strong> como engenheiro core em 2021, trabalhando com scaffolding, análise de protobuf, código gerado e os fluxos usados para construir e manter chains Cosmos SDK.",
 
         "exp.hermez.role": "Engenheiro Blockchain / Layer-2, Go",
         "exp.hermez.meta": "Fev 2021 — Jun 2021<br>Remoto",
-        "exp.hermez.b1": "Construí serviços Go a nível de backend e de protocolo para o <strong>Hermez</strong>, sistema Ethereum Layer-2 baseado em zk-SNARKs.",
-        "exp.hermez.b2": "Integrei serviços Go com ferramentas Ethereum e ao pipeline de prover / coordinator do stack do operador rollup.",
+        "exp.hermez.b1": "Na <strong>Hermez</strong>, escrevi serviços Go para o backend e as partes ligadas ao protocolo do stack do operador Ethereum Layer-2.",
+        "exp.hermez.b2": "Esses serviços conectavam as ferramentas Ethereum ao pipeline de prover e coordinator baseado em zk-SNARKs.",
 
         "exp.energi.role": "Engenheiro Backend / Arquitetura",
         "exp.energi.meta": "Abr 2020 — Fev 2021<br>Remoto",
-        "exp.energi.b1": "Construí serviços Go no backend do <strong>stack DeFi da Energi</strong> e em sistemas custodiais de wallet com fluxos de chaves privadas.",
-        "exp.energi.b2": "Responsável pela arquitetura de deploy em Kubernetes com <strong>Helm e GitHub Actions CI/CD</strong> para serviços blockchain e operação de nós.",
-        "exp.energi.b3": "Implementei observabilidade com <strong>Prometheus e Grafana</strong> para serviços e nós em produção.",
+        "exp.energi.b1": "Na Energi, construí serviços Go para o <strong>stack DeFi</strong> e fluxos de wallets custodiais, incluindo sistemas que lidavam com chaves privadas.",
+        "exp.energi.b2": "Também desenhei a estrutura de deploy em Kubernetes e Helm e seu pipeline de entrega com <strong>GitHub Actions</strong>.",
+        "exp.energi.b3": "<strong>Prometheus e Grafana</strong> cobriam o monitoramento dos serviços e dos nós blockchain em produção.",
 
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
-        "exp.trustwallet.b1": "Liderei o backend da plataforma de indexação e integração multi-chain da Trust Wallet, <strong>blockatlas</strong>, com <strong>200+ PRs públicos integrados</strong> em integração de chains, indexadores, rotas de market data e tooling para full nodes.",
-        "exp.trustwallet.b2": "Migrei serviços legados de Node.js para Go, padronizando worker pools, processamento fan-out, cancelamento de contexto e padrões de concorrência para produção.",
-        "exp.trustwallet.b3": "Operei e monitorei full nodes em produção em diversas chains, sustentando a infraestrutura backend de uma wallet cripto em larga escala.",
+        "exp.trustwallet.b1": "Na Trust Wallet, liderei o backend do <strong>blockatlas</strong>. Mais de <strong>200 dos meus PRs públicos</strong> foram integrados em chains, indexadores, rotas de market data e ferramentas para full nodes.",
+        "exp.trustwallet.b2": "Enquanto os serviços migravam de Node.js para Go, padronizei worker pools, processamento fan-out, batching e cancelamento de contexto.",
+        "exp.trustwallet.b3": "Também operei e monitorei full nodes para o backend multi-chain da wallet.",
         "exp.trustwallet.b4": "Construí e mantive rotas de dados blockchain, fluxos de metadados de ativos, parsing de transações, lógica de validadores, batching de RPC e integrações específicas por chain.",
 
         "exp.mb.role": "Tech Lead — Backend e Mobile",
         "exp.mb.meta": "Mar 2018 — Ago 2019<br>São Paulo",
-        "exp.mb.b1": "Construí serviços em Go e Python para rastreio multi-chain de transações e assinatura de payloads em uma das maiores exchanges cripto da LATAM.",
-        "exp.mb.b2": "Mantive scripts de wallets hot / warm / cold e procedimentos de gestão de chaves integrados ao ledger e ao matching da exchange.",
-        "exp.mb.b3": "Liderei engenharia de backend e mobile em fluxos voltados ao cliente, em iOS, Android e web.",
+        "exp.mb.b1": "No Mercado Bitcoin, construí serviços em Go e Python para rastreio multi-chain de transações e assinatura de payloads.",
+        "exp.mb.b2": "A função também incluía scripts de wallets hot, warm e cold ligados ao ledger e aos sistemas de matching da exchange.",
+        "exp.mb.b3": "Liderei a entrega de backend e mobile em iOS, Android e web.",
 
         "exp.earlier.title": "Atuações Anteriores",
         "exp.earlier.role": "Tech Lead / Fundador / Engenheiro Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — engenharia de serviços de exchange em .NET. <strong>Finchain / FlowBTC</strong> — fluxos de wallet ERC-20, integrações com smart contracts e sistemas de compliance. <strong>Neon Bank</strong> — engenharia iOS / Android e fluxos de reconhecimento de documentos.",
+        "exp.earlier.body": "<strong>XDEX:</strong> serviços de exchange em .NET. <strong>Finchain / FlowBTC:</strong> wallets ERC-20, integrações com smart contracts e sistemas de compliance. <strong>Neon Bank:</strong> aplicativos iOS / Android e fluxos de reconhecimento de documentos.",
 
         "projects.title": "Repositórios Selecionados / Evidências",
         "projects.intro": "Repositórios públicos que sustentam os trabalhos de protocolo, backend, interoperabilidade e ferramentas para desenvolvedores descritos acima.",
 
         "seeking.title": "O que estou buscando",
         "seeking.b1": "Vagas de <strong>Engenheiro Sênior Go</strong> em backend, sistemas distribuídos, engenharia de plataforma ou infraestrutura blockchain.",
-        "seeking.b2": "Responsabilidade por serviços confiáveis de ponta a ponta — da <strong>arquitetura e APIs à entrega e operação em produção</strong>.",
+        "seeking.b2": "Responsabilidade por serviços, da <strong>arquitetura e APIs ao deploy e suporte em produção</strong>.",
         "seeking.b3": "Remoto integral, UTC−3 friendly. <strong>Elegível para UE</strong> (cidadão italiano) e disponível para viagens ocasionais.",
 
         "summary.title": "Resumo",
-        "summary.body": "<p>Engenheiro sênior Go com <strong>10+ anos</strong> em engenharia de software.</p><p>Backend, sistemas distribuídos, engenharia de plataforma e infraestrutura blockchain.</p>",
+        "summary.body": "<p>Comecei com aplicativos mobile em <strong>São Paulo, em 2011</strong>.</p><p>Meu trabalho recente inclui Ignite CLI, Cosmos SDK, IBC, AtomOne e ferramentas para validadores.</p>",
 
         "highlights.title": "Destaques",
-        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados em protoanalysis, geração de código com AST, migrações de scaffold e UX de CLI.",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados. O trabalho incluiu análise de protobuf, geração baseada em AST, migrações de scaffold e comportamento do CLI.",
         "highlights.b2": "<strong>AtomOne:</strong> atuação no fork Cosmos SDK — módulo de distribuição, ADR-004 Nakamoto Bonus e migrações de governança.",
         "highlights.b3": "<strong>Hermez:</strong> backend em Go para fluxos do operador Ethereum L2 zk-SNARK rollup.",
         "highlights.b4": "<strong>ignite/network · spn:</strong> coordenação de lançamento e ciclo de vida de chains Cosmos soberanas.",
@@ -3912,8 +3903,6 @@
 
         "toolbar.downloadPdf": "Descargar PDF",
         "toolbar.downloadPdfTitle": "Descargar currículum en PDF",
-        "toolbar.downloadAts": "Currículum ATS",
-        "toolbar.downloadAtsTitle": "Descargar currículum ATS",
         "toolbar.copyEmail": "Copiar correo",
         "toolbar.copyEmailTitle": "Copiar correo",
         "toolbar.copied": "Copiado ✓",
@@ -3923,8 +3912,8 @@
         "hero.eyebrow": "Disponible para puestos Senior Go, Backend y Sistemas Distribuidos · Remoto · UTC−3 · Elegible para la UE",
         "hero.title": "Ingeniero Senior <span class=\"name-accent\">Go</span>",
         "hero.technical": "Backend · Sistemas Distribuidos · Ingeniería de Plataforma · Infraestructura Blockchain",
-        "hero.pitch": "10+ años en ingeniería de software, incluyendo plataformas backend, sistemas financieros, herramientas para desarrolladores e infraestructura blockchain.",
-        "hero.summary": "Ingeniería Go y sistemas distribuidos como núcleo, con liderazgo técnico desde el diseño de sistemas hasta la operación en producción.",
+        "hero.pitch": "Comencé mi carrera desarrollando aplicaciones móviles en São Paulo en 2011.",
+        "hero.summary": "Desde entonces, pasé por plataformas financieras, backends en Go e infraestructura blockchain. En Ignite, trabajé en la CLI, Cosmos SDK, IBC, AtomOne y herramientas para validadores.",
         "hero.cta.protocol": "Ver impacto de ingeniería",
         "hero.cta.downloadPdf": "Descargar currículum (PDF)",
 
@@ -3945,24 +3934,24 @@
         "proof.ossPRs": "PRs públicos integrados en open source (Cosmos, Ethereum y backends de wallet)",
 
         "impact.title": "Impacto Seleccionado en Protocolos",
-        "impact.intro": "Decisiones de protocolo e implementación en producción, acompañadas de evidencia pública.",
+        "impact.intro": "Algunos ejemplos de trabajo en protocolos y backend, con enlaces a los repositorios públicos.",
         "impact.contribution": "Contribución",
         "impact.scope": "Impacto y alcance",
         "impact.evidence": "Evidencia",
         "impact.mergedPRs": "PRs integrados",
         "impact.atomone.badge": "Protocolo + implementación",
-        "impact.atomone.contribution": "Implementó el comportamiento del módulo de distribución definido en ADR-004 Nakamoto Bonus.",
-        "impact.atomone.scope": "Migraciones de gobernanza y lógica de comisión de validadores en el fork de Cosmos SDK usado por AtomOne.",
-        "impact.ignite.contribution": "Evolucionó protoanalysis, generación de código guiada por AST y migraciones de scaffold.",
-        "impact.ignite.scope": "Mejoró la UX de la CLI y las herramientas para construir chains con Cosmos SDK.",
+        "impact.atomone.contribution": "Implementé el comportamiento del módulo de distribución definido en ADR-004 Nakamoto Bonus.",
+        "impact.atomone.scope": "El trabajo posterior incluyó migraciones de gobernanza y actualizaciones de comisión de validadores en el fork del SDK usado por AtomOne.",
+        "impact.ignite.contribution": "Trabajé con análisis de protobuf, generación basada en AST y migraciones de scaffold.",
+        "impact.ignite.scope": "Más de 300 PRs integrados en la CLI y sus flujos para desarrolladores.",
         "impact.upstream.badge": "Upstream",
-        "impact.upstream.contribution": "Contribuyó con tratamiento de interface-registry y gogoproto, además de helpers de capability-keeper.",
-        "impact.upstream.scope": "Fortaleció la composición de módulos downstream y la interoperabilidad entre chains.",
-        "impact.blockatlas.contribution": "Lideró indexación multi-chain, integraciones, tooling para full nodes y la migración de Node.js a Go.",
-        "impact.blockatlas.scope": "Estableció patrones de concurrencia para producción en servicios backend de wallet.",
+        "impact.upstream.contribution": "Añadí manejo de interface-registry y gogoproto, además de un helper de capability-keeper.",
+        "impact.upstream.scope": "Pequeños cambios upstream usados por módulos downstream de Cosmos SDK.",
+        "impact.blockatlas.contribution": "Lideré el backend de indexación multi-chain, integraciones y herramientas para full nodes.",
+        "impact.blockatlas.scope": "Más de 200 PRs integrados, incluido el trabajo en la migración de Node.js a Go.",
 
         "expertise.title": "Áreas de Especialización",
-        "expertise.intro": "Ingeniería de backend y protocolos como núcleo, con alcance full-stack y DevOps para asumir entregas de extremo a extremo.",
+        "expertise.intro": "La mayor parte de mi trabajo está en backend y protocolos. También me ocupo de despliegues, observabilidad y frontend cuando el proyecto lo necesita.",
         "expertise.blockchain.title": "Ingeniería de Blockchain y Protocolos",
         "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestructura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestructura de rollups.",
         "expertise.backend.title": "Backend en Go y Sistemas Distribuidos",
@@ -3970,88 +3959,88 @@
         "expertise.frontend.title": "Entrega Full-Stack",
         "expertise.frontend.body": "JavaScript, TypeScript, React, UI responsiva, arquitectura de componentes y entrega full-stack de la API a la interfaz.",
         "expertise.tooling.title": "Herramientas para Desarrolladores",
-        "expertise.tooling.body": "Tooling de CLI, Cobra, Viper, generación de código, manipulación de AST, protobuf, protoanalysis, migraciones de scaffold, ergonomía para devs y flujos de release.",
+        "expertise.tooling.body": "Cobra, Viper, análisis de protobuf, generación de código basada en AST, scaffolding, migraciones, diseño de CLI y herramientas de release.",
         "expertise.infra.title": "Infraestructura y DevOps",
         "expertise.infra.body": "Docker, Kubernetes, Terraform, Pulumi, Ansible, Helm Charts, AWS, GCP, despliegues en cloud, GitHub Actions, CI/CD, Prometheus, Grafana, operación de full nodes en múltiples chains Cosmos, observabilidad y operación en producción.",
-        "expertise.ai.title": "Ingeniería Potenciada por IA",
-        "expertise.ai.body": "Asistentes de código con IA para contexto de repositorios, prompting y ciclos de revisión/refactor en bases Go y Cosmos SDK, además de tooling MCP propio para TouchDesigner con tdmcp.",
+        "expertise.ai.title": "Flujo de Ingeniería",
+        "expertise.ai.body": "Contexto de repositorio, revisión de código, refactorización y herramientas MCP para TouchDesigner con tdmcp.",
 
         "os.title": "Open Source e Impacto en Protocolos",
         "os.ignite.badge": "300+ PRs",
-        "os.ignite.body": "Protoanalysis, generación de código con AST, migraciones de scaffold, UX de CLI, ergonomía para devs y correcciones de calidad de release en la plataforma all-in-one para construir blockchains Cosmos SDK.",
+        "os.ignite.body": "Análisis de protobuf, generación de código basada en AST, migraciones de scaffold, comportamiento de la CLI y correcciones de release para equipos que construyen chains con Cosmos SDK.",
         "os.atomone.badge": "Fork Cosmos",
-        "os.atomone.body": "Implementación del módulo de distribución, mecánica del <strong>ADR-004 Nakamoto Bonus</strong>, correcciones en la migración de gobernanza y actualización de la lógica de comisión de validadores en el fork AtomOne de Cosmos SDK.",
+        "os.atomone.body": "Implementé el comportamiento de distribución del <strong>ADR-004 Nakamoto Bonus</strong> y después trabajé en migraciones de gobernanza y actualizaciones de comisión de validadores en el fork del SDK de AtomOne.",
         "os.hermez.badge": "Eth L2",
-        "os.hermez.body": "Backend en Go y trabajo a nivel de protocolo en el stack del operador <strong>zk-SNARK rollup</strong> — integración de prover/coordinator e infraestructura Ethereum Layer-2.",
+        "os.hermez.body": "Escribí servicios Go que conectaban las herramientas de Ethereum con el pipeline de prover y coordinator del stack del operador <strong>zk-SNARK rollup</strong>.",
         "os.spn.badge": "SPN",
-        "os.spn.body": "Coordinación del lanzamiento de chains Cosmos, ciclo de vida de chains soberanas y operaciones de bootstrap orientadas a validadores.",
+        "os.spn.body": "Trabajé en lanzamientos de chains Cosmos, ciclos de vida de chains soberanas y operaciones de validadores durante el bootstrap de redes.",
         "os.sdk.badge": "Upstream",
-        "os.sdk.body": "Contribuciones upstream incluyendo el manejo de interface-registry / resolver gogoproto y helpers de capability-keeper para composición de módulos downstream.",
+        "os.sdk.body": "Añadí pequeños cambios upstream para la resolución de interface-registry y gogoproto, además de un helper de capability-keeper usado por módulos downstream.",
         "os.blockatlas.badge": "200+ PRs",
-        "os.blockatlas.body": "Indexación multi-chain, integración de chains, rutas de market data, tooling para full nodes y migración de Node.js a Go en un backend de wallet cripto de alto tráfico.",
+        "os.blockatlas.body": "Lideré el backend de indexación multi-chain, integraciones, rutas de market data y herramientas para full nodes. Más de 200 de mis PRs públicos fueron integrados.",
 
         "exp.title": "Experiencia Profesional",
 
         "exp.ignite.role": "Ingeniero Blockchain, Go · Cosmos SDK · IBC",
         "exp.ignite.meta": "Dic 2022 — Mar 2026<br>Remoto",
-        "exp.ignite.b1": "Evolucioné <strong>Ignite CLI</strong> con <strong>300+ PRs públicos integrados</strong> en protoanalysis, generación de código guiada por AST, migraciones de scaffold, UX de CLI y ergonomía para devs.",
+        "exp.ignite.b1": "En <strong>Ignite CLI</strong>, trabajé con análisis de protobuf, generación de código basada en AST, migraciones de scaffold y comportamiento de la CLI. Más de <strong>300 de mis PRs públicos</strong> fueron integrados.",
         "exp.ignite.b2": "Trabajé en protocolo y módulos del <strong>AtomOne / fork de Cosmos SDK</strong>: implementación del módulo de distribución, mecánica del ADR-004 Nakamoto Bonus, correcciones en la migración de gobernanza y actualización de la lógica de comisión de validadores.",
-        "exp.ignite.b3": "Implementé y revisé código en <strong>IBC, infraestructura de validadores, ciclo de vida de consumer chains, validación de misbehaviour, limpieza de parámetros</strong> y flujos Validator-as-a-Service.",
+        "exp.ignite.b3": "El mismo puesto también abarcó <strong>IBC, infraestructura de validadores, ciclo de vida de consumer chains y validación de misbehaviour</strong>, además de limpieza de parámetros y Validator-as-a-Service.",
         "exp.ignite.b4": "Amplié <strong>Gno / allinbits/gno-realms</strong> con funcionalidades de IBC core y del realm de transferencia, incluidos helpers de MsgCall y restricciones en operaciones IBC retransmitidas.",
-        "exp.ignite.b5": "Aporté correcciones y helpers upstream en <strong>Cosmos SDK e IBC-Go</strong>, incluyendo el manejo del registry resolver de gogoproto y funcionalidades de capability-keeper.",
-        "exp.ignite.b6": "Mejoré la experiencia de desarrollo con scaffolding de CLI, análisis de protobuf, resolución de mensajes RPC anidados, arrays personalizados, modo daemon y reducción de ruido en CI / Sentry; integré <strong>Claude Code</strong> y <strong>Codex</strong> en los ciclos de revisión y refactor como multiplicador de productividad en bases Go y Cosmos SDK.",
+        "exp.ignite.b5": "También aporté correcciones upstream menores a <strong>Cosmos SDK e IBC-Go</strong>, incluida la resolución del registry de gogoproto y un helper de capability-keeper.",
+        "exp.ignite.b6": "El trabajo también incluyó mensajes RPC anidados, arrays personalizados, modo daemon, fallos de CI y ruido en Sentry. Usé <strong>Claude Code</strong> y <strong>Codex</strong> durante la revisión y refactorización, comprobando el código y las pruebas antes del merge.",
 
         "exp.interchain.role": "Ingeniero Blockchain, Go",
         "exp.interchain.meta": "Jun 2022 — Dic 2022<br>Remoto",
-        "exp.interchain.b1": "Colaboración enfocada en el desarrollo de la chain <strong>Cosmos Hub / ATOM</strong> con el equipo core de la Interchain Foundation, aportando en gaia y en módulos adyacentes de Cosmos SDK.",
-        "exp.interchain.b2": "Construí composición de módulos y funcionalidades de IBC para chains Cosmos SDK downstream, incluyendo mejoras de capability-keeper en IBC-Go.",
+        "exp.interchain.b1": "Durante seis meses con el equipo core de la Interchain Foundation, contribuí a <strong>Gaia</strong> y módulos cercanos de Cosmos SDK para Cosmos Hub.",
+        "exp.interchain.b2": "El trabajo incluyó composición de módulos, funcionalidades de IBC para chains downstream y una mejora de capability-keeper en IBC-Go.",
 
         "exp.ignite2.role": "Ingeniero Senior Blockchain, Go",
         "exp.ignite2.meta": "Jun 2021 — Jun 2022<br>Remoto",
-        "exp.ignite2.b1": "Me incorporé a <strong>Ignite CLI</strong> como ingeniero core de la plataforma all-in-one para construir, lanzar y mantener blockchains Cosmos SDK — entregando trabajo de scaffold, protobuf y UX de CLI que alimentó la larga trayectoria de 300+ PRs públicos integrados, sostenida hasta 2026.",
+        "exp.ignite2.b1": "Me incorporé a <strong>Ignite CLI</strong> como ingeniero core en 2021, trabajando con scaffolding, análisis de protobuf, código generado y los flujos usados para construir y mantener chains Cosmos SDK.",
 
         "exp.hermez.role": "Ingeniero Blockchain / Layer-2, Go",
         "exp.hermez.meta": "Feb 2021 — Jun 2021<br>Remoto",
-        "exp.hermez.b1": "Construí servicios Go a nivel de backend y de protocolo para <strong>Hermez</strong>, sistema Ethereum Layer-2 basado en zk-SNARKs.",
-        "exp.hermez.b2": "Integré servicios Go con herramientas Ethereum y con el pipeline de prover / coordinator del stack del operador rollup.",
+        "exp.hermez.b1": "En <strong>Hermez</strong>, escribí servicios Go para el backend y las partes vinculadas al protocolo del stack del operador Ethereum Layer-2.",
+        "exp.hermez.b2": "Esos servicios conectaban las herramientas de Ethereum con el pipeline de prover y coordinator basado en zk-SNARKs.",
 
         "exp.energi.role": "Ingeniero Backend / Arquitectura",
         "exp.energi.meta": "Abr 2020 — Feb 2021<br>Remoto",
-        "exp.energi.b1": "Construí servicios Go en el backend del <strong>stack DeFi de Energi</strong> y en sistemas custodiales de wallet con flujos de claves privadas.",
-        "exp.energi.b2": "A cargo de la arquitectura de despliegue en Kubernetes con <strong>Helm y GitHub Actions CI/CD</strong> para servicios blockchain y operación de nodos.",
-        "exp.energi.b3": "Implementé observabilidad con <strong>Prometheus y Grafana</strong> para servicios y nodos en producción.",
+        "exp.energi.b1": "En Energi, construí servicios Go para el <strong>stack DeFi</strong> y flujos de wallets custodiales, incluidos sistemas que manejaban claves privadas.",
+        "exp.energi.b2": "También diseñé la estructura de despliegue en Kubernetes y Helm y su pipeline de entrega con <strong>GitHub Actions</strong>.",
+        "exp.energi.b3": "<strong>Prometheus y Grafana</strong> cubrían el monitoreo de servicios y nodos blockchain en producción.",
 
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
-        "exp.trustwallet.b1": "Lideré el backend de la plataforma de indexación e integración multi-chain de Trust Wallet, <strong>blockatlas</strong>, con <strong>200+ PRs públicos integrados</strong> en integración de chains, indexadores, rutas de market data y tooling para full nodes.",
-        "exp.trustwallet.b2": "Migré servicios legacy de Node.js a Go, estandarizando worker pools, procesamiento fan-out, cancelación de contexto y patrones de concurrencia para producción.",
-        "exp.trustwallet.b3": "Operé y monitoreé full nodes en producción en múltiples chains, sosteniendo la infraestructura backend de una wallet cripto a gran escala.",
+        "exp.trustwallet.b1": "En Trust Wallet, lideré el backend de <strong>blockatlas</strong>. Más de <strong>200 de mis PRs públicos</strong> fueron integrados en chains, indexadores, rutas de market data y herramientas para full nodes.",
+        "exp.trustwallet.b2": "Mientras los servicios pasaban de Node.js a Go, estandaricé worker pools, procesamiento fan-out, batching y cancelación de contexto.",
+        "exp.trustwallet.b3": "También operé y monitoreé full nodes para el backend multi-chain de la wallet.",
         "exp.trustwallet.b4": "Construí y mantuve rutas de datos blockchain, flujos de metadatos de activos, parsing de transacciones, lógica de validadores, batching de RPC e integraciones específicas por chain.",
 
         "exp.mb.role": "Tech Lead — Backend y Mobile",
         "exp.mb.meta": "Mar 2018 — Ago 2019<br>São Paulo",
-        "exp.mb.b1": "Construí servicios en Go y Python para tracking multi-chain de transacciones y firma de payloads en uno de los exchanges cripto más grandes de LATAM.",
-        "exp.mb.b2": "Mantuve scripts de wallets hot / warm / cold y procedimientos de gestión de claves integrados al ledger y al matching del exchange.",
-        "exp.mb.b3": "Lideré ingeniería de backend y mobile en flujos orientados al cliente, en iOS, Android y web.",
+        "exp.mb.b1": "En Mercado Bitcoin, construí servicios en Go y Python para el seguimiento multi-chain de transacciones y la firma de payloads.",
+        "exp.mb.b2": "El puesto también incluía scripts de wallets hot, warm y cold vinculados al ledger y a los sistemas de matching del exchange.",
+        "exp.mb.b3": "Lideré la entrega de backend y mobile en iOS, Android y web.",
 
         "exp.earlier.title": "Roles Anteriores",
         "exp.earlier.role": "Tech Lead / Fundador / Ingeniero Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<strong>XDEX</strong> — ingeniería de servicios de exchange en .NET. <strong>Finchain / FlowBTC</strong> — flujos de wallet ERC-20, integraciones con smart contracts y sistemas de compliance. <strong>Neon Bank</strong> — ingeniería iOS / Android y flujos de reconocimiento de documentos.",
+        "exp.earlier.body": "<strong>XDEX:</strong> servicios de exchange en .NET. <strong>Finchain / FlowBTC:</strong> wallets ERC-20, integraciones con smart contracts y sistemas de compliance. <strong>Neon Bank:</strong> aplicaciones iOS / Android y flujos de reconocimiento de documentos.",
 
         "projects.title": "Repositorios Seleccionados / Evidencias",
         "projects.intro": "Repositorios públicos que respaldan los trabajos de protocolo, backend, interoperabilidad y herramientas para desarrolladores descritos arriba.",
 
         "seeking.title": "Lo que estoy buscando",
         "seeking.b1": "Puestos de <strong>Ingeniero Senior Go</strong> en backend, sistemas distribuidos, ingeniería de plataforma o infraestructura blockchain.",
-        "seeking.b2": "Responsabilidad sobre servicios confiables de extremo a extremo — de la <strong>arquitectura y las APIs a la entrega y operación en producción</strong>.",
+        "seeking.b2": "Responsabilidad sobre servicios, desde la <strong>arquitectura y las APIs hasta el despliegue y soporte en producción</strong>.",
         "seeking.b3": "Remoto integral, UTC−3 friendly. <strong>Elegible para UE</strong> (ciudadano italiano) y disponible para viajes ocasionales.",
 
         "summary.title": "Resumen",
-        "summary.body": "<p>Ingeniero senior Go con <strong>10+ años</strong> en ingeniería de software.</p><p>Backend, sistemas distribuidos, ingeniería de plataforma e infraestructura blockchain.</p>",
+        "summary.body": "<p>Comencé con aplicaciones móviles en <strong>São Paulo en 2011</strong>.</p><p>Mi trabajo reciente incluye Ignite CLI, Cosmos SDK, IBC, AtomOne y herramientas para validadores.</p>",
 
         "highlights.title": "Logros Destacados",
-        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados en protoanalysis, generación de código con AST, migraciones de scaffold y UX de CLI.",
+        "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados. El trabajo incluyó análisis de protobuf, generación basada en AST, migraciones de scaffold y comportamiento de la CLI.",
         "highlights.b2": "<strong>AtomOne:</strong> trabajo en el fork Cosmos SDK — módulo de distribución, ADR-004 Nakamoto Bonus y migraciones de gobernanza.",
         "highlights.b3": "<strong>Hermez:</strong> backend en Go para flujos del operador Ethereum L2 zk-SNARK rollup.",
         "highlights.b4": "<strong>ignite/network · spn:</strong> coordinación de lanzamiento y ciclo de vida de chains Cosmos soberanas.",
