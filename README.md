@@ -1,7 +1,7 @@
 # Danilo Pantani
 
-**Senior Go Engineer & Technical Lead**<br>
-**Distributed Systems · Backend & Platform Engineering · Fintech & Blockchain**
+**Senior Go (Golang) Backend Engineer**<br>
+**Distributed Systems · Platform Engineering · Kubernetes, gRPC & REST APIs · Fintech & Blockchain**
 
 São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen · EU work-eligible<br>
@@ -13,7 +13,9 @@ Brazilian and Italian citizen · EU work-eligible<br>
 
 ## Professional summary
 
-I began my software engineering career in São Paulo in 2011. My path started with native iOS and Android applications, full-stack products, automation, IoT, and micro-location systems before moving into financial platforms, Go backends, distributed systems, and blockchain.
+Senior Go (Golang) backend engineer and hands-on technical lead with 10+ years of experience building production backend platforms, distributed systems, fintech and digital-asset infrastructure, and blockchain developer tooling.
+
+Core strengths include Go, system design, gRPC and REST APIs, concurrent processing, Kubernetes, CI/CD, observability, developer tooling, and technical leadership. My earlier work spans native mobile applications, full-stack products, automation, IoT, and micro-location systems.
 
 At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling. More than 300 of my public Ignite CLI pull requests were merged. Earlier, I led backend work on Trust Wallet blockatlas, where more than 200 of my public pull requests were merged.
 
@@ -50,12 +52,12 @@ Alongside hands-on engineering, I have held leadership roles at XDEX, Mercado Bi
 
 | Area | Technologies and focus |
 |---|---|
-| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
-| **Go Backend & Distributed Systems** | Go, gRPC, REST APIs, concurrency, goroutines, worker pools, context cancellation, Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates |
+| **Go Backend & Distributed Systems** | Go (Golang), backend engineering, distributed systems, software architecture, system design, gRPC, REST APIs, concurrent processing, goroutines, worker pools, fan-out processing, batching, context cancellation |
+| **Platform Engineering, Cloud & DevOps** | Kubernetes, Docker, Helm, Terraform, Pulumi, Ansible, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, observability, cloud deployments, production operations |
 | **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
-| **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain full-node operations |
-| **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
+| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
 | **Technical Leadership** | Hands-on team leadership, system design, technical decisions, code review, and cross-functional delivery across backend, mobile, and product engineering |
+| **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
 | **Engineering Workflow** | Repository context, refactoring, and MCP tooling for TouchDesigner through tdmcp |
 
 ## Professional experience
