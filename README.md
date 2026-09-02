@@ -1,7 +1,7 @@
 # Danilo Pantani
 
-**Senior Go Engineer**<br>
-**Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure**
+**Senior Go Engineer & Technical Lead**<br>
+**Distributed Systems · Backend & Platform Engineering · Fintech & Blockchain**
 
 São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen · EU work-eligible<br>
@@ -13,9 +13,11 @@ Brazilian and Italian citizen · EU work-eligible<br>
 
 ## Professional summary
 
-I began my software engineering career in São Paulo in 2011. Since then, my work has moved through financial platforms, Go backends, and blockchain infrastructure.
+I began my software engineering career in São Paulo in 2011. My path started with native iOS and Android applications, full-stack products, automation, IoT, and micro-location systems before moving into financial platforms, Go backends, distributed systems, and blockchain.
 
 At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling. More than 300 of my public Ignite CLI pull requests were merged. Earlier, I led backend work on Trust Wallet blockatlas, where more than 200 of my public pull requests were merged.
+
+Alongside hands-on engineering, I have held leadership roles at XDEX, Mercado Bitcoin, Ice Juice Lemon, and Pixon, spanning development teams, mobile engineering, and product delivery.
 
 ## Selected engineering impact
 
@@ -52,8 +54,9 @@ At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling
 | **Go Backend & Distributed Systems** | Go, gRPC, REST APIs, concurrency, goroutines, worker pools, context cancellation, Validator-as-a-Service, consumer-chain lifecycle, misbehaviour validation, validator-commission updates |
 | **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
 | **Infrastructure & DevOps** | Docker, Kubernetes, Terraform, Ansible, Helm, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, multi-chain full-node operations |
-| **Full-Stack Delivery** | TypeScript, React, JavaScript, responsive UI, component architecture, API-to-interface delivery |
-| **Engineering Workflow** | Repository context, code review, refactoring, MCP tooling for TouchDesigner through tdmcp |
+| **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
+| **Technical Leadership** | Hands-on team leadership, system design, technical decisions, code review, and cross-functional delivery across backend, mobile, and product engineering |
+| **Engineering Workflow** | Repository context, refactoring, and MCP tooling for TouchDesigner through tdmcp |
 
 ## Professional experience
 
@@ -106,14 +109,20 @@ At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling
 
 - At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.
 - The role also included wallet scripts tied to the exchange ledger and delivery across iOS, Android, and web.
+- I led the mobile team and coordinated customer-facing engineering across backend, iOS, Android, and web.
 
 ### Earlier experience
 
-**Tech Lead / Founder / Mobile Engineer** · 2011 — 2018 · São Paulo, Brazil
+**Staff Engineer / Founder / Full-Stack & Mobile Engineer** · 2011 — 2018 · São Paulo, Brazil
 
-- **XDEX:** exchange-service engineering in .NET.
-- **Finchain / FlowBTC:** ERC-20 wallet flows, smart-contract integrations, and exchange compliance systems.
-- **Neon Bank:** iOS / Android engineering and document-recognition workflows with OpenCV and C++.
+- **XDEX (Dec 2017 — Mar 2018):** as Staff Engineer, led the development team, technical decisions, and exchange-service engineering in .NET.
+- **Finchain / FlowBTC (Sep 2017 — Nov 2017):** built native mobile applications, ERC-20 wallets, DApp and ICO smart contracts, and exchange-reconciliation systems.
+- **Neon Bank (Jan 2017 — Nov 2017):** developed native iOS and Android features plus OpenCV/C++ document-capture workflows.
+- **Miya (Jan 2016 — Jan 2017):** founded and developed a real-time people-management platform using Wi-Fi signals.
+- **Pixon (Jan 2014 — Jan 2017):** founded and led the engineering team behind native mobile applications, automation, beacons, and Wi-Fi micro-location products.
+- **Ice Juice Lemon (Jun 2013 — Jan 2014):** led the mobile team and built native iOS and Android applications.
+- **IAI (Jul 2012 — Jun 2013):** developed native iOS and Android applications and delivered mobile-development training.
+- **Brandish Ad (Nov 2011 — Jul 2012):** developed native iOS applications.
 
 ## Selected repositories / evidence
 
@@ -138,7 +147,7 @@ At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling
 ## Education, certifications and languages
 
 - **Universidade Presbiteriana Mackenzie:** coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters), São Paulo, Brazil.
-- **Certifications:** Programming Blockchain — Jimmy Song (2018, 16h); Data Science — Let's Code Academy (2021, 48h).
+- **Certifications:** Data Science - Let's Code Academy (2021, 48h); Programming Blockchain - Jimmy Song (2018, 16h); Ethereum Blockchain Developer - Go Blockchain (2017, 16h); Smart Contracts in Ethereum Blockchain - FIAP (2017, 8h); Blockchain Development - Finchain / Blockchain Brazil (2017, 16h).
 - **Languages:** Portuguese — native; English — advanced; Spanish — advanced.
 
 ## Repository
