@@ -2808,7 +2808,20 @@
       .teaching-grid p,
       .credentials-grid p { margin-bottom: 2px; font-size: 6.3pt; line-height: 1.21; }
 
-      .repos-section { display: none !important; }
+      .repos-section {
+        display: block !important;
+        margin-top: 6px !important;
+        padding-bottom: 4mm;
+        break-before: auto;
+        page-break-before: auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .repos-section .section-title { margin-bottom: 9px; }
+      .repos-section .section-title h2 { font-size: 10.5pt; }
+      .repos-section .repo-intro { display: none; }
+      .repos-section .repo-chips { margin: 0; gap: 2px 3px; }
+      .repos-section a.tag.repo-chip { font-size: 5.8pt; padding: 1px 4px; }
       .credentials-section {
         margin-top: 0 !important;
         padding-top: 0 !important;
@@ -2820,8 +2833,17 @@
       a.tag.repo-chip { font-size: 6.5pt; padding: 2px 5px; }
 
       .contact-cta { display: none !important; }
-      .resume-footer { clear: both; margin-top: 8mm; padding-top: 3mm; font-size: 6.8pt; }
-      .resume-footer::after { font-size: 6.8pt; }
+      .resume-footer {
+        display: flex !important;
+        clear: both;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6mm;
+        margin-top: 0;
+        padding-top: 1mm;
+        font-size: 6.8pt;
+      }
+      .resume-footer::after { margin-top: 0; font-size: 6.8pt; white-space: nowrap; }
 
       /* Page 1 keeps positioning and protocol evidence; page 2 carries
          experience, selected highlights, teaching, and credentials. */
