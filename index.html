@@ -2200,905 +2200,441 @@
       .impact-card p { grid-template-columns: 1fr; gap: 3px; }
     }
 
-    /* ───── Print ───── */
+    /* ───── Print / PDF ─────
+       One coherent, single-column stylesheet for the exported CV.
+
+       ATS constraints honoured here:
+       - Single column, top-to-bottom reading order that matches the DOM.
+       - Contact details as plain text directly under the name (no boxes,
+         no icons, nothing in page headers or footers).
+       - Conventional section names: Professional Summary, Technical
+         Skills, Professional Experience, Education & Certifications,
+         Languages.
+       - Static system fonts only. Google Fonts serves Inter / Fraunces /
+         JetBrains Mono as variable fonts, which Chrome's PDF engine embeds
+         as Type 3 outlines; static TrueType faces embed as real CID fonts
+         with a Unicode map, so every parser recovers the text.
+       - No auto-hyphenation (soft hyphens break keyword matching).
+       Everything screen-only (toolbar, proof strip, impact cards, share
+       preview, footer) is removed rather than restyled. */
     @page {
       size: A4;
-      /* 10mm margin on every page so content gets breathing room
-         on every page break, not only on the first/last page. */
-      margin: 10mm 8mm;
+      margin: 12mm 14mm 13mm;
     }
     @media print {
       :root {
         --paper: #ffffff;
-        --paper-2: #f8f4ec;
-        --ink: #18130d;
-        --ink-strong: #0a0703;
-        --muted: #3d362e;
-        --muted-2: #5a5048;
-        --line: #d8cdb6;
-        --line-strong: #b9a988;
+        --paper-2: #ffffff;
+        --ink: #161616;
+        --ink-strong: #0b0b0b;
+        --muted: #4a4a4a;
+        --muted-2: #5c5c5c;
+        --line: #d9d3c6;
+        --line-strong: #bdb5a4;
+        --print-plum: #5b3a7a;
+        --print-copper: #b8763f;
+        --print-sans: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+        --print-serif: Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
       }
-      html, body {
-        background: #fff !important;
-      }
+
+      html, body { background: #fff !important; }
       body {
-        font-size: 9pt;
-        line-height: 1.32;
-        color-adjust: exact;
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--print-sans);
+        font-size: 8.5pt;
+        line-height: 1.36;
+        -webkit-hyphens: manual;
+        hyphens: manual;
+        orphans: 2;
+        widows: 2;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
       body::before { display: none !important; }
-      .toolbar, .social-preview-section, .resume-footer { display: none !important; }
+      a { color: inherit; text-decoration: none; background-image: none !important; }
+      strong { color: var(--ink-strong); font-weight: 700; }
+
+      /* Screen-only chrome and decorative duplicates. */
+      .toolbar,
+      .eyebrow,
+      .ctas,
+      .contact-card,
+      .proof-strip,
+      .protocol-impact,
+      .section-intro,
+      .section-title .num,
+      .section-title .rule,
+      .expertise-card .ec-icon,
+      .side-panel-head .sp-icon,
+      .repo-intro,
+      .contact-cta,
+      .social-preview-section,
+      .resume-footer,
+      .print-sidebar-only .side-panel[aria-labelledby="sidebar-summary-title"],
+      .print-sidebar-only .side-panel[aria-labelledby="print-stack-title"],
+      .print-sidebar-only .side-panel[aria-labelledby="print-seeking-title"],
+      .print-sidebar-only .side-panel[aria-labelledby="print-highlights-title"] {
+        display: none !important;
+      }
+      .print-only { display: block !important; }
+
+      /* Collapse every screen grid / float / column into one flow. */
+      .resume,
+      .resume::before { border: 0; border-radius: 0; box-shadow: none; }
       .resume {
         width: 100%;
         max-width: none;
         margin: 0;
-        /* Padding zeroed because @page already provides the 10mm margin
-           around every printed page. Keeping both would double the gutter
-           on page 1 only and look inconsistent across page breaks. */
         padding: 0;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
         background: #fff !important;
-        /* Screen sets overflow:hidden for the rounded card; in print that
-           clips the right column. Reset it so nothing gets cut off. */
         overflow: visible;
       }
       .resume::before { display: none; }
-      .hero {
-        grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
-        gap: 18px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid var(--line-strong);
-      }
-      .eyebrow {
-        margin-bottom: 8px;
-        padding: 3px 7px;
-        font-size: 7.4pt;
-      }
-      h1 { font-size: 24pt; line-height: 0.96; margin-bottom: 4px; }
-      .title { font-size: 11pt; margin-bottom: 6px; }
-      /* Show the full hero text in print: the pitch (elevator description)
-         and the summary (the merged-PRs / ADR-004 / blockatlas recap). */
-      .hero-pitch {
-        display: block !important;
-        margin: 2px 0 4px;
-        font-size: 8pt;
-        line-height: 1.34;
-        color: var(--muted);
-        max-width: 100%;
-      }
-      .hero-summary {
-        display: block !important;
-        margin: 0 0 4px;
-        font-size: 7.6pt;
-        line-height: 1.3;
-        color: var(--muted-2);
-        max-width: 100%;
-      }
-      .hero-summary strong { color: var(--ink); }
-      .ctas { display: none; }
-      .contact-card { padding: 9px 10px; border-radius: 10px; background: #fff; box-shadow: none; }
-      .contact-card-head { margin-bottom: 6px; padding-bottom: 6px; }
-      .contact-card-head h2 { font-size: 7pt; }
-      .avatar-mark {
-        width: 22px;
-        height: 22px;
-        font-size: 12px;
-        /* macOS Preview/Quick Look paints the translucent screen shadow as
-           its rectangular PDF transparency group. Keep the circular mark
-           and gradient, but remove that shadow in print. */
-        box-shadow: none;
-      }
-      .contact-item {
-        grid-template-columns: 11px 56px minmax(0, 1fr);
-        gap: 5px;
-        padding: 3px 0;
-      }
-      .contact-item .ico { width: 11px; height: 11px; }
-      .contact-label { font-size: 6.2pt; letter-spacing: 0.04em; }
-      .contact-value {
-        font-size: 7.6pt;
-        word-break: break-word;
-        overflow-wrap: anywhere;
-        line-height: 1.25;
-      }
-      .contact-value a { word-break: break-word; overflow-wrap: anywhere; }
-
-      .proof-strip {
-        /* Force all four cards onto one row in the PDF. The
-           max-width:1000px rule above also matches the A4 print
-           width (~194mm) and would otherwise collapse this to
-           2 columns. */
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        margin: 16px 0 0;
-        gap: 7px;
-      }
-      .proof-card {
-        padding: 9px 10px;
-        border-radius: 9px;
-        background: var(--paper-2) !important;
-        box-shadow: none;
-      }
-      .proof-card:hover { transform: none; box-shadow: none; }
-      .proof-icon { display: none; }
-      .proof-value { font-size: 17pt; margin-bottom: 3px; }
-      .proof-value .small { font-size: 11pt; }
-      .proof-label { font-size: 7.4pt; line-height: 1.25; }
-
-      .section { margin-top: 18px; }
-      .section-title {
-        gap: 9px;
-        margin-bottom: 10px;
-        /* Keep the title attached to its first item to prevent
-           orphaned section headers at the bottom of a page. */
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-      .section-title h2 { font-size: 13pt; }
-      .section-title .num { font-size: 7pt; }
-
-      /* ─── Print: replace the CSS grid body with floats ───
-         CSS grid in Chrome's print engine treats .body-grid as one
-         unfragmentable block and pushes the entire two-column section
-         to page 2 if its first "row" doesn't fit at the bottom of page 1.
-         Floats fragment cleanly across pages while keeping the same
-         visual layout (main on left, sidebar on right). */
-      .body-grid {
-        display: block;
-        margin-top: 32px;
-        gap: 0;
-      }
-      .body-grid::after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .main-column {
-        float: left;
-        width: 64%;
-      }
-      .sidebar {
-        float: right;
-        width: 33.5%;
-        display: block !important;
-      }
-      .sidebar .side-panel {
-        margin-bottom: 6px;
-      }
-      .sidebar .side-panel:last-child {
-        margin-bottom: 10mm;
-      }
-
-      .expertise-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
-      .expertise-card { padding: 6px 8px; border-radius: 8px; background: #fff !important; box-shadow: none; }
-      .expertise-card:hover { transform: none; box-shadow: none; }
-      .expertise-card .ec-head { gap: 6px; margin-bottom: 5px; }
-      .expertise-card .ec-icon { width: 16px; height: 16px; border-radius: 5px; }
-      .expertise-card .ec-icon svg { width: 9px; height: 9px; }
-      .expertise-card h3 { font-size: 8pt; }
-      .expertise-card p { font-size: 7.2pt; line-height: 1.22; }
-
-      .os-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
-      .os-card { padding: 5px 8px; border-radius: 8px; background: #fff !important; box-shadow: none; }
-      .os-card::before { width: 2px; }
-      .os-card:hover { transform: none; box-shadow: none; }
-      .os-card .os-head { margin-bottom: 4px; }
-      .os-card h3 { font-size: 7.8pt; }
-      .os-card .os-badge { font-size: 6.6pt; padding: 2px 5px; }
-      .os-card p { font-size: 7pt; line-height: 1.2; }
-
-      .job { padding: 0 0 5px 16px; }
-      .job::before { left: 4px; width: 1px; }
-      .job::after { width: 7px; height: 7px; box-shadow: 0 0 0 2px #fff; top: 4px; }
-      .job.featured::after { box-shadow: 0 0 0 2px #fff; }
-      .job-card { padding: 4px 9px; border-radius: 8px; background: #fff !important; box-shadow: none; }
-      .job-card:hover { transform: none; box-shadow: none; }
-      .job.featured .job-card { background: var(--paper-2) !important; }
-      .job-head { gap: 8px; margin-bottom: 2px; }
-      .job h3 { font-size: 8.8pt; }
-      .role { font-size: 7.4pt; }
-      .job-meta { font-size: 6.8pt; }
-      .job ul { padding-left: 0.9rem; margin: 2px 0 0; }
-      .job ul li { font-size: 7pt; line-height: 1.2; margin-bottom: 1px; }
-      .earlier-roles { gap: 3px 7px; font-size: 6.45pt; line-height: 1.16; }
-      .job .earlier-roles li { padding-top: 2px; }
-
-      .project-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
-      .project-card { padding: 7px 9px; border-radius: 7px; background: #fff !important; box-shadow: none; }
-      .project-card:hover { transform: none; box-shadow: none; }
-      .project-card .pc-head { margin-bottom: 4px; }
-      .pc-ext { display: none; }
-      .project-card h3 { font-size: 7.6pt; }
-      .project-link { font-size: 6.8pt; margin-bottom: 3px; }
-      .project-card p { font-size: 7pt; line-height: 1.22; }
-      .project-links { gap: 0 6px; margin-bottom: 3px; }
-
-      .sidebar { gap: 8px; }
-      .side-panel { padding: 8px 10px; border-radius: 9px; background: #fff !important; box-shadow: none; }
-      .side-panel-head { margin-bottom: 6px; padding-bottom: 4px; gap: 6px; }
-      .side-panel-head h2 { font-size: 9.4pt; }
-      .side-panel-head .sp-icon { width: 16px; height: 16px; }
-      .side-panel-head .sp-icon svg { width: 9px; height: 9px; }
-      .summary-body p {
-        font-size: 7.2pt;
-        line-height: 1.25;
-        margin: 0 0 3px;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .summary-body p:last-child { margin-bottom: 0; }
-      .impact-list li {
-        padding: 4px 0 4px 11px;
-        font-size: 7.2pt;
-        line-height: 1.26;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .impact-list li::before { width: 4px; height: 4px; top: 9px; }
-      .impact-list li:first-child::before { top: 5px; }
-      .edu-group { padding: 4px 0; break-inside: avoid; }
-      .edu-group h3 { font-size: 7.6pt; margin-bottom: 2px; }
-      .edu-group p { font-size: 6.9pt; line-height: 1.26; }
-      .lang-list { gap: 4px; }
-      .lang-row { break-inside: avoid; }
-      .lang-row strong { font-size: 7.4pt; }
-      .lang-row span { font-size: 6.6pt; }
-      .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 3px 4px;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .tag-row .tag {
-        font-size: 5.8pt;
-        letter-spacing: 0;
-        padding: 1px 5px;
-        border: 1px solid var(--line-strong);
-        background: #fff !important;
-        color: var(--ink);
-      }
-
-      /* Selected Repositories — shown in print as the closing section
-         (compact repo chips below). */
-      .repos-section { display: block !important; }
-
-      /* Selected Repositories — compact print */
-      .repo-intro {
-        font-size: 7.4pt;
-        line-height: 1.3;
-        margin: 0 0 4px;
-        max-width: 100%;
-      }
-      .repo-chips {
-        gap: 4px 5px;
-        margin: 6px 0 0;
-      }
-      a.tag.repo-chip {
-        font-size: 6.8pt;
-        padding: 2px 6px 2px 5px;
-        background: #fff !important;
-        border-color: var(--line-strong);
-        text-decoration: none;
-      }
-      a.tag.repo-chip::before { font-size: 7pt; margin-right: 3px; opacity: 0.6; }
-
-      a { color: inherit; text-decoration: none; background-image: none !important; }
-      .contact-value a, .project-link {
-        text-decoration: underline;
-        text-decoration-thickness: 0.5px;
-        text-underline-offset: 2px;
-      }
-
-      /* Keep small UNITS together (jobs, project cards, OS cards, etc.).
-         Removed the OUTER .side-panel from this list intentionally —
-         a single tall side-panel forced the whole sidebar onto page 2
-         and left the right half of page 1 blank. Inside the Summary
-         panel, individual <p> children carry their own break-inside:
-         avoid so paragraphs never split mid-word. Education / Languages
-         keep cohesion via .edu-group / .lang-row. */
-      .project-card, .expertise-card,
-      .edu-group, .proof-card,
-      .side-panel[aria-labelledby="languages-title"] {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      /* OS cards may flow across a page break; with break-inside:avoid a card
-         straddling the page-1 boundary jumped wholesale and left a gap that
-         tipped the footer onto a 3rd page. Keep the heading with its text. */
-      .os-card .os-head { break-after: avoid; page-break-after: avoid; }
-      /* Long jobs may flow across a page break (avoids large jump-gaps that
-         pushed content onto a 3rd page), but keep each job's title block with
-         its first bullets so headers are never orphaned at a page bottom. */
-      .job-head { break-inside: avoid; break-after: avoid; page-break-after: avoid; }
-
-      /* ─── 2-page pagination ───
-         Page 1 carries positioning, proof, protocol impact, and expertise.
-         Page 2 begins with experience and closes with evidence, teaching,
-         education, certifications, languages, and readable profile URLs. */
-      .section[aria-labelledby="experience-title"] {
-        break-before: page;
-        page-break-before: always;
-      }
-      .section[aria-labelledby="experience-title"] {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-      }
-
-      /* URL footprint at the very bottom of the printed page so the
-         PDF carries clickable / readable references back to the live site. */
-      .resume-footer {
-        display: block !important;
-        margin-top: 8mm;
-        padding-top: 3mm;
-        border-top: 1px solid var(--line);
-        font-size: 7pt;
-        color: var(--muted);
-      }
-      /* Extra breathing room before the very last section bottoms out
-         against the URL footer, especially after the compact repo chips. */
-      .repo-chips {
-        margin-bottom: 6mm;
-      }
-      .resume-footer::after {
-        content: "pantani.github.io · github.com/Pantani · linkedin.com/in/dpantani";
-        display: block;
-        font-family: var(--mono);
-        font-size: 7pt;
-        color: var(--muted);
-        margin-top: 3px;
-      }
-
-      /* Final compact layout: two pages in EN, PT-BR, and ES. */
-      .hero {
-        grid-template-columns: minmax(0, 1.45fr) minmax(205px, 0.55fr);
-        gap: 12px;
-        padding-bottom: 6px;
-      }
-      .person-name { margin-bottom: 4px; font-size: 7pt; }
-      h1 { max-width: 100%; margin-bottom: 4px; font-size: 25pt; line-height: 0.98; }
-      .technical-line { margin-bottom: 5px; font-size: 9.4pt; }
-      .hero-pitch { margin-bottom: 4px; font-size: 8.2pt; line-height: 1.28; }
-      .hero-summary { margin-bottom: 0; font-size: 7.6pt; line-height: 1.26; }
-      .contact-card { padding: 8px 10px; }
-      .contact-item { grid-template-columns: 10px 70px minmax(0, 1fr); gap: 8px; padding: 3px 0; }
-      .contact-value { font-size: 6.8pt; letter-spacing: -0.02em; }
-      .contact-label { font-size: 4.8pt; }
-      .proof-strip { margin-top: 11px; gap: 6px; }
-      .proof-card { padding: 8px 9px; }
-      .proof-value { font-size: 17pt; }
-      .proof-value .small { font-size: 10pt; }
-      .proof-label { font-size: 7pt; line-height: 1.2; }
-
-      /* Keep adjacent sections visually distinct in exported PDFs without
-         spending enough vertical space to disturb the two-page layout. */
-      .section { margin-top: 18px; }
-      .section-title { margin-bottom: 7px; gap: 8px; }
-      .section-title h2 { font-size: 12pt; }
-      .section-title .num { font-size: 6.5pt; }
-      .section-intro { margin: -2px 0 7px; font-size: 7.2pt; line-height: 1.24; }
-
-      .impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .impact-card,
-      .impact-card:nth-child(even) { padding: 7px 9px; }
-      .impact-card-head { margin-bottom: 4px; gap: 6px; }
-      .impact-card h3 { font-size: 9pt; }
-      .impact-card p { grid-template-columns: 58px 1fr; gap: 5px; padding: 3px 0; font-size: 6.9pt; line-height: 1.2; }
-      .impact-card p strong { font-size: 5.7pt; }
-      .evidence-links { gap: 4px 7px; padding-top: 4px; font-size: 6.2pt; }
-      .os-badge { font-size: 5.9pt; padding: 1px 4px; }
-
-      .expertise-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
-      .expertise-card:nth-child(n) { grid-column: auto; }
-      .expertise-card { padding: 7px 8px; }
-      .expertise-card .ec-head { gap: 4px; margin-bottom: 4px; align-items: flex-start; }
-      .expertise-card .ec-icon { display: none; }
-      .expertise-card h3 { font-size: 7.2pt; line-height: 1.14; }
-      .expertise-card p { font-size: 6.3pt; line-height: 1.2; }
-
-      .body-grid,
-      .main-column,
-      .supporting-sections { display: block; float: none; width: 100%; margin: 0; }
-      .experience { columns: 2; column-gap: 6mm; }
-      .job {
-        display: inline-block;
-        width: 100%;
-        margin: 0 0 4px;
-        padding: 0 0 0 11px;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .job::before { left: 3px; }
-      .job::after { width: 5px; height: 5px; top: 4px; }
-      .job-card { padding: 4px 7px; }
-      .job h3 { font-size: 8.2pt; }
-      .role { font-size: 6.9pt; }
-      .job-meta { font-size: 6.3pt; }
-      .job ul { margin-top: 2px; }
-      .job ul li { font-size: 6.5pt; line-height: 1.2; margin-bottom: 1px; }
-      .earlier-roles { gap: 3px 6px; font-size: 6pt; line-height: 1.14; }
-      .job .earlier-roles li { padding-top: 2px; }
-
-      .repos-section { margin-top: 12px !important; break-before: auto; page-break-before: auto; }
-      .repo-intro { font-size: 6.8pt; line-height: 1.24; }
-      .repo-chips { margin: 5px 0 0; gap: 4px; }
-      a.tag.repo-chip { font-size: 6.3pt; padding: 1px 5px; }
-
-      .teaching-grid,
-      .credentials-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
-      .teaching-grid .side-panel:last-child,
-      .credentials-grid .side-panel:first-child { grid-column: auto; }
-      .teaching-grid .side-panel,
-      .credentials-grid .side-panel { padding: 7px 8px; border-radius: 7px; }
-      .teaching-grid h3,
-      .credentials-grid h3 { margin-bottom: 3px; font-size: 7.5pt; }
-      .teaching-grid p,
-      .credentials-grid p { margin-bottom: 2px; font-size: 6.3pt; line-height: 1.22; }
-      .lang-list { gap: 3px; }
-      .lang-row strong { font-size: 6.7pt; }
-      .lang-row span { font-size: 6pt; }
-
-      .contact-cta { display: none !important; }
-      .resume-footer { margin-top: 5mm; padding-top: 2mm; font-size: 6.5pt; }
-      .resume-footer::after { font-size: 6.5pt; }
-
-      /* ─── Editorial print layout ───
-         Keeps the protocol-first hierarchy while using a compact second page
-         for experience, teaching, and credentials. Print backgrounds and
-         text gradients are explicitly neutralized to avoid purple bands in
-         Chrome/Skia PDF exports. */
-      .print-only { display: block !important; }
-      .name-accent {
-        background: none !important;
-        color: var(--plum) !important;
-        -webkit-text-fill-color: currentColor !important;
-      }
-      .hero {
-        grid-template-columns: minmax(0, 1.35fr) minmax(225px, 0.65fr);
-        gap: 16px;
-        padding-bottom: 8px;
-      }
-      .person-name {
-        margin: 0 0 2px;
-        color: var(--ink-strong);
-        font-family: var(--serif);
-        font-size: 25pt;
-        font-weight: 500;
-        letter-spacing: -0.04em;
-        line-height: 1;
-        text-transform: none;
-      }
-      h1 {
-        max-width: 100%;
-        margin: 0 0 3px;
-        font-family: var(--sans);
-        font-size: 11.5pt;
-        font-weight: 650;
-        letter-spacing: -0.02em;
-        line-height: 1.12;
-      }
-      .technical-line { margin-bottom: 5px; font-size: 8.4pt; }
-      .hero-pitch {
-        margin-bottom: 4px;
-        font-family: var(--serif);
-        font-size: 8.2pt;
-        font-style: italic;
-        line-height: 1.28;
-      }
-      .hero-summary { margin-bottom: 0; font-size: 7.4pt; line-height: 1.25; }
-      .contact-card { padding: 8px 10px; }
-      .contact-item { grid-template-columns: 10px 64px minmax(0, 1fr); gap: 6px; padding: 3px 0; }
-      .contact-value { font-size: 7pt; letter-spacing: -0.015em; }
-      .contact-label { font-size: 5.2pt; }
-
-      .proof-strip { margin-top: 12px; gap: 7px; }
-      .proof-card { min-height: 23mm; padding: 8px 9px; }
-      .proof-value { font-size: 17pt; }
-      .proof-value .small { font-size: 10pt; }
-      .proof-label { font-size: 7.1pt; line-height: 1.22; }
-
-      .section { margin-top: 15px; }
-      .section-title { margin-bottom: 7px; gap: 8px; }
-      .section-title h2 { font-size: 12.2pt; }
-      .section-title .num { font-size: 6.5pt; }
-      .section-intro { margin: -2px 0 7px; font-size: 7.1pt; line-height: 1.24; }
-
-      /* Page 1: protocol evidence on the left, expertise on the right. */
-      .protocol-impact { float: left; width: 64%; }
-      .section[aria-labelledby="expertise-title"] { float: right; width: 33.5%; }
-      .impact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-        border: 0;
-      }
-      .impact-card,
-      .impact-card:nth-child(even) {
-        position: relative;
-        padding: 6px 8px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #fff !important;
-      }
-      .impact-card:nth-last-child(-n + 2) { border-bottom: 1px solid var(--line); }
-      .impact-card::before {
-        content: "";
-        position: absolute;
-        inset: 5px auto 5px 0;
-        width: 2px;
-        border-radius: 2px;
-        background: var(--copper) !important;
-      }
-      .impact-card-head { margin-bottom: 4px; gap: 5px; }
-      .impact-card h3 { font-size: 8.4pt; }
-      .impact-card p {
-        display: block;
-        padding: 3px 0;
-        font-size: 6.55pt;
-        line-height: 1.18;
-      }
-      .impact-card p strong {
-        display: block;
-        margin-bottom: 1px;
-        font-size: 5.3pt;
-      }
-      .evidence-links { gap: 3px 6px; padding-top: 4px; font-size: 5.8pt; }
-      .evidence-links > span { display: none; }
-      .os-badge { font-size: 5.4pt; padding: 1px 4px; }
-
-      .expertise-grid { grid-template-columns: 1fr; gap: 5px; }
-      .expertise-card:nth-child(n) { grid-column: auto; }
-      .expertise-card { padding: 6px 8px; }
-      .expertise-card .ec-head { gap: 5px; margin-bottom: 3px; }
-      .expertise-card .ec-icon { width: 15px; height: 15px; }
-      .expertise-card h3 { font-size: 7.2pt; line-height: 1.12; }
-      .expertise-card p { font-size: 6.15pt; line-height: 1.18; }
-
-      /* Page 2: wide timeline + supporting evidence sidebar. */
-      .body-grid {
-        display: block;
-        clear: both;
-        margin-top: 0;
-        break-before: page;
-        page-break-before: always;
-      }
-      .body-grid::after { content: ""; display: block; clear: both; }
-      .main-column { float: left; width: 64%; }
-      .supporting-sections { float: right; width: 33.5%; }
-      .experience {
-        columns: auto;
-        padding-top: 4mm;
-      }
-      .job {
-        display: block;
-        width: 100%;
-        margin: 0;
-        padding: 0 0 5px 16px;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .job::before {
-        left: 4px;
-        width: 1px;
-        background: var(--line-strong) !important;
-      }
-      .job::after { width: 7px; height: 7px; top: 4px; }
-      .job-card,
-      .job.featured .job-card { padding: 4px 9px; background: #fff !important; }
-      .job h3 { font-size: 8.6pt; }
-      .role { font-size: 7.2pt; }
-      .job-meta { font-size: 6.6pt; }
-      .job ul { margin-top: 2px; }
-      .job ul li { font-size: 6.75pt; line-height: 1.19; margin-bottom: 1px; }
-      .earlier-roles { gap: 3px 6px; font-size: 6.05pt; line-height: 1.14; }
-      .job .earlier-roles li { padding-top: 2px; }
-
-      .print-sidebar-only .side-panel { margin-bottom: 6px; }
-      .print-sidebar-only .side-panel-head h2 { font-size: 9pt; }
-      .print-sidebar-only .impact-list li { font-size: 6.7pt; line-height: 1.22; }
-      .print-sidebar-only .tag-row .tag { font-size: 5.5pt; }
-      .teaching-grid,
-      .credentials-grid { display: block; }
-      .teaching-grid .side-panel,
-      .credentials-grid .side-panel { margin-bottom: 6px; padding: 7px 9px; }
-      .teaching-grid h3,
-      .credentials-grid h3 { margin-bottom: 3px; font-size: 7.4pt; }
-      .teaching-grid p,
-      .credentials-grid p { margin-bottom: 2px; font-size: 6.3pt; line-height: 1.21; }
-
-      .repos-section {
-        display: block !important;
-        margin-top: 6px !important;
-        padding-bottom: 4mm;
-        break-before: auto;
-        page-break-before: auto;
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-      .repos-section .section-title { margin-bottom: 9px; }
-      .repos-section .section-title h2 { font-size: 10.5pt; }
-      .repos-section .repo-intro { display: none; }
-      .repos-section .repo-chips { margin: 0; gap: 2px 3px; }
-      .repos-section a.tag.repo-chip { font-size: 5.8pt; padding: 1px 4px; }
-      .credentials-section {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-        break-before: auto;
-        page-break-before: auto;
-      }
-      .repo-intro { font-size: 7.1pt; line-height: 1.26; }
-      .repo-chips { margin: 5px 0 0; gap: 4px; }
-      a.tag.repo-chip { font-size: 6.5pt; padding: 2px 5px; }
-
-      .contact-cta { display: none !important; }
-      .resume-footer {
-        display: flex !important;
-        clear: both;
-        align-items: center;
-        justify-content: space-between;
-        gap: 6mm;
-        margin-top: 0;
-        padding-top: 1mm;
-        font-size: 6.8pt;
-      }
-      .resume-footer::after { margin-top: 0; font-size: 6.8pt; white-space: nowrap; }
-
-      /* Page 1 keeps positioning and protocol evidence; page 2 carries
-         experience, selected highlights, teaching, and credentials. */
-      .section[aria-labelledby="expertise-title"] {
-        float: none;
-        width: 100%;
-      }
-      .expertise-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-      .expertise-card:nth-child(n) { grid-column: span 2; }
-      .body-grid {
-        clear: both;
-        margin-top: 12px;
-        break-before: auto;
-        page-break-before: auto;
-      }
-      .main-column { float: left; width: 64%; }
-      .supporting-sections { float: right; width: 33.5%; }
-      .main-column > .protocol-impact {
-        float: none;
-        width: 100%;
-        margin-top: 0;
-      }
-      .print-sidebar-only { display: block !important; }
-      .print-sidebar-only .side-panel[aria-labelledby="sidebar-summary-title"],
-      .print-sidebar-only .side-panel[aria-labelledby="print-seeking-title"] {
-        display: none !important;
-      }
-      .supporting-sections > .section .section-title .num { display: none; }
-      .print-sidebar-only .summary-body p {
-        font-size: 6.8pt;
-        line-height: 1.22;
-      }
-      .print-sidebar-only .side-panel[aria-labelledby="print-highlights-title"] {
-        margin-top: 0 !important;
-        break-before: page;
-        page-break-before: always;
-      }
-
-      /* ATS-safe PDF flow. Keep the website editorial, but export the CV in
-         a conventional single-column reading order so parsers do not merge
-         unrelated columns or detach skill headings from their descriptions. */
-      body { font-size: 8.5pt; line-height: 1.32; }
-      .eyebrow,
-      .proof-strip,
-      .protocol-impact,
-      .repos-section,
-      .supporting-sections > .section[aria-labelledby="teaching-title"],
-      .print-sidebar-only .side-panel,
-      .contact-cta { display: none !important; }
-
       .hero,
+      .hero > div,
       .body-grid,
       .main-column,
       .supporting-sections,
-      .section[aria-labelledby="expertise-title"] {
-        display: block !important;
-        float: none !important;
-        width: 100% !important;
-        max-width: none !important;
+      .print-sidebar-only,
+      .expertise-grid,
+      .experience,
+      .teaching-grid,
+      .credentials-grid,
+      .lang-list {
+        display: block;
+        float: none;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        columns: auto;
+        gap: 0;
       }
 
-      .hero {
-        padding-bottom: 0;
-        border-bottom: 0;
-      }
+      /* ── Header ── */
+      .hero { padding-bottom: 0; border: 0; }
       .person-name {
-        margin: 0 0 1mm;
-        font-size: 23pt;
+        margin: 0 0 1.2mm;
+        color: var(--ink-strong);
+        font-family: var(--print-serif);
+        font-size: 26pt;
+        font-weight: 700;
+        letter-spacing: -0.015em;
         line-height: 1;
+        text-transform: none;
+      }
+      .person-name .name-accent {
+        color: var(--print-plum);
+        font-style: normal;
+        font-weight: 700;
+        background: none !important;
+        -webkit-text-fill-color: currentColor;
       }
       h1 {
-        margin: 0 0 1.5mm;
-        font-size: 13.5pt;
-        line-height: 1.15;
+        max-width: none;
+        margin: 0 0 0.8mm;
+        color: var(--ink-strong);
+        font-family: var(--print-sans);
+        font-size: 12.5pt;
+        font-weight: 700;
+        letter-spacing: -0.012em;
+        line-height: 1.2;
+        text-wrap: initial;
       }
       h1 .name-accent {
-        background: none;
-        color: var(--plum);
+        padding: 0;
+        color: inherit;
         font-style: normal;
+        font-weight: inherit;
+        background: none !important;
         -webkit-text-fill-color: currentColor;
       }
       .technical-line {
-        margin: 0 0 5mm;
-        font-size: 8.8pt;
+        max-width: none;
+        margin: 0 0 2mm;
+        color: var(--print-plum);
+        font-family: var(--print-sans);
+        font-size: 9pt;
+        font-weight: 500;
+        letter-spacing: 0;
         line-height: 1.3;
       }
-      .ats-summary-title {
-        display: block !important;
-        margin: 0 0 2.5mm;
-        padding-bottom: 1.2mm;
-        border-bottom: 1px solid var(--line-strong);
-        color: var(--ink-strong);
-        font-family: var(--sans);
-        font-size: 9pt;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-      .hero-pitch,
-      .hero-summary {
-        margin: 0 0 2.5mm;
-        max-width: 75ch;
-        color: var(--ink);
-        font-family: var(--sans);
-        font-size: 8.2pt;
-        font-style: normal;
-        line-height: 1.4;
-      }
-      .contact-card {
-        display: none !important;
-      }
       .ats-contact-summary {
-        display: block !important;
-        margin: 4mm 0 0;
-        padding: 2.5mm 3.5mm;
-        border-left: 2px solid var(--plum);
-        background: var(--paper-2);
+        margin: 0;
+        padding: 0 0 2.2mm;
+        border: 0;
+        border-bottom: 1.4px solid var(--ink-strong);
+        background: none;
         color: var(--ink);
-        font-family: var(--sans);
+        font-family: var(--print-sans);
         font-style: normal;
       }
       .ats-contact-summary p {
         margin: 0;
-        font-size: 7.4pt;
-        line-height: 1.38;
+        font-size: 8.3pt;
+        line-height: 1.5;
       }
-      .ats-contact-summary p + p {
-        margin-top: 1.2mm;
-      }
-      .ats-contact-summary a {
-        color: var(--ink-strong);
-        text-decoration: none;
-      }
+      .ats-contact-summary a { color: var(--ink); }
 
-      .section[aria-labelledby="expertise-title"] {
-        margin-top: 7mm;
-      }
-      .section-title {
-        margin-bottom: 3mm;
-        padding-bottom: 1.2mm;
+      /* ── Section headings (shared by summary, sections, languages) ── */
+      .ats-summary-title,
+      .section-title,
+      .side-panel-head {
+        display: block;
+        margin: 3.9mm 0 1.7mm;
+        padding: 0 0 0.9mm;
         border-bottom: 1px solid var(--line-strong);
+        break-after: avoid;
+        page-break-after: avoid;
       }
-      .section-title .num,
-      .section-title .rule { display: none !important; }
-      .section-title h2 { font-size: 10.5pt; }
-      .section-intro {
-        margin: 0 0 3mm;
-        max-width: 75ch;
-        font-size: 7.8pt;
+      .ats-summary-title,
+      .section-title h2,
+      .side-panel-head h2 {
+        margin: 0;
+        color: var(--print-plum);
+        font-family: var(--print-sans);
+        font-size: 8.6pt;
+        font-weight: 700;
+        /* Tracking above ~0.05em makes PDF text extractors insert spaces
+           between letters ("T E A C H I N G"), which breaks ATS matching. */
+        letter-spacing: 0.045em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+      .section { margin: 0; padding: 0; }
+
+      /* ── Professional summary ── */
+      .hero-pitch,
+      .hero-summary {
+        display: block !important;
+        max-width: none;
+        margin: 0 0 1.4mm;
+        color: var(--ink);
+        font-family: var(--print-sans);
+        font-size: 8.6pt;
+        font-style: normal;
         line-height: 1.38;
       }
-      .expertise-grid { display: block !important; }
+      .hero-summary { margin-bottom: 0; }
+
+      /* ── Technical skills: "Category: keywords" rows ── */
       .expertise-card,
       .expertise-card:nth-child(n) {
         display: block;
+        grid-column: auto;
         margin: 0;
-        padding: 1.6mm 0;
+        padding: 0.9mm 0;
         border: 0;
         border-bottom: 1px solid var(--line);
         border-radius: 0;
         background: #fff !important;
+        box-shadow: none;
+        transform: none;
         break-inside: avoid;
         page-break-inside: avoid;
       }
-      .expertise-card .ec-head { margin: 0 0 0.7mm; }
-      .expertise-card .ec-icon { display: none; }
-      .expertise-card h3 { font-size: 8.3pt; line-height: 1.25; }
-      .expertise-card p { font-size: 7.6pt; line-height: 1.34; }
+      .expertise-card:last-child { border-bottom: 0; }
+      .expertise-card .ec-head { display: inline; margin: 0; gap: 0; }
+      .expertise-card h3 {
+        display: inline;
+        margin: 0;
+        color: var(--ink-strong);
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+      .expertise-card h3::after { content: ": "; }
+      .expertise-card p {
+        display: inline;
+        margin: 0;
+        color: var(--ink);
+        font-size: 8.4pt;
+        line-height: 1.36;
+      }
 
-      .body-grid {
-        clear: both;
-        margin-top: 6mm;
-        break-before: auto;
-        page-break-before: auto;
-      }
-      .section[aria-labelledby="experience-title"] {
-        margin-top: 0 !important;
-        break-before: auto !important;
-        page-break-before: auto !important;
-      }
-      .experience { columns: auto; padding-top: 0; }
+      /* ── Professional experience ── */
       .job {
         display: block;
         width: 100%;
-        margin: 0;
+        margin: 0 0 2.2mm;
         padding: 0;
         break-inside: avoid;
         page-break-inside: avoid;
       }
+      .job:last-child { margin-bottom: 0; }
       .job::before,
       .job::after { display: none; }
       .job-card,
       .job.featured .job-card {
-        padding: 1.4mm 0;
-        border: 0;
-        border-bottom: 1px solid var(--line);
-        border-radius: 0;
-        background: #fff !important;
-      }
-      .job-head { display: block; margin-bottom: 1mm; }
-      .job h3 { font-size: 9.2pt; line-height: 1.2; }
-      .role { margin-top: 0.3mm; font-size: 7.8pt; line-height: 1.25; }
-      .job-meta {
-        margin-top: 0.5mm;
-        text-align: left;
-        font-size: 7pt;
-        line-height: 1.2;
-      }
-      .job ul { margin: 1mm 0 0; padding-left: 4mm; }
-      .job ul li { font-size: 7.5pt; line-height: 1.27; margin-bottom: 0.35mm; }
-      .earlier-roles { display: block; font-size: 7.1pt; line-height: 1.26; }
-      .job .earlier-roles li { padding-top: 0.4mm; }
-
-      .print-sidebar-only .side-panel[aria-labelledby="sidebar-languages-title"] {
-        display: block !important;
-        margin-top: 5mm;
         padding: 0;
         border: 0;
         border-radius: 0;
+        background: #fff !important;
+        box-shadow: none;
+        transform: none;
       }
-      .print-sidebar-only .side-panel[aria-labelledby="sidebar-languages-title"] .side-panel-head {
-        margin-bottom: 1.5mm;
-        padding-bottom: 1mm;
-        border-bottom: 1px solid var(--line-strong);
+      .job-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 6mm;
+        margin: 0 0 0.9mm;
+        break-after: avoid;
+        page-break-after: avoid;
       }
-      .lang-list { display: block; }
-      .lang-row {
-        display: grid;
-        grid-template-columns: 40mm 1fr;
-        padding: 0.5mm 0;
-      }
-      .lang-row strong,
-      .lang-row span { font-size: 7.5pt; }
-      .lang-row span { text-align: left; }
-
-      .credentials-section {
-        display: block !important;
-        margin-top: 5mm !important;
-      }
-      .credentials-section > .section-title {
-        margin-bottom: 2mm;
-        padding-bottom: 1mm;
-      }
-      .credentials-grid { display: block; }
-      .credentials-grid .side-panel {
+      .job h3 {
         margin: 0;
-        padding: 0.8mm 0;
-        border: 0;
-        border-bottom: 1px solid var(--line);
-        border-radius: 0;
+        color: var(--ink-strong);
+        font-family: var(--print-sans);
+        font-size: 9.5pt;
+        font-weight: 700;
+        letter-spacing: -0.008em;
+        line-height: 1.25;
       }
-      .credentials-grid h3 { font-size: 8.2pt; }
-      .credentials-grid p { font-size: 7.4pt; line-height: 1.28; }
-      .resume-footer {
-        display: none !important;
+      .role {
+        margin: 0.3mm 0 0;
+        color: var(--print-plum);
+        font-size: 8.4pt;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 1.3;
+      }
+      .job-meta {
+        flex-shrink: 0;
+        margin: 0.4mm 0 0;
+        color: var(--muted);
+        font-family: var(--print-sans);
+        font-size: 8pt;
+        font-weight: 500;
+        line-height: 1.35;
+        text-align: right;
+        white-space: nowrap;
+      }
+      .job ul {
+        margin: 0.6mm 0 0;
+        padding-left: 3.8mm;
+      }
+      .job ul li {
+        margin: 0 0 0.5mm;
+        color: var(--ink);
+        font-size: 8.4pt;
+        line-height: 1.33;
+      }
+      .job ul li::marker { color: var(--print-copper); }
+      .earlier-roles {
+        display: block;
+        font-size: 8.1pt;
+        line-height: 1.33;
+      }
+      .job .earlier-roles li { padding: 0; margin-bottom: 0.4mm; }
+      .earlier-roles strong { color: var(--ink-strong); }
+
+      /* ── Selected repositories: one plain-text line of links ── */
+      .repos-section {
+        display: block !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .repo-chips {
+        display: block;
+        margin: 0;
+        font-size: 8.2pt;
+        line-height: 1.5;
+      }
+      a.tag.repo-chip {
+        display: inline;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none !important;
+        color: var(--ink);
+        font-family: var(--print-sans);
+        font-size: 8.2pt;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      a.tag.repo-chip::before { content: none; }
+      a.tag.repo-chip + a.tag.repo-chip::before {
+        content: "·";
+        margin: 0 1.6mm 0 0.6mm;
+        color: var(--line-strong);
+        font-size: 8.4pt;
+        opacity: 1;
+      }
+
+      /* ── Teaching & talks, education & certifications ── */
+      .supporting-sections .side-panel,
+      .print-sidebar-only .side-panel {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none !important;
+        box-shadow: none;
+      }
+      .teaching-grid .side-panel {
+        margin-bottom: 1mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .teaching-grid h3,
+      .credentials-grid h3 {
+        margin: 0;
+        color: var(--ink-strong);
+        font-family: var(--print-sans);
+        font-size: 8.5pt;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 1.35;
+      }
+      .teaching-grid h3 { display: inline; }
+      .teaching-grid h3::after { content: " — "; color: var(--muted-2); font-weight: 400; }
+      .teaching-grid p {
+        display: inline;
+        margin: 0;
+        color: var(--ink);
+        font-size: 8.3pt;
+        line-height: 1.36;
+      }
+      .credentials-grid .side-panel {
+        margin-bottom: 1.8mm;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .credentials-grid .side-panel:last-child { margin-bottom: 0; }
+      .credentials-grid h3 { display: block; margin-bottom: 0.5mm; }
+      .credentials-grid p {
+        margin: 0;
+        color: var(--ink);
+        font-size: 8.3pt;
+        line-height: 1.36;
+      }
+
+      /* ── Languages: one inline line ── */
+      .print-sidebar-only .side-panel[aria-labelledby="sidebar-languages-title"] {
+        display: block !important;
+      }
+      .lang-list { font-size: 8.4pt; line-height: 1.5; }
+      .lang-row { display: inline; }
+      .lang-row strong {
+        color: var(--ink-strong);
+        font-size: 8.4pt;
+        font-weight: 700;
+      }
+      .lang-row span {
+        color: var(--ink);
+        font-family: var(--print-sans);
+        font-size: 8.4pt;
+        letter-spacing: 0;
+      }
+      .lang-row span::before { content: " ("; }
+      .lang-row span::after { content: ")"; }
+      .lang-row + .lang-row::before {
+        content: "·";
+        margin: 0 1.8mm;
+        color: var(--line-strong);
       }
     }
   </style>
@@ -3149,10 +2685,6 @@
         <p class="person-name">Danilo <span class="name-accent">Pantani</span></p>
         <h1 data-i18n-html="hero.title">Senior <span class="name-accent">Go (Golang) Backend Engineer</span></h1>
         <p class="title technical-line" data-i18n="hero.technical">Distributed Systems · Platform Engineering · Kubernetes, gRPC &amp; REST APIs · Fintech &amp; Blockchain</p>
-        <h2 class="print-only ats-summary-title" data-i18n="summary.title">Professional Summary</h2>
-        <p class="hero-pitch" data-i18n="hero.pitch">Senior Go (Golang) backend engineer and hands-on technical lead with 10+ years building production backend platforms, distributed systems, fintech and digital-asset infrastructure, and blockchain developer tooling.</p>
-        <p class="hero-summary" data-i18n="hero.summary">Core strengths: Go, system design, gRPC and REST APIs, concurrent processing, Kubernetes, CI/CD, observability, developer tooling, and technical leadership. Evidence includes 300+ merged Ignite CLI PRs, 200+ Trust Wallet blockatlas PRs, and AtomOne ADR-004 implementation.</p>
-
         <address class="print-only ats-contact-summary" aria-label="Contact information">
           <p>
             <span data-i18n="contact.location.value">São Paulo, Brazil</span> ·
@@ -3167,6 +2699,9 @@
             <a href="https://t.me/dpantani">t.me/dpantani</a>
           </p>
         </address>
+        <h2 class="print-only ats-summary-title" data-i18n="summary.title">Professional Summary</h2>
+        <p class="hero-pitch" data-i18n="hero.pitch">Senior Go (Golang) backend engineer and hands-on technical lead with 10+ years building production backend platforms, distributed systems, fintech and digital-asset infrastructure, and blockchain developer tooling.</p>
+        <p class="hero-summary" data-i18n="hero.summary">Core strengths: Go, system design, gRPC and REST APIs, concurrent processing, Kubernetes, CI/CD, observability, developer tooling, and technical leadership. Evidence includes 300+ merged Ignite CLI PRs, 200+ Trust Wallet blockatlas PRs, and AtomOne ADR-004 implementation.</p>
 
         <div class="ctas">
           <a class="cta primary" href="#experience-title">

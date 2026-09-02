@@ -167,3 +167,5 @@ Regenerate the three PDFs after changing resume content or print styles:
 ```sh
 ./scripts/generate-pdfs.sh
 ```
+
+The print stylesheet uses static system fonts (Helvetica Neue and Charter on macOS, with Helvetica/Arial and Georgia fallbacks) instead of the Google web fonts. Chrome embeds variable web fonts as Type 3 outlines, which some ATS parsers cannot read; static faces embed as CID TrueType with a Unicode map.
