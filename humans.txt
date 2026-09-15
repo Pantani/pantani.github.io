@@ -1,5 +1,5 @@
 Danilo Pantani
-Senior Go Engineer · Backend · Distributed Systems · Platform Engineering · Blockchain Infrastructure
+Senior Go / Backend Engineer | Distributed Systems & Platform Engineering
 GitHub: https://github.com/Pantani
 LinkedIn: https://www.linkedin.com/in/dpantani/
 Site: https://pantani.github.io/

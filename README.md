@@ -1,10 +1,10 @@
 # Danilo Pantani
 
-**Senior Go (Golang) Backend Engineer**<br>
-**Distributed Systems · Platform Engineering · Kubernetes, gRPC & REST APIs · Fintech & Blockchain**
+**Senior Go / Backend Engineer**<br>
+**Distributed Systems & Platform Engineering**
 
 São Paulo, Brazil · Remote · UTC−3<br>
-Brazilian and Italian citizen · EU work-eligible<br>
+Brazilian and Italian citizen<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
 
 [Live visual resume](https://pantani.github.io/) · [HTML source](./index.html)
@@ -13,32 +13,28 @@ Brazilian and Italian citizen · EU work-eligible<br>
 
 ## Professional summary
 
-Senior Go (Golang) backend engineer and hands-on technical lead with 10+ years of experience building production backend platforms, distributed systems, fintech and digital-asset infrastructure, and blockchain developer tooling.
+Senior Go backend engineer with 10+ years in software engineering across distributed systems, developer tooling and financial infrastructure. Experience includes leading backend work on Trust Wallet's blockatlas, building protobuf and AST-based tooling at Ignite, and implementing AtomOne distribution-module changes. Combines hands-on Go development with deployment, observability and technical collaboration across international teams.
 
-Core strengths include Go, system design, gRPC and REST APIs, concurrent processing, Kubernetes, CI/CD, observability, developer tooling, and technical leadership. My earlier work spans native mobile applications, full-stack products, automation, IoT, and micro-location systems.
+Remote Senior Go/backend opportunities in distributed systems, developer tools and platform engineering. Open to Staff opportunities where the scope fits my experience.
 
-At Ignite, I focused on the CLI, Cosmos SDK, IBC, AtomOne, and validator tooling. More than 300 of my public Ignite CLI pull requests were merged. Earlier, I led backend work on Trust Wallet blockatlas, where more than 200 of my public pull requests were merged.
-
-Alongside hands-on engineering, I have held leadership roles at XDEX, Mercado Bitcoin, Ice Juice Lemon, and Pixon, spanning development teams, mobile engineering, and product delivery.
-
-## Selected engineering impact
+## Selected engineering contributions
 
 ### AtomOne
 
-- Implemented the distribution-module behavior defined by ADR-004 Nakamoto Bonus.
+- Implemented distribution-module changes for ADR-004 Nakamoto Bonus.
 - Delivered governance migrations and validator-commission logic in the AtomOne Cosmos SDK fork.
 - Evidence: [`atomone-hub/atomone`](https://github.com/atomone-hub/atomone) · [`atomone-hub/atomone-sdk`](https://github.com/atomone-hub/atomone-sdk)
 
 ### Ignite CLI
 
-- Contributed 300+ public merged PRs.
+- Contributed 300+ public merged PRs across two engagements with Ignite CLI; this is a project total, not a count for the latest role.
 - Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior.
 - Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
 
 ### Cosmos SDK and IBC-Go
 
-- Contributed interface-registry and gogoproto handling plus capability-keeper helpers.
-- Added small upstream changes used by downstream Cosmos SDK modules.
+- Fixed protobuf file resolution in Cosmos SDK AutoCLI ([#24330](https://github.com/cosmos/cosmos-sdk/pull/24330)).
+- Added an IBC-Go capability-scope inspection helper and tests ([#6716](https://github.com/cosmos/ibc-go/pull/6716)).
 - Evidence: [`cosmos/cosmos-sdk`](https://github.com/cosmos/cosmos-sdk) · [`cosmos/ibc-go`](https://github.com/cosmos/ibc-go)
 
 ### Trust Wallet blockatlas
@@ -62,69 +58,129 @@ Alongside hands-on engineering, I have held leadership roles at XDEX, Mercado Bi
 
 ## Professional experience
 
-### All in Bits (Ignite)
+### Independent Software Engineer — Danilo Pantani
 
-**Blockchain Engineer, Go · Cosmos SDK · IBC** · Dec 2022 — Mar 2026 · Remote
+**Self-employed · Apr 2026–Present · Remote**
 
-- On Ignite CLI, I worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. More than 300 of my public pull requests were merged.
-- The same role also covered IBC, validator infrastructure, consumer-chain lifecycle work, misbehaviour validation, parameter cleanup, and Validator-as-a-Service.
-- I contributed smaller upstream fixes to Cosmos SDK and IBC-Go.
+Independent work combining project-based backend engagements with open-source developer tooling.
 
-### Interchain Foundation
+- Take on occasional backend and Go assignments for external clients.
+- Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
+- Develop Rust CLI projects, including Sunscreen for Solana scaffolding and stellar-forge for Stellar workspaces.
 
-**Blockchain Engineer, Go** · Jun 2022 — Dec 2022 · Remote
+### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite
 
-- During a six-month engagement with the Interchain Foundation core team, I contributed to Gaia and nearby Cosmos SDK modules for the Cosmos Hub.
-- The work included module composition, IBC functionality for downstream chains, and a capability-keeper improvement in IBC-Go.
+**Full-time · Dec 2022–Mar 2026 · Remote**
 
-### All in Bits (Ignite)
+Go engineering across Ignite's developer tooling and Cosmos-based protocol infrastructure.
 
-**Senior Blockchain Engineer, Go** · Jun 2021 — Jun 2022 · Remote
+- Replaced import and keeper-initialization placeholders with AST-based transformations in Ignite CLI, allowing scaffolding to modify Go source through its structure.
+- Worked on protobuf analysis, generated code, CLI behavior and source-formatting fixes, including comment handling in the xast package.
+- Implemented AtomOne distribution-module changes for ADR-004 Nakamoto Bonus and contributed subsequent epoch-timing, governance-migration and validator-commission changes.
+- Contributed upstream improvements to Cosmos SDK and IBC-Go, including protobuf file resolution in AutoCLI and a helper for checking existing capability scopes.
+- Worked on validator infrastructure and consumer-chain lifecycle tooling, alongside code review and CI maintenance.
 
-- I joined Ignite CLI as a core engineer in 2021, working on scaffolding, protobuf analysis, generated code, and CLI flows.
+### Blockchain Engineer, Go — Cosmos Hub & Interoperability — Interchain Foundation
 
-### Hermez Network
+**Full-time · Jun 2022–Dec 2022 · Remote**
 
-**Blockchain / Layer-2 Engineer, Go** · Feb 2021 — Jun 2021 · Remote
+Contributed to Gaia, the Cosmos Hub application, during an engagement with the Interchain Foundation core team.
 
-- At Hermez, I wrote Go services for the backend and protocol-facing parts of its Ethereum Layer-2 operator stack.
-- Those services connected Ethereum tooling with the zk-SNARK prover and coordinator pipeline.
+- Added end-to-end tests for vesting accounts, covering delegation and transfer behavior before and after funds became available.
+- Contributed test coverage for protocol modules, including slashing, fee grants and interchain-account workflows.
+- Fixed application-configuration and genesis-export behavior, and contributed CI and engineering-documentation improvements.
 
-### Energi
+### Senior Blockchain Engineer, Go — Developer Tooling — Ignite (formerly Tendermint)
 
-**Backend Engineer / Architecture** · Apr 2020 — Feb 2021 · Remote
+**Full-time · Jun 2021–Jun 2022 · Remote**
 
-- At Energi, I built Go services for the DeFi stack and custodial-wallet flows.
-- I also designed the Kubernetes and Helm deployment setup, its GitHub Actions delivery pipeline, and Prometheus / Grafana monitoring.
+Core engineer on Ignite CLI, working on tools for building and maintaining Cosmos SDK chains.
 
-### Trust Wallet / Binance
+- Developed scaffolding and generated-code workflows, including module parameters, custom field types and generated tests.
+- Worked on chain-launch commands and validator-oriented workflows for sovereign-chain development.
+- Fixed concurrency issues and improved integration-test and CI behavior in the Go toolchain.
 
-**Backend Lead, Go** · Aug 2019 — Apr 2020 · Remote
+### Blockchain / Layer-2 Engineer, Go — Hermez Network
 
-- At Trust Wallet, I led backend work on blockatlas. More than 200 of my public pull requests were merged across integrations, indexers, market-data routes, and full-node tooling.
-- As services moved from Node.js to Go, I standardized worker pools, fan-out processing, batching, and context cancellation.
-- I also operated and monitored full nodes for the wallet's multi-chain backend.
+**Full-time · Feb 2021–Jun 2021 · Remote**
 
-### Mercado Bitcoin
+Backend engineering for the operator stack of an Ethereum Layer-2 rollup.
 
-**Tech Lead — Backend & Mobile** · Mar 2018 — Aug 2019 · São Paulo, Brazil
+- Built Go services for backend and protocol-facing workflows.
+- Connected those services with Ethereum tooling and the zk-SNARK prover and coordinator pipeline.
 
-- At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.
-- The role also included wallet scripts tied to the exchange ledger and delivery across iOS, Android, and web.
-- I led the mobile team and coordinated customer-facing engineering across backend, iOS, Android, and web.
+### Backend Engineer / Architecture — Go, Kubernetes & Observability — Energi Core
 
-### Earlier experience
+**Full-time · Apr 2020–Feb 2021 · Remote**
 
-**Staff Engineer / Founder / Full-Stack & Mobile Engineer** · 2011 — 2018 · São Paulo, Brazil
+Backend and infrastructure engineering for DeFi services and custodial-wallet workflows.
 
-- **XDEX (Dec 2017 — Mar 2018):** as Staff Engineer, led the development team, technical decisions, and exchange-service engineering in .NET.
-- **Finchain / FlowBTC (Sep 2017 — Nov 2017):** built native mobile applications, ERC-20 wallets, DApp and ICO smart contracts, and exchange-reconciliation systems.
-- **Neon Bank (Jan 2017 — Nov 2017):** developed native iOS and Android features plus OpenCV/C++ document-capture workflows.
-- **Miya (Jan 2016 — Jan 2017):** founded and developed a real-time people-management platform using Wi-Fi signals.
-- **Pixon (Jan 2014 — Jan 2017):** founded and led the engineering team behind native mobile applications, automation, beacons, and Wi-Fi micro-location products.
-- **Ice Juice Lemon (Jun 2013 — Jan 2014):** led the mobile team and built native iOS and Android applications.
-- **IAI (Jul 2012 — Jun 2013):** developed native iOS and Android applications and delivered mobile-development training.
-- **Brandish Ad (Nov 2011 — Jul 2012):** developed native iOS applications.
+- Built Go services for custodial flows and event-driven processing involving Kafka, RabbitMQ and NATS.
+- Designed Kubernetes and Helm deployments on AWS and GCP, with infrastructure definitions in Terraform.
+- Built GitHub Actions delivery pipelines and instrumented services and blockchain nodes with Prometheus and Grafana for production monitoring.
+
+### Backend Lead, Go — Trust Wallet — Binance
+
+**Full-time · Aug 2019–Apr 2020 · Remote**
+
+Led backend work on blockatlas, Trust Wallet's multi-chain backend.
+
+- Built and maintained chain integrations, transaction parsing, asset-data routes and indexing workflows in Go.
+- Contributed to the migration from Node.js to Go and standardized worker pools, fan-out processing, batching and context cancellation.
+- Added HTTP metrics and a metrics endpoint for Prometheus, making request behavior available for monitoring.
+- Operated and monitored full nodes supporting the wallet's multi-chain infrastructure.
+
+### Tech Lead — Backend & Mobile — Mercado Bitcoin
+
+**Full-time · Mar 2018–Aug 2019 · São Paulo, Brazil**
+
+Technical leadership across exchange backend services and mobile engineering.
+
+- Built Go and Python services for multi-chain transaction tracking and payload signing.
+- Maintained wallet workflows connected to the exchange ledger and matching systems.
+- Led a seven-person mobile team and coordinated customer-facing delivery across backend, iOS, Android and web engineering.
+
+### Staff Engineer — XP Inc.
+
+**Full-time · Dec 2017–Mar 2018 · São Paulo, Brazil**
+
+Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group, and a structured-credit product.
+
+- Led a 15-person engineering team and technical decisions for the exchange stack.
+- Built and maintained .NET exchange services running on Microsoft Azure.
+- Served as technical lead on the structured-credit product.
+
+### Full-Stack Developer — Finchain — Sep 2017–Nov 2017
+
+Built native mobile applications, ERC-20 wallets, smart contracts for DApps and ICO workflows, and reconciliation systems supporting exchange operations.
+
+### Mobile Developer (Android / iOS) — Neon — Jan 2017–Nov 2017
+
+Developed and maintained native iOS and Android applications, including document-capture and image-recognition workflows using OpenCV and C++.
+
+### Co-Founder / CTO — Miya Solutions — Jan 2016–Jan 2017
+
+Co-founded a real-time people-management platform and led its technical direction, using Wi-Fi signals for presence and location workflows.
+
+### Co-Founder / CTO — Pixon — Jan 2014–Jan 2017
+
+Co-founded the company and led engineering across native mobile applications, automation and micro-location products using beacons and Wi-Fi.
+
+### Mobile Developer (Android / iOS) — Ice Juice Lemon — Jun 2013–Jan 2014
+
+Led the mobile development team while building and maintaining native iOS and Android applications.
+
+### Mobile Developer (Android / iOS) — iai? Instituto de Artes Interativas — Jul 2012–Jun 2013
+
+Developed native iOS and Android applications and delivered practical mobile-development training.
+
+### iOS Developer — Brandish Ad — Nov 2011–Jul 2012
+
+Built and maintained native iOS applications.
+
+### Trainee — Construtora Camargo Corrêa — Jun 2010–Aug 2010
+
+Supported electrical-engineering activities at the Jirau Hydroelectric Power Plant construction site in Porto Velho, Brazil.
 
 ## Selected repositories / evidence
 
@@ -140,15 +196,16 @@ Alongside hands-on engineering, I have held leadership roles at XDEX, Mercado Bi
 
 ## Teaching and talks
 
-- **FIAP (2021):** MBA instructor in decentralized application development and Ethereum smart contracts.
-- **Go Blockchain (2018):** instructor in Ethereum blockchain development and smart contracts for mobile.
+- **FIAP (Nov 2021–May 2022, part-time):** MBA instructor in decentralized application development and Ethereum smart contracts.
+- **Go Blockchain (Jan 2018–Aug 2019, freelance):** instructor in Ethereum blockchain development and smart contracts for mobile.
+- **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java.
 - **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.
 - **AwesomWasm 2023, Berlin:** workshop on the Ignite stack and roadmap.
 - **ETH São Paulo 2021:** zk-SNARKs and Ethereum Layer-2 rollup infrastructure.
 
 ## Education, certifications and languages
 
-- **Universidade Presbiteriana Mackenzie:** coursework toward Computer Science (6 semesters) and Electrical Engineering (8 semesters), São Paulo, Brazil.
+- **Universidade Presbiteriana Mackenzie:** Computer Science coursework (6 semesters completed) and Electrical Engineering coursework (8 semesters completed); neither degree completed. São Paulo, Brazil.
 - **Certifications:** Data Science - Let's Code Academy (2021, 48h); Programming Blockchain - Jimmy Song (2018, 16h); Ethereum Blockchain Developer - Go Blockchain (2017, 16h); Smart Contracts in Ethereum Blockchain - FIAP (2017, 8h); Blockchain Development - Finchain / Blockchain Brazil (2017, 16h).
 - **Languages:** Portuguese — native; English — advanced; Spanish — advanced.
 
