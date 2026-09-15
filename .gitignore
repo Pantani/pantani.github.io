@@ -38,3 +38,8 @@ htmlcov/
 
 # Generated local artifacts
 /tmp/
+
+# Local audits, AI-generated drafts, artwork, and supporting evidence.
+# Published CV downloads remain versioned because the site links to them.
+/output/*
+!/output/pdf/
