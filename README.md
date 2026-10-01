@@ -1,7 +1,7 @@
 # Danilo Pantani
 
-**Senior Go / Backend Engineer**<br>
-**Distributed Systems & Platform Engineering**
+**Blockchain Developer**<br>
+**Crypto Infrastructure · Go Backend · Distributed Systems**
 
 São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen<br>
@@ -13,9 +13,9 @@ Brazilian and Italian citizen<br>
 
 ## Professional summary
 
-Senior Go backend engineer with 10+ years in software engineering across distributed systems, developer tooling and financial infrastructure. Experience includes leading backend work on Trust Wallet's blockatlas, building protobuf and AST-based tooling at Ignite, and implementing AtomOne distribution-module changes. Combines hands-on Go development with deployment, observability and technical collaboration across international teams.
+Blockchain developer with 10+ years in software engineering, focused on crypto infrastructure, Go backend services, and distributed systems. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes. Current independent work includes Rust tooling for Solana and Stellar development.
 
-Remote Senior Go/backend opportunities in distributed systems, developer tools and platform engineering. Open to Staff opportunities where the scope fits my experience.
+Seeking remote Blockchain Developer and crypto infrastructure roles where Go, backend engineering, and distributed systems are central. Open to Staff opportunities where the scope fits my experience.
 
 ## Selected engineering contributions
 
@@ -48,25 +48,25 @@ Remote Senior Go/backend opportunities in distributed systems, developer tools a
 
 | Area | Technologies and focus |
 |---|---|
+| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure; Solana and Stellar developer tooling |
 | **Go Backend & Distributed Systems** | Go (Golang), backend engineering, distributed systems, software architecture, system design, gRPC, REST APIs, concurrent processing, goroutines, worker pools, fan-out processing, batching, context cancellation |
 | **Platform Engineering, Cloud & DevOps** | Kubernetes, Docker, Helm, Terraform, Pulumi, Ansible, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, observability, cloud deployments, production operations |
 | **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
-| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
 | **Technical Leadership** | Hands-on team leadership, system design, technical decisions, code review, and cross-functional delivery across backend, mobile, and product engineering |
 | **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
 | **Engineering Workflow** | Repository context, refactoring, and MCP tooling for TouchDesigner through tdmcp |
 
 ## Professional experience
 
-### Independent Software Engineer — Danilo Pantani
+### Blockchain Developer & Go Backend Engineer — Danilo Pantani
 
 **Self-employed · Apr 2026–Present · Remote**
 
-Independent work combining project-based backend engagements with open-source developer tooling.
+Independent work combining blockchain developer tooling with occasional project-based backend engagements.
 
+- Develop Rust CLI projects, including Sunscreen for Solana scaffolding and stellar-forge for Stellar workspaces.
 - Take on occasional backend and Go assignments for external clients.
 - Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
-- Develop Rust CLI projects, including Sunscreen for Solana scaffolding and stellar-forge for Stellar workspaces.
 
 ### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite
 
