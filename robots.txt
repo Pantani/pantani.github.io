@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pantani.github.io/sitemap.xml
+Sitemap: https://pantani.xyz/sitemap.xml
+Sitemap: https://pantani.xyz/triton-l200-hpe/sitemap.xml
