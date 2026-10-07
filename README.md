@@ -5,7 +5,7 @@
 
 São Paulo, Brazil · Remote · UTC−3<br>
 Brazilian and Italian citizen<br>
-[danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/) · [Telegram](https://t.me/dpantani)
+[danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/?locale=en-US) · [Telegram](https://t.me/dpantani)
 
 [Live visual resume](https://pantani.xyz/) · [HTML source](./index.html)
 
