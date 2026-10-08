@@ -100,6 +100,7 @@ Independent work combining blockchain developer tooling with occasional project-
 Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 
 - Refactored transaction selection in Go for the Ethereum L2 rollup, adding atomic transaction support and unit tests.
+- Integrated Go services with Ethereum smart contracts via ABI to submit zk-SNARK proofs for rollup batches.
 - Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.
 - Added account-authorization synchronization from the rollup contract, Prometheus instrumentation, and race detection in unit tests.
 

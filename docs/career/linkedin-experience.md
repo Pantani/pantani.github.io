@@ -33,3 +33,5 @@ Developed Go backend and integration tooling for Hermez, an Ethereum Layer-2 zk-
 • Built hermez-integration, a Go integration example for exchanges, covering Baby Jubjub wallet derivation from Ethereum wallets, Hermez address encoding/decoding, and signed account-creation authorization linking Ethereum addresses with Baby Jubjub public keys.
 • Implemented L2 transaction flows for signing and submitting transfers to Baby Jubjub addresses, Ethereum addresses and account indices, plus exits and transaction-status tracking.
 • Added account-authorization synchronization from the rollup contract, Prometheus instrumentation for the node, and race detection in unit tests.
+
+• Integrated the Go backend with Ethereum smart contracts through their ABI, including submission of zk-SNARK proofs as part of the rollup batch-forging workflow.
