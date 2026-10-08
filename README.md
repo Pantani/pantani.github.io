@@ -108,11 +108,13 @@ Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 
 **Full-time · Apr 2020–Feb 2021 · Remote**
 
-Backend and infrastructure engineering for DeFi services and custodial-wallet workflows.
+Designed the overall architecture and built core Go backend services for a cryptocurrency exchange from the ground up, owning application services, infrastructure and operational workflows. Worked alongside an engineer responsible for the matching engine.
 
-- Built Go services for custodial flows and event-driven processing involving Kafka, RabbitMQ and NATS.
-- Designed Kubernetes and Helm deployments on AWS and GCP, with infrastructure definitions in Terraform.
-- Built GitHub Actions delivery pipelines and instrumented services and blockchain nodes with Prometheus and Grafana for production monitoring.
+- Developed APIs and backend workflows for user accounts, KYC, deposits, withdrawals and transaction tracking, integrating multiple cryptocurrencies and blockchain networks.
+- Built custodial-wallet services covering user wallets, private-key custody and blockchain integrations.
+- Designed SQL data models and implemented Kafka-based asynchronous processing, including background workers for reconciliation and balance management.
+- Designed and deployed infrastructure on AWS and GCP using Kubernetes and Helm charts, with HashiCorp tooling including Vault, Consul and Terraform, plus Ansible for infrastructure automation.
+- Built GitHub Actions delivery pipelines for services and full nodes, and implemented production monitoring using Prometheus and Grafana.
 
 ### Backend Lead, Go — Trust Wallet — Binance
 
