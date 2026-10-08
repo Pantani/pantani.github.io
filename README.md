@@ -123,6 +123,8 @@ Led backend work on blockatlas, Trust Wallet's multi-chain backend.
 - Contributed to the migration from Node.js to Go and standardized worker pools, fan-out processing, batching and context cancellation.
 - Added HTTP metrics and a metrics endpoint for Prometheus, making request behavior available for monitoring.
 - Operated and monitored full nodes supporting the wallet's multi-chain infrastructure.
+- Built the Go backend for a Binance crypto gift-card and promotional redemption system, enabling token claims in Trust Wallet via QR codes and single-use links. Implemented redemption-code generation and validation, link expiration and invalidation, and Binance Chain token transfers.
+- Evidence: [`redemption` Go backend implementation](https://github.com/prazd/redemption/commit/8a4e8bf3dd686b2ffa2ed4d480c32cc6a9725198).
 
 ### Tech Lead — Backend & Mobile — Mercado Bitcoin
 
