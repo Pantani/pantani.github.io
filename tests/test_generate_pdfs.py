@@ -15,7 +15,7 @@ from pypdf import PdfWriter
 
 
 GENERATOR = Path(__file__).resolve().parents[1] / "scripts" / "generate-pdfs.sh"
-PDF_NAMES = tuple(f"danilo-pantani-cv-{language}.pdf" for language in ("en", "pt-br", "es"))
+PDF_NAMES = tuple(f"danilo-pantani-cv-{language}.pdf" for language in ("en", "pt-br"))
 FAKE_CHROME_HEADER = """#!/bin/sh
 set -eu
 for argument in "$@"; do
@@ -112,7 +112,7 @@ class GeneratePDFFailureTests(unittest.TestCase):
         self.assertEqual(calls, list(PDF_NAMES))
         report = json.loads((self.root / "validation" / "report.json").read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "needs_changes")
-        self.assertEqual(len(report["documents"]), 3)
+        self.assertEqual(len(report["documents"]), 2)
         self.assertIn("empty_text", {item["code"] for item in report["documents"][0]["findings"]})
         actual = {name: (self.output / name).read_bytes() for name in PDF_NAMES}
         self.assertEqual(actual, self.originals)

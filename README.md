@@ -144,13 +144,13 @@ Technical leadership across exchange backend services and mobile engineering.
 
 Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group, and a structured-credit product.
 
-- Led a 15-person engineering team and technical decisions for the exchange stack.
+- Led the entire 15-person XDEX exchange engineering team as Staff Engineer, combining technical leadership with hands-on work across technical decisions, development and delivery.
 - Built and maintained .NET exchange services running on Microsoft Azure.
 - Served as technical lead on the structured-credit product.
 
 ### Full-Stack Developer — Finchain — Sep 2017–Nov 2017
 
-Built native mobile applications, ERC-20 wallets, smart contracts for DApps and ICO workflows, and reconciliation systems supporting exchange operations.
+Developed smart contracts and applications on Ethereum, including ERC-20 wallets, DApps and ICO workflows. Also built native mobile applications and reconciliation systems supporting exchange operations.
 
 ### Mobile Developer (Android / iOS) — Neon — Jan 2017–Nov 2017
 
@@ -199,7 +199,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 ## Teaching and talks
 
-- **FIAP (Nov 2021–May 2022, part-time):** MBA instructor in decentralized application development and Ethereum smart contracts.
+- **FIAP (Nov 2021–May 2022, part-time):** Taught blockchain fundamentals and Ethereum dApp development in MBA courses, guiding students through Solidity smart contracts for escrow and polling applications.
 - **Go Blockchain (Jan 2018–Aug 2019, freelance):** instructor in Ethereum blockchain development and smart contracts for mobile.
 - **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java.
 - **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.

@@ -2272,7 +2272,7 @@
        preview, footer) is removed rather than restyled. */
     @page {
       size: A4;
-      margin: 12mm 14mm 13mm;
+      margin: 10mm 14mm;
     }
     @media print {
       :root {
@@ -2448,8 +2448,8 @@
       .section-title,
       .side-panel-head {
         display: block;
-        margin: 3mm 0 1.4mm;
-        padding: 0 0 0.9mm;
+        margin: 2mm 0 1mm;
+        padding: 0 0 0.7mm;
         border-bottom: 1px solid var(--line-strong);
         break-after: avoid;
         page-break-after: avoid;
@@ -2525,7 +2525,7 @@
       .job {
         display: block;
         width: 100%;
-        margin: 0 0 1.7mm;
+        margin: 0 0 1.3mm;
         padding: 0;
         break-inside: avoid;
         page-break-inside: avoid;
@@ -2706,7 +2706,7 @@
       }
       .earlier-experience { margin-top: 2mm; }
       .earlier-experience > h3 { margin: 0 0 1mm; font-size: 9.5pt; }
-      .earlier-job { margin: 0 0 1mm; break-inside: avoid; }
+      .earlier-job { margin: 0 0 0.6mm; break-inside: avoid; }
       .earlier-job h4 { display: inline; margin: 0; font-size: 9pt; }
       .earlier-job h4::after { content: " — "; }
       .earlier-job p { display: inline; margin: 0; font-size: 9pt; line-height: 1.25; }
@@ -3118,9 +3118,39 @@
               </div>
             </article>
 
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>XP Inc. (XDEX)</h3>
+                    <p class="role" data-i18n="exp.xp.role">Staff Engineer</p>
+                  </div>
+                  <div class="job-meta" data-i18n-html="exp.xp.meta">Dec 2017 — Mar 2018<br>São Paulo</div>
+                </div>
+                <ul>
+                  <li data-i18n="exp.xp.b1">Led the entire XDEX exchange engineering team as Staff Engineer, combining technical leadership with hands-on work across technical decisions, development and delivery.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="job">
+              <div class="job-card">
+                <div class="job-head">
+                  <div>
+                    <h3>Finchain / FlowBTC</h3>
+                    <p class="role" data-i18n="exp.finchain.role">Full-Stack Developer</p>
+                  </div>
+                  <div class="job-meta" data-i18n-html="exp.finchain.meta">Sep 2017 — Nov 2017</div>
+                </div>
+                <ul>
+                  <li data-i18n="exp.finchain.b1">Developed smart contracts and applications on Ethereum, including ERC-20 wallets and DApps.</li>
+                </ul>
+              </div>
+            </article>
+
             <div class="earlier-experience">
               <h3 data-i18n="exp.earlier.title">Earlier Roles</h3>
-              <div class="earlier-roles" data-i18n-html="exp.earlier.body"><article class="earlier-job"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | Dec 2017 - Mar 2018</p></article><article class="earlier-job"><h4>Finchain / FlowBTC</h4><p>Full-Stack Developer | Sep 2017 - Nov 2017</p></article><article class="earlier-job"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class="earlier-job"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class="earlier-job"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class="earlier-job"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class="earlier-job"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class="earlier-job"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article></div>
+              <div class="earlier-roles" data-i18n-html="exp.earlier.body"><article class="earlier-job"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class="earlier-job"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class="earlier-job"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class="earlier-job"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class="earlier-job"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class="earlier-job"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article></div>
             </div>
           </div>
         </section>
@@ -3208,7 +3238,7 @@
           <div class="teaching-grid">
             <article class="side-panel">
               <h3>FIAP · 2021–2022</h3>
-              <p data-i18n-html="edu.fiap.body">MBA instructor in decentralized application development and Ethereum smart contracts.</p>
+              <p data-i18n-html="edu.fiap.body">Taught blockchain fundamentals and Ethereum dApp development in MBA courses, guiding students through Solidity smart contracts for escrow and polling applications.</p>
             </article>
             <article class="side-panel">
               <h3>Go Blockchain · 2018–2019</h3>
@@ -3401,6 +3431,9 @@
     // ─── i18n: EN (default) / PT-BR ───
     const translations = {
       en: {
+        "exp.xp.role": "Staff Engineer",
+        "exp.xp.meta": "Dec 2017 — Mar 2018<br>São Paulo",
+        "exp.xp.b1": "Led the entire XDEX exchange engineering team as Staff Engineer, combining technical leadership with hands-on work across technical decisions, development and delivery.",
         "personal.title": "Personal Projects",
         "lang.aria.en": "Switch language to English",
         "lang.aria.pt": "Switch language to Brazilian Portuguese",
@@ -3514,10 +3547,13 @@
         "exp.mb.b1": "At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.",
         "exp.mb.b2": "The role also included hot, warm, and cold wallet scripts tied to the exchange ledger and matching systems.",
         "exp.mb.b3": "Led a seven-person mobile team and coordinated delivery across backend, iOS, Android and web engineering.",
+        "exp.finchain.role": "Full-Stack Developer",
+        "exp.finchain.meta": "Sep 2017 — Nov 2017",
+        "exp.finchain.b1": "Developed smart contracts and applications on Ethereum, including ERC-20 wallets and DApps.",
         "exp.earlier.title": "Earlier Roles",
         "exp.earlier.role": "Staff Engineer / Founder / Full-Stack & Mobile Engineer",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<article class=\"earlier-job\"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | Dec 2017 - Mar 2018</p></article><article class=\"earlier-job\"><h4>Finchain / FlowBTC</h4><p>Full-Stack Developer | Sep 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article>",
         "projects.title": "Selected Repositories / Evidence",
         "projects.intro": "Public repositories that support the protocol, backend, interoperability, and developer-tooling work above.",
         "seeking.title": "What I'm looking for",
@@ -3537,7 +3573,7 @@
         "teach.title": "Teaching & Talks",
         "credentials.title": "Education & Certifications",
         "edu.mackenzie.body": "Computer Science: six semesters completed. Electrical Engineering: eight semesters completed. Neither degree completed. São Paulo, Brazil.",
-        "edu.fiap.body": "MBA instructor in decentralized application development and Ethereum smart contracts.",
+        "edu.fiap.body": "Taught blockchain fundamentals and Ethereum dApp development in MBA courses, guiding students through Solidity smart contracts for escrow and polling applications.",
         "edu.gobc.body": "Instructor in Ethereum blockchain development and smart contracts for mobile.",
         "edu.speaking.title": "Selected talks",
         "edu.speaking.body": "Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite.<br>AwesomWasm 2023, Berlin — Ignite stack workshop.<br>ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.",
@@ -3573,6 +3609,9 @@
       },
 
       pt: {
+        "exp.xp.role": "Staff Engineer",
+        "exp.xp.meta": "Dez 2017 — Mar 2018<br>São Paulo",
+        "exp.xp.b1": "Como Staff Engineer, liderei toda a equipe de engenharia da exchange XDEX, combinando liderança técnica com atuação direta nas decisões técnicas, no desenvolvimento e nas entregas.",
         "personal.title": "Projetos Pessoais",
         "lang.aria.en": "Mudar idioma para inglês",
         "lang.aria.pt": "Mudar idioma para português do Brasil",
@@ -3686,10 +3725,13 @@
         "exp.mb.b1": "No Mercado Bitcoin, construí serviços em Go e Python para rastreio multi-chain de transações e assinatura de payloads.",
         "exp.mb.b2": "A função também incluía scripts de wallets hot, warm e cold ligados ao ledger e aos sistemas de matching da exchange.",
         "exp.mb.b3": "Liderei uma equipe mobile de sete pessoas e coordenei entregas entre backend, iOS, Android e web.",
+        "exp.finchain.role": "Desenvolvedor Full-Stack",
+        "exp.finchain.meta": "Set 2017 — Nov 2017",
+        "exp.finchain.b1": "Desenvolvi smart contracts e aplicações na rede Ethereum, incluindo wallets ERC-20 e DApps.",
         "exp.earlier.title": "Atuações Anteriores",
         "exp.earlier.role": "Staff Engineer / Fundador / Engenheiro Full-Stack e Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<article class=\"earlier-job\"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | dez 2017 - mar 2018</p></article><article class=\"earlier-job\"><h4>Finchain / FlowBTC</h4><p>Desenvolvedor Full-Stack | set 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desenvolvedor Mobile | jan 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | jan 2016 - jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | jan 2014 - jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desenvolvedor Mobile / Líder de Time | jun 2013 - jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desenvolvedor Mobile / Instrutor | jul 2012 - jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desenvolvedor iOS | nov 2011 - jul 2012</p></article>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desenvolvedor Mobile | jan 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | jan 2016 - jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | jan 2014 - jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desenvolvedor Mobile / Líder de Time | jun 2013 - jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desenvolvedor Mobile / Instrutor | jul 2012 - jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desenvolvedor iOS | nov 2011 - jul 2012</p></article>",
         "projects.title": "Repositórios Selecionados / Evidências",
         "projects.intro": "Repositórios públicos que sustentam os trabalhos de protocolo, backend, interoperabilidade e ferramentas para desenvolvedores descritos acima.",
         "seeking.title": "O que estou buscando",
@@ -3709,7 +3751,7 @@
         "teach.title": "Docência e Palestras",
         "credentials.title": "Formação e Certificações",
         "edu.mackenzie.body": "Ciência da Computação: seis semestres concluídos. Engenharia Elétrica: oito semestres concluídos. Ambos os cursos incompletos. São Paulo, Brasil.",
-        "edu.fiap.body": "Professor de MBA em desenvolvimento de aplicações descentralizadas e smart contracts com Ethereum.",
+        "edu.fiap.body": "Ensinei fundamentos de blockchain e desenvolvimento de dApps Ethereum no MBA, orientando a criação de smart contracts em Solidity para aplicações de escrow e enquetes.",
         "edu.gobc.body": "Professor de desenvolvimento blockchain com Ethereum e smart contracts para mobile.",
         "edu.speaking.title": "Palestras selecionadas",
         "edu.speaking.body": "Web3Family 2023, Barcelona — construção de chains Cosmos SDK e ferramentas com Ignite.<br>AwesomWasm 2023, Berlim — workshop sobre o stack Ignite.<br>ETH São Paulo 2021 — zk-SNARKs e Ethereum Layer 2.",

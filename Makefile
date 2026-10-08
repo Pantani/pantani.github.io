@@ -1,7 +1,18 @@
 PYTHON ?= python3
 CV_RUN_DIR ?= _workspace/cv-quality
+CAREER_EVIDENCE ?=
+CAREER_DRAFT ?=
+CAREER_RUN_DIR ?= _workspace/career-evidence/build
+CAREER_SOURCE ?= index.html
+CAREER_ANALYSIS ?=
 
-.PHONY: cv-analyze cv-implement cv-test
+.PHONY: cv-analyze cv-implement cv-test career-audit career-pdf
+
+career-audit:
+	$(PYTHON) scripts/career_audit.py --evidence "$(CAREER_EVIDENCE)" --draft "$(CAREER_DRAFT)" --source "$(CAREER_SOURCE)" --output "$(CAREER_RUN_DIR)"
+
+career-pdf:
+	CV_ANALYSIS_REPORT="$(abspath $(CAREER_ANALYSIS))" CV_VALIDATION_DIR="$(abspath $(CAREER_RUN_DIR))/pdf-validation" PYTHON="$(PYTHON)" bash "$(CAREER_RUN_DIR)/candidate/scripts/generate-pdfs.sh"
 
 cv-analyze:
 	$(PYTHON) scripts/cv_quality.py --output "$(CV_RUN_DIR)/analysis"
