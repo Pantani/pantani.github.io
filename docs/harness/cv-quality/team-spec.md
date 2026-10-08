@@ -28,13 +28,13 @@ All roles use `cv-quality`, semantic model policy `inherit`, and `runtime_overri
 
 ## Failure policy
 
-Missing source/PDF/tool/permission: preserve available evidence and mark coverage incomplete. Missing baseline prevents implementation build. Generation uses staging so a Chrome failure cannot erase existing PDFs. The implementation build also runs strict validation on staging before promotion; generation or quality failure preserves previous outputs and leaves implementation incomplete. Three final renames are serialized but are not a filesystem transaction: an I/O failure during promotion may leave a partial set and must be reported. Visual review is an explicit additional acceptance step.
+Missing source/PDF/tool/permission: preserve available evidence and mark coverage incomplete. Missing baseline prevents implementation build. Generation uses staging so a Chrome failure cannot erase existing PDFs. The implementation build also runs strict validation on staging before promotion; generation or quality failure preserves previous outputs and leaves implementation incomplete. Two final renames are serialized but are not a filesystem transaction: an I/O failure during promotion may leave a partial set and must be reported. Visual review is an explicit additional acceptance step.
 
 Worker/model/spawn/communication failure: disclose the missing review, then use serialized owner review if possible. Never count an absent report or branch as a pass. Resource conflict: stop overlapping writes and serialize. Missing workspace: return unsaved drafts and blocked status. Unavailable runtime capabilities lower the guarantee explicitly; no claims of mechanical ownership. Maximum two reviewer correction rounds; remaining factual uncertainty stays needs-evidence, not fabricated closure.
 
 ## Scenarios
 
-1. Normal: baseline records old extraction/font defects; final evidence passes for all three PDFs and every page is visually inspected.
+1. Normal: baseline records old extraction/font defects; final evidence passes for both supported PDFs and every page is visually inspected.
 2. Missing PDF: analysis records missing coverage; strict validation fails. Never substitute a file from another language.
 3. Generation failure: command exits nonzero and preserves the previously complete PDF set.
 4. Unknown client metric: improve wording using existing facts; record missing metric, no invented percentage.

@@ -11,7 +11,7 @@ import sys
 import pdfplumber
 from pypdf import PdfReader
 
-LANGUAGES = ("en", "pt-br", "es")
+LANGUAGES = ("en", "pt-br")
 SECTION_ANCHORS = {
     "en": ("Professional Summary", "Technical Skills & Core Expertise",
            "Professional Experience", "Trust Wallet / Binance", "Mercado Bitcoin",
@@ -21,10 +21,6 @@ SECTION_ANCHORS = {
               "Experiência Profissional", "Trust Wallet / Binance", "Mercado Bitcoin",
               "Atuações Anteriores", "Repositórios Selecionados / Evidências",
               "Docência e Palestras", "Idiomas", "Formação e Certificações"),
-    "es": ("Resumen Profesional", "Competencias Técnicas y Áreas de Especialización",
-           "Experiencia Profesional", "Trust Wallet / Binance", "Mercado Bitcoin",
-           "Roles Anteriores", "Repositorios Seleccionados / Evidencias",
-           "Docencia y Charlas", "Idiomas", "Formación y Certificaciones"),
 }
 CONTACT = "danpantani@gmail.com"
 LIGATURES = re.compile("[\ufb00-\ufb06]")
@@ -157,7 +153,7 @@ def collect_report(args):
 def verify_analysis_documents(report, path, pdf_dir, retries):
     documents = report["documents"]
     if {doc["language"] for doc in documents} != set(LANGUAGES):
-        raise ValueError("Analysis must cover all three languages")
+        raise ValueError("Analysis must cover all supported languages")
     for doc in documents:
         current = pdf_dir / f"danilo-pantani-cv-{doc['language']}.pdf"
         accepted = {doc["sha256"], retries.get(doc["language"])}

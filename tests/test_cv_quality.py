@@ -11,7 +11,7 @@ import unittest
 from pypdf import PdfWriter
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "cv_quality.py"
-LANGUAGES = ("en", "pt-br", "es")
+LANGUAGES = ("en", "pt-br")
 SPEC = importlib.util.spec_from_file_location("cv_quality", SCRIPT)
 QUALITY = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(QUALITY)
@@ -80,7 +80,7 @@ class QualityCommandTests(unittest.TestCase):
         result = self.run_check()
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(self.report()["status"], "needs_changes")
-        self.assertEqual(len(self.report()["documents"]), 3)
+        self.assertEqual(len(self.report()["documents"]), len(LANGUAGES))
         self.assertTrue(self.report()["documents"][0]["findings"])
 
     def test_strict_rejects_blank_wrong_page_count_pdfs(self):

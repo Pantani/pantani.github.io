@@ -116,7 +116,6 @@ generate_pdf() {
 
 generate_pdf "" "danilo-pantani-cv-en.pdf"
 generate_pdf "?lang=pt-BR" "danilo-pantani-cv-pt-br.pdf"
-generate_pdf "?lang=es" "danilo-pantani-cv-es.pdf"
 
 if [[ -n "${CV_VALIDATION_DIR:-}" ]]; then
   "${PYTHON:-python3}" "${PROJECT_DIR}/scripts/cv_quality.py" \
@@ -127,7 +126,7 @@ if [[ -n "${CV_VALIDATION_DIR:-}" ]]; then
 fi
 
 # Promote only after all languages finish; a Chrome failure preserves old files.
-for output_name in danilo-pantani-cv-en.pdf danilo-pantani-cv-pt-br.pdf danilo-pantani-cv-es.pdf; do
+for output_name in danilo-pantani-cv-en.pdf danilo-pantani-cv-pt-br.pdf; do
   mv "${STAGING_DIR}/${output_name}" "${OUTPUT_DIR}/${output_name}"
 done
 

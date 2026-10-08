@@ -11,7 +11,7 @@ Use for repository CV analysis, authorized CV edits, or PDF-generation regressio
 
 ## Required inputs
 
-Read `index.html`, `README.md`, `scripts/generate-pdfs.sh`, and all three files in `output/pdf/`. Read `docs/harness/cv-quality/team-spec.md` for phase paths and ownership. Establish whether the request authorizes analysis only or implementation too. A target vacancy is optional: without it, report general Go/backend positioning and no match score.
+Read `index.html`, `README.md`, `scripts/generate-pdfs.sh`, and both supported files in `output/pdf/`. Read `docs/harness/cv-quality/team-spec.md` for phase paths and ownership. Establish whether the request authorizes analysis only or implementation too. A target vacancy is optional: without it, report general Go/backend positioning and no match score.
 
 ## Analysis build
 
@@ -33,7 +33,7 @@ Read `index.html`, `README.md`, `scripts/generate-pdfs.sh`, and all three files 
 
 Analysis: `_workspace/cv-quality/analysis/` contains machine evidence; the run root contains inventory, audit and plan. Implementation evidence lives in `implementation/`; final files remain `output/pdf/`.
 
-Normal acceptance: three languages, correct extraction sequence in both readers, no presentation ligatures, readable fonts, complete roles and factual boundaries, reviewed rendering. Tests cover missing inputs and a failed generation. Build success is local PDF validation, never a proprietary ATS score or interview guarantee.
+Normal acceptance: both currently supported languages, correct extraction sequence in both readers, no presentation ligatures, readable fonts, complete roles and factual boundaries, reviewed rendering. Tests cover missing inputs and a failed generation. Build success is local PDF validation, never a proprietary ATS score or interview guarantee.
 
 ## Common mistakes
 
@@ -43,4 +43,4 @@ Normal acceptance: three languages, correct extraction sequence in both readers,
 - Treating a successful command as visual review or a partial language set as complete.
 - Publishing private audit evidence with the public CV.
 
-Example: “Audit the three CV PDFs for remote Go/backend roles, then apply the accepted fixes locally.” Run analysis, preserve its baseline, implement the plan, then return final PDFs and explicit unverified items. No upload, commit or publication is implied.
+Example: “Audit the supported CV PDFs for remote Go/backend roles, then apply the accepted fixes locally.” Run analysis, preserve its baseline, implement the plan, then return final PDFs and explicit unverified items. No upload, commit or publication is implied.

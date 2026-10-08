@@ -214,9 +214,9 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 ## Repository
 
-This repository contains a static, trilingual visual portfolio.
+This repository contains a static, bilingual visual portfolio.
 
-- [`index.html`](./index.html) — English, Brazilian Portuguese, and Spanish resume
+- [`index.html`](./index.html) — English and Brazilian Portuguese CVs
 - [`output/pdf/`](./output/pdf/) — generated resume PDFs
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
@@ -237,7 +237,7 @@ make cv-test PYTHON=.venv/bin/python
 
 Use a new `CV_RUN_DIR` for each new audit. Analysis preserves source hashes, parser versions and extraction evidence; implementation requires that baseline and records an incomplete state before generation. Repeated implementation attempts within the same run retain the original analysis. The workflow is defined in [CV quality](.agents/skills/cv-quality/SKILL.md) and its [team contract](docs/harness/cv-quality/team-spec.md).
 
-Generation requires Chrome/Chromium and a local Python HTTP server. `CHROME_BIN` selects an executable and `PDF_SERVER_PORT` changes the default local port (8765). All three PDFs are generated in staging before replacing the existing files. The implementation build validates staging before promotion; generation or quality failure preserves the previous set. Final file moves are serialized, not a filesystem transaction. Run `bash scripts/generate-pdfs.sh` for generation alone, or use the implementation build for mandatory local validation.
+Generation requires Chrome/Chromium and a local Python HTTP server. `CHROME_BIN` selects an executable and `PDF_SERVER_PORT` changes the default local port (8765). Both supported PDFs are generated in staging before replacing the existing files. The implementation build validates staging before promotion; generation or quality failure preserves the previous set. Final file moves are serialized, not a filesystem transaction. Run `bash scripts/generate-pdfs.sh` for generation alone, or use the implementation build for mandatory local validation.
 
 The print stylesheet uses static system fonts, neutralizes inherited screen layering, and disables presentation ligatures. Checks require two pages per language, at least 9pt visible text, and the expected section order in two independent readers. Inspect every rendered page as well: automated extraction checks do not prove visual quality or compatibility with an employer's ATS. No job-match score is produced.
 
