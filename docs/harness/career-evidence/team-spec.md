@@ -29,8 +29,8 @@ All run files live under `_workspace/career-evidence/<run>/`. Every narrative ha
 | Auditor → editor | Contribution inventory path recorded in the contract | JSON array: URL, state, repository owner/privacy, file count and complete `allFiles` | snapshot-complete; never implies all diffs reviewed |
 | Editor → builder/reviewer | `draft.json` | `confirmed_employers`, `roles` as specified below | proposed |
 | Provenance build → reviewer | `build/report.json`, `build/claim-ledger.md` | Status/errors/input hashes; each text mapped to PR URLs | pass/fail; semantic review still required |
-| Editor → owner | `build/linkedin.md`, `build/cv-{en,pt-br,es}.md` | Proposed descriptions by role | local draft |
-| CV builder → reviewer | `build/candidate/index.html`, `build/candidate/output/pdf/`, `build/pdf-validation/report.json` | Candidate source, three PDFs, extraction and font/page checks | pass/fail |
+| Editor → owner | `build/linkedin.md`, `build/cv-{en,pt-br}.md` | Proposed descriptions by role | local draft |
+| CV builder → reviewer | `build/candidate/index.html`, `build/candidate/output/pdf/`, `build/pdf-validation/report.json` | Candidate source, two PDFs, extraction and font/page checks | pass/fail |
 | Reviewer → owner | `04_validation.md` | Automated results, semantic review, rendered-page inspection, chronology caveats, original-file preservation | accepted-local-draft or partial |
 
 The inventory can be reused from an earlier dated audit. Record its exact path and limitations rather than silently recrawling or upgrading its verification level. The executable does not collect GitHub history or semantically read code; those remain the auditor's responsibility.

@@ -66,37 +66,32 @@ Independent work combining blockchain developer tooling with occasional project-
 
 - Take on occasional backend and Go assignments for external clients.
 
-### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite
+### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite (All in Bits)
 
 **Full-time · Dec 2022–Mar 2026 · Remote**
 
-Go engineering across Ignite's developer tooling and Cosmos-based protocol infrastructure.
-
-- Replaced import and keeper-initialization placeholders with AST-based transformations in Ignite CLI, allowing scaffolding to modify Go source through its structure.
-- Worked on protobuf analysis, generated code, CLI behavior and source-formatting fixes, including comment handling in the xast package.
-- Implemented AtomOne distribution-module changes for ADR-004 Nakamoto Bonus and contributed subsequent epoch-timing, governance-migration and validator-commission changes.
-- Contributed upstream improvements to Cosmos SDK and IBC-Go, including protobuf file resolution in AutoCLI and a helper for checking existing capability scopes.
-- Worked on validator infrastructure and consumer-chain lifecycle tooling, alongside code review and CI maintenance.
+- Developed Go developer tooling in Ignite CLI: AST-based source transformations, Protocol Buffers code generation, module and migration scaffolding, application wiring, and compatibility updates across Cosmos SDK, CometBFT and IBC-Go.
+- Built and extended Ignite apps for Hermes relaying, CosmWasm and fee-abstraction integration. Implemented Spaceship remote chain deployment over SSH/SFTP, including process control, logs, faucets and archive extraction.
+- Implemented AtomOne protocol changes: ADR-004 Nakamoto Bonus distribution, epoch-based execution, validator commission constraints and updates, and governance migration fixes.
+- Implemented VaaS consumer fee pools, provider validator payments and debt-state propagation, with transaction admission rules that preserve IBC and governance recovery operations. Added misbehaviour validation and IBC v2 fixes.
+- Extended IBC functionality in Gno Realms with transfer memos, GRC20 voucher transfer and approval helpers, relay authorization, and query views.
+- Contributed upstream fixes to Cosmos SDK AutoCLI protobuf descriptor resolution and an IBC-Go helper for inspecting existing capability scopes.
 
 ### Blockchain Engineer, Go — Cosmos Hub & Interoperability — Interchain Foundation
 
 **Full-time · Jun 2022–Dec 2022 · Remote**
 
-Contributed to Gaia, the Cosmos Hub application, during an engagement with the Interchain Foundation core team.
+- Maintained and evolved Gaia, the Cosmos Hub application, implementing bug fixes, upgrades and ongoing improvements across the Go codebase.
+- Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.
+- Added ICA authorization unit tests, refactored shared E2E query and execution helpers, and improved test coverage workflows and CI handling of documentation-only changes.
 
-- Added end-to-end tests for vesting accounts, covering delegation and transfer behavior before and after funds became available.
-- Contributed test coverage for protocol modules, including slashing, fee grants and interchain-account workflows.
-- Fixed application-configuration and genesis-export behavior, and contributed CI and engineering-documentation improvements.
-
-### Senior Blockchain Engineer, Go — Developer Tooling — Ignite (formerly Tendermint)
+### Senior Blockchain Engineer, Go — Developer Tooling — Ignite (Tendermint)
 
 **Full-time · Jun 2021–Jun 2022 · Remote**
 
-Core engineer on Ignite CLI, working on tools for building and maintaining Cosmos SDK chains.
-
-- Developed scaffolding and generated-code workflows, including module parameters, custom field types and generated tests.
-- Worked on chain-launch commands and validator-oriented workflows for sovereign-chain development.
-- Fixed concurrency issues and improved integration-test and CI behavior in the Go toolchain.
+- Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
+- Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.
+- Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
 
 ### Blockchain / Layer-2 Engineer, Go — Hermez Network
 
