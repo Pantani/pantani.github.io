@@ -22,3 +22,14 @@ Status: local draft; not published.
 - Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
 - Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.
 - Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
+
+## Hermez Network — February 2021 – June 2021
+
+Status: published to LinkedIn and verified by read-back on October 8, 2026.
+
+Developed Go backend and integration tooling for Hermez, an Ethereum Layer-2 zk-SNARK rollup.
+
+• Refactored the node's transaction selector, adding atomic transaction support and unit tests for transaction groups and batch selection.
+• Built hermez-integration, a Go integration example for exchanges, covering Baby Jubjub wallet derivation from Ethereum wallets, Hermez address encoding/decoding, and signed account-creation authorization linking Ethereum addresses with Baby Jubjub public keys.
+• Implemented L2 transaction flows for signing and submitting transfers to Baby Jubjub addresses, Ethereum addresses and account indices, plus exits and transaction-status tracking.
+• Added account-authorization synchronization from the rollup contract, Prometheus instrumentation for the node, and race detection in unit tests.

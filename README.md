@@ -97,10 +97,11 @@ Independent work combining blockchain developer tooling with occasional project-
 
 **Full-time · Feb 2021–Jun 2021 · Remote**
 
-Backend engineering for the operator stack of an Ethereum Layer-2 rollup.
+Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 
-- Built Go services for backend and protocol-facing workflows.
-- Connected those services with Ethereum tooling and the zk-SNARK prover and coordinator pipeline.
+- Refactored transaction selection in Go for the Ethereum L2 rollup, adding atomic transaction support and unit tests.
+- Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.
+- Added account-authorization synchronization from the rollup contract, Prometheus instrumentation, and race detection in unit tests.
 
 ### Backend Engineer / Architecture — Go, Kubernetes & Observability — Energi Core
 
@@ -190,6 +191,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 - [`cosmos/gaia`](https://github.com/cosmos/gaia) — Cosmos Hub / ATOM chain application
 - [`allinbits/vaas`](https://github.com/allinbits/vaas) — validator and consumer-chain lifecycle workflows
 - [`hermeznetwork/hermez-node`](https://github.com/hermeznetwork/hermez-node) — Ethereum Layer 2 and zk-SNARK rollup operator services
+- [`hermeznetwork/hermez-integration`](https://github.com/hermeznetwork/hermez-integration) — Go wallet authorization and L2 transaction integration examples
 - [`trustwallet/blockatlas`](https://github.com/trustwallet/blockatlas) — multi-chain indexing, integrations, and full-node tooling
 
 ## Teaching and talks
