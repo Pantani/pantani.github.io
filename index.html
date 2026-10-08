@@ -2247,6 +2247,12 @@
       .impact-card p { grid-template-columns: 1fr; gap: 3px; }
     }
 
+    .earlier-experience { margin-top: 20px; }
+    .earlier-job { margin: 0 0 8px; }
+    .earlier-job h4 { margin: 0; font-size: 14px; }
+    .earlier-job p { margin: 2px 0 0; font-size: 12px; }
+    .personal-projects p { font-size: 13px; line-height: 1.45; }
+
     /* ───── Print / PDF ─────
        One coherent, single-column stylesheet for the exported CV.
 
@@ -2260,7 +2266,7 @@
        - Static system fonts only. Google Fonts serves Inter / Fraunces /
          JetBrains Mono as variable fonts, which Chrome's PDF engine embeds
          as Type 3 outlines; static TrueType faces embed as real CID fonts
-         with a Unicode map, so every parser recovers the text.
+         with a Unicode map, for extraction checks with the installed PDF readers.
        - No auto-hyphenation (soft hyphens break keyword matching).
        Everything screen-only (toolbar, proof strip, impact cards, share
        preview, footer) is removed rather than restyled. */
@@ -2284,13 +2290,26 @@
         --print-serif: Charter, "Iowan Old Style", Georgia, "Times New Roman", serif;
       }
 
+      /* Neutralize screen layering so PDF text follows document order. */
+      .resume, .resume * {
+        position: static !important;
+        z-index: auto !important;
+        transform: none !important;
+        filter: none !important;
+        opacity: 1 !important;
+        will-change: auto !important;
+        transition: none !important;
+        animation: none !important;
+        font-variant-ligatures: none;
+        font-feature-settings: "liga" 0, "clig" 0;
+      }
       html, body { background: #fff !important; }
       body {
         margin: 0;
         color: var(--ink);
         font-family: var(--print-sans);
-        font-size: 8.5pt;
-        line-height: 1.36;
+        font-size: 9pt;
+        line-height: 1.25;
         -webkit-hyphens: manual;
         hyphens: manual;
         orphans: 2;
@@ -2419,7 +2438,7 @@
       }
       .ats-contact-summary p {
         margin: 0;
-        font-size: 8.3pt;
+        font-size: 9pt;
         line-height: 1.5;
       }
       .ats-contact-summary a { color: var(--ink); }
@@ -2429,7 +2448,7 @@
       .section-title,
       .side-panel-head {
         display: block;
-        margin: 3.9mm 0 1.7mm;
+        margin: 3mm 0 1.4mm;
         padding: 0 0 0.9mm;
         border-bottom: 1px solid var(--line-strong);
         break-after: avoid;
@@ -2441,7 +2460,7 @@
         margin: 0;
         color: var(--print-plum);
         font-family: var(--print-sans);
-        font-size: 8.6pt;
+        font-size: 9pt;
         font-weight: 700;
         /* Tracking above ~0.05em makes PDF text extractors insert spaces
            between letters ("T E A C H I N G"), which breaks ATS matching. */
@@ -2459,7 +2478,7 @@
         margin: 0 0 1.4mm;
         color: var(--ink);
         font-family: var(--print-sans);
-        font-size: 8.6pt;
+        font-size: 9pt;
         font-style: normal;
         line-height: 1.38;
       }
@@ -2487,7 +2506,7 @@
         display: inline;
         margin: 0;
         color: var(--ink-strong);
-        font-size: 8.5pt;
+        font-size: 9pt;
         font-weight: 700;
         letter-spacing: 0;
       }
@@ -2496,17 +2515,17 @@
         display: inline;
         margin: 0;
         color: var(--ink);
-        font-size: 8.4pt;
-        line-height: 1.36;
+        font-size: 9pt;
+        line-height: 1.25;
       }
 
-      .expertise-card:nth-child(n + 4) { display: none; }
+      .expertise-card:nth-child(n + 5) { display: none; }
 
       /* ── Professional experience ── */
       .job {
         display: block;
         width: 100%;
-        margin: 0 0 2.2mm;
+        margin: 0 0 1.7mm;
         padding: 0;
         break-inside: avoid;
         page-break-inside: avoid;
@@ -2544,7 +2563,7 @@
       .role {
         margin: 0.3mm 0 0;
         color: var(--print-plum);
-        font-size: 8.4pt;
+        font-size: 9pt;
         font-weight: 600;
         letter-spacing: 0;
         line-height: 1.3;
@@ -2554,7 +2573,7 @@
         margin: 0.4mm 0 0;
         color: var(--muted);
         font-family: var(--print-sans);
-        font-size: 8pt;
+        font-size: 9pt;
         font-weight: 500;
         line-height: 1.35;
         text-align: right;
@@ -2567,14 +2586,14 @@
       .job ul li {
         margin: 0 0 0.5mm;
         color: var(--ink);
-        font-size: 8.4pt;
-        line-height: 1.33;
+        font-size: 9pt;
+        line-height: 1.25;
       }
       .job ul li::marker { color: var(--print-copper); }
       .earlier-roles {
         display: block;
-        font-size: 8.1pt;
-        line-height: 1.33;
+        font-size: 9pt;
+        line-height: 1.25;
       }
       .job .earlier-roles li { padding: 0; margin-bottom: 0.4mm; }
       .earlier-roles strong { color: var(--ink-strong); }
@@ -2588,7 +2607,7 @@
       .repo-chips {
         display: block;
         margin: 0;
-        font-size: 8.2pt;
+        font-size: 9pt;
         line-height: 1.5;
       }
       a.tag.repo-chip {
@@ -2599,7 +2618,7 @@
         background: none !important;
         color: var(--ink);
         font-family: var(--print-sans);
-        font-size: 8.2pt;
+        font-size: 9pt;
         font-weight: 500;
         letter-spacing: 0;
       }
@@ -2608,7 +2627,7 @@
         content: "·";
         margin: 0 1.6mm 0 0.6mm;
         color: var(--line-strong);
-        font-size: 8.4pt;
+        font-size: 9pt;
         opacity: 1;
       }
 
@@ -2633,7 +2652,7 @@
         margin: 0;
         color: var(--ink-strong);
         font-family: var(--print-sans);
-        font-size: 8.5pt;
+        font-size: 9pt;
         font-weight: 700;
         letter-spacing: 0;
         line-height: 1.35;
@@ -2644,8 +2663,8 @@
         display: inline;
         margin: 0;
         color: var(--ink);
-        font-size: 8.3pt;
-        line-height: 1.36;
+        font-size: 9pt;
+        line-height: 1.25;
       }
       .credentials-grid .side-panel {
         margin-bottom: 1.8mm;
@@ -2657,25 +2676,25 @@
       .credentials-grid p {
         margin: 0;
         color: var(--ink);
-        font-size: 8.3pt;
-        line-height: 1.36;
+        font-size: 9pt;
+        line-height: 1.25;
       }
 
       /* ── Languages: one inline line ── */
       .print-sidebar-only .side-panel[aria-labelledby="sidebar-languages-title"] {
         display: block !important;
       }
-      .lang-list { font-size: 8.4pt; line-height: 1.5; }
+      .lang-list { font-size: 9pt; line-height: 1.5; }
       .lang-row { display: inline; }
       .lang-row strong {
         color: var(--ink-strong);
-        font-size: 8.4pt;
+        font-size: 9pt;
         font-weight: 700;
       }
       .lang-row span {
         color: var(--ink);
         font-family: var(--print-sans);
-        font-size: 8.4pt;
+        font-size: 9pt;
         letter-spacing: 0;
       }
       .lang-row span::before { content: " ("; }
@@ -2685,6 +2704,13 @@
         margin: 0 1.8mm;
         color: var(--line-strong);
       }
+      .earlier-experience { margin-top: 2mm; }
+      .earlier-experience > h3 { margin: 0 0 1mm; font-size: 9.5pt; }
+      .earlier-job { margin: 0 0 1mm; break-inside: avoid; }
+      .earlier-job h4 { display: inline; margin: 0; font-size: 9pt; }
+      .earlier-job h4::after { content: " — "; }
+      .earlier-job p { display: inline; margin: 0; font-size: 9pt; line-height: 1.25; }
+      .personal-projects p { margin: 0 0 1mm; font-size: 9pt; line-height: 1.25; }
     }
   </style>
 </head>
@@ -2750,7 +2776,7 @@
         </address>
         <h2 class="print-only ats-summary-title" data-i18n="summary.title">Professional Summary</h2>
         <p class="hero-pitch" data-i18n="hero.pitch">Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.</p>
-        <p class="hero-summary" data-i18n="hero.summary">Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects. Rust tooling for Solana and Stellar is personal study, not professional Rust experience.</p>
+        <p class="hero-summary" data-i18n="hero.summary">Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects.</p>
 
         <div class="ctas">
           <a class="cta primary" href="#experience-title">
@@ -2895,16 +2921,6 @@
       </div>
         <p class="section-intro" data-i18n="expertise.intro">Go backend engineering and distributed systems are the focus, with professional experience in blockchain infrastructure and developer tooling.</p>
       <div class="expertise-grid">
-        <div class="expertise-card copper">
-          <div class="ec-head">
-            <span class="ec-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>
-            </span>
-            <h3 data-i18n="expertise.blockchain.title">Blockchain &amp; Protocol Engineering</h3>
-          </div>
-          <p data-i18n="expertise.blockchain.body">Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.</p>
-        </div>
-
         <div class="expertise-card">
           <div class="ec-head">
             <span class="ec-icon">
@@ -2912,7 +2928,7 @@
             </span>
             <h3 data-i18n="expertise.backend.title">Go Backend &amp; Distributed Systems</h3>
           </div>
-          <p data-i18n="expertise.backend.body">Go (Golang), gRPC, REST APIs, distributed systems, concurrency, PostgreSQL.</p>
+          <p data-i18n="expertise.backend.body">Go (Golang), distributed systems, HTTP APIs, worker pools, fan-out, batching, context cancellation.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -2933,6 +2949,16 @@
             <h3 data-i18n="expertise.tooling.title">Developer Tooling</h3>
           </div>
           <p data-i18n="expertise.tooling.body">Protocol Buffers, AST transformations, code generation, scaffolding, CLI and SDK tooling.</p>
+        </div>
+
+        <div class="expertise-card copper">
+          <div class="ec-head">
+            <span class="ec-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="8" cy="7" r="1.5" fill="currentColor"/><circle cx="14" cy="12" r="1.5" fill="currentColor"/><circle cx="10" cy="17" r="1.5" fill="currentColor"/></svg>
+            </span>
+            <h3 data-i18n="expertise.blockchain.title">Blockchain &amp; Protocol Engineering</h3>
+          </div>
+          <p data-i18n="expertise.blockchain.body">Cosmos SDK, CometBFT, IBC, AtomOne, Ethereum / EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2.</p>
         </div>
 
         <div class="expertise-card copper">
@@ -2976,7 +3002,7 @@
                   <div><h3>Danilo Pantani</h3><p class="role" data-i18n="exp.independent.role">Go Backend Engineer &amp; Blockchain Developer</p></div>
                   <div class="job-meta" data-i18n-html="exp.independent.meta">Apr 2026 — Present<br>Self-employed · Remote</div>
                 </div>
-                <ul><li data-i18n="exp.independent.b1">Study Rust through personal projects at home, including Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.</li><li data-i18n="exp.independent.b2">Take on occasional backend and Go assignments for external clients.</li><li data-i18n="exp.independent.b3">Build tdmcp and Ableton Mind: developer integrations for creative applications using TypeScript and Python.</li></ul>
+                <ul><li data-i18n="exp.independent.b2">Take on occasional backend and Go assignments for external clients.</li></ul>
               </div>
             </article>
             <article class="job featured">
@@ -3055,7 +3081,7 @@
                 </div>
                 <ul>
                   <li data-i18n-html="exp.energi.b1">At Energi, I built Go services for the <strong>DeFi stack</strong> and custodial-wallet flows, including systems that handled private-key custody.</li>
-                  <li data-i18n-html="exp.energi.b2">I also designed the Kubernetes and Helm deployment setup and its <strong>GitHub Actions</strong> delivery pipeline.</li>
+                  <li data-i18n-html="exp.energi.b2">Designed Kubernetes and Helm deployments on AWS and GCP with Terraform, plus GitHub Actions delivery pipelines.</li>
                   <li data-i18n-html="exp.energi.b3"><strong>Prometheus and Grafana</strong> covered monitoring for services and blockchain nodes in production.</li>
                 </ul>
               </div>
@@ -3095,19 +3121,17 @@
               </div>
             </article>
 
-            <article class="job">
-              <div class="job-card">
-                <div class="job-head">
-                  <div>
-                    <h3 data-i18n="exp.earlier.title">Earlier Roles</h3>
-                    <p class="role" data-i18n="exp.earlier.role">Staff Engineer / Founder / Full-Stack &amp; Mobile Engineer</p>
-                  </div>
-                  <div class="job-meta" data-i18n-html="exp.earlier.meta">2011 — 2018<br>São Paulo</div>
-                </div>
-                <ul class="earlier-roles" data-i18n-html="exp.earlier.body"><li><strong>XP Inc. (XDEX) - Staff Engineer · Dec 2017 - Mar 2018:</strong> led the development team, technical decisions, and .NET exchange services.</li><li><strong>Finchain / FlowBTC - Full-Stack Developer · Sep - Nov 2017:</strong> native mobile apps, ERC-20 wallets, DApp and ICO smart contracts, and exchange reconciliation.</li><li><strong>Neon Bank - Mobile Developer · Jan - Nov 2017:</strong> native iOS and Android work plus OpenCV/C++ document capture.</li><li><strong>Miya - Co-Founder / CTO · Jan 2016 - Jan 2017:</strong> real-time people-management platform using Wi-Fi signals.</li><li><strong>Pixon - Co-Founder / CTO · Jan 2014 - Jan 2017:</strong> led native mobile, automation, beacon, and Wi-Fi micro-location products.</li><li><strong>Ice Juice Lemon - Mobile Developer / Team Lead · Jun 2013 - Jan 2014:</strong> led the mobile team and built native iOS and Android apps.</li><li><strong>IAI - Mobile Developer / Instructor · Jul 2012 - Jun 2013:</strong> built native iOS and Android apps and delivered mobile-development training.</li><li><strong>Brandish Ad - iOS Developer · Nov 2011 - Jul 2012:</strong> built native iOS applications.</li></ul>
-              </div>
-            </article>
+            <div class="earlier-experience">
+              <h3 data-i18n="exp.earlier.title">Earlier Roles</h3>
+              <div class="earlier-roles" data-i18n-html="exp.earlier.body"><article class="earlier-job"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | Dec 2017 - Mar 2018</p></article><article class="earlier-job"><h4>Finchain / FlowBTC</h4><p>Full-Stack Developer | Sep 2017 - Nov 2017</p></article><article class="earlier-job"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class="earlier-job"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class="earlier-job"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class="earlier-job"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class="earlier-job"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class="earlier-job"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article></div>
+            </div>
           </div>
+        </section>
+
+        <section class="section personal-projects" aria-labelledby="personal-title">
+          <div class="section-title"><h2 id="personal-title" data-i18n="personal.title">Personal Projects</h2></div>
+          <p data-i18n="exp.independent.b3">Build tdmcp and Ableton Mind: developer integrations for creative applications using TypeScript and Python.</p>
+          <p data-i18n="exp.independent.b1">Rust personal study: Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.</p>
         </section>
 
         <!-- ───── 04 Selected Repositories ───── -->
@@ -3147,7 +3171,7 @@
               </span>
               <h2 id="sidebar-summary-title" data-i18n="summary.title">Professional Summary</h2>
             </div>
-            <div class="summary-body" data-i18n-html="summary.body"><p>Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.</p><p>Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects. Rust tooling for Solana and Stellar is personal study, not professional Rust experience.</p></div>
+            <div class="summary-body" data-i18n-html="summary.body"><p>Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.</p><p>Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects.</p></div>
           </section>
 
           <section class="side-panel" aria-labelledby="print-stack-title">
@@ -3244,7 +3268,7 @@
             </article>
             <article class="side-panel">
               <h3 data-i18n="edu.certs.title">Certifications</h3>
-              <p data-i18n-html="edu.certs.body">Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) - Go Blockchain · 16h<br>Smart Contracts in Ethereum Blockchain (2017) - FIAP · 8h<br>Blockchain Development (2017) - Finchain / Blockchain Brazil · 16h</p>
+              <p data-i18n-html="edu.certs.body">Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h</p>
             </article>
           </div>
         </section>
@@ -3380,6 +3404,7 @@
     // ─── i18n: EN (default) / PT-BR / ES ───
     const translations = {
       en: {
+        "personal.title": "Personal Projects",
         "lang.aria.en": "Switch language to English",
         "lang.aria.pt": "Switch language to Brazilian Portuguese",
         "lang.aria.es": "Switch language to Spanish",
@@ -3397,7 +3422,7 @@
         "hero.title": "<span class=\"name-accent\">Senior Backend Engineer</span>",
         "hero.technical": "Go (Golang) · Distributed Systems · Blockchain Infrastructure",
         "hero.pitch": "Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.",
-        "hero.summary": "Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects. Rust tooling for Solana and Stellar is personal study, not professional Rust experience.",
+        "hero.summary": "Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects.",
         "hero.cta.protocol": "View selected engineering work",
         "hero.cta.downloadPdf": "Download resume (PDF)",
         "contact.heading": "Contact",
@@ -3433,9 +3458,9 @@
         "expertise.title": "Technical Skills & Core Expertise",
         "expertise.intro": "Go backend engineering and distributed systems are the focus, with professional experience in blockchain infrastructure and developer tooling.",
         "expertise.blockchain.title": "Blockchain & Protocol Engineering",
-        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure.",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, IBC, AtomOne, Ethereum / EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2.",
         "expertise.backend.title": "Go Backend & Distributed Systems",
-        "expertise.backend.body": "Go (Golang), gRPC, REST APIs, distributed systems, concurrency, PostgreSQL.",
+        "expertise.backend.body": "Go (Golang), distributed systems, HTTP APIs, worker pools, fan-out, batching, context cancellation.",
         "expertise.frontend.title": "Full-Stack, Mobile & IoT",
         "expertise.frontend.body": "JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, and Raspberry Pi.",
         "expertise.tooling.title": "Developer Tooling",
@@ -3480,7 +3505,7 @@
         "exp.energi.role": "Backend Engineer / Architecture",
         "exp.energi.meta": "Apr 2020 — Feb 2021<br>Remote",
         "exp.energi.b1": "At Energi, I built Go services for the <strong>DeFi stack</strong> and custodial-wallet flows, including systems that handled private-key custody.",
-        "exp.energi.b2": "I also designed the Kubernetes and Helm deployment setup and its <strong>GitHub Actions</strong> delivery pipeline.",
+        "exp.energi.b2": "Designed Kubernetes and Helm deployments on AWS and GCP with Terraform, plus GitHub Actions delivery pipelines.",
         "exp.energi.b3": "<strong>Prometheus and Grafana</strong> covered monitoring for services and blockchain nodes in production.",
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Aug 2019 — Apr 2020<br>Remote",
@@ -3496,7 +3521,7 @@
         "exp.earlier.title": "Earlier Roles",
         "exp.earlier.role": "Staff Engineer / Founder / Full-Stack & Mobile Engineer",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<li><strong>XP Inc. (XDEX) - Staff Engineer · Dec 2017 - Mar 2018:</strong> led the development team, technical decisions, and .NET exchange services.</li><li><strong>Finchain / FlowBTC - Full-Stack Developer · Sep - Nov 2017:</strong> native mobile apps, ERC-20 wallets, DApp and ICO smart contracts, and exchange reconciliation.</li><li><strong>Neon Bank - Mobile Developer · Jan - Nov 2017:</strong> native iOS and Android work plus OpenCV/C++ document capture.</li><li><strong>Miya - Co-Founder / CTO · Jan 2016 - Jan 2017:</strong> real-time people-management platform using Wi-Fi signals.</li><li><strong>Pixon - Co-Founder / CTO · Jan 2014 - Jan 2017:</strong> led native mobile, automation, beacon, and Wi-Fi micro-location products.</li><li><strong>Ice Juice Lemon - Mobile Developer / Team Lead · Jun 2013 - Jan 2014:</strong> led the mobile team and built native iOS and Android apps.</li><li><strong>IAI - Mobile Developer / Instructor · Jul 2012 - Jun 2013:</strong> built native iOS and Android apps and delivered mobile-development training.</li><li><strong>Brandish Ad - iOS Developer · Nov 2011 - Jul 2012:</strong> built native iOS applications.</li>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | Dec 2017 - Mar 2018</p></article><article class=\"earlier-job\"><h4>Finchain / FlowBTC</h4><p>Full-Stack Developer | Sep 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Neon Bank</h4><p>Mobile Developer | Jan 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Co-Founder / CTO | Jan 2016 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Co-Founder / CTO | Jan 2014 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Mobile Developer / Team Lead | Jun 2013 - Jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Mobile Developer / Instructor | Jul 2012 - Jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>iOS Developer | Nov 2011 - Jul 2012</p></article>",
         "projects.title": "Selected Repositories / Evidence",
         "projects.intro": "Public repositories that support the protocol, backend, interoperability, and developer-tooling work above.",
         "seeking.title": "What I'm looking for",
@@ -3504,7 +3529,7 @@
         "seeking.b2": "Responsibility for services from <strong>architecture and APIs to deployment and production support</strong>.",
         "seeking.b3": "Based in São Paulo, UTC−3. Brazilian and Italian citizen. Open to Staff opportunities where the scope fits my experience.",
         "summary.title": "Professional Summary",
-        "summary.body": "<p>Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.</p><p>Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects. Rust tooling for Solana and Stellar is personal study, not professional Rust experience.</p>",
+        "summary.body": "<p>Senior backend engineer with 10+ years in software engineering, focused on Go services, distributed systems and blockchain infrastructure.</p><p>Led backend work on Trust Wallet's multi-chain blockatlas, built Cosmos developer tooling at Ignite and implemented AtomOne distribution-module changes. Independent work includes Go client engagements and personal projects.</p>",
         "highlights.title": "Highlights",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ public merged PRs. The work included protobuf analysis, AST-based generation, scaffold migrations, and CLI behavior.",
         "highlights.b2": "<strong>AtomOne:</strong> Cosmos SDK fork work — distribution module, ADR-004 Nakamoto Bonus, governance migrations.",
@@ -3521,7 +3546,7 @@
         "edu.speaking.title": "Selected talks",
         "edu.speaking.body": "Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite.<br>AwesomWasm 2023, Berlin — Ignite stack workshop.<br>ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.",
         "edu.certs.title": "Certifications",
-        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) - Go Blockchain · 16h<br>Smart Contracts in Ethereum Blockchain (2017) - FIAP · 8h<br>Blockchain Development (2017) - Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h",
         "langs.title": "Languages",
         "langs.portuguese": "Portuguese",
         "langs.portuguese.level": "Native",
@@ -3546,12 +3571,13 @@
         "footer.version": "Updated Oct 2026",
         "exp.independent.role": "Go Backend Engineer & Blockchain Developer",
         "exp.independent.meta": "Apr 2026 — Present<br>Self-employed · Remote",
-        "exp.independent.b1": "Study Rust through personal projects at home, including Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.",
+        "exp.independent.b1": "Rust personal study: Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.",
         "exp.independent.b2": "Take on occasional backend and Go assignments for external clients.",
         "exp.independent.b3": "Build tdmcp and Ableton Mind: developer integrations for creative applications using TypeScript and Python."
       },
 
       pt: {
+        "personal.title": "Projetos Pessoais",
         "lang.aria.en": "Mudar idioma para inglês",
         "lang.aria.pt": "Mudar idioma para português do Brasil",
         "lang.aria.es": "Mudar idioma para espanhol",
@@ -3569,7 +3595,7 @@
         "hero.title": "<span class=\"name-accent\">Engenheiro Backend Sênior</span>",
         "hero.technical": "Go (Golang) · Sistemas Distribuídos · Infraestrutura Blockchain",
         "hero.pitch": "Engenheiro backend sênior com mais de dez anos em engenharia de software, focado em serviços Go, sistemas distribuídos e infraestrutura blockchain.",
-        "hero.summary": "Liderei o backend do blockatlas multichain da Trust Wallet, construí ferramentas para desenvolvedores Cosmos no Ignite e implementei mudanças no módulo de distribuição do AtomOne. O trabalho independente inclui serviços Go para clientes e projetos pessoais. As ferramentas Rust para Solana e Stellar são estudo pessoal, sem experiência profissional em Rust.",
+        "hero.summary": "Liderei o backend do blockatlas multichain da Trust Wallet, construí ferramentas para desenvolvedores Cosmos no Ignite e implementei mudanças no módulo de distribuição do AtomOne. O trabalho independente inclui serviços Go para clientes e projetos pessoais.",
         "hero.cta.protocol": "Ver trabalhos de engenharia",
         "hero.cta.downloadPdf": "Baixar currículo (PDF)",
         "contact.heading": "Contato",
@@ -3605,9 +3631,9 @@
         "expertise.title": "Competências Técnicas e Áreas de Especialização",
         "expertise.intro": "Engenharia backend em Go e sistemas distribuídos são o foco, com experiência profissional em infraestrutura blockchain e ferramentas para desenvolvedores.",
         "expertise.blockchain.title": "Engenharia de Blockchain e Protocolos",
-        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestrutura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestrutura de rollups.",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, IBC, AtomOne, Ethereum / EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2.",
         "expertise.backend.title": "Backend em Go e Sistemas Distribuídos",
-        "expertise.backend.body": "Go (Golang), gRPC, APIs REST, sistemas distribuídos, concorrência, PostgreSQL.",
+        "expertise.backend.body": "Go (Golang), sistemas distribuídos, APIs HTTP, worker pools, fan-out, operações em lote, cancelamento por contexto.",
         "expertise.frontend.title": "Full-Stack, Mobile e IoT",
         "expertise.frontend.body": "JavaScript, TypeScript e React; iOS e Android nativos com Objective-C, Swift, Java e Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino e Raspberry Pi.",
         "expertise.tooling.title": "Ferramentas para Desenvolvedores",
@@ -3652,7 +3678,7 @@
         "exp.energi.role": "Engenheiro Backend / Arquitetura",
         "exp.energi.meta": "Abr 2020 — Fev 2021<br>Remoto",
         "exp.energi.b1": "Na Energi, construí serviços Go para o <strong>stack DeFi</strong> e fluxos de wallets custodiais, incluindo sistemas que lidavam com chaves privadas.",
-        "exp.energi.b2": "Também desenhei a estrutura de deploy em Kubernetes e Helm e seu pipeline de entrega com <strong>GitHub Actions</strong>.",
+        "exp.energi.b2": "Desenhei deployments com Kubernetes e Helm em AWS e GCP usando Terraform, além de pipelines de entrega com GitHub Actions.",
         "exp.energi.b3": "<strong>Prometheus e Grafana</strong> cobriam o monitoramento dos serviços e dos nós blockchain em produção.",
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
@@ -3668,7 +3694,7 @@
         "exp.earlier.title": "Atuações Anteriores",
         "exp.earlier.role": "Staff Engineer / Fundador / Engenheiro Full-Stack e Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<li><strong>XP Inc. (XDEX) - Staff Engineer · dez 2017 - mar 2018:</strong> liderei o time de desenvolvimento, as decisões técnicas e os serviços de exchange em .NET.</li><li><strong>Finchain / FlowBTC - Desenvolvedor Full-Stack · set - nov 2017:</strong> apps mobile nativos, wallets ERC-20, smart contracts para DApps e ICOs e conciliação de exchange.</li><li><strong>Neon Bank - Desenvolvedor Mobile · jan - nov 2017:</strong> desenvolvimento nativo em iOS e Android e captura de documentos com OpenCV/C++.</li><li><strong>Miya - Cofundador / CTO · jan 2016 - jan 2017:</strong> plataforma de gestão de pessoas em tempo real usando sinais Wi-Fi.</li><li><strong>Pixon - Cofundador / CTO · jan 2014 - jan 2017:</strong> liderei produtos mobile nativos, automação, beacons e micro-localização Wi-Fi.</li><li><strong>Ice Juice Lemon - Desenvolvedor Mobile / Líder de Time · jun 2013 - jan 2014:</strong> liderei o time mobile e desenvolvi apps nativos para iOS e Android.</li><li><strong>IAI - Desenvolvedor Mobile / Instrutor · jul 2012 - jun 2013:</strong> desenvolvi apps nativos para iOS e Android e ministrei treinamentos mobile.</li><li><strong>Brandish Ad - Desenvolvedor iOS · nov 2011 - jul 2012:</strong> desenvolvi aplicativos iOS nativos.</li>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | dez 2017 - mar 2018</p></article><article class=\"earlier-job\"><h4>Finchain / FlowBTC</h4><p>Desenvolvedor Full-Stack | set 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desenvolvedor Mobile | jan 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | jan 2016 - jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | jan 2014 - jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desenvolvedor Mobile / Líder de Time | jun 2013 - jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desenvolvedor Mobile / Instrutor | jul 2012 - jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desenvolvedor iOS | nov 2011 - jul 2012</p></article>",
         "projects.title": "Repositórios Selecionados / Evidências",
         "projects.intro": "Repositórios públicos que sustentam os trabalhos de protocolo, backend, interoperabilidade e ferramentas para desenvolvedores descritos acima.",
         "seeking.title": "O que estou buscando",
@@ -3676,7 +3702,7 @@
         "seeking.b2": "Responsabilidade por serviços, da <strong>arquitetura e APIs ao deploy e suporte em produção</strong>.",
         "seeking.b3": "Baseado em São Paulo, UTC−3. Cidadão brasileiro e italiano. Também considero posições Staff com escopo compatível com minha experiência.",
         "summary.title": "Resumo Profissional",
-        "summary.body": "<p>Engenheiro backend sênior com mais de dez anos em engenharia de software, focado em serviços Go, sistemas distribuídos e infraestrutura blockchain.</p><p>Liderei o backend do blockatlas multichain da Trust Wallet, construí ferramentas para desenvolvedores Cosmos no Ignite e implementei mudanças no módulo de distribuição do AtomOne. O trabalho independente inclui serviços Go para clientes e projetos pessoais. As ferramentas Rust para Solana e Stellar são estudo pessoal, sem experiência profissional em Rust.</p>",
+        "summary.body": "<p>Engenheiro backend sênior com mais de dez anos em engenharia de software, focado em serviços Go, sistemas distribuídos e infraestrutura blockchain.</p><p>Liderei o backend do blockatlas multichain da Trust Wallet, construí ferramentas para desenvolvedores Cosmos no Ignite e implementei mudanças no módulo de distribuição do AtomOne. O trabalho independente inclui serviços Go para clientes e projetos pessoais.</p>",
         "highlights.title": "Destaques",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados. O trabalho incluiu análise de protobuf, geração baseada em AST, migrações de scaffold e comportamento do CLI.",
         "highlights.b2": "<strong>AtomOne:</strong> atuação no fork Cosmos SDK — módulo de distribuição, ADR-004 Nakamoto Bonus e migrações de governança.",
@@ -3693,7 +3719,7 @@
         "edu.speaking.title": "Palestras selecionadas",
         "edu.speaking.body": "Web3Family 2023, Barcelona — construção de chains Cosmos SDK e ferramentas com Ignite.<br>AwesomWasm 2023, Berlim — workshop sobre o stack Ignite.<br>ETH São Paulo 2021 — zk-SNARKs e Ethereum Layer 2.",
         "edu.certs.title": "Certificações",
-        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) - Go Blockchain · 16h<br>Smart Contracts in Ethereum Blockchain (2017) - FIAP · 8h<br>Blockchain Development (2017) - Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h",
         "langs.title": "Idiomas",
         "langs.portuguese": "Português",
         "langs.portuguese.level": "Nativo",
@@ -3718,12 +3744,13 @@
         "footer.version": "Atualizado em out de 2026",
         "exp.independent.role": "Engenheiro Backend em Go e Desenvolvedor Blockchain",
         "exp.independent.meta": "abr 2026 — atual<br>Autônomo · Remoto",
-        "exp.independent.b1": "Estudo Rust em projetos pessoais em casa, incluindo Sunscreen para Solana e stellar-forge para Stellar; sem experiência profissional em Rust.",
+        "exp.independent.b1": "Estudo pessoal de Rust: Sunscreen para Solana e stellar-forge para Stellar; sem experiência profissional em Rust.",
         "exp.independent.b2": "Realizo demandas pontuais de backend e Go para clientes externos.",
         "exp.independent.b3": "Desenvolvo tdmcp e Ableton Mind: integrações para aplicações criativas com TypeScript e Python."
       },
 
       es: {
+        "personal.title": "Proyectos Personales",
         "lang.aria.en": "Cambiar idioma a inglés",
         "lang.aria.pt": "Cambiar idioma a portugués de Brasil",
         "lang.aria.es": "Cambiar idioma a español",
@@ -3741,7 +3768,7 @@
         "hero.title": "<span class=\"name-accent\">Ingeniero Backend Senior</span>",
         "hero.technical": "Go (Golang) · Sistemas Distribuidos · Infraestructura Blockchain",
         "hero.pitch": "Ingeniero backend senior con más de diez años en ingeniería de software, centrado en servicios Go, sistemas distribuidos e infraestructura blockchain.",
-        "hero.summary": "Lideré el backend de blockatlas multichain de Trust Wallet, desarrollé herramientas para Cosmos en Ignite e implementé cambios en el módulo de distribución de AtomOne. El trabajo independiente incluye servicios Go para clientes y proyectos personales. Las herramientas Rust para Solana y Stellar son estudio personal, sin experiencia profesional en Rust.",
+        "hero.summary": "Lideré el backend de blockatlas multichain de Trust Wallet, desarrollé herramientas para Cosmos en Ignite e implementé cambios en el módulo de distribución de AtomOne. El trabajo independiente incluye servicios Go para clientes y proyectos personales.",
         "hero.cta.protocol": "Ver trabajos de ingeniería",
         "hero.cta.downloadPdf": "Descargar currículum (PDF)",
         "contact.heading": "Contacto",
@@ -3777,9 +3804,9 @@
         "expertise.title": "Competencias Técnicas y Áreas de Especialización",
         "expertise.intro": "Backend en Go y sistemas distribuidos son el foco, con experiencia profesional en infraestructura blockchain y herramientas para desarrolladores.",
         "expertise.blockchain.title": "Ingeniería de Blockchain y Protocolos",
-        "expertise.blockchain.body": "Cosmos SDK, CometBFT, Tendermint, IBC, infraestructura de validadores, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2 e infraestructura de rollups.",
+        "expertise.blockchain.body": "Cosmos SDK, CometBFT, IBC, AtomOne, Ethereum / EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2.",
         "expertise.backend.title": "Backend en Go y Sistemas Distribuidos",
-        "expertise.backend.body": "Go (Golang), gRPC, APIs REST, sistemas distribuidos, concurrencia, PostgreSQL.",
+        "expertise.backend.body": "Go (Golang), sistemas distribuidos, APIs HTTP, worker pools, fan-out, operaciones por lotes, cancelación por contexto.",
         "expertise.frontend.title": "Full-Stack, Mobile e IoT",
         "expertise.frontend.body": "JavaScript, TypeScript y React; iOS y Android nativos con Objective-C, Swift, Java y Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino y Raspberry Pi.",
         "expertise.tooling.title": "Herramientas para Desarrolladores",
@@ -3824,7 +3851,7 @@
         "exp.energi.role": "Ingeniero Backend / Arquitectura",
         "exp.energi.meta": "Abr 2020 — Feb 2021<br>Remoto",
         "exp.energi.b1": "En Energi, construí servicios Go para el <strong>stack DeFi</strong> y flujos de wallets custodiales, incluidos sistemas que manejaban claves privadas.",
-        "exp.energi.b2": "También diseñé la estructura de despliegue en Kubernetes y Helm y su pipeline de entrega con <strong>GitHub Actions</strong>.",
+        "exp.energi.b2": "Diseñé despliegues con Kubernetes y Helm en AWS y GCP mediante Terraform, además de pipelines de entrega con GitHub Actions.",
         "exp.energi.b3": "<strong>Prometheus y Grafana</strong> cubrían el monitoreo de servicios y nodos blockchain en producción.",
         "exp.trustwallet.role": "Backend Lead, Go",
         "exp.trustwallet.meta": "Ago 2019 — Abr 2020<br>Remoto",
@@ -3840,7 +3867,7 @@
         "exp.earlier.title": "Roles Anteriores",
         "exp.earlier.role": "Staff Engineer / Fundador / Ingeniero Full-Stack y Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<li><strong>XP Inc. (XDEX) - Staff Engineer · dic 2017 - mar 2018:</strong> lideré el equipo de desarrollo, las decisiones técnicas y los servicios de exchange en .NET.</li><li><strong>Finchain / FlowBTC - Desarrollador Full-Stack · sep - nov 2017:</strong> apps mobile nativas, wallets ERC-20, smart contracts para DApps e ICOs y conciliación de exchange.</li><li><strong>Neon Bank - Desarrollador Mobile · ene - nov 2017:</strong> desarrollo nativo en iOS y Android y captura de documentos con OpenCV/C++.</li><li><strong>Miya - Cofundador / CTO · ene 2016 - ene 2017:</strong> plataforma de gestión de personas en tiempo real mediante señales Wi-Fi.</li><li><strong>Pixon - Cofundador / CTO · ene 2014 - ene 2017:</strong> lideré productos mobile nativos, automatización, beacons y micro-localización Wi-Fi.</li><li><strong>Ice Juice Lemon - Desarrollador Mobile / Líder de Equipo · jun 2013 - ene 2014:</strong> lideré el equipo mobile y desarrollé apps nativas para iOS y Android.</li><li><strong>IAI - Desarrollador Mobile / Instructor · jul 2012 - jun 2013:</strong> desarrollé apps nativas para iOS y Android e impartí formación mobile.</li><li><strong>Brandish Ad - Desarrollador iOS · nov 2011 - jul 2012:</strong> desarrollé aplicaciones iOS nativas.</li>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>XP Inc. (XDEX)</h4><p>Staff Engineer | dic 2017 - mar 2018</p></article><article class=\"earlier-job\"><h4>Finchain / FlowBTC</h4><p>Desarrollador Full-Stack | sep 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desarrollador Mobile | ene 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | ene 2016 - ene 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | ene 2014 - ene 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desarrollador Mobile / Líder de Equipo | jun 2013 - ene 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desarrollador Mobile / Instructor | jul 2012 - jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desarrollador iOS | nov 2011 - jul 2012</p></article>",
         "projects.title": "Repositorios Seleccionados / Evidencias",
         "projects.intro": "Repositorios públicos que respaldan los trabajos de protocolo, backend, interoperabilidad y herramientas para desarrolladores descritos arriba.",
         "seeking.title": "Lo que estoy buscando",
@@ -3848,7 +3875,7 @@
         "seeking.b2": "Responsabilidad sobre servicios, desde la <strong>arquitectura y las APIs hasta el despliegue y soporte en producción</strong>.",
         "seeking.b3": "Desde São Paulo, UTC−3. Ciudadano brasileño e italiano. También considero puestos Staff cuyo alcance encaje con mi experiencia.",
         "summary.title": "Resumen Profesional",
-        "summary.body": "<p>Ingeniero backend senior con más de diez años en ingeniería de software, centrado en servicios Go, sistemas distribuidos e infraestructura blockchain.</p><p>Lideré el backend de blockatlas multichain de Trust Wallet, desarrollé herramientas para Cosmos en Ignite e implementé cambios en el módulo de distribución de AtomOne. El trabajo independiente incluye servicios Go para clientes y proyectos personales. Las herramientas Rust para Solana y Stellar son estudio personal, sin experiencia profesional en Rust.</p>",
+        "summary.body": "<p>Ingeniero backend senior con más de diez años en ingeniería de software, centrado en servicios Go, sistemas distribuidos e infraestructura blockchain.</p><p>Lideré el backend de blockatlas multichain de Trust Wallet, desarrollé herramientas para Cosmos en Ignite e implementé cambios en el módulo de distribución de AtomOne. El trabajo independiente incluye servicios Go para clientes y proyectos personales.</p>",
         "highlights.title": "Logros Destacados",
         "highlights.b1": "<strong>Ignite CLI:</strong> 300+ PRs públicos integrados. El trabajo incluyó análisis de protobuf, generación basada en AST, migraciones de scaffold y comportamiento de la CLI.",
         "highlights.b2": "<strong>AtomOne:</strong> trabajo en el fork Cosmos SDK — módulo de distribución, ADR-004 Nakamoto Bonus y migraciones de gobernanza.",
@@ -3865,7 +3892,7 @@
         "edu.speaking.title": "Charlas seleccionadas",
         "edu.speaking.body": "Web3Family 2023, Barcelona — construcción de chains Cosmos SDK y herramientas con Ignite.<br>AwesomWasm 2023, Berlín — workshop sobre el stack Ignite.<br>ETH São Paulo 2021 — zk-SNARKs y Ethereum Layer 2.",
         "edu.certs.title": "Certificaciones",
-        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h<br>Ethereum Blockchain Developer (2017) - Go Blockchain · 16h<br>Smart Contracts in Ethereum Blockchain (2017) - FIAP · 8h<br>Blockchain Development (2017) - Finchain / Blockchain Brazil · 16h",
+        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h",
         "langs.title": "Idiomas",
         "langs.portuguese": "Portugués",
         "langs.portuguese.level": "Nativo",
@@ -3890,7 +3917,7 @@
         "footer.version": "Actualizado en oct de 2026",
         "exp.independent.role": "Ingeniero Backend en Go y Desarrollador Blockchain",
         "exp.independent.meta": "abr 2026 — actualidad<br>Autónomo · Remoto",
-        "exp.independent.b1": "Estudio Rust en proyectos personales en casa, incluidos Sunscreen para Solana y stellar-forge para Stellar; sin experiencia profesional en Rust.",
+        "exp.independent.b1": "Estudio personal de Rust: Sunscreen para Solana y stellar-forge para Stellar; sin experiencia profesional en Rust.",
         "exp.independent.b2": "Realizo encargos puntuales de backend y Go para clientes externos.",
         "exp.independent.b3": "Desarrollo tdmcp y Ableton Mind: integraciones para aplicaciones creativas con TypeScript y Python."
       }

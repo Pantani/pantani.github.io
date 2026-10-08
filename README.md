@@ -13,7 +13,7 @@ Brazilian and Italian citizen<br>
 
 ## Professional summary
 
-Senior backend engineer with 10+ years in software engineering, focused on crypto infrastructure, Go backend services, and distributed systems. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes. Rust tooling for Solana and Stellar is personal study at home, not professional Rust experience.
+Senior backend engineer with 10+ years in software engineering, focused on Go backend services, distributed systems, and blockchain infrastructure. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes.
 
 Seeking remote Senior Backend Engineer and Senior Software Engineer roles focused on Go and distributed systems, including blockchain infrastructure.
 
@@ -48,8 +48,8 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 | Area | Technologies and focus |
 |---|---|
+| **Go Backend & Distributed Systems** | Go (Golang), backend engineering, distributed systems, software architecture, system design, HTTP APIs, concurrent processing, goroutines, worker pools, fan-out processing, batching, context cancellation |
 | **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
-| **Go Backend & Distributed Systems** | Go (Golang), backend engineering, distributed systems, software architecture, system design, gRPC, REST APIs, concurrent processing, goroutines, worker pools, fan-out processing, batching, context cancellation |
 | **Platform Engineering, Cloud & DevOps** | Kubernetes, Docker, Helm, Terraform, Pulumi, Ansible, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, observability, cloud deployments, production operations |
 | **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
 | **Technical Leadership** | Hands-on team leadership, system design, technical decisions, code review, and cross-functional delivery across backend, mobile, and product engineering |
@@ -64,9 +64,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 Independent work combining blockchain developer tooling with occasional project-based backend engagements.
 
-- Study Rust through personal projects at home, including Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.
 - Take on occasional backend and Go assignments for external clients.
-- Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
 
 ### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite
 
@@ -182,6 +180,11 @@ Built and maintained native iOS applications.
 
 Supported electrical-engineering activities at the Jirau Hydroelectric Power Plant construction site in Porto Velho, Brazil.
 
+## Personal projects
+
+- Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
+- Rust personal study: Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.
+
 ## Selected repositories / evidence
 
 - [`ignite/cli`](https://github.com/ignite/cli) — Cosmos SDK tooling, protobuf analysis, AST-based code generation, CLI behavior
@@ -219,10 +222,23 @@ This repository contains a static, trilingual visual portfolio.
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
 - [`humans.txt`](./humans.txt) — human-readable contact card
 
-Regenerate the three PDFs after changing resume content or print styles:
+## CV analysis and implementation builds
+
+Install the validation dependencies in a dedicated Python environment:
 
 ```sh
-./scripts/generate-pdfs.sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r scripts/requirements-cv.txt
+make cv-analyze PYTHON=.venv/bin/python CV_RUN_DIR=_workspace/cv-quality/my-audit
+# Apply the audited source/content changes, then regenerate and validate:
+make cv-implement PYTHON=.venv/bin/python CV_RUN_DIR=_workspace/cv-quality/my-audit
+make cv-test PYTHON=.venv/bin/python
 ```
 
-The print stylesheet uses static system fonts (Helvetica Neue and Charter on macOS, with Helvetica/Arial and Georgia fallbacks) instead of the Google web fonts. Chrome embeds variable web fonts as Type 3 outlines, which some ATS parsers cannot read; static faces embed as CID TrueType with a Unicode map.
+Use a new `CV_RUN_DIR` for each new audit. Analysis preserves source hashes, parser versions and extraction evidence; implementation requires that baseline and records an incomplete state before generation. Repeated implementation attempts within the same run retain the original analysis. The workflow is defined in [CV quality](.agents/skills/cv-quality/SKILL.md) and its [team contract](docs/harness/cv-quality/team-spec.md).
+
+Generation requires Chrome/Chromium and a local Python HTTP server. `CHROME_BIN` selects an executable and `PDF_SERVER_PORT` changes the default local port (8765). All three PDFs are generated in staging before replacing the existing files. The implementation build validates staging before promotion; generation or quality failure preserves the previous set. Final file moves are serialized, not a filesystem transaction. Run `bash scripts/generate-pdfs.sh` for generation alone, or use the implementation build for mandatory local validation.
+
+The print stylesheet uses static system fonts, neutralizes inherited screen layering, and disables presentation ligatures. Checks require two pages per language, at least 9pt visible text, and the expected section order in two independent readers. Inspect every rendered page as well: automated extraction checks do not prove visual quality or compatibility with an employer's ATS. No job-match score is produced.
+
+The PDF selects two short courses and compact earlier-job records; this README retains the fuller history. Career statements come from the owner's existing record. Missing client metrics or employer-specific technology evidence must never be invented to improve keyword matching.
