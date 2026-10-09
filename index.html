@@ -450,6 +450,32 @@
     }
 
     /* ───── Language switcher ───── */
+    .tb-btn.is-active { border-color: var(--plum); color: var(--plum); }
+    .references-intro {
+      margin: 0 0 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--line-strong);
+      border-left: 3px solid var(--plum);
+      border-radius: 12px;
+      background: var(--paper);
+      font-size: 14px;
+    }
+    .references-intro h3 { margin-bottom: 8px; font-size: 17px; }
+    .references-intro p:last-child { margin-bottom: 0; }
+    .claim-references {
+      margin: 10px 0 18px;
+      padding: 10px 14px;
+      border-left: 2px solid var(--line-strong);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .reference-details summary { cursor: pointer; color: var(--plum); font-weight: 600; }
+    .job-card .reference-list { margin: 8px 0 0; padding-left: 18px; }
+    .job-card .reference-list li { margin: 6px 0; padding: 0; }
+    .reference-link { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 3px; }
+    .reference-note { margin: 8px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); }
+    @media print { .references-only { display: none !important; } }
+
     .lang-switcher {
       display: inline-flex;
       align-items: center;
@@ -2727,6 +2753,7 @@
               data-i18n-attr="aria-label" data-i18n-attr-key="lang.aria.pt"
               aria-label="Switch language to Brazilian Portuguese">PT-BR</button>
     </div>
+    <a class="tb-btn" id="referencesToggle" href="?references=1">With references</a>
     <a class="tb-btn" id="downloadPdfBtn"
        href="output/pdf/danilo-pantani-cv-en.pdf"
        download="Danilo-Pantani-CV-EN.pdf"
@@ -3870,6 +3897,7 @@
 
       // Persist for returning visitors.
       try { localStorage.setItem("lang", lang); } catch (_) { /* ignore */ }
+      document.dispatchEvent(new Event('cv:languagechange'));
     }
 
     document.querySelectorAll(".lang-button").forEach((btn) => {
@@ -3907,5 +3935,7 @@
       }
     });
   </script>
+  <script src="assets/references-data.js"></script>
+  <script src="assets/references.js"></script>
 </body>
 </html>

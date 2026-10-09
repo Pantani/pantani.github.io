@@ -9,6 +9,10 @@ Brazilian and Italian citizen<br>
 
 [Live visual resume](https://pantani.xyz/) · [HTML source](./index.html)
 
+[CV with references](https://pantani.xyz/?references=1) · [CV com referências](https://pantani.xyz/?lang=pt-BR&references=1)
+
+The **With references / Com referências** toolbar link opens a shareable view of the same CV with public PRs and code changes grouped under the statements they support. Each reference includes its repository, number and original title. The view identifies statements without a specific public source and distinguishes implementation evidence from owner-confirmed responsibilities. The mapping is curated, not an exhaustive history of all contributions. Standard PDF downloads remain compact.
+
 ---
 
 ## Professional summary
@@ -219,6 +223,8 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 This repository contains a static, bilingual visual portfolio.
 
 - [`index.html`](./index.html) — English and Brazilian Portuguese CVs
+- [`assets/references-data.js`](./assets/references-data.js) — public evidence mapped to stable experience keys; source titles remain in their original language
+- [`assets/references.js`](./assets/references.js) — optional `?references=1` view; preserves language and anchors without duplicating CV content
 - [`output/pdf/`](./output/pdf/) — generated resume PDFs
 - [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
 - [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
@@ -244,3 +250,15 @@ Generation requires Chrome/Chromium and a local Python HTTP server. `CHROME_BIN`
 The print stylesheet uses static system fonts, neutralizes inherited screen layering, and disables presentation ligatures. Checks require two pages per language, at least 9pt visible text, and the expected section order in two independent readers. Inspect every rendered page as well: automated extraction checks do not prove visual quality or compatibility with an employer's ATS. No job-match score is produced.
 
 The PDF selects two short courses and compact earlier-job records; this README retains the fuller history. Career statements come from the owner's existing record. Missing client metrics or employer-specific technology evidence must never be invented to improve keyword matching.
+
+### References browser checks
+
+With Playwright and Google Chrome available, serve the repository on port 8879 and run:
+
+```sh
+python3 -m http.server 8879 --bind 127.0.0.1
+# In another terminal, with Playwright resolvable by Node:
+node --test tests/references.cjs
+```
+
+`CV_TEST_URL` selects another server. The checks exercise navigation, reload, language changes, missing evidence, mobile width and print exclusion. To add a source, verify public visibility, authorship, merge status and relevance to the exact claim; update the dated mapping without changing the underlying career statements. A public commit can be cited explicitly when a suitable PR is unavailable.
