@@ -11,7 +11,7 @@ Brazilian and Italian citizen<br>
 
 [CV with references](https://pantani.xyz/?references=1) · [CV com referências](https://pantani.xyz/?lang=pt-BR&references=1)
 
-The **With references / Com referências** toolbar link opens a shareable view of the same CV with public PRs and code changes grouped under the statements they support. Each reference includes its repository, number and original title. The view identifies statements without a specific public source and distinguishes implementation evidence from owner-confirmed responsibilities. The mapping is curated, not an exhaustive history of all contributions. Standard PDF downloads remain compact.
+The **With references / Com referências** toolbar link opens a shareable view of the same CV with public PRs and code changes grouped under the statements they support. Each reference includes its repository, number and original title. The view identifies statements without a specific public source and distinguishes implementation evidence from owner-confirmed responsibilities. The mapping is curated, not an exhaustive history of all contributions. Standard PDF downloads remain compact. The online CV includes additional implementation details and open-source work; these are omitted from the two-page PDFs. As of 9 October 2026, the reference map contains 123 public merged PRs and one implementation commit.
 
 ---
 
@@ -32,7 +32,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 ### Ignite CLI
 
 - Contributed 300+ public merged PRs across two engagements with Ignite CLI; this is a project total, not a count for the latest role.
-- Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior.
+- Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. Improved plugin execution, synchronized output handling, custom HTTP clients and qualified/nested RPC message resolution.
 - Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
 
 ### Cosmos SDK and IBC-Go
@@ -80,6 +80,7 @@ Independent work combining blockchain developer tooling with occasional project-
 - Implemented VaaS consumer fee pools, provider validator payments and debt-state propagation, with transaction admission rules that preserve IBC and governance recovery operations. Added misbehaviour validation and IBC v2 fixes.
 - Extended IBC functionality in Gno Realms with transfer memos, GRC20 voucher transfer and approval helpers, relay authorization, and query views.
 - Contributed upstream fixes to Cosmos SDK AutoCLI protobuf descriptor resolution and an IBC-Go helper for inspecting existing capability scopes.
+- Implemented airdrop start and claim rules, staking/governance hooks, mission invariants and simulation coverage in Cosmos SDK modules.
 
 ### Blockchain Engineer, Go — Cosmos Hub & Interoperability — Interchain Foundation
 
@@ -96,6 +97,7 @@ Independent work combining blockchain developer tooling with occasional project-
 - Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
 - Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.
 - Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
+- Implemented validation and invariants for SPN chain-launch requests, campaign associations and share accounting.
 
 ### Blockchain / Layer-2 Engineer, Go — Hermez Network
 
@@ -106,7 +108,7 @@ Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 - Refactored transaction selection in Go for the Ethereum L2 rollup, adding atomic transaction support and unit tests.
 - Integrated Go services with Ethereum smart contracts via ABI to submit zk-SNARK proofs for rollup batches.
 - Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.
-- Added account-authorization synchronization from the rollup contract, Prometheus instrumentation, and race detection in unit tests.
+- Added account-authorization synchronization from the rollup contract, Prometheus instrumentation, transaction validation, race detection in CI, GoReleaser configuration and contract-address discovery.
 
 ### Backend Engineer / Architecture — Go, Kubernetes & Observability — Energi Core
 
@@ -129,6 +131,7 @@ Led backend work on blockatlas, Trust Wallet's multi-chain backend.
 - Built and maintained chain integrations, transaction parsing, asset-data routes and indexing workflows in Go.
 - Contributed to the migration from Node.js to Go and standardized worker pools, fan-out processing, batching and context cancellation.
 - Added HTTP metrics and a metrics endpoint for Prometheus, making request behavior available for monitoring.
+- Built transaction webhooks, PostgreSQL-backed observer storage, HTTP caching and market-data workers with exponential backoff; corrected concurrency issues in multi-chain processing.
 - Operated and monitored full nodes supporting the wallet's multi-chain infrastructure.
 - Built the Go backend for a Binance crypto gift-card and promotional redemption system, enabling token claims in Trust Wallet via QR codes and single-use links. Implemented redemption-code generation and validation, link expiration and invalidation, and Binance Chain token transfers.
 - Evidence: [`redemption` Go backend implementation](https://github.com/prazd/redemption/commit/8a4e8bf3dd686b2ffa2ed4d480c32cc6a9725198).
@@ -188,7 +191,15 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 ## Personal projects
 
 - Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
+- Extended tdmcp with retrieval fusion, explicit executable-code authorization and operator snapshot provenance; enabled Ableton Mind server startup and metadata access without a local Ableton bridge.
+- Built Healthcheck in Go for scheduled HTTP checks, Redis-backed state and PagerDuty alerts, and Chainops for declarative blockchain operations with validation and artifact planning.
+- Developed local XCM tooling in Cartographer and maintained deterministic wallet-address derivation and concurrency safety in Pool Party.
 - Rust personal study: Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.
+
+## Open-source contributions
+
+- Contributed merged on-chain adapter fixes to DefiLlama: replaced SuperRare subgraph accounting and narrowed Rumpel Fluid position discovery to protocol-owned positions.
+- Evidence: [SuperRare #21478](https://github.com/DefiLlama/DefiLlama-Adapters/pull/21478) · [Rumpel Fluid #21479](https://github.com/DefiLlama/DefiLlama-Adapters/pull/21479). These are contributions, not an employment entry.
 
 ## Selected repositories / evidence
 

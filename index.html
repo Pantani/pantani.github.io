@@ -453,7 +453,7 @@
     .job-card .reference-list li { margin: 6px 0; padding: 0; }
     .reference-link { overflow-wrap: anywhere; text-decoration: underline; text-underline-offset: 3px; }
     .reference-note { margin: 8px 0 0; font-size: 12px; line-height: 1.5; color: var(--muted); }
-    @media print { .references-only { display: none !important; } }
+    @media print { .references-only, .online-detail { display: none !important; } }
 
     .lang-switcher {
       display: inline-flex;
@@ -2256,7 +2256,9 @@
     .earlier-job { margin: 0 0 8px; }
     .earlier-job h4 { margin: 0; font-size: 14px; }
     .earlier-job p { margin: 2px 0 0; font-size: 12px; }
-    .personal-projects p { font-size: 13px; line-height: 1.45; }
+    .personal-projects p, .online-project-list { font-size: 13px; line-height: 1.45; }
+    .online-project-list { padding-left: 20px; }
+    .online-project-list > li { margin-bottom: 12px; }
 
     /* ───── Print / PDF ─────
        One coherent, single-column stylesheet for the exported CV.
@@ -3023,6 +3025,8 @@
                   <li data-i18n-html="exp.ignite.b3">Implemented AtomOne Nakamoto Bonus distribution, epoch-based execution, validator commission rules and governance migration fixes.</li>
                   <li data-i18n-html="exp.ignite.b4">Implemented VaaS fee pools, validator payments, debt-state propagation and transaction admission rules; added misbehaviour validation and IBC v2 fixes.</li>
                   <li data-i18n-html="exp.ignite.b5">Extended Gno Realms IBC transfers with memos, GRC20 voucher helpers, relay authorization and query views.</li>
+                  <li class="online-detail" data-i18n-html="exp.ignite.b6">Improved Go plugin execution and protobuf analysis with synchronized output handling, custom HTTP clients and resolution of qualified and nested RPC request messages.</li>
+                  <li class="online-detail" data-i18n-html="exp.ignite.b7">Implemented airdrop start and claim rules, staking/governance hooks, mission invariants and simulation coverage in Cosmos SDK modules.</li>
                 </ul>
               </div>
             </article>
@@ -3055,6 +3059,7 @@
                 <ul>
                   <li data-i18n-html="exp.ignite2.b1">Implemented SPN modules in Go for validator profiles, chain-launch requests, campaign shares, vesting vouchers and reward distribution.</li>
                   <li data-i18n-html="exp.ignite2.b2">Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.</li>
+                  <li class="online-detail" data-i18n-html="exp.ignite2.b3">Implemented validation and invariants for chain-launch requests, campaign associations and share accounting in SPN.</li>
                 </ul>
               </div>
             </article>
@@ -3072,6 +3077,7 @@
                   <li data-i18n-html="exp.hermez.b1">Refactored transaction selection in Go for the Ethereum L2 rollup, adding atomic transaction support and unit tests.</li>
                   <li data-i18n-html="exp.hermez.b2">Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.</li>
                   <li data-i18n-html="exp.hermez.b3">Integrated Go services with Ethereum smart contracts via ABI to submit zk-SNARK proofs for rollup batches.</li>
+                  <li class="online-detail" data-i18n-html="exp.hermez.b4">Added Prometheus metrics, L1 account-authorization synchronization, transaction validation, race detection in CI, GoReleaser configuration and contract-address discovery.</li>
                 </ul>
               </div>
             </article>
@@ -3106,6 +3112,7 @@
                   <li data-i18n-html="exp.trustwallet.b1">Led Go backend work on blockatlas: multi-chain integrations, transaction parsing, indexing, staking and market-data APIs.</li>
                   <li data-i18n-html="exp.trustwallet.b2">Built the Go backend for a Binance crypto gift-card system, enabling token claims in Trust Wallet via QR codes and single-use redemption links.</li>
                   <li data-i18n-html="exp.trustwallet.b3">Implemented RPC batching and Prometheus HTTP metrics; operated and monitored full nodes supporting the multi-chain backend.</li>
+                  <li class="online-detail" data-i18n-html="exp.trustwallet.b5">Built transaction webhooks, PostgreSQL-backed observer storage, HTTP caching and market-data workers with exponential backoff; corrected concurrency issues in multi-chain processing.</li>
                 </ul>
               </div>
             </article>
@@ -3168,6 +3175,18 @@
           <div class="section-title"><h2 id="personal-title" data-i18n="personal.title">Personal Projects</h2></div>
           <p data-i18n="exp.independent.b3">Build tdmcp and Ableton Mind: developer integrations for creative applications using TypeScript and Python.</p>
           <p data-i18n="exp.independent.b1">Rust personal study: Sunscreen for Solana and stellar-forge for Stellar; no professional Rust experience.</p>
+          <ul class="online-detail online-project-list">
+            <li data-i18n-html="personal.mcp">Extended tdmcp with retrieval fusion, explicit executable-code authorization and operator snapshot provenance; enabled Ableton Mind server startup and metadata access without a local Ableton bridge.</li>
+            <li data-i18n-html="personal.go">Built Healthcheck in Go for scheduled HTTP checks, Redis-backed state and PagerDuty alerts, and Chainops for declarative blockchain operations with validation and artifact planning.</li>
+            <li data-i18n-html="personal.blockchain">Developed local XCM tooling in Cartographer and maintained deterministic wallet-address derivation and concurrency safety in Pool Party.</li>
+          </ul>
+        </section>
+
+        <section class="section online-detail" aria-labelledby="opensource-title">
+          <div class="section-title"><h2 id="opensource-title" data-i18n="opensource.title">Open-Source Contributions</h2></div>
+          <ul class="online-project-list">
+            <li data-i18n-html="opensource.defillama">Contributed merged on-chain adapter fixes to DefiLlama: replaced SuperRare subgraph accounting and narrowed Rumpel Fluid position discovery to protocol-owned positions.</li>
+          </ul>
         </section>
 
         <!-- ───── 04 Selected Repositories ───── -->
@@ -3444,6 +3463,11 @@
         "exp.xp.meta": "Dec 2017 — Mar 2018<br>São Paulo",
         "exp.xp.b1": "Led the entire XDEX exchange engineering team as Staff Engineer, combining technical leadership with hands-on work across technical decisions, development and delivery.",
         "personal.title": "Personal Projects",
+        "opensource.title": "Open-Source Contributions",
+        "opensource.defillama": "Contributed merged on-chain adapter fixes to DefiLlama: replaced SuperRare subgraph accounting and narrowed Rumpel Fluid position discovery to protocol-owned positions.",
+        "personal.mcp": "Extended tdmcp with retrieval fusion, explicit executable-code authorization and operator snapshot provenance; enabled Ableton Mind server startup and metadata access without a local Ableton bridge.",
+        "personal.go": "Built Healthcheck in Go for scheduled HTTP checks, Redis-backed state and PagerDuty alerts, and Chainops for declarative blockchain operations with validation and artifact planning.",
+        "personal.blockchain": "Developed local XCM tooling in Cartographer and maintained deterministic wallet-address derivation and concurrency safety in Pool Party.",
         "lang.aria.en": "Switch language to English",
         "lang.aria.pt": "Switch language to Brazilian Portuguese",
         "a11y.skipLink": "Skip to content",
@@ -3528,6 +3552,8 @@
         "exp.ignite.b3": "Implemented AtomOne Nakamoto Bonus distribution, epoch-based execution, validator commission rules and governance migration fixes.",
         "exp.ignite.b4": "Implemented VaaS fee pools, validator payments, debt-state propagation and transaction admission rules; added misbehaviour validation and IBC v2 fixes.",
         "exp.ignite.b5": "Extended Gno Realms IBC transfers with memos, GRC20 voucher helpers, relay authorization and query views.",
+        "exp.ignite.b6": "Improved Go plugin execution and protobuf analysis with synchronized output handling, custom HTTP clients and resolution of qualified and nested RPC request messages.",
+        "exp.ignite.b7": "Implemented airdrop start and claim rules, staking/governance hooks, mission invariants and simulation coverage in Cosmos SDK modules.",
         "exp.interchain.role": "Blockchain Engineer, Go — Cosmos Hub & Interoperability",
         "exp.interchain.meta": "Jun 2022 — Dec 2022<br>Remote",
         "exp.interchain.b1": "Maintained and evolved Gaia, the Cosmos Hub application, implementing bug fixes, upgrades and ongoing improvements across the Go codebase.",
@@ -3536,11 +3562,13 @@
         "exp.ignite2.meta": "Jun 2021 — Jun 2022<br>Remote",
         "exp.ignite2.b1": "Implemented SPN modules in Go for validator profiles, chain-launch requests, campaign shares, vesting vouchers and reward distribution.",
         "exp.ignite2.b2": "Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.",
+        "exp.ignite2.b3": "Implemented validation and invariants for chain-launch requests, campaign associations and share accounting in SPN.",
         "exp.hermez.role": "Blockchain / Layer-2 Engineer, Go",
         "exp.hermez.meta": "Feb 2021 — Jun 2021<br>Remote",
         "exp.hermez.b1": "Refactored transaction selection in Go for the Ethereum L2 rollup, adding atomic transaction support and unit tests.",
         "exp.hermez.b2": "Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.",
         "exp.hermez.b3": "Integrated Go services with Ethereum smart contracts via ABI to submit zk-SNARK proofs for rollup batches.",
+        "exp.hermez.b4": "Added Prometheus metrics, L1 account-authorization synchronization, transaction validation, race detection in CI, GoReleaser configuration and contract-address discovery.",
         "exp.energi.role": "Backend Engineer / Architecture",
         "exp.energi.meta": "Apr 2020 — Feb 2021<br>Remote",
         "exp.energi.b1": "Designed exchange architecture from scratch and built <strong>Go APIs</strong> for users, KYC, custodial wallets, deposits, withdrawals and multi-chain transaction tracking.",
@@ -3552,6 +3580,7 @@
         "exp.trustwallet.b2": "Built the Go backend for a Binance crypto gift-card system, enabling token claims in Trust Wallet via QR codes and single-use redemption links.",
         "exp.trustwallet.b3": "Implemented RPC batching and Prometheus HTTP metrics; operated and monitored full nodes supporting the multi-chain backend.",
         "exp.trustwallet.b4": "Built and maintained blockchain data routes, asset metadata flows, transaction parsing, validator logic, RPC batching, and chain-specific integration logic.",
+        "exp.trustwallet.b5": "Built transaction webhooks, PostgreSQL-backed observer storage, HTTP caching and market-data workers with exponential backoff; corrected concurrency issues in multi-chain processing.",
         "exp.mb.role": "Tech Lead — Backend & Mobile",
         "exp.mb.meta": "Mar 2018 — Aug 2019<br>São Paulo",
         "exp.mb.b1": "At Mercado Bitcoin, I built Go and Python services for multi-chain transaction tracking and payload signing.",
@@ -3623,6 +3652,11 @@
         "exp.xp.meta": "Dez 2017 — Mar 2018<br>São Paulo",
         "exp.xp.b1": "Como Staff Engineer, liderei toda a equipe de engenharia da exchange XDEX, combinando liderança técnica com atuação direta nas decisões técnicas, no desenvolvimento e nas entregas.",
         "personal.title": "Projetos Pessoais",
+        "opensource.title": "Contribuições Open Source",
+        "opensource.defillama": "Contribuí com correções mergeadas em adapters on-chain da DefiLlama: substituí a contabilização via subgraph da SuperRare e restringi a descoberta de posições Rumpel Fluid às posições do protocolo.",
+        "personal.mcp": "Ampliei o tdmcp com fusão de resultados de busca, autorização explícita para executar código e rastreabilidade de snapshots de operadores; permiti iniciar o servidor Ableton Mind e consultar metadados sem a ponte local do Ableton.",
+        "personal.go": "Criei o Healthcheck em Go para verificações HTTP agendadas, estado em Redis e alertas no PagerDuty, e o Chainops para operações declarativas de blockchain com validação e planejamento de artefatos.",
+        "personal.blockchain": "Desenvolvi ferramentas locais de XCM no Cartographer e mantive a derivação determinística de endereços de carteiras e a segurança de concorrência no Pool Party.",
         "lang.aria.en": "Mudar idioma para inglês",
         "lang.aria.pt": "Mudar idioma para português do Brasil",
         "a11y.skipLink": "Ir para o conteúdo",
@@ -3707,6 +3741,8 @@
         "exp.ignite.b3": "Implementei a distribuição Nakamoto Bonus no AtomOne, execução por épocas, regras de comissão de validadores e correções de migração de governança.",
         "exp.ignite.b4": "Implementei pools de taxas, pagamentos a validadores, propagação de dívida e regras de admissão de transações no VaaS; validei misbehaviour e corrigi fluxos IBC v2.",
         "exp.ignite.b5": "Ampliei transferências IBC no Gno Realms com memos, operações de vouchers GRC20, autorização de relayers e telas de consulta.",
+        "exp.ignite.b6": "Aprimorei a execução de plugins Go e a análise de protobuf com sincronização de buffers de saída, clientes HTTP personalizados e resolução de mensagens RPC qualificadas e aninhadas.",
+        "exp.ignite.b7": "Implementei regras de início e resgate de airdrops, hooks de staking e governança, invariantes de missões e cobertura de simulação em módulos Cosmos SDK.",
         "exp.interchain.role": "Blockchain Engineer, Go — Cosmos Hub e Interoperabilidade",
         "exp.interchain.meta": "Jun 2022 — Dez 2022<br>Remoto",
         "exp.interchain.b1": "Atuei na manutenção e evolução do Gaia, aplicação do Cosmos Hub, implementando correções, upgrades e melhorias contínuas na base de código Go.",
@@ -3715,11 +3751,13 @@
         "exp.ignite2.meta": "Jun 2021 — Jun 2022<br>Remoto",
         "exp.ignite2.b1": "Implementei módulos Go no SPN para perfis de validadores, solicitações de lançamento de chains, participações em campanhas, vouchers de vesting e distribuição de recompensas.",
         "exp.ignite2.b2": "Desenvolvi novas funcionalidades e mantive o Ignite CLI, corrigindo bugs e acompanhando as atualizações do Cosmos SDK.",
+        "exp.ignite2.b3": "Implementei validações e invariantes para solicitações de lançamento de chains, associações de campanhas e contabilização de participações no SPN.",
         "exp.hermez.role": "Engenheiro Blockchain / Layer-2, Go",
         "exp.hermez.meta": "Fev 2021 — Jun 2021<br>Remoto",
         "exp.hermez.b1": "Refatorei a seleção de transações em Go no rollup Ethereum L2, adicionando suporte a transações atômicas e testes unitários.",
         "exp.hermez.b2": "Criei exemplos de integração em Go para derivação de carteiras Baby Jubjub, autorização de contas Ethereum e assinatura, envio e acompanhamento de transações L2.",
         "exp.hermez.b3": "Integrei serviços Go com contratos Ethereum via ABI para enviar provas zk-SNARK de lotes do rollup.",
+        "exp.hermez.b4": "Adicionei métricas Prometheus, sincronização de autorizações de contas L1, validação de transações, detecção de races no CI, configuração do GoReleaser e descoberta de endereços de contratos.",
         "exp.energi.role": "Engenheiro Backend / Arquitetura",
         "exp.energi.meta": "Abr 2020 — Fev 2021<br>Remoto",
         "exp.energi.b1": "Desenhei a arquitetura de uma exchange do zero e criei <strong>APIs Go</strong> para usuários, KYC, carteiras custodiais, depósitos, saques e rastreamento multi-chain.",
@@ -3731,6 +3769,7 @@
         "exp.trustwallet.b2": "Criei o backend Go de um sistema de gift cards da Binance, permitindo resgatar tokens na Trust Wallet por QR codes e links de uso único.",
         "exp.trustwallet.b3": "Implementei chamadas RPC em lote e métricas HTTP no Prometheus; operei e monitorei full nodes do backend multichain.",
         "exp.trustwallet.b4": "Construí e mantive rotas de dados blockchain, fluxos de metadados de ativos, parsing de transações, lógica de validadores, batching de RPC e integrações específicas por chain.",
+        "exp.trustwallet.b5": "Criei webhooks de transações, persistência de observers em PostgreSQL, cache HTTP e workers de dados de mercado com backoff exponencial; corrigi problemas de concorrência no processamento multichain.",
         "exp.mb.role": "Tech Lead — Backend e Mobile",
         "exp.mb.meta": "Mar 2018 — Ago 2019<br>São Paulo",
         "exp.mb.b1": "No Mercado Bitcoin, construí serviços em Go e Python para rastreio multi-chain de transações e assinatura de payloads.",

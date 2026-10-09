@@ -506,6 +506,232 @@ const CV_REFERENCES = {
         "en": "References cover RPC batching and metrics. Full-node operations are owner-confirmed.",
         "pt": "As referências cobrem RPC em lote e métricas. A operação de full nodes foi confirmada pelo autor."
       }
+    },
+    "exp.trustwallet.b5": {
+      "sources": [
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/283",
+          "title": "Add transaction webhook support for xpub addresses",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/426",
+          "title": "Create cache middleware",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/451",
+          "title": "Change Redis to Postgres",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/518",
+          "title": "market/rates worker",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/641",
+          "title": "fix btc block memory leak",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/771",
+          "title": "fix cosmos race condition",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/795",
+          "title": "fix observer race condition",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/trustwallet/blockatlas/pull/883",
+          "title": "fix Zilliqa block request and data race",
+          "kind": "pr"
+        }
+      ]
+    },
+    "exp.ignite.b6": {
+      "sources": [
+        {
+          "url": "https://github.com/ignite/cli/pull/4091",
+          "title": "fix: race conditions in the plugin logic",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/cli/pull/4889",
+          "title": "fix: plugin data race",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/cli/pull/4910",
+          "title": "fix(protoanalysis): resolve qualified and nested RPC request messages",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/cli/pull/4869",
+          "title": "feat(pkg/httpstatuschecker): allow custom `http.Client`",
+          "kind": "pr"
+        }
+      ]
+    },
+    "exp.hermez.b4": {
+      "sources": [
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/611",
+          "title": "Synchronize the AccountCreationAuths from L1CoordinatorTxs",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/636",
+          "title": "instrumenting the application",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/653",
+          "title": "Generating automatically releases with Goreleaser",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/708",
+          "title": "fix the setType method to avoid invalid tx in the tx pool",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/713",
+          "title": "add race condition detector to the unit tests",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/hermeznetwork/hermez-node/pull/723",
+          "title": "Automatically fetch the smart contract addresses from the Rollup contract",
+          "kind": "pr"
+        }
+      ]
+    },
+    "opensource.defillama": {
+      "sources": [
+        {
+          "url": "https://github.com/DefiLlama/DefiLlama-Adapters/pull/21478",
+          "title": "Replace SuperRare subgraph with on-chain Rarity Pool balances",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/DefiLlama/DefiLlama-Adapters/pull/21479",
+          "title": "Fix Rumpel Fluid position discovery to avoid full-factory scans",
+          "kind": "pr"
+        }
+      ]
+    },
+    "exp.ignite.b7": {
+      "sources": [
+        {
+          "url": "https://github.com/ignite/modules/pull/77",
+          "title": "feat: airdrop start",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/modules/pull/81",
+          "title": "feat: register staking and gov hooks",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/modules/pull/82",
+          "title": "feat: add claim record mission invariant",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/ignite/modules/pull/87",
+          "title": "feat(sim): add sim tests",
+          "kind": "pr"
+        }
+      ]
+    },
+    "exp.ignite2.b3": {
+      "sources": [
+        {
+          "url": "https://github.com/tendermint/spn/pull/248",
+          "title": "feat(x/launch/keeper): verify and validate all request contents",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/tendermint/spn/pull/315",
+          "title": "feat(invariants): add module invariants",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/tendermint/spn/pull/332",
+          "title": "feat(campaign): add shares invariant",
+          "kind": "pr"
+        }
+      ]
+    },
+    "personal.mcp": {
+      "sources": [
+        {
+          "url": "https://github.com/Pantani/tdmcp/pull/100",
+          "title": "feat(rag): cross-RAG ranking via Reciprocal Rank Fusion (opt-in)",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/tdmcp/pull/143",
+          "title": "fix: enforce raw-off across code-bearing routes",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/tdmcp/pull/150",
+          "title": "fix: expose operator snapshot provenance",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/ableton-mind/pull/11",
+          "title": "Handle Glama startup without a local Ableton bridge",
+          "kind": "pr"
+        }
+      ]
+    },
+    "personal.go": {
+      "sources": [
+        {
+          "url": "https://github.com/Pantani/healthcheck/pull/1",
+          "title": "feat: modernize healthcheck runtime",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/chainops/pull/1",
+          "title": "Refine safety checks and add coverage across core pipelines",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/chainops/pull/2",
+          "title": "Harden registry, validation, and path handling across the project",
+          "kind": "pr"
+        }
+      ]
+    },
+    "personal.blockchain": {
+      "sources": [
+        {
+          "url": "https://github.com/Pantani/cartographer/pull/2",
+          "title": "Add local XCM Chopsticks orchestration",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/cartographer/pull/3",
+          "title": "feat: implement Cartographer next steps",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/pool-party/pull/1",
+          "title": "feat: modernize crypto derivation and CI",
+          "kind": "pr"
+        },
+        {
+          "url": "https://github.com/Pantani/pool-party/pull/2",
+          "title": "Deprecate legacy BIP32 and harden BIP39 wordlists",
+          "kind": "pr"
+        }
+      ]
     }
   }
 };
