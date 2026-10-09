@@ -16,11 +16,11 @@ The public portfolio is built from the existing CV source into an explicit stati
 
 ## Verified locally
 
-40 Python tests, four JavaScript runtime tests and six reference-view browser checks passed. ESLint, Ruff and complexipy passed with cyclomatic limit 6 and cognitive limit 10. The generated artifact passed canonical, reciprocal-language, structured-data, local-link, sitemap and publication checks. English/PT home, article index and article layouts were inspected in the browser, including a 390px mobile viewport. Reference navigation preserved 86 links, language, query and anchor.
+40 Python tests, four JavaScript runtime tests and six reference-view browser checks passed. ESLint, Ruff and complexipy passed with cyclomatic limit 6 and cognitive limit 10. The generated artifact passed canonical, reciprocal-language, structured-data, local-link, sitemap and publication checks. English/PT home, article index and article layouts were inspected in the browser, including a 390px mobile viewport. After integrating the latest public evidence update, reference navigation preserved 124 links, language, query and anchor.
 
 Existing PDFs were preserved, inspected visually and passed strict extraction checks in pypdf and pdfplumber: two pages each, minimum visible font 9pt, no reported findings. This is a local readability check, not an ATS vendor score.
 
-The source HTML is 172,602 bytes and generated English HTML is 47,249 bytes at this revision. Styles, scripts and fonts remain separate downloads; the HTML reduction is not a measured loading-time improvement.
+The source HTML is 179,036 bytes and generated English HTML is 49,491 bytes after integrating the latest public evidence update. Styles, scripts and fonts remain separate downloads; the HTML reduction is not a measured loading-time improvement.
 
 ## Measurement still requires external access
 
