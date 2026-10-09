@@ -17,7 +17,6 @@ from site_content import (
     fragment,
     hub,
     load_cases,
-    navigation,
     not_found,
 )
 from site_metadata import (
@@ -239,12 +238,6 @@ def home_details(soup, language):
 
 def home_additions(soup, language, items):
     labels = LABELS[language]
-    nav = (
-        '<div class="site-only print-hidden">'
-        + navigation(language, with_languages=False)
-        + "</div>"
-    )
-    soup.body.insert(0, BeautifulSoup(nav, "html.parser"))
     statement = soup.new_tag(
         "p", attrs={"class": "remote-statement site-only print-hidden"}
     )
