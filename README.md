@@ -220,15 +220,35 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 ## Repository
 
-This repository contains a static, bilingual visual portfolio.
+This repository contains a static, bilingual visual portfolio. The canonical public site is built into `_site/`; the root `index.html` remains the CV generation source.
 
 - [`index.html`](./index.html) — English and Brazilian Portuguese CVs
 - [`assets/references-data.js`](./assets/references-data.js) — public evidence mapped to stable experience keys; source titles remain in their original language
 - [`assets/references.js`](./assets/references.js) — optional `?references=1` view; preserves language and anchors without duplicating CV content
 - [`output/pdf/`](./output/pdf/) — generated resume PDFs
-- [`og-image.jpg`](./og-image.jpg) — 1200×630 social preview for LinkedIn, WhatsApp, Slack, Discord, Telegram, and X
-- [`robots.txt`](./robots.txt) and [`sitemap.xml`](./sitemap.xml) — crawler discovery for the canonical homepage
+- [`assets/social-card.jpg`](./assets/social-card.jpg) — current 1200×630 public social preview
+- [`content/case-studies.json`](./content/case-studies.json) — bilingual articles with public implementation sources
+- [`scripts/build_site.py`](./scripts/build_site.py) — static locale pages and an explicit public asset allowlist
+- [`scripts/validate_site.py`](./scripts/validate_site.py) — canonical, locale, metadata, sitemap, link and artifact checks
 - [`humans.txt`](./humans.txt) — human-readable contact card
+
+## Public site build and deployment
+
+```sh
+python3 -m venv .venv-seo
+.venv-seo/bin/python -m pip install -r scripts/requirements-site.txt -r scripts/requirements-cv.txt -r scripts/requirements-seo-tools.txt
+npm ci
+make site-test site-check PYTHON=.venv-seo/bin/python
+.venv-seo/bin/python -m http.server 8881 --bind 127.0.0.1 --directory _site
+```
+
+English is served at `/`, Brazilian Portuguese at `/pt/`. `/work/` and `/pt/work/` list three evidence-backed articles each. All ten pages contain their localized content before JavaScript runs, have self-referencing canonicals and reciprocal `hreflang` links, and appear in the generated sitemap. Legacy `?lang=pt-BR` links redirect in the browser while preserving references and anchors. English remains the default regardless of browser storage. Existing PDF URLs remain stable.
+
+GitHub Pages uses the validated `_site/` artifact through [the Pages workflow](.github/workflows/pages.yml). Pull requests and the SEO branch run checks; only `main` deploys. Repository files, local reports, CV source scripts and the LinkedIn cover editor are excluded from the public artifact. The L200 project retains its separate sitemap and publishing workflow.
+
+Update `MODIFIED` in `scripts/site_metadata.py` and article `dateModified` values only when their content changes. The build does not stamp every run with today's date. Fonts are local, licensed WOFF2 subsets; see [font provenance](docs/seo-fonts.md). Article claims and limits are documented in [the evidence record](docs/seo-case-study-evidence.md).
+
+Validation proves the generated HTML contracts, not search rankings or real-user Core Web Vitals. Search Console indexing, query performance and field performance require access to the property's measurements. No analytics identifiers or ownership records are invented.
 
 ## CV analysis and implementation builds
 
@@ -253,10 +273,11 @@ The PDF selects two short courses and compact earlier-job records; this README r
 
 ### References browser checks
 
-With Playwright and Google Chrome available, serve the repository on port 8879 and run:
+With Playwright and Google Chrome available, build and serve the public artifact on port 8881 and run:
 
 ```sh
-python3 -m http.server 8879 --bind 127.0.0.1
+make site-check PYTHON=.venv-seo/bin/python
+python3 -m http.server 8881 --bind 127.0.0.1 --directory _site
 # In another terminal, with Playwright resolvable by Node:
 node --test tests/references.cjs
 ```

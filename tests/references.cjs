@@ -1,11 +1,11 @@
-// Run with Playwright available on NODE_PATH and the site served on port 8879.
+// Run with Playwright available on NODE_PATH and the generated _site served on port 8881.
 const { test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
 const { chromium } = require('playwright');
 
 let browser;
 let page;
-const base = process.env.CV_TEST_URL || 'http://127.0.0.1:8879';
+const base = process.env.CV_TEST_URL || 'http://127.0.0.1:8881';
 
 before(async () => {
   browser = await chromium.launch({ channel: 'chrome', headless: true });
@@ -31,7 +31,8 @@ test('language changes retain references without duplicates and preserve the URL
   assert.ok(count > 50);
   await page.locator('[data-lang="pt"]').click();
   assert.equal(new URL(page.url()).searchParams.get('references'), '1');
-  assert.equal(new URL(page.url()).searchParams.get('lang'), 'pt-BR');
+  assert.equal(new URL(page.url()).pathname, '/pt/');
+  assert.equal(new URL(page.url()).searchParams.has('lang'), false);
   assert.equal(await page.locator('.claim-references a').count(), count);
   assert.match(await page.locator('#referencesToggle').textContent(), /Sem referências/);
   await page.locator('[data-lang="en"]').click();
@@ -51,7 +52,8 @@ test('return to regular CV preserves the selected language and anchor', async ()
   await page.goto(`${base}/?references=1&lang=pt-BR#experience-title`);
   await page.locator('#referencesToggle').click();
   assert.equal(new URL(page.url()).searchParams.has('references'), false);
-  assert.equal(new URL(page.url()).searchParams.get('lang'), 'pt-BR');
+  assert.equal(new URL(page.url()).pathname, '/pt/');
+  assert.equal(new URL(page.url()).searchParams.has('lang'), false);
   assert.equal(new URL(page.url()).hash, '#experience-title');
   assert.equal(await page.locator('.claim-references').count(), 0);
 });

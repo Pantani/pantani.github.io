@@ -6,7 +6,18 @@ CAREER_RUN_DIR ?= _workspace/career-evidence/build
 CAREER_SOURCE ?= index.html
 CAREER_ANALYSIS ?=
 
-.PHONY: cv-analyze cv-implement cv-test career-audit career-pdf
+.PHONY: cv-analyze cv-implement cv-test career-audit career-pdf site-build site-check site-test
+
+site-build:
+	$(PYTHON) scripts/build_site.py --output _site
+
+site-check: site-build
+	$(PYTHON) scripts/validate_site.py --directory _site
+
+site-test:
+	$(PYTHON) -m unittest discover -s tests -p 'test_site.py' -v
+	npm test
+	npm run lint
 
 career-audit:
 	$(PYTHON) scripts/career_audit.py --evidence "$(CAREER_EVIDENCE)" --draft "$(CAREER_DRAFT)" --source "$(CAREER_SOURCE)" --output "$(CAREER_RUN_DIR)"

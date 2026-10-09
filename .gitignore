@@ -44,3 +44,9 @@ htmlcov/
 /_workspace/
 /output/*
 !/output/pdf/
+
+# Static site build and local SEO tooling
+/_site/
+/.venv-seo/
+
+/node_modules/

@@ -1,0 +1,340 @@
+[
+  {
+    "slug": "trust-wallet-go-backend",
+    "dateModified": "2026-10-09",
+    "en": {
+      "title": "Go backend engineering at Trust Wallet: multi-chain integrations",
+      "description": "Danilo Pantani's verified Go contributions to blockatlas: RPC batching, Bitcoin Blockbook compatibility and HTTP metrics for a multi-chain wallet backend.",
+      "lead": "Trust Wallet's multi-chain backend, blockatlas, had to consume different node APIs and evolving transaction formats. My Go contributions addressed three parts of that integration work: Bitcoin Blockbook compatibility, shared JSON-RPC batching used by the Zilliqa adapter, and HTTP instrumentation. The linked merged changes show how each problem was handled at the backend boundary.",
+      "sections": [
+        {
+          "title": "The problem: different chains, different upstream behavior",
+          "paragraphs": [
+            "In blockatlas PR #698, newer Blockbook instances had changed the response fields consumed by the Bitcoin integration. I added support for both response versions. The code accepted transaction lists under either transactions or txs, selected valueOut when value was absent, and read output addresses from either a direct field or scriptPubKey. These were concrete compatibility differences in an upstream service that the wallet backend needed to normalize.",
+            "Normalization helpers kept the representation used by the adapter consistent while handling variation in the upstream data. The trade-off was additional parsing logic to maintain: compatibility now included more than one field layout. Requiring every upstream instance to use a single response format would simplify the adapter, but would remove the compatibility this change was designed to preserve. That distinction matters when a backend integrates systems with separate upgrade schedules."
+          ]
+        },
+        {
+          "title": "Reusable RPC batching",
+          "paragraphs": [
+            "PR #891 added a batch method to the shared JSON-RPC client. It submitted a collection of requests through one HTTP POST and decoded a collection of responses. The change also added tests for the default JSON-RPC version and request identifiers. JSON-RPC is the request format used by these node calls; batching packages several operations into a single request envelope.",
+            "PR #892 then used that method in the Zilliqa adapter. Previously, transaction retrieval launched a goroutine for each transaction hash and collected results through a channel and a wait group. The replacement built GetTransaction requests from the block's hashes, submitted them together, and converted decoded responses into the adapter's transaction type. An empty block returned without making the batch call."
+          ]
+        },
+        {
+          "title": "The batching trade-off",
+          "paragraphs": [
+            "The Zilliqa change moved transaction retrieval from separate concurrent calls to a batch request, removing the adapter's goroutine and channel coordination for that operation. This exchanged local concurrency management for a dependency on batch support at the node endpoint. The implementation did not introduce batch-size limits or a comprehensive per-item retry policy; it skipped responses that could not be decoded. Fewer request envelopes also do not establish a latency or throughput improvement without measuring endpoint behavior and the response workload."
+          ]
+        },
+        {
+          "title": "HTTP visibility",
+          "paragraphs": [
+            "PR #372 added HTTP instrumentation and a metrics route. Its code defined outbound request counters and duration histograms, added server middleware, and connected a Prometheus handler to the API. Prometheus is the metrics collection system targeted by this implementation. The route also included optional bearer-token checking when a token was configured. The PR description identified missing visibility into incoming and outgoing requests as the problem.",
+            "The counters and duration histograms made request volume and timing available to a metrics collector. This complemented the adapter work: normalization and request execution handle data movement, while instrumentation provides observations about the HTTP path. Exposing these measurements supplies the foundation for monitoring; the PR itself does not describe an alerting policy or quantify operational improvements."
+          ]
+        },
+        {
+          "title": "Contribution scope",
+          "paragraphs": [
+            "These four merged contributions connect three recurring Go backend concerns: compatible data models, external I/O and observability. Their common thread is the integration boundary, where differences between external systems must become data and operations the application can use. The linked PRs document these particular changes, including their implementation choices and limits."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "blockatlas #698 — Bitcoin Blockbook parser compatibility",
+          "url": "https://github.com/trustwallet/blockatlas/pull/698"
+        },
+        {
+          "label": "blockatlas #891 — Shared JSON-RPC batch support",
+          "url": "https://github.com/trustwallet/blockatlas/pull/891"
+        },
+        {
+          "label": "blockatlas #892 — Zilliqa transaction batching",
+          "url": "https://github.com/trustwallet/blockatlas/pull/892"
+        },
+        {
+          "label": "blockatlas #372 — HTTP metrics",
+          "url": "https://github.com/trustwallet/blockatlas/pull/372"
+        }
+      ]
+    },
+    "pt": {
+      "title": "Engenharia de backend Go na Trust Wallet: integrações multi-chain",
+      "description": "Contribuições Go verificadas de Danilo Pantani ao blockatlas: RPC em lote, compatibilidade com Bitcoin Blockbook e métricas HTTP em um backend de carteira multi-chain.",
+      "lead": "O backend multi-chain da Trust Wallet, blockatlas, precisava consumir APIs de nós diferentes e formatos de transação em evolução. Minhas contribuições Go trataram três partes desse trabalho de integração: compatibilidade com Bitcoin Blockbook, JSON-RPC em lote compartilhado e aplicado ao adaptador Zilliqa, e instrumentação HTTP. As mudanças integradas vinculadas mostram como cada problema foi tratado na fronteira do backend.",
+      "sections": [
+        {
+          "title": "O problema: redes diferentes, comportamentos externos diferentes",
+          "paragraphs": [
+            "No PR #698 do blockatlas, novas instâncias de Blockbook haviam mudado os campos de resposta consumidos pela integração Bitcoin. Adicionei suporte às duas versões de resposta. O código aceitou listas de transações em transactions ou txs, selecionou valueOut quando value estava ausente e leu endereços de saída tanto de um campo direto quanto de scriptPubKey. Eram diferenças concretas de compatibilidade em um serviço externo que o backend da carteira precisava normalizar.",
+            "Os helpers de normalização mantinham consistente a representação usada pelo adaptador enquanto tratavam a variação dos dados externos. O trade-off era a manutenção de lógica adicional de parsing: a compatibilidade agora incluía mais de uma organização de campos. Exigir que todas as instâncias externas usassem um único formato simplificaria o adaptador, mas eliminaria a compatibilidade que essa mudança buscava preservar. Essa distinção importa quando um backend integra sistemas com cronogramas de upgrade separados."
+          ]
+        },
+        {
+          "title": "RPC em lote reutilizável",
+          "paragraphs": [
+            "O PR #891 adicionou um método de lote ao cliente JSON-RPC compartilhado. Ele enviava uma coleção de requisições em um único POST HTTP e decodificava uma coleção de respostas. A mudança também acrescentou testes dos valores padrão de versão JSON-RPC e identificadores de requisição. JSON-RPC é o formato de requisição usado nessas chamadas aos nós; o lote reúne várias operações em uma única requisição.",
+            "O PR #892 aplicou esse método ao adaptador Zilliqa. Antes, a busca de transações iniciava uma goroutine para cada hash e reunia os resultados com um canal e um wait group. A substituição montava requisições GetTransaction a partir dos hashes do bloco, enviava todas juntas e convertia as respostas decodificadas para o tipo de transação do adaptador. Um bloco vazio retornava sem executar a chamada em lote."
+          ]
+        },
+        {
+          "title": "O trade-off do processamento em lote",
+          "paragraphs": [
+            "A mudança Zilliqa substituiu chamadas concorrentes separadas por uma requisição em lote, removendo a coordenação de goroutines e canais do adaptador nessa operação. Isso trocou o gerenciamento local de concorrência pela dependência do suporte a lotes no endpoint do nó. A implementação não introduziu limites de tamanho de lote nem uma política completa de novas tentativas por item; respostas que não podiam ser decodificadas eram ignoradas. Menos requisições também não comprovam redução de latência ou ganho de throughput sem medir o comportamento do endpoint e o volume das respostas."
+          ]
+        },
+        {
+          "title": "Visibilidade HTTP",
+          "paragraphs": [
+            "O PR #372 adicionou instrumentação HTTP e uma rota de métricas. Seu código definiu contadores de requisições de saída e histogramas de duração, adicionou middleware de servidor e conectou um handler Prometheus à API. Prometheus é o sistema de coleta de métricas escolhido nessa implementação. A rota também incluía verificação opcional de bearer token quando um token estava configurado. A descrição do PR apontava a falta de visibilidade de requisições recebidas e enviadas como o problema.",
+            "Os contadores e histogramas de duração disponibilizaram volume e tempo de requisições para um coletor de métricas. Isso complementava o trabalho dos adaptadores: normalização e execução de requisições tratam o movimento dos dados, enquanto a instrumentação fornece observações sobre o caminho HTTP. Expor essas medidas fornece a base para monitoramento; o PR em si não descreve uma política de alertas nem quantifica melhorias operacionais."
+          ]
+        },
+        {
+          "title": "Escopo das contribuições",
+          "paragraphs": [
+            "Essas quatro contribuições integradas conectam três preocupações recorrentes de backend Go: modelos de dados compatíveis, I/O externo e observabilidade. O ponto comum é a fronteira de integração, onde diferenças entre sistemas externos precisam se transformar em dados e operações utilizáveis pela aplicação. Os PRs vinculados documentam essas mudanças específicas, incluindo suas escolhas de implementação e seus limites."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "blockatlas #698 — Compatibilidade do parser Bitcoin Blockbook",
+          "url": "https://github.com/trustwallet/blockatlas/pull/698"
+        },
+        {
+          "label": "blockatlas #891 — Suporte compartilhado a JSON-RPC em lote",
+          "url": "https://github.com/trustwallet/blockatlas/pull/891"
+        },
+        {
+          "label": "blockatlas #892 — Transações Zilliqa em lote",
+          "url": "https://github.com/trustwallet/blockatlas/pull/892"
+        },
+        {
+          "label": "blockatlas #372 — Métricas HTTP",
+          "url": "https://github.com/trustwallet/blockatlas/pull/372"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ignite-go-developer-tooling",
+    "dateModified": "2026-10-09",
+    "en": {
+      "title": "Go developer tooling at Ignite: AST transformations and migration scaffolding",
+      "description": "Verified Ignite CLI contributions by Danilo Pantani: Go source transformations, application wiring and module migration scaffolding with explicit compatibility limits.",
+      "lead": "Ignite CLI scaffolding needed to modify Go applications as developers continued to change their code. My contributions replaced selected comment placeholders with syntax-based transformations, extended that approach to application configuration and IBC routes, and added module migration scaffolding. The work combined Go source analysis with explicit compatibility checks and tests for generated changes.",
+      "sections": [
+        {
+          "title": "The problem: generated code keeps changing",
+          "paragraphs": [
+            "Earlier scaffolding paths inserted code at special comments embedded in templates. In PR #4004, I removed import placeholders and replaced those insertions with xast helpers. An AST, or abstract syntax tree, represents the structure of source code. Here, that structure provided a way to modify Go imports and function calls without depending on the old import marker comments.",
+            "The important boundary was between the tool's assumptions and code a developer continues to edit. A marker-based approach is straightforward while the markers remain intact. Structural editing removes that dependency, but requires the tooling to understand supported source shapes and report failures when it cannot locate an expected declaration. The choice shifts maintenance from marker placement to source analysis; it does not make application structure irrelevant."
+          ]
+        },
+        {
+          "title": "Imports and keeper wiring",
+          "paragraphs": [
+            "In PR #4004, module scaffolding used xast.AppendImports to insert named imports and side-effect imports. The same change used xast.ModifyFunction to add a keeper argument to an Inject call inside the application's New function. A keeper is the module component being connected to the application's dependencies in this code. The PR updated import-helper options and their tests alongside the callers.",
+            "This was an incremental transition. Other modifications still used placeholders, including keeper declarations and some module lifecycle lists. Changing the import and Inject paths separately kept the contribution focused on particular transformations. It also left a clear compatibility boundary: removing one group of markers did not mean that every Ignite generator could already operate without them."
+          ]
+        },
+        {
+          "title": "Application configuration and IBC routes",
+          "paragraphs": [
+            "PR #4877 extended structural editing to application configuration and IBC route registration. The new code parsed Go files, located the application configuration, added the module to genesis and block lifecycle lists, and appended its configuration entry. For IBC routing, it found registerIBCModules, checked for an existing route and inserted the new route before the IBC v2 router assignment.",
+            "The added tests applied the transformation twice and checked that the relevant module entries or route appeared only once. That verifies the intended repeated-application behavior covered by those fixtures. It does not establish support for every hand-edited application: the implementation still searches for particular variable names, types and function structures. Structural editing costs more implementation complexity than string replacement, and compatibility remains a responsibility of the tooling."
+          ]
+        },
+        {
+          "title": "Module migration scaffolding",
+          "paragraphs": [
+            "PR #4902 added migration scaffolding for an existing module. The implementation read its consensus version, generated the next version's migration package, updated the module version and registered the handler. It rejected a missing module or an already existing target migration directory. Tests covered initial registration, appending a subsequent migration and supported variants of the registration signature.",
+            "The generated migration handler initially returned nil without changing state. The tool supplied registration and file structure; application-specific data migration logic remained work for the chain developer. This was an explicit boundary in the generated output: the scaffolder could inspect the module's version and connect a handler, but the resulting file still needed the state-transition logic appropriate to the application. Boilerplate generation alone cannot establish migration correctness."
+          ]
+        },
+        {
+          "title": "Contribution scope",
+          "paragraphs": [
+            "The three linked merged changes cover source transformations, application composition and module migration boilerplate. Together, they show developer tooling that works with existing Go code while making its assumptions visible through errors and tests. The supported syntax and generated no-op migration remain meaningful boundaries for developers extending the resulting applications."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ignite CLI #4004 — Imports and keeper wiring through xast",
+          "url": "https://github.com/ignite/cli/pull/4004"
+        },
+        {
+          "label": "Ignite CLI #4877 — Application configuration and IBC route transformations",
+          "url": "https://github.com/ignite/cli/pull/4877"
+        },
+        {
+          "label": "Ignite CLI #4902 — Module migration scaffolding",
+          "url": "https://github.com/ignite/cli/pull/4902"
+        }
+      ]
+    },
+    "pt": {
+      "title": "Ferramentas Go para desenvolvedores na Ignite: AST e scaffolding de migrações",
+      "description": "Contribuições verificadas de Danilo Pantani ao Ignite CLI: transformação de código Go, composição da aplicação e scaffolding de migrações com limites explícitos de compatibilidade.",
+      "lead": "O scaffolding do Ignite CLI precisava modificar aplicações Go enquanto os desenvolvedores continuavam alterando seu código. Minhas contribuições substituíram determinados placeholders de comentários por transformações baseadas em sintaxe, estenderam essa abordagem à configuração da aplicação e às rotas IBC, e adicionaram scaffolding de migrações de módulos. O trabalho combinou análise de código Go com verificações explícitas de compatibilidade e testes das mudanças geradas.",
+      "sections": [
+        {
+          "title": "O problema: o código gerado continua mudando",
+          "paragraphs": [
+            "Os caminhos anteriores de scaffolding inseriam código em comentários especiais nos templates. No PR #4004, removi placeholders de imports e substituí essas inserções por helpers xast. AST, ou árvore sintática abstrata, representa a estrutura do código-fonte. Nesse caso, a estrutura permitiu modificar imports e chamadas de função Go sem depender dos antigos comentários de marcação dos imports.",
+            "A fronteira importante estava entre as suposições da ferramenta e o código que o desenvolvedor continua editando. A abordagem com marcadores é simples enquanto eles permanecem intactos. A edição estrutural elimina essa dependência, mas exige que a ferramenta entenda os formatos de código suportados e relate falhas quando não consegue localizar uma declaração esperada. A escolha desloca a manutenção da posição dos marcadores para a análise do código; não torna irrelevante a estrutura da aplicação."
+          ]
+        },
+        {
+          "title": "Imports e composição dos keepers",
+          "paragraphs": [
+            "No PR #4004, o scaffolding de módulos passou a usar xast.AppendImports para inserir imports nomeados e imports por efeitos colaterais. A mesma mudança usou xast.ModifyFunction para adicionar um argumento de keeper a uma chamada Inject dentro da função New da aplicação. Keeper é o componente do módulo conectado às dependências da aplicação nesse código. O PR atualizou as opções dos helpers de import e seus testes junto com os pontos de chamada.",
+            "Foi uma transição incremental. Outras modificações ainda usavam placeholders, incluindo declarações de keepers e algumas listas de ciclo de vida dos módulos. Alterar separadamente os caminhos de imports e Inject manteve a contribuição focada em transformações específicas. Isso também deixou um limite claro de compatibilidade: remover um grupo de marcadores não significava que todos os geradores Ignite já podiam operar sem eles."
+          ]
+        },
+        {
+          "title": "Configuração da aplicação e rotas IBC",
+          "paragraphs": [
+            "O PR #4877 estendeu a edição estrutural à configuração da aplicação e ao registro de rotas IBC. O novo código fazia o parsing de arquivos Go, localizava a configuração da aplicação, adicionava o módulo às listas de gênese e ciclo de vida dos blocos e acrescentava sua entrada de configuração. No roteamento IBC, encontrava registerIBCModules, verificava a presença de uma rota e inseria a nova rota antes da atribuição do roteador IBC v2.",
+            "Os testes adicionados aplicavam a transformação duas vezes e verificavam que as entradas relevantes do módulo ou a rota apareciam apenas uma vez. Isso verifica o comportamento pretendido de aplicação repetida coberto por essas fixtures. Não comprova suporte a toda aplicação editada manualmente: a implementação ainda busca nomes de variáveis, tipos e estruturas de funções específicos. A edição estrutural exige mais complexidade de implementação que a substituição de strings, e a compatibilidade continua sendo responsabilidade da ferramenta."
+          ]
+        },
+        {
+          "title": "Scaffolding de migrações de módulos",
+          "paragraphs": [
+            "O PR #4902 adicionou scaffolding de migrações para um módulo existente. A implementação lia sua versão de consenso, gerava o pacote de migração da próxima versão, atualizava a versão do módulo e registrava o handler. Ela rejeitava um módulo inexistente ou um diretório da migração de destino já existente. Os testes cobriam o registro inicial, a adição de uma migração seguinte e variantes suportadas da assinatura de registro.",
+            "O handler de migração gerado inicialmente retornava nil sem alterar o estado. A ferramenta fornecia o registro e a estrutura de arquivos; a lógica de migração dos dados da aplicação continuava sendo trabalho do desenvolvedor da chain. Esse era um limite explícito no código gerado: o scaffolder podia inspecionar a versão do módulo e conectar um handler, mas o arquivo resultante ainda precisava da lógica de transição de estado adequada à aplicação. A geração de boilerplate sozinha não comprova a correção da migração."
+          ]
+        },
+        {
+          "title": "Escopo das contribuições",
+          "paragraphs": [
+            "As três mudanças integradas vinculadas cobrem transformações de código, composição da aplicação e boilerplate de migrações de módulos. Juntas, mostram ferramentas que trabalham sobre código Go existente e tornam suas suposições visíveis por meio de erros e testes. A sintaxe suportada e a migração gerada sem alteração de estado continuam sendo limites relevantes para desenvolvedores que estendem as aplicações resultantes."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Ignite CLI #4004 — Imports e composição dos keepers com xast",
+          "url": "https://github.com/ignite/cli/pull/4004"
+        },
+        {
+          "label": "Ignite CLI #4877 — Transformações da configuração e rotas IBC",
+          "url": "https://github.com/ignite/cli/pull/4877"
+        },
+        {
+          "label": "Ignite CLI #4902 — Scaffolding de migrações de módulos",
+          "url": "https://github.com/ignite/cli/pull/4902"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "cosmos-sdk-ibc-upstream",
+    "dateModified": "2026-10-09",
+    "en": {
+      "title": "Upstream Go contributions to Cosmos SDK AutoCLI and IBC-Go",
+      "description": "Danilo Pantani's merged upstream Go changes: protobuf file resolution in Cosmos SDK AutoCLI and capability-scope inspection in IBC-Go.",
+      "lead": "My upstream Go contributions to Cosmos SDK and IBC-Go addressed two application integration problems: AutoCLI command decoding with incomplete protobuf metadata, and inspecting capability scopes before creating them. One changed the source of protobuf file descriptors; the other added a narrow query helper. Both changes sit at boundaries between generated interfaces and application composition.",
+      "sections": [
+        {
+          "title": "AutoCLI: the reported decoding failure",
+          "paragraphs": [
+            "Cosmos SDK PR #24330 reported that AutoCLI commands for new modules failed to decode after a Go upgrade and removal of Pulsar from the application. AutoCLI builds command-line interfaces from protobuf descriptions. The reported diagnosis was that the interface registry, when used as a file resolver, could expose incomplete descriptors for a message also referenced within another message.",
+            "The PR used an AddressList message referenced by a Genesis message to illustrate the problem. Its diagnosis described placeholder descriptors and registration order: a command could encounter incomplete metadata for the type it needed to decode. The implementation addressed the resolver used during command construction, so the change belonged in the shared AutoCLI builder rather than in a specific module's generated commands."
+          ]
+        },
+        {
+          "title": "Change the file resolver",
+          "paragraphs": [
+            "The accepted patch called the gogoproto merged-registry function before constructing the AutoCLI builder. If registry construction failed, it returned the error. The resulting registry became the builder's FileResolver, while its TypeResolver remained the global type registry. A file resolver supplies protobuf file descriptors; in this change it was a distinct dependency from the resolver used for message types.",
+            "The change corrected the source of metadata at the command-building boundary instead of adding a workaround to individual generated commands. That kept the fix concentrated, but made registry construction an explicit failure point. Returning its error meant the builder would not continue with that registry unavailable. The distinction between file and type resolution also remained intact: the patch changed one dependency while preserving the other."
+          ]
+        },
+        {
+          "title": "IBC-Go: inspecting a capability scope before creation",
+          "paragraphs": [
+            "In IBC-Go PR #6716, I added HasModule(moduleName string) bool to the capability keeper. Its implementation checked whether the module name existed in the keeper's scopedModules map. A scoped keeper is the module-specific capability scope in this code. ScopeToModule's documentation states that creating a scope for an already scoped module causes a panic. The new helper exposed an existence check for application wiring before attempting that operation.",
+            "The added test created a scope for the bank module, asserted that HasModule returned true for it, and asserted false for an invalid module name. This establishes the behavior covered by that test and the deliberately narrow interface: callers can inspect scope existence. The contribution did not change ScopeToModule into an operation that silently reuses an existing scope."
+          ]
+        },
+        {
+          "title": "The composition trade-off",
+          "paragraphs": [
+            "A small query helper preserved the existing scope-creation contract while giving application code a way to avoid an accidental duplicate creation. Altering creation to reuse an existing scope would change a broader contract. With HasModule, the caller still decides how to handle an existing scope. The check alone does not provide a concurrency guarantee or prevent duplicate creation by callers that ignore it; its responsibility is reporting the keeper's current membership."
+          ]
+        },
+        {
+          "title": "Contribution scope",
+          "paragraphs": [
+            "The linked changes were merged upstream: IBC-Go #6716 in July 2024 and Cosmos SDK #24330 in April 2025. They document focused Go contributions to developer interfaces and module composition. One supplies a different metadata source for command construction; the other exposes state that callers need when wiring an application. Their scope is these accepted changes, rather than downstream deployment or network performance."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Cosmos SDK #24330 — AutoCLI protobuf file resolver",
+          "url": "https://github.com/cosmos/cosmos-sdk/pull/24330"
+        },
+        {
+          "label": "IBC-Go #6716 — Capability scope inspection and tests",
+          "url": "https://github.com/cosmos/ibc-go/pull/6716"
+        }
+      ]
+    },
+    "pt": {
+      "title": "Contribuições Go upstream ao Cosmos SDK AutoCLI e IBC-Go",
+      "description": "Mudanças Go upstream de Danilo Pantani integradas aos projetos: resolução de arquivos protobuf no Cosmos SDK AutoCLI e inspeção de escopos de capabilities no IBC-Go.",
+      "lead": "Minhas contribuições Go upstream ao Cosmos SDK e ao IBC-Go trataram dois problemas de integração de aplicações: decodificação de comandos AutoCLI com metadados protobuf incompletos e inspeção de escopos de capabilities antes de criá-los. Uma mudou a origem dos descritores de arquivos protobuf; a outra adicionou um helper restrito de consulta. Ambas ficam nas fronteiras entre interfaces geradas e composição da aplicação.",
+      "sections": [
+        {
+          "title": "AutoCLI: a falha de decodificação relatada",
+          "paragraphs": [
+            "O PR #24330 do Cosmos SDK relatava falhas de decodificação em comandos AutoCLI de novos módulos após um upgrade do Go e a remoção de Pulsar da aplicação. AutoCLI monta interfaces de linha de comando a partir de descrições protobuf. O diagnóstico relatado era que o registro de interfaces, quando usado como resolvedor de arquivos, podia expor descritores incompletos de uma mensagem também referenciada dentro de outra mensagem.",
+            "O PR usou uma mensagem AddressList referenciada por uma mensagem Genesis para ilustrar o problema. Seu diagnóstico descrevia descritores placeholder e ordem de registro: um comando podia encontrar metadados incompletos do tipo que precisava decodificar. A implementação tratou o resolvedor usado durante a construção dos comandos, portanto a mudança ficou no builder compartilhado do AutoCLI, em vez de nos comandos gerados de um módulo específico."
+          ]
+        },
+        {
+          "title": "Trocar o resolvedor de arquivos",
+          "paragraphs": [
+            "O patch aceito chamou a função de registro combinado do gogoproto antes de construir o builder AutoCLI. Se a construção do registro falhasse, retornava o erro. O registro resultante passou a ser o FileResolver do builder, enquanto seu TypeResolver continuou sendo o registro global de tipos. Um resolvedor de arquivos fornece descritores de arquivos protobuf; nessa mudança, ele era uma dependência distinta do resolvedor usado para tipos de mensagens.",
+            "A mudança ajustou a origem dos metadados na fronteira de construção de comandos, em vez de adicionar contornos a cada comando gerado. Isso concentrou a correção, mas tornou a construção do registro um ponto explícito de falha. Retornar seu erro significava que o builder não continuaria com esse registro indisponível. A distinção entre resolução de arquivos e de tipos também permaneceu intacta: o patch mudou uma dependência e preservou a outra."
+          ]
+        },
+        {
+          "title": "IBC-Go: inspecionar um escopo antes de criá-lo",
+          "paragraphs": [
+            "No PR #6716 do IBC-Go, adicionei HasModule(moduleName string) bool ao keeper de capabilities. Sua implementação verificava se o nome do módulo existia no map scopedModules do keeper. Scoped keeper é o escopo de capabilities específico de um módulo nesse código. A documentação de ScopeToModule diz que criar um escopo para um módulo já registrado causa panic. O novo helper expôs uma verificação de existência para a composição da aplicação antes de tentar essa operação.",
+            "O teste adicionado criava um escopo para o módulo bank, verificava que HasModule retornava true para ele e false para um nome de módulo inválido. Isso demonstra o comportamento coberto pelo teste e a interface intencionalmente restrita: quem chama pode inspecionar a existência do escopo. A contribuição não transformou ScopeToModule em uma operação que reutiliza silenciosamente um escopo existente."
+          ]
+        },
+        {
+          "title": "O trade-off da composição",
+          "paragraphs": [
+            "Um pequeno helper de consulta preservou o contrato de criação de escopos existente e deu ao código da aplicação uma forma de evitar uma criação duplicada acidental. Alterar a criação para reutilizar um escopo existente mudaria um contrato mais amplo. Com HasModule, quem chama ainda decide como tratar um escopo existente. A verificação sozinha não oferece garantia de concorrência nem impede a criação duplicada por chamadores que a ignoram; sua responsabilidade é informar a presença atual do módulo no keeper."
+          ]
+        },
+        {
+          "title": "Escopo das contribuições",
+          "paragraphs": [
+            "As mudanças vinculadas foram integradas upstream: IBC-Go #6716 em julho de 2024 e Cosmos SDK #24330 em abril de 2025. Elas documentam contribuições Go específicas em interfaces para desenvolvedores e composição de módulos. Uma fornece outra origem de metadados para a construção de comandos; a outra expõe um estado necessário aos chamadores ao compor uma aplicação. Seu escopo são essas mudanças aceitas, e não implantação downstream ou desempenho de rede."
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Cosmos SDK #24330 — Resolvedor de arquivos protobuf do AutoCLI",
+          "url": "https://github.com/cosmos/cosmos-sdk/pull/24330"
+        },
+        {
+          "label": "IBC-Go #6716 — Inspeção de escopos e testes",
+          "url": "https://github.com/cosmos/ibc-go/pull/6716"
+        }
+      ]
+    }
+  }
+]
