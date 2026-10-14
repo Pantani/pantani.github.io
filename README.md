@@ -235,7 +235,7 @@ This repository contains a static, bilingual visual portfolio. The canonical pub
 
 - [`index.html`](./index.html) — English and Brazilian Portuguese CVs
 - [`assets/references-data.js`](./assets/references-data.js) — public evidence mapped to stable experience keys; source titles remain in their original language
-- [`assets/references.js`](./assets/references.js) — optional `?references=1` view; preserves language and anchors without duplicating CV content
+- [`assets/references.js`](./assets/references.js) — references shown by default; `?references=0` hides them, while language and anchor navigation are preserved
 - [`output/pdf/`](./output/pdf/) — generated resume PDFs
 - [`assets/social-card.jpg`](./assets/social-card.jpg) — current 1200×630 public social preview
 - [`content/case-studies.json`](./content/case-studies.json) — bilingual articles with public implementation sources

@@ -232,8 +232,8 @@ def home_details(soup, language):
         tag["download"] = "Danilo-Pantani-CV-" + code.upper() + ".pdf"
     toggle = soup.select_one("#referencesToggle")
     if toggle is not None:
-        toggle.string = "Com referências" if language == "pt" else "With references"
-        toggle["href"] = "?references=1"
+        toggle.string = "Sem referências" if language == "pt" else "Without references"
+        toggle["href"] = "?references=0"
 
 
 def home_additions(soup, language, items):

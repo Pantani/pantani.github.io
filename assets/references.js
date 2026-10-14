@@ -1,6 +1,6 @@
 /* Public evidence augments the canonical CV without changing its claims. */
 (() => {
-  const enabled = new URLSearchParams(location.search).get('references') === '1';
+  const enabled = new URLSearchParams(location.search).get('references') !== '0';
   const copy = {
     en: {
       show: 'With references', hide: 'Without references', label: 'References',
@@ -77,8 +77,8 @@
   function renderToggle(labels) {
     const toggle = document.getElementById('referencesToggle');
     const url = new URL(location.href);
-    if (enabled) url.searchParams.delete('references');
-    else url.searchParams.set('references', '1');
+    if (enabled) url.searchParams.set('references', '0');
+    else url.searchParams.delete('references');
     toggle.href = url.pathname + url.search + url.hash;
     toggle.textContent = enabled ? labels.hide : labels.show;
     toggle.classList.toggle('is-active', enabled);
