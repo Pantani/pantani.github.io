@@ -14,11 +14,11 @@ from pypdf import PdfReader
 LANGUAGES = ("en", "pt-br")
 SECTION_ANCHORS = {
     "en": ("Professional Summary", "Technical Skills & Core Expertise",
-           "Professional Experience", "Trust Wallet / Binance", "Mercado Bitcoin",
+           "Professional Experience", "Energi Core", "Mercado Bitcoin",
            "Earlier Roles", "Selected Repositories / Evidence", "Teaching & Talks",
            "Languages", "Education & Certifications"),
     "pt-br": ("Resumo Profissional", "Competências Técnicas e Áreas de Especialização",
-              "Experiência Profissional", "Trust Wallet / Binance", "Mercado Bitcoin",
+              "Experiência Profissional", "Energi Core", "Mercado Bitcoin",
               "Atuações Anteriores", "Repositórios Selecionados / Evidências",
               "Docência e Palestras", "Idiomas", "Formação e Certificações"),
 }

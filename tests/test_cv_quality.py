@@ -31,10 +31,10 @@ class ExtractionContractTests(unittest.TestCase):
         self.assertIn("missing_anchor", codes)
 
     def test_company_mentioned_in_summary_cannot_replace_experience(self):
-        text = self.valid_text().replace("Professional Summary", "Professional Summary\nTrust Wallet / Binance")
-        text = text.replace("Professional Experience\nTrust Wallet / Binance", "Professional Experience")
+        text = self.valid_text().replace("Professional Summary", "Professional Summary\nEnergi Core")
+        text = text.replace("Professional Experience\nEnergi Core", "Professional Experience")
         issues = QUALITY.text_findings(text, "en", "fixture")
-        self.assertTrue(any("Trust Wallet" in item["detail"] for item in issues))
+        self.assertTrue(any("Energi Core" in item["detail"] for item in issues))
 
     def test_ligatures_are_detected_before_unicode_normalization(self):
         text = self.valid_text() + "\nWorkﬂows and ﬁxes"

@@ -70,7 +70,7 @@ Independent work combining blockchain developer tooling with occasional project-
 
 - Take on occasional backend and Go assignments for external clients.
 
-### Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (Ignite)
+### Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (AiB)
 
 **Full-time · Jun 2021–May 2026 · Remote**
 
@@ -93,7 +93,7 @@ Independent work combining blockchain developer tooling with occasional project-
 - Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.
 - Added ICA authorization unit tests, refactored shared E2E query and execution helpers, and improved test coverage workflows and CI handling of documentation-only changes.
 
-### Blockchain / Layer-2 Engineer, Go — Hermez Network
+### Blockchain / Layer-2 Engineer, Go — Hermez Network (Iden3)
 
 **Full-time · Feb 2021–Jun 2021 · Remote**
 
@@ -151,7 +151,7 @@ Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group
 - Built and maintained .NET exchange services running on Microsoft Azure.
 - Served as technical lead on the structured-credit product.
 
-### Full-Stack Developer — Finchain — Sep 2017–Nov 2017
+### Full-Stack Developer — Finchain - Fintech Venture Builder — Sep 2017–Nov 2017
 
 Developed smart contracts and applications on Ethereum, including ERC-20 wallets, DApps and ICO workflows. Built an Angular frontend that interacted with smart contracts, as well as native mobile applications and reconciliation systems supporting exchange operations.
 
