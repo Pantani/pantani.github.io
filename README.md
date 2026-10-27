@@ -31,7 +31,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 ### Ignite CLI
 
-- Contributed 300+ public merged PRs across two engagements with Ignite CLI; this is a project total, not a count for the latest role.
+- Contributed 300+ public merged PRs to Ignite CLI at All in Bits (Jun 2021–May 2026).
 - Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. Improved plugin execution, synchronized output handling, custom HTTP clients and qualified/nested RPC message resolution.
 - Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
 
@@ -213,7 +213,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 ## Teaching and talks
 
 - **FIAP (Mar 2018–May 2022, part-time):** Taught blockchain fundamentals and Ethereum dApp development in MBA courses, using Angular and React for dApp frontends and guiding students through Solidity smart contracts for escrow and polling applications.
-- **Go Blockchain (Jan 2018–Aug 2019, freelance):** Blockchain Instructor. Taught courses on Ethereum smart contract development and delivered talks on integrating smart contracts with Android applications and IoT devices. Helped make blockchain education more accessible through affordable, practical courses.
+- **goBlockchain (Jan 2018–Aug 2019, freelance):** Blockchain Instructor. Taught courses on Ethereum smart contract development and delivered talks on integrating smart contracts with Android applications and IoT devices. Helped make blockchain education more accessible through affordable, practical courses.
 - **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java, plus blockchain and Ethereum smart contract development, at the school and in-company (including a well-known law firm).
 - **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.
 - **AwesomWasm 2023, Berlin:** workshop on the Ignite stack and roadmap.
@@ -222,7 +222,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 ## Education, certifications and languages
 
 - **Universidade Presbiteriana Mackenzie:** Computer Science coursework (6 semesters completed) and Electrical Engineering coursework (8 semesters completed); neither degree completed. São Paulo, Brazil.
-- **Certifications:** Data Science - Let's Code Academy (2021, 48h); Programming Blockchain - Jimmy Song (2018, 16h); Ethereum Blockchain Developer - Go Blockchain (2017, 16h); Smart Contracts in Ethereum Blockchain - FIAP (2017, 8h); Blockchain Development - Finchain / Blockchain Brazil (2017, 16h).
+- **Certifications:** Data Science - Let's Code Academy (2021, 48h); Programming Blockchain - Jimmy Song (2018, 16h); Ethereum Blockchain Developer - goBlockchain (2017, 16h); Smart Contracts in Ethereum Blockchain - FIAP (2017, 8h); Blockchain Development - Finchain / Blockchain Brazil (2017, 16h).
 - **Languages:** Portuguese — native; English — advanced; Spanish — advanced.
 
 ## Repository
