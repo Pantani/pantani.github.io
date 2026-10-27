@@ -53,11 +53,11 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 | Area | Technologies and focus |
 |---|---|
 | **Go Backend & Distributed Systems** | Go (Golang), backend engineering, distributed systems, software architecture, system design, HTTP APIs, concurrent processing, goroutines, worker pools, fan-out processing, batching, context cancellation |
-| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
+| **Blockchain & Protocol Engineering** | Cosmos SDK, CometBFT, Tendermint, IBC, TypeScript relayers, validator infrastructure, AtomOne, Gno, Ethereum, EVM, Bitcoin / UTXO, zk-SNARKs, Layer 2, rollup infrastructure |
 | **Platform Engineering, Cloud & DevOps** | Kubernetes, Docker, Helm, Terraform, Pulumi, Ansible, AWS, GCP, GitHub Actions, CI/CD, Prometheus, Grafana, observability, cloud deployments, production operations |
 | **Developer Tooling** | Cobra, Viper, protobuf analysis, AST-based code generation, scaffolding, migrations, CLI design, release tooling |
 | **Technical Leadership** | Hands-on team leadership, system design, technical decisions, code review, and cross-functional delivery across backend, mobile, and product engineering |
-| **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
+| **Full-Stack, Mobile & IoT** | JavaScript, TypeScript, React, Angular, React Native; native iOS and Android with Objective-C, Swift, Java, and Kotlin; OpenCV/C++, beacons, Wi-Fi, Arduino, Raspberry Pi |
 | **Engineering Workflow** | Repository context, refactoring, and MCP tooling for TouchDesigner through tdmcp |
 
 ## Professional experience
@@ -70,9 +70,9 @@ Independent work combining blockchain developer tooling with occasional project-
 
 - Take on occasional backend and Go assignments for external clients.
 
-### Blockchain Engineer, Go — Developer Platform & Distributed Systems — Ignite (All in Bits)
+### Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (Ignite)
 
-**Full-time · Dec 2022–May 2026 · Remote**
+**Full-time · Jun 2021–May 2026 · Remote**
 
 - Developed Go developer tooling in Ignite CLI: AST-based source transformations, Protocol Buffers code generation, module and migration scaffolding, application wiring, and compatibility updates across Cosmos SDK, CometBFT and IBC-Go.
 - Built and extended Ignite apps for Hermes relaying, CosmWasm and fee-abstraction integration. Implemented Spaceship remote chain deployment over SSH/SFTP, including process control, logs, faucets and archive extraction.
@@ -81,23 +81,17 @@ Independent work combining blockchain developer tooling with occasional project-
 - Extended IBC functionality in Gno Realms with transfer memos, GRC20 voucher transfer and approval helpers, relay authorization, and query views.
 - Contributed upstream fixes to Cosmos SDK AutoCLI protobuf descriptor resolution and an IBC-Go helper for inspecting existing capability scopes.
 - Implemented airdrop start and claim rules, staking/governance hooks, mission invariants and simulation coverage in Cosmos SDK modules.
+- Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
+- Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
+- Implemented validation and invariants for SPN chain-launch requests, campaign associations and share accounting.
 
 ### Blockchain Engineer, Go — Cosmos Hub & Interoperability — Interchain Foundation
 
-**Full-time · Jun 2022–Dec 2022 · Remote**
+**Full-time · Jul 2022–Dec 2022 · Remote · in parallel with All in Bits**
 
 - Maintained and evolved Gaia, the Cosmos Hub application, implementing bug fixes, upgrades and ongoing improvements across the Go codebase.
 - Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.
 - Added ICA authorization unit tests, refactored shared E2E query and execution helpers, and improved test coverage workflows and CI handling of documentation-only changes.
-
-### Senior Blockchain Engineer, Go — Developer Tooling — Ignite (Tendermint)
-
-**Full-time · Jun 2021–Jun 2022 · Remote**
-
-- Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
-- Developed new features and maintained Ignite CLI, fixing bugs and keeping it up to date with Cosmos SDK changes.
-- Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
-- Implemented validation and invariants for SPN chain-launch requests, campaign associations and share accounting.
 
 ### Blockchain / Layer-2 Engineer, Go — Hermez Network
 
@@ -121,6 +115,7 @@ Designed the overall architecture and built core Go backend services for a crypt
 - Designed SQL data models and implemented Kafka-based asynchronous processing, including background workers for reconciliation and balance management.
 - Designed and deployed infrastructure on AWS and GCP using Kubernetes and Helm charts, with HashiCorp tooling including Vault, Consul and Terraform, plus Ansible for infrastructure automation.
 - Built GitHub Actions delivery pipelines for services and full nodes, and implemented production monitoring using Prometheus and Grafana.
+- Built TypeScript components for the exchange frontend.
 
 ### Backend Lead, Go — Trust Wallet — Binance
 
@@ -158,11 +153,11 @@ Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group
 
 ### Full-Stack Developer — Finchain — Sep 2017–Nov 2017
 
-Developed smart contracts and applications on Ethereum, including ERC-20 wallets, DApps and ICO workflows. Also built native mobile applications and reconciliation systems supporting exchange operations.
+Developed smart contracts and applications on Ethereum, including ERC-20 wallets, DApps and ICO workflows. Built an Angular frontend that interacted with smart contracts, as well as native mobile applications and reconciliation systems supporting exchange operations.
 
 ### Mobile Developer (Android / iOS) — Neon — Jan 2017–Nov 2017
 
-Developed and maintained native iOS and Android applications, including document-capture and image-recognition workflows using OpenCV and C++.
+Developed mobile applications with React Native and native Objective-C for iOS and Java for Android, including document-capture and image-recognition workflows using OpenCV and C++.
 
 ### Co-Founder / CTO — Miya Solutions — Jan 2016–Jan 2017
 
@@ -191,6 +186,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 ## Personal projects
 
 - Build tdmcp, an MCP server for TouchDesigner, and Ableton Mind, an MCP server for Ableton Live, using TypeScript and Python to connect AI assistants with creative applications.
+- Built their project and documentation sites: [tdmcp](https://pantani.xyz/tdmcp/) and [Ableton Mind](https://pantani.xyz/ableton-mind/); built this [portfolio](https://pantani.xyz/).
 - Extended tdmcp with retrieval fusion, explicit executable-code authorization and operator snapshot provenance; enabled Ableton Mind server startup and metadata access without a local Ableton bridge.
 - Built Healthcheck in Go for scheduled HTTP checks, Redis-backed state and PagerDuty alerts, and Chainops for declarative blockchain operations with validation and artifact planning.
 - Developed local XCM tooling in Cartographer and maintained deterministic wallet-address derivation and concurrency safety in Pool Party.
@@ -216,7 +212,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 ## Teaching and talks
 
-- **FIAP (Nov 2021–May 2022, part-time):** Taught blockchain fundamentals and Ethereum dApp development in MBA courses, guiding students through Solidity smart contracts for escrow and polling applications.
+- **FIAP (Nov 2021–May 2022, part-time):** Taught blockchain fundamentals and Ethereum dApp development in MBA courses, using Angular and React for dApp frontends and guiding students through Solidity smart contracts for escrow and polling applications.
 - **Go Blockchain (Jan 2018–Aug 2019, freelance):** Blockchain Instructor. Taught courses on Ethereum smart contract development and delivered talks on integrating smart contracts with Android applications and IoT devices. Helped make blockchain education more accessible through affordable, practical courses.
 - **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java.
 - **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.
