@@ -214,7 +214,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 - **FIAP (Mar 2018–May 2022, part-time):** Taught blockchain fundamentals and Ethereum dApp development in MBA courses, using Angular and React for dApp frontends and guiding students through Solidity smart contracts for escrow and polling applications.
 - **Go Blockchain (Jan 2018–Aug 2019, freelance):** Blockchain Instructor. Taught courses on Ethereum smart contract development and delivered talks on integrating smart contracts with Android applications and IoT devices. Helped make blockchain education more accessible through affordable, practical courses.
-- **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java.
+- **Let's Code (Sep 2016–Jul 2019, part-time):** taught programming fundamentals and Java, plus blockchain and Ethereum smart contract development, at the school and in-company (including a well-known law firm).
 - **Web3Family 2023, Barcelona:** building Cosmos SDK chains and developer tooling with Ignite.
 - **AwesomWasm 2023, Berlin:** workshop on the Ignite stack and roadmap.
 - **ETH São Paulo 2021:** zk-SNARKs and Ethereum Layer-2 rollup infrastructure.

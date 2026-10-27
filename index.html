@@ -1992,7 +1992,8 @@
       gap: 14px;
       align-items: stretch;
     }
-    .teaching-grid { grid-template-columns: 0.85fr 0.85fr 1.3fr; }
+    .teaching-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .teaching-grid .side-panel:last-child { grid-column: 1 / -1; }
     .credentials-grid { grid-template-columns: 1.2fr 0.8fr; }
     .teaching-grid .side-panel,
     .credentials-grid .side-panel { box-shadow: none; }
@@ -2679,8 +2680,11 @@
         page-break-inside: avoid;
       }
       .credentials-grid .side-panel:last-child { margin-bottom: 0; }
-      .credentials-grid h3 { display: block; margin-bottom: 0.5mm; }
+      .credentials-grid h3 { display: inline; }
+      .credentials-grid h3::after { content: " — "; color: var(--muted-2); font-weight: 400; }
+      .credentials-grid p + p::before { content: "· "; color: var(--muted-2); }
       .credentials-grid p {
+        display: inline;
         margin: 0;
         color: var(--ink);
         font-size: 9pt;
@@ -3255,11 +3259,15 @@
             </article>
             <article class="side-panel">
               <h3>Go Blockchain · 2018–2019</h3>
-              <p data-i18n-html="edu.gobc.body">Taught Ethereum smart contract courses and gave talks on Android and IoT integration, helping make blockchain education accessible through affordable, practical courses.</p>
+              <p data-i18n-html="edu.gobc.body">Taught Ethereum smart contract courses and gave talks on Android and IoT integration.</p>
+            </article>
+            <article class="side-panel">
+              <h3 data-i18n="edu.letscode.title">Let's Code · Sep 2016–Jul 2019</h3>
+              <p data-i18n-html="edu.letscode.body">Taught programming fundamentals and Java, plus blockchain and Ethereum smart contract development, at the school and in-company (including a well-known law firm).</p>
             </article>
             <article class="side-panel">
               <h3 data-i18n="edu.speaking.title">Selected talks</h3>
-              <p data-i18n-html="edu.speaking.body">Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite.<br>AwesomWasm 2023, Berlin — Ignite stack workshop.<br>ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.</p>
+              <p data-i18n-html="edu.speaking.body">Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite · AwesomWasm 2023, Berlin — Ignite stack workshop · ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.</p>
             </article>
           </div>
         </section>
@@ -3308,7 +3316,7 @@
             </article>
             <article class="side-panel">
               <h3 data-i18n="edu.certs.title">Certifications</h3>
-              <p data-i18n-html="edu.certs.body">Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h</p>
+              <p data-i18n-html="edu.certs.body">Data Science (Let's Code Academy, 2021, 48h) · Programming Blockchain (Jimmy Song, 2018, 16h) · Ethereum Blockchain Developer (Go Blockchain, 2017, 16h) · Smart Contracts in Ethereum Blockchain (FIAP, 2017, 8h) · Blockchain Development (Finchain / Blockchain Brazil, 2017, 16h)</p>
             </article>
           </div>
         </section>
@@ -3596,11 +3604,13 @@
         "edu.mackenzie.body": "Computer Science: six semesters completed. Electrical Engineering: eight semesters completed. Neither degree completed. São Paulo, Brazil.",
         "edu.fiap.title": "FIAP · Mar 2018–May 2022",
         "edu.fiap.body": "Taught Ethereum dApps with Angular, React and Solidity in MBA courses.",
-        "edu.gobc.body": "Taught Ethereum smart contract courses and gave talks on Android and IoT integration, helping make blockchain education accessible through affordable, practical courses.",
+        "edu.letscode.title": "Let's Code · Sep 2016–Jul 2019",
+        "edu.letscode.body": "Taught programming fundamentals and Java, plus blockchain and Ethereum smart contract development, at the school and in-company (including a well-known law firm).",
+        "edu.gobc.body": "Taught Ethereum smart contract courses and gave talks on Android and IoT integration.",
         "edu.speaking.title": "Selected talks",
-        "edu.speaking.body": "Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite.<br>AwesomWasm 2023, Berlin — Ignite stack workshop.<br>ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.",
+        "edu.speaking.body": "Web3Family 2023, Barcelona — building Cosmos SDK chains and tooling with Ignite · AwesomWasm 2023, Berlin — Ignite stack workshop · ETH São Paulo 2021 — zk-SNARKs and Ethereum Layer 2.",
         "edu.certs.title": "Certifications",
-        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h",
+        "edu.certs.body": "Data Science (Let's Code Academy, 2021, 48h) · Programming Blockchain (Jimmy Song, 2018, 16h) · Ethereum Blockchain Developer (Go Blockchain, 2017, 16h) · Smart Contracts in Ethereum Blockchain (FIAP, 2017, 8h) · Blockchain Development (Finchain / Blockchain Brazil, 2017, 16h)",
         "langs.title": "Languages",
         "langs.portuguese": "Portuguese",
         "langs.portuguese.level": "Native",
@@ -3761,7 +3771,7 @@
         "exp.earlier.title": "Atuações Anteriores",
         "exp.earlier.role": "Staff Engineer / Fundador / Engenheiro Full-Stack e Mobile",
         "exp.earlier.meta": "2011 — 2018<br>São Paulo",
-        "exp.earlier.body": "<article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desenvolvedor Mobile (React Native, Objective-C, Java) | jan 2017 - nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | jan 2016 - jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | jan 2014 - jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desenvolvedor Mobile / Líder de Time | jun 2013 - jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desenvolvedor Mobile / Instrutor | jul 2012 - jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desenvolvedor iOS | nov 2011 - jul 2012</p></article>",
+        "exp.earlier.body": "<article class=\"earlier-job\"><h4>Neon Bank</h4><p>Desenvolvedor Mobile (React Native, Objective-C, Java) | Jan 2017 - Nov 2017</p></article><article class=\"earlier-job\"><h4>Miya</h4><p>Cofundador / CTO | Jan 2016 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Pixon</h4><p>Cofundador / CTO | Jan 2014 - Jan 2017</p></article><article class=\"earlier-job\"><h4>Ice Juice Lemon</h4><p>Desenvolvedor Mobile / Líder de Time | Jun 2013 - Jan 2014</p></article><article class=\"earlier-job\"><h4>IAI</h4><p>Desenvolvedor Mobile / Instrutor | Jul 2012 - Jun 2013</p></article><article class=\"earlier-job\"><h4>Brandish Ad</h4><p>Desenvolvedor iOS | Nov 2011 - Jul 2012</p></article>",
         "projects.title": "Repositórios Selecionados / Evidências",
         "projects.intro": "Repositórios públicos que sustentam os trabalhos de protocolo, backend, interoperabilidade e ferramentas para desenvolvedores descritos acima.",
         "seeking.title": "O que estou buscando",
@@ -3783,11 +3793,13 @@
         "edu.mackenzie.body": "Ciência da Computação: seis semestres concluídos. Engenharia Elétrica: oito semestres concluídos. Ambos os cursos incompletos. São Paulo, Brasil.",
         "edu.fiap.title": "FIAP · Mar 2018–Mai 2022",
         "edu.fiap.body": "Ensinei dApps Ethereum com Angular, React e Solidity no MBA.",
-        "edu.gobc.body": "Ministrei cursos de smart contracts em Ethereum e palestras sobre integração com Android e IoT, contribuindo para o ensino de blockchain com cursos práticos a preços acessíveis.",
+        "edu.letscode.title": "Let's Code · Set 2016–Jul 2019",
+        "edu.letscode.body": "Ensinei fundamentos de programação e Java, além de desenvolvimento blockchain e smart contracts Ethereum, na escola e in company (inclusive em um escritório de advocacia renomado).",
+        "edu.gobc.body": "Ministrei cursos de smart contracts em Ethereum e palestras sobre integração com Android e IoT.",
         "edu.speaking.title": "Palestras selecionadas",
-        "edu.speaking.body": "Web3Family 2023, Barcelona — construção de chains Cosmos SDK e ferramentas com Ignite.<br>AwesomWasm 2023, Berlim — workshop sobre o stack Ignite.<br>ETH São Paulo 2021 — zk-SNARKs e Ethereum Layer 2.",
+        "edu.speaking.body": "Web3Family 2023, Barcelona — construção de chains Cosmos SDK e ferramentas com Ignite · AwesomWasm 2023, Berlim — workshop sobre o stack Ignite · ETH São Paulo 2021 — zk-SNARKs e Ethereum Layer 2.",
         "edu.certs.title": "Certificações",
-        "edu.certs.body": "Data Science (2021) - Let's Code Academy · 48h<br>Programming Blockchain (2018) - Jimmy Song · 16h",
+        "edu.certs.body": "Data Science (Let's Code Academy, 2021, 48h) · Programming Blockchain (Jimmy Song, 2018, 16h) · Ethereum Blockchain Developer (Go Blockchain, 2017, 16h) · Smart Contracts in Ethereum Blockchain (FIAP, 2017, 8h) · Blockchain Development (Finchain / Blockchain Brazil, 2017, 16h)",
         "langs.title": "Idiomas",
         "langs.portuguese": "Português",
         "langs.portuguese.level": "Nativo",
@@ -3811,7 +3823,7 @@
         "footer.copy": "© 2026 Danilo Pantani",
         "footer.version": "Atualizado em out de 2026",
         "exp.independent.role": "Engenheiro Backend em Go e Desenvolvedor Blockchain",
-        "exp.independent.meta": "mai 2026 — atual<br>Autônomo · Remoto",
+        "exp.independent.meta": "Mai 2026 — Atual<br>Autônomo · Remoto",
         "exp.independent.b1": "Estudo pessoal de Rust: Sunscreen para Solana e stellar-forge para Stellar; sem experiência profissional em Rust.",
         "exp.independent.b2": "Realizo demandas pontuais de backend e Go para clientes externos.",
         "exp.independent.b3": "Desenvolvo tdmcp e Ableton Mind (TypeScript/Python); docs: pantani.xyz/tdmcp/ e pantani.xyz/ableton-mind/."
