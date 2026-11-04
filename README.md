@@ -64,7 +64,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 ### Go Backend Engineer & Blockchain Developer — Danilo Pantani
 
-**Self-employed · May 2026–Present · Remote**
+**Self-employed · Jun 2026–Present · Remote**
 
 Independent work combining blockchain developer tooling with occasional project-based backend engagements.
 
