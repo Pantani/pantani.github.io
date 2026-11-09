@@ -31,7 +31,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 ### Ignite CLI
 
-- Contributed 300+ public merged PRs to Ignite CLI at All in Bits (Jun 2021–May 2026).
+- Contributed 300+ public merged PRs to Ignite CLI at All in Bits (Jun 2021–Jul 2026).
 - Worked on protobuf analysis, AST-based code generation, scaffold migrations, and CLI behavior. Improved plugin execution, synchronized output handling, custom HTTP clients and qualified/nested RPC message resolution.
 - Evidence: [merged PRs](https://github.com/ignite/cli/pulls?q=is%3Apr+author%3APantani+is%3Amerged) · [`ignite/cli`](https://github.com/ignite/cli)
 
@@ -64,7 +64,7 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 ### Go Backend Engineer & Blockchain Developer — Danilo Pantani
 
-**Self-employed · Jun 2026–Present · Remote**
+**Self-employed · Jul 2026–Present · Remote**
 
 Independent work combining blockchain developer tooling with occasional project-based backend engagements.
 
@@ -72,7 +72,7 @@ Independent work combining blockchain developer tooling with occasional project-
 
 ### Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (AiB)
 
-**Full-time · Jun 2021–May 2026 · Remote**
+**Full-time · Jun 2021–Jul 2026 · Remote**
 
 - Developed Go developer tooling in Ignite CLI: AST-based source transformations, Protocol Buffers code generation, module and migration scaffolding, application wiring, and compatibility updates across Cosmos SDK, CometBFT and IBC-Go.
 - Built and extended Ignite apps for Hermes relaying, CosmWasm and fee-abstraction integration. Implemented Spaceship remote chain deployment over SSH/SFTP, including process control, logs, faucets and archive extraction.

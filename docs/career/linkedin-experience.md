@@ -2,7 +2,7 @@
 
 Status: local draft; not published.
 
-## All in Bits (Ignite) — June 2021 – May 2026
+## All in Bits (Ignite) — June 2021 – July 2026
 
 - Developed Go developer tooling in Ignite CLI: AST-based source transformations, Protocol Buffers code generation, module and migration scaffolding, application wiring, and compatibility updates across Cosmos SDK, CometBFT and IBC-Go.
 - Built and extended Ignite apps for Hermes relaying, CosmWasm and fee-abstraction integration. Implemented Spaceship remote chain deployment over SSH/SFTP, including process control, logs, faucets and archive extraction.
