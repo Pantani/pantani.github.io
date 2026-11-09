@@ -19,7 +19,7 @@ Status: local draft; not published.
 - Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.
 - Added ICA authorization unit tests, refactored shared E2E query and execution helpers, and improved test coverage workflows and CI handling of documentation-only changes.
 
-## Hermez Network — February 2021 – June 2021
+## Hermez Network — April 2020 – June 2021
 
 Status: published to LinkedIn and verified by read-back on October 8, 2026.
 

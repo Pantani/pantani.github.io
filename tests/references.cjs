@@ -44,8 +44,8 @@ test('unsupported claims are explicit and do not borrow unrelated PRs', async ()
   const abi = page.locator('[data-i18n-html="exp.hermez.b3"]');
   assert.equal(await abi.locator('a').count(), 0);
   assert.match(await abi.textContent(), /no specific public PR identified/);
-  const energi = page.locator('.job-card').filter({ has: page.locator('[data-i18n-html="exp.energi.b1"]') });
-  assert.match(await energi.textContent(), /No public references identified/);
+  const mercadoBitcoin = page.locator('.job-card').filter({ has: page.locator('[data-i18n-html="exp.mb.b1"]') });
+  assert.match(await mercadoBitcoin.textContent(), /No public references identified/);
 });
 
 test('return to regular CV preserves the selected language and anchor', async () => {

@@ -95,7 +95,7 @@ Independent work combining blockchain developer tooling with occasional project-
 
 ### Blockchain / Layer-2 Engineer, Go — Hermez Network (Iden3)
 
-**Full-time · Feb 2021–Jun 2021 · Remote**
+**Full-time · Apr 2020–Jun 2021 · Remote**
 
 Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 
@@ -103,19 +103,6 @@ Go backend and integration tooling for an Ethereum Layer-2 zk-SNARK rollup.
 - Integrated Go services with Ethereum smart contracts via ABI to submit zk-SNARK proofs for rollup batches.
 - Built Go integration examples for Baby Jubjub wallet derivation, Ethereum account authorization, and L2 transaction signing, submission and tracking.
 - Added account-authorization synchronization from the rollup contract, Prometheus instrumentation, transaction validation, race detection in CI, GoReleaser configuration and contract-address discovery.
-
-### Backend Engineer / Architecture — Go, Kubernetes & Observability — Energi Core
-
-**Full-time · Apr 2020–Feb 2021 · Remote**
-
-Designed the overall architecture and built core Go backend services for a cryptocurrency exchange from the ground up, owning application services, infrastructure and operational workflows. Worked alongside an engineer responsible for the matching engine.
-
-- Developed APIs and backend workflows for user accounts, KYC, deposits, withdrawals and transaction tracking, integrating multiple cryptocurrencies and blockchain networks.
-- Built custodial-wallet services covering user wallets, private-key custody and blockchain integrations.
-- Designed SQL data models and implemented Kafka-based asynchronous processing, including background workers for reconciliation and balance management.
-- Designed and deployed infrastructure on AWS and GCP using Kubernetes and Helm charts, with HashiCorp tooling including Vault, Consul and Terraform, plus Ansible for infrastructure automation.
-- Built GitHub Actions delivery pipelines for services and full nodes, and implemented production monitoring using Prometheus and Grafana.
-- Built TypeScript components for the exchange frontend.
 
 ### Backend Lead, Go — Trust Wallet — Binance
 
