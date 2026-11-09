@@ -143,17 +143,13 @@ Technical leadership across exchange backend services and mobile engineering.
 
 ### Staff Engineer — XP Inc.
 
-**Full-time · Dec 2017–Mar 2018 · São Paulo, Brazil**
+**Full-time · Jul 2017–Mar 2018 · São Paulo, Brazil**
 
 Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group, and a structured-credit product.
 
 - Led the entire 15-person XDEX exchange engineering team as Staff Engineer, combining technical leadership with hands-on work across technical decisions, development and delivery.
 - Built and maintained .NET exchange services running on Microsoft Azure.
 - Served as technical lead on the structured-credit product.
-
-### Full-Stack Developer — Finchain - Fintech Venture Builder — Sep 2017–Nov 2017
-
-Developed smart contracts and applications on Ethereum, including ERC-20 wallets, DApps and ICO workflows. Built an Angular frontend that interacted with smart contracts, as well as native mobile applications and reconciliation systems supporting exchange operations.
 
 ### Mobile Developer (Android / iOS) — Neon — Jan 2017–Nov 2017
 
