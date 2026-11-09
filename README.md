@@ -138,27 +138,23 @@ Staff Engineer at XP, working on XDEX, a digital-asset exchange within the group
 - Built and maintained .NET exchange services running on Microsoft Azure.
 - Served as technical lead on the structured-credit product.
 
-### Mobile Developer (Android / iOS) — Neon — Jan 2017–Nov 2017
+### Mobile Developer (Android / iOS) — Neon — Jul 2016–Jul 2017
 
 Developed mobile applications with React Native and native Objective-C for iOS and Java for Android, including document-capture and image-recognition workflows using OpenCV and C++.
 
-### Co-Founder / CTO — Miya Solutions — Jan 2016–Jan 2017
+### Co-Founder / CTO — Miya Solutions — Jan 2014–Jul 2016
 
 Co-founded a real-time people-management platform and led its technical direction, using Wi-Fi signals for presence and location workflows.
 
-### Co-Founder / CTO — Pixon — Jan 2014–Jan 2017
+### Co-Founder / CTO — Pixon — Jan 2014–Jul 2016
 
 Co-founded the company and led engineering across native mobile applications, automation and micro-location products using beacons and Wi-Fi.
 
-### Mobile Developer (Android / iOS) — Ice Juice Lemon — Jun 2013–Jan 2014
-
-Led the mobile development team while building and maintaining native iOS and Android applications.
-
-### Mobile Developer (Android / iOS) — iai? Instituto de Artes Interativas — Jul 2012–Jun 2013
+### Mobile Developer (Android / iOS) — iai? Instituto de Artes Interativas — Jul 2012–Jan 2014
 
 Developed native iOS and Android applications and delivered practical mobile-development training.
 
-### iOS Developer — Brandish Ad — Nov 2011–Jul 2012
+### iOS Developer — Brandish Ad — Feb 2011–Jul 2012
 
 Built and maintained native iOS applications.
 
