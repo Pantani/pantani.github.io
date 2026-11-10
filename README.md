@@ -1,10 +1,10 @@
 # Danilo Pantani
 
-**Senior Backend Engineer**<br>
+**Staff Backend Engineer**<br>
 **Go (Golang) · Distributed Systems · Blockchain Infrastructure**
 
 São Paulo, Brazil · Remote · UTC−3<br>
-Brazilian and Italian citizen<br>
+Brazilian and Italian (EU) citizen · Available immediately · Open to relocation<br>
 [danpantani@gmail.com](mailto:danpantani@gmail.com) · [GitHub](https://github.com/Pantani) · [LinkedIn](https://www.linkedin.com/in/dpantani/?locale=en-US) · [Telegram](https://t.me/dpantani)
 
 [Live visual resume](https://pantani.xyz/) · [HTML source](./index.html)
@@ -17,9 +17,9 @@ The **With references / Com referências** toolbar link opens a shareable view o
 
 ## Professional summary
 
-Senior backend engineer with 10+ years in software engineering, focused on Go backend services, distributed systems, and blockchain infrastructure. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes.
+Staff backend engineer with 10+ years in software engineering, focused on Go backend services, distributed systems, and blockchain infrastructure. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes.
 
-Seeking remote Senior Backend Engineer and Senior Software Engineer roles focused on Go and distributed systems, including blockchain infrastructure.
+Seeking remote Staff or Senior Backend Engineer and Staff or Senior Software Engineer roles focused on Go and distributed systems, including blockchain infrastructure.
 
 ## Selected engineering contributions
 

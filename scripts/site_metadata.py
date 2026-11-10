@@ -18,7 +18,7 @@ LABELS = {
         "updated": "Updated",
         "hub_description": "Go backend engineering, developer tooling and protocol contributions with public implementation evidence.",
         "remote": "Based in Brazil (UTC−3), seeking remote Go/backend opportunities with employers outside Brazil.",
-        "role": "Senior Backend Engineer",
+        "role": "Staff Backend Engineer",
     },
     "pt": {
         "work": "Estudos de caso de engenharia",
@@ -29,7 +29,7 @@ LABELS = {
         "updated": "Atualizado em",
         "hub_description": "Engenharia backend Go, ferramentas para desenvolvedores e contribuições em protocolos com evidências públicas de implementação.",
         "remote": "Resido no Brasil (UTC−3) e busco oportunidades remotas em Go/backend com empregadores de fora do Brasil.",
-        "role": "Engenheiro Backend Sênior",
+        "role": "Engenheiro Backend Staff",
     },
 }
 
