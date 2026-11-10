@@ -19,7 +19,7 @@ The **With references / Com referências** toolbar link opens a shareable view o
 
 Staff backend engineer with 10+ years in software engineering, focused on Go backend services, distributed systems, and blockchain infrastructure. Experience includes leading backend work on Trust Wallet's multi-chain blockatlas, building Cosmos developer tooling at Ignite, and implementing AtomOne distribution-module changes.
 
-Seeking remote Staff or Senior Backend Engineer and Staff or Senior Software Engineer roles focused on Go and distributed systems, including blockchain infrastructure.
+Seeking remote Staff or Senior Backend Engineer, Go/Golang Engineer, Blockchain Engineer or Protocol Engineer roles focused on Go, distributed systems and blockchain infrastructure.
 
 ## Selected engineering contributions
 
