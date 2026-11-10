@@ -125,7 +125,7 @@ Led backend work on blockatlas, Trust Wallet's multi-chain backend.
 
 Technical leadership across exchange backend services and mobile engineering.
 
-- Built Go and Python services for multi-chain transaction tracking and payload signing.
+- Built Go and Python services for multi-chain transaction tracking and payload signing, with event-driven processing over Kafka, RabbitMQ and NATS.
 - Maintained wallet workflows connected to the exchange ledger and matching systems.
 - Ran the exchange infrastructure on Kubernetes across AWS and GCP, managed as code with Terraform.
 - Led a seven-person mobile team and coordinated customer-facing delivery across backend, iOS, Android and web engineering.
@@ -204,7 +204,7 @@ Supported electrical-engineering activities at the Jirau Hydroelectric Power Pla
 
 - **Universidade Presbiteriana Mackenzie:** Computer Science coursework (6 semesters completed) and Electrical Engineering coursework (8 semesters completed); neither degree completed. São Paulo, Brazil.
 - **Certifications:** Data Science - Let's Code Academy (2021, 48h); Programming Blockchain - Jimmy Song (2018, 16h); Ethereum Blockchain Developer - goBlockchain (2017, 16h); Smart Contracts in Ethereum Blockchain - FIAP (2017, 8h); Blockchain Development - Finchain / Blockchain Brazil (2017, 16h).
-- **Languages:** Portuguese — native; English — advanced; Spanish — advanced.
+- **Languages:** Portuguese — native; English — full professional; Spanish — full professional.
 
 ## Repository
 
