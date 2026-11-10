@@ -5,7 +5,7 @@ import json
 from bs4 import BeautifulSoup
 
 DOMAIN = "https://pantani.xyz"
-MODIFIED = "2026-10-09"
+MODIFIED = "2026-11-09"
 IMAGE = f"{DOMAIN}/assets/social-card.jpg"
 LANGUAGES = {"en": "en", "pt": "pt-BR"}
 LABELS = {
