@@ -62,17 +62,18 @@ Seeking remote Senior Backend Engineer and Senior Software Engineer roles focuse
 
 ## Professional experience
 
-### Go Backend Engineer & Blockchain Developer — Danilo Pantani
+### Senior Backend Engineer (Go/Golang) & Blockchain Engineer — Danilo Pantani
 
 **Self-employed · Jul 2026–Present · Remote**
 
 Independent work combining blockchain developer tooling with occasional project-based backend engagements.
 
+- Build MCP servers that connect AI assistants to creative tools for musicians and visual artists: tdmcp for TouchDesigner and Ableton Mind for Ableton Live.
 - Take on occasional backend and Go assignments for external clients.
 
-### Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (AiB)
+### Staff Blockchain Engineer, Go — Developer Platform & Distributed Systems — All in Bits (AiB)
 
-**Full-time · Jun 2021–Jul 2026 · Remote**
+**Full-time · Jun 2021–Jul 2026 · Remote · Senior Blockchain Engineer, Go (Jun 2021–Dec 2022); Staff Blockchain Engineer, Go (Jan 2023–Jul 2026)**
 
 - Developed Go developer tooling in Ignite CLI: AST-based source transformations, Protocol Buffers code generation, module and migration scaffolding, application wiring, and compatibility updates across Cosmos SDK, CometBFT and IBC-Go.
 - Built and extended Ignite apps for Hermes relaying, CosmWasm and fee-abstraction integration. Implemented Spaceship remote chain deployment over SSH/SFTP, including process control, logs, faucets and archive extraction.
@@ -126,6 +127,7 @@ Technical leadership across exchange backend services and mobile engineering.
 
 - Built Go and Python services for multi-chain transaction tracking and payload signing.
 - Maintained wallet workflows connected to the exchange ledger and matching systems.
+- Ran the exchange infrastructure on Kubernetes across AWS and GCP, managed as code with Terraform.
 - Led a seven-person mobile team and coordinated customer-facing delivery across backend, iOS, Android and web engineering.
 
 ### Staff Engineer — XP Inc.
