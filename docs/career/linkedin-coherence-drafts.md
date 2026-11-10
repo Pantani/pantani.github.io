@@ -1,5 +1,7 @@
 # LinkedIn coherence drafts
 
+> **Superseded 2026-11-10.** The live LinkedIn profile now uses "Staff Backend Engineer" (headline, About, Featured CV), and Kafka, RabbitMQ and NATS are on the site under Mercado Bitcoin. The current texts are on LinkedIn and in index.html; this file keeps the earlier drafts for history.
+
 Status: local draft; not published. Prepared on 2026-11-09 by comparing the LinkedIn profile with the CV PDFs and `index.html` at commit `8a36623`.
 
 Assumption: Energi was removed on purpose (commit `530d1e9`). If that is wrong, keep the Energi bullet and restore the role in the CV and site instead.
