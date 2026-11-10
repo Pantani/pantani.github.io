@@ -58,7 +58,7 @@ The CV says "Advanced" for English and Spanish. LinkedIn has no such level, so "
 Held in parallel with my All in Bits role.
 ```
 
-This matches the CV and site, and explains why two full-time roles overlap from Jul to Dec 2022.
+This matches the CV and site, and explains why two full-time roles overlap from Jun 2022 to Feb 2023.
 
 ## 6. Open to Work: job titles (replace)
 

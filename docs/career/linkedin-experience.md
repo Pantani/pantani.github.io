@@ -13,7 +13,7 @@ Status: local draft; not published.
 - Implemented Go modules and transaction flows for SPN: coordinator and validator profiles, chain-launch requests, genesis accounts and validators, campaign share allocation, vesting vouchers and reward distribution.
 - Added genesis validation and simulation coverage, and corrected concurrency issues in CLI progress and context-aware input handling.
 
-## Interchain Foundation — July 2022 – December 2022 (in parallel with All in Bits)
+## Interchain Foundation — June 2022 – February 2023 (in parallel with All in Bits)
 
 - Maintained and evolved Gaia, the Cosmos Hub application, implementing bug fixes, upgrades and ongoing improvements across the Go codebase.
 - Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.

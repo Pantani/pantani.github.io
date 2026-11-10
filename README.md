@@ -88,7 +88,7 @@ Independent work combining blockchain developer tooling with occasional project-
 
 ### Blockchain Engineer, Go — Cosmos Hub & Interoperability — Interchain Foundation
 
-**Full-time · Jul 2022–Dec 2022 · Remote · in parallel with All in Bits**
+**Full-time · Jun 2022–Feb 2023 · Remote · in parallel with All in Bits**
 
 - Maintained and evolved Gaia, the Cosmos Hub application, implementing bug fixes, upgrades and ongoing improvements across the Go codebase.
 - Implemented end-to-end coverage for vesting accounts, fee grants and sponsored transactions, validator unjailing, transaction encoding/decoding, and interchain accounts controlled through governance and groups.
