@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 DOMAIN = "https://pantani.xyz"
 MODIFIED = "2026-11-09"
-IMAGE = f"{DOMAIN}/assets/social-card.jpg"
+IMAGE = f"{DOMAIN}/assets/social-card.jpg?v=20261111"
 LANGUAGES = {"en": "en", "pt": "pt-BR"}
 LABELS = {
     "en": {
